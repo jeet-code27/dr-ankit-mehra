@@ -13,7 +13,7 @@ const PatientReviews = () => {
         </h2>
         <div className="w-24 h-1 mx-auto bg-gradient-to-r from-blue-500 to-blue-300 rounded-full mb-3 md:mb-4"></div>
         <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-blue-500 to-blue-300 inline-block text-transparent bg-clip-text leading-relaxed">
-          <strong>Dr. Vishnu Agrawal - Best Urologist & Stone Specialist in Ajmer</strong>
+          <strong>Dr. Vishnu Agarwal - Best Urologist & Stone Specialist in Ajmer</strong>
           <span className="block text-lg md:text-xl lg:text-2xl mt-1">M.B.B.S., M.D., Urologist & Stone Specialist</span>
         </h3>
         

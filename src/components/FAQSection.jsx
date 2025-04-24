@@ -42,20 +42,20 @@ const FAQItem = ({ question, answer }) => {
 const FAQSection = () => {
   const faqData = [
     {
-      question: "What urological conditions does Dr. Vishnu Agrawal treat?",
-      answer: "Dr. Vishnu Agrawal specializes in treating kidney stones, prostate issues, urinary tract infections, male infertility, erectile dysfunction, bladder cancer, and other urological conditions. He provides both medical and surgical treatments using the latest techniques."
+      question: "What urological conditions does Dr. Vishnu Agarwal treat?",
+      answer: "Dr. Vishnu Agarwal specializes in treating kidney stones, prostate issues, urinary tract infections, male infertility, erectile dysfunction, bladder cancer, and other urological conditions. He provides both medical and surgical treatments using the latest techniques."
     },
     {
-      question: "What makes Dr. Vishnu Agrawal the best urologist in Ajmer?",
-      answer: "Dr. Agrawal combines extensive experience (15+ years), advanced training in minimally invasive techniques, state-of-the-art equipment, personalized care, and a high success rate in complex urological surgeries. His patient-centric approach and continuous skill upgradation make him stand out."
+      question: "What makes Dr. Vishnu Agarwal the best urologist in Ajmer?",
+      answer: "Dr. Agarwal combines extensive experience (15+ years), advanced training in minimally invasive techniques, state-of-the-art equipment, personalized care, and a high success rate in complex urological surgeries. His patient-centric approach and continuous skill upgradation make him stand out."
     },
     {
       question: "What are the clinic hours for consultation?",
-      answer: "Dr. Agrawal's clinic is open Monday to Saturday from 4:00 PM to 7:00 PM. Emergency services are available 24/7. It's recommended to book an appointment in advance to minimize waiting time."
+      answer: "Dr. Agarwal's clinic is open Monday to Saturday from 4:00 PM to 7:00 PM. Emergency services are available 24/7. It's recommended to book an appointment in advance to minimize waiting time."
     },
     {
       question: "What advanced treatments are available for kidney stones?",
-      answer: "Dr. Agrawal offers laser lithotripsy, PCNL (Percutaneous Nephrolithotomy), RIRS (Retrograde Intrarenal Surgery), and ESWL (Extracorporeal Shock Wave Lithotripsy). The treatment is chosen based on stone size, location, and patient condition for optimal results."
+      answer: "Dr. Agarwal offers laser lithotripsy, PCNL (Percutaneous Nephrolithotomy), RIRS (Retrograde Intrarenal Surgery), and ESWL (Extracorporeal Shock Wave Lithotripsy). The treatment is chosen based on stone size, location, and patient condition for optimal results."
     },
     {
       question: "How can I prepare for my first consultation?",
@@ -67,7 +67,7 @@ const FAQSection = () => {
     },
     {
       question: "Do you provide emergency urology services?",
-      answer: "Yes, Dr. Agrawal provides 24/7 emergency care for acute urinary retention, severe kidney stone pain, testicular torsion, traumatic urological injuries, and other urgent urological conditions. Call our emergency helpline for immediate assistance."
+      answer: "Yes, Dr. Agarwal provides 24/7 emergency care for acute urinary retention, severe kidney stone pain, testicular torsion, traumatic urological injuries, and other urgent urological conditions. Call our emergency helpline for immediate assistance."
     }
   ];
 
@@ -82,7 +82,7 @@ const FAQSection = () => {
         >
           <img 
             src="/images/faq.png" 
-            alt="Dr. Vishnu Agrawal Urology Clinic" 
+            alt="Dr. Vishnu Agarwal Urology Clinic" 
             className="h-32 w-auto object-contain"
           />
         </motion.div>

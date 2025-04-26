@@ -34,13 +34,13 @@ const AboutDoctorSection = () => {
                     <svg className="w-5 h-5 text-blue-600 mr-1" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">10+ Years Experience</span>
+                    <span className="text-gray-700">15+ Years Experience</span>
                   </div>
                   <div className="flex items-center">
                     <svg className="w-5 h-5 text-blue-600 mr-1" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700">1000+ Surgeries</span>
+                    <span className="text-gray-700">10000+ Surgeries</span>
                   </div>
                 </div>
               </div>
@@ -50,7 +50,7 @@ const AboutDoctorSection = () => {
           {/* Right Content */}
           <div className="w-full lg:w-3/5">
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Dr. Vishnu Agarwal is one of the best urologists in Jaipur, specializing in advanced technology for Laparoscopic Surgery, Andrology, Female Urology, Uro-Oncology, and Kidney Surgery. With over 10 years of experience in the field, Dr. Vishnu Agarwal is highly skilled and knowledgeable in treating various urological conditions with care and precision.
+              Dr. Vishnu Agarwal is one of the best urologists in Jaipur, specializing in advanced technology for Laparoscopic Surgery, Andrology, Female Urology, Uro-Oncology, and Kidney Surgery. With over 15+ years of experience in the field, Dr. Vishnu Agarwal is highly skilled and knowledgeable in treating various urological conditions with care and precision.
             </p>
             
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
@@ -66,6 +66,8 @@ const AboutDoctorSection = () => {
                   Specializations
                 </h4>
                 <ul className="text-gray-700">
+                <li className="mb-1">• Female Incompetance </li>
+                <li className="mb-1">• Eractile  Dysfunction</li>
                   <li className="mb-1">• Laparoscopic Surgery</li>
                   <li className="mb-1">• Andrology</li>
                   <li className="mb-1">• Female Urology</li>

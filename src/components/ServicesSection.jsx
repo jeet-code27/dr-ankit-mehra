@@ -16,6 +16,16 @@ const ServicesSection = () => {
   ];
   
   const services = [
+    // New highlighted prostate surgery service (placed at the beginning to ensure it's in top 3)
+    { 
+      id: 16, 
+      title: 'Prostate Surgery (18 French)', 
+      hindi: 'प्रोस्टेट सर्जरी',
+      category: 'prostate',
+      imagePath: '/images/diseases/prostate-surgery.png',
+      description: 'Exclusive to Dr. Vishnu Agarwal - First in Ajmer to provide this advanced minimally invasive technique.',
+      featured: true // Added featured flag to highlight this service
+    },
     { 
       id: 1, 
       title: 'Renal Stone', 
@@ -143,10 +153,17 @@ const ServicesSection = () => {
     ? services 
     : services.filter(service => service.category === selectedCategory);
   
+  // Sort services to ensure featured services appear first
+  const sortedServices = [...filteredServices].sort((a, b) => {
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+    return 0;
+  });
+  
   // Limit display to 6 services initially unless "See More" is clicked
   const displayedServices = showAllServices 
-    ? filteredServices 
-    : filteredServices.slice(0, 6);
+    ? sortedServices 
+    : sortedServices.slice(0, 6);
   
   // Reset "Show All" state when category changes
   const handleCategoryChange = (categoryId) => {
@@ -186,8 +203,10 @@ const ServicesSection = () => {
           {displayedServices.map(service => (
             <div 
               key={service.id} 
-              className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 group"
+              className={`bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 group
+                ${service.featured ? 'order-first' : ''}`}
             >
+              
               {/* Image Section */}
               <div className="relative h-50 w-full overflow-hidden">
                 <Image
@@ -201,12 +220,21 @@ const ServicesSection = () => {
               
               {/* Content Section */}
               <div className="p-5">
-                <h3 className="text-lg font-bold text-gray-900 mb-1">{service.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-1">
+                  {service.title}
+                  {service.featured && <span className="ml-2 text-sm font-medium text-blue-600 inline-block">• Only by Dr. Vishnu in ajmer</span>}
+                </h3>
                 <p className="text-md text-blue-700 font-medium mb-3">{service.hindi}</p>
                 <p className="text-gray-600">{service.description}</p>
+                {service.featured && (
+                  <div className="mt-3 bg-blue-50 text-blue-800 text-sm p-2 rounded">
+                    First and only in Ajmer to offer this advanced procedure
+                  </div>
+                )}
                 
                 <Link href={`/services/${service.id}`} passHref>
-                  <button className="mt-4 text-blue-600 font-medium flex items-center hover:text-blue-800 transition-colors">
+                  <button className={`mt-4 font-medium flex items-center transition-colors
+                    ${service.featured ? 'text-blue-700 hover:text-blue-900' : 'text-blue-600 hover:text-blue-800'}`}>
                     Learn more
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>

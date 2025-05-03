@@ -23,7 +23,7 @@ const ServicesSection = () => {
       hindi: 'प्रोस्टेट सर्जरी',
       category: 'prostate',
       imagePath: '/images/diseases/prostate-surgery.png',
-      description: 'Exclusive to Dr. Vishnu Agarwal - First in Ajmer to provide this advanced minimally invasive technique.',
+      description: 'Exclusive to Dr. Vishnu Agrawal - First in Ajmer to provide this advanced minimally invasive technique.',
       featured: true // Added featured flag to highlight this service
     },
     { 
@@ -177,7 +177,7 @@ const ServicesSection = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-3">Our Services</h2>
           <p className="text-xl text-gray-700 font-medium max-w-2xl mx-auto">
-            Dr. Vishnu Agarwal provides comprehensive treatment for a wide range of urological conditions
+            Dr. Vishnu Agrawal provides comprehensive treatment for a wide range of urological conditions
           </p>
         </div>
         

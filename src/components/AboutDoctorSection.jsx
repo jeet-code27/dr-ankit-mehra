@@ -17,7 +17,7 @@ const AboutDoctorSection = () => {
               <div className="relative w-full aspect-square mb-6">
                 <Image
                   src="/images/drvishnu.png" 
-                  alt="Dr. Vishnu Agarwal"
+                  alt="Dr. Vishnu Agrawal"
                   fill
                   className="rounded-lg object-cover"
                   sizes="(max-width: 768px) 100vw, 40vw"
@@ -25,7 +25,7 @@ const AboutDoctorSection = () => {
               </div>
               
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-1">Dr. Vishnu Agarwal</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-1">Dr. Vishnu Agrawal</h3>
                 <p className="text-blue-700 font-medium mb-2">M.B.B.S., M.D., Urologist & Stone Specialist</p>
                 <p className="text-gray-600 mb-4">Consultant Urologist & Laparoscopic Surgeon</p>
                 
@@ -50,11 +50,11 @@ const AboutDoctorSection = () => {
           {/* Right Content */}
           <div className="w-full lg:w-3/5">
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Dr. Vishnu Agarwal is one of the best urologists in Jaipur, specializing in advanced technology for Laparoscopic Surgery, Andrology, Female Urology, Uro-Oncology, and Kidney Surgery. With over 15+ years of experience in the field, Dr. Vishnu Agarwal is highly skilled and knowledgeable in treating various urological conditions with care and precision.
+              Dr. Vishnu Agrawal is one of the best urologists in Ajmer, specializing in advanced technology for Laparoscopic Surgery, Andrology, Female Urology, Uro-Oncology, and Kidney Surgery. With over 15+ years of experience in the field, Dr. Vishnu Agrawal is highly skilled and knowledgeable in treating various urological conditions with care and precision.
             </p>
             
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              Currently practicing at Kshetrapal Hospital, Dr. Vishnu Agarwal provides expert consultation and treatment in Urology, Kidney Disorders, and Female Urology. As a specialist urologist and consultant laparoscopic surgeon, he is known for his advanced techniques and patient-centric approach. His commitment to offering the best urological care makes him a trusted name in Jaipur.
+              Currently practicing at Kshetrapal Hospital, Dr. Vishnu Agrawal provides expert consultation and treatment in Urology, Kidney Disorders, and Female Urology. As a specialist urologist and consultant laparoscopic surgeon, he is known for his advanced techniques and patient-centric approach. His commitment to offering the best urological care makes him a trusted name in Ajmer.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">

@@ -72,10 +72,10 @@ const WhyChooseSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-3">
-            Why Choose Dr. Vishnu Agarwal as the Best Urologist in Ajmer?
+            Why Choose Dr. Vishnu Agrawal as the Best Urologist in Ajmer?
           </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            Dr. Vishnu Agarwal combines years of expertise, cutting-edge techniques, and compassionate care to provide the best urological treatment in Ajmer.
+            Dr. Vishnu Agrawal combines years of expertise, cutting-edge techniques, and compassionate care to provide the best urological treatment in Ajmer.
           </p>
         </div>
 
@@ -100,7 +100,7 @@ const WhyChooseSection = () => {
               <div className="aspect-[4/5] relative">
                 <Image
                   src="/images/drvishnu.png"
-                  alt="Dr. Vishnu Agarwal consulting with patient"
+                  alt="Dr. Vishnu Agrawal consulting with patient"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 40vw"
@@ -108,7 +108,7 @@ const WhyChooseSection = () => {
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900 to-transparent p-6">
                 <div className="text-white">
-                  <h3 className="text-2xl font-bold mb-1">Dr. Vishnu Agarwal</h3>
+                  <h3 className="text-2xl font-bold mb-1">Dr. Vishnu Agrawal</h3>
                   <p className="text-blue-100">M.B.B.S., M.D., Urologist & Stone Specialist</p>
                 </div>
               </div>
@@ -142,7 +142,7 @@ const WhyChooseSection = () => {
                 </svg>
                 <div>
                   <p className="text-gray-700 italic">
-                    "Dr. Agarwal's expertise and compassionate care changed my life. After years of suffering with urological issues, his advanced treatment approach provided relief I never thought possible."
+                    "Dr. Agrawal's expertise and compassionate care changed my life. After years of suffering with urological issues, his advanced treatment approach provided relief I never thought possible."
                   </p>
                   <p className="mt-2 font-medium text-gray-900">— Rahul Sharma, Patient</p>
                 </div>

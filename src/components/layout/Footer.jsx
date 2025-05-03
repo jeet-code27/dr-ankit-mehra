@@ -57,7 +57,7 @@ export default function Footer() {
   return (
     <footer className="relative">
       {/* Appointment Banner */}
-      <div className="relative bg-gradient-to-r from-[#0055A4] to-[#1976D2] py-12 overflow-hidden">
+      <div className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 py-12 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
           <div className="absolute top-10 left-10 w-20 h-20 rounded-full bg-white"></div>
           <div className="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-white"></div>

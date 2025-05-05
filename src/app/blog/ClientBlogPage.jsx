@@ -314,7 +314,7 @@ const ClientBlogPage = ({ blogs }) => {
                 </div>
               </motion.div>
               
-              <motion.div
+              {/* <motion.div
                 ref={membershipsRef}
                 initial={{ opacity: 0, y: 30 }}
                 animate={membershipsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -326,7 +326,7 @@ const ClientBlogPage = ({ blogs }) => {
                   <span className="bg-teal-50 text-teal-600 px-3 py-1 rounded-full">Indian Medical Association</span>
                   <span className="bg-blue-50 text-blue-600 px-3 py-1 rounded-full">Endourology Society</span>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
         </div>

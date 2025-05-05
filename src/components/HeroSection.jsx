@@ -17,11 +17,11 @@ const HeroSection = () => {
               Providing advanced solutions for kidney stones, prostate issues, and urological health. <span className="font-bold">Trust Dr. Vishnu Agrawal, your partner in care.</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
-              <Link href="/bookappointment" passHref>
+              <Link href="/bookconsultation" passHref>
                 <button 
                   className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-full text-lg transition-colors"
                 >
-                  Book Appointment
+                  Book Consultation
                 </button>
               </Link>
               <Link href="/services" passHref>
@@ -38,10 +38,10 @@ const HeroSection = () => {
           <div className="w-full lg:w-1/2 mt-12 lg:mt-0 relative rounded-4xl  ">
             <div className="relative w-full aspect-[3/3]">
               <Image
-                src="/images/logo.png" 
+                src="/images/logoo.png" 
                 alt="Doctor consulting with patient"
                 fill
-                className="rounded-3xl object-cover"
+                className="rounded-3xl object-fit"
                 priority
                 sizes="(max-width: 768px) 100vw, 50vw"
               />

@@ -24,6 +24,7 @@ const ServicesSection = () => {
       category: 'prostate',
       imagePath: '/images/diseases/prostate-surgery.png',
       description: 'Exclusive to Dr. Vishnu Agrawal - First in Ajmer to provide this advanced minimally invasive technique.',
+      path: 'prostate-surgery',
       featured: true // Added featured flag to highlight this service
     },
     { 
@@ -32,6 +33,7 @@ const ServicesSection = () => {
       hindi: 'गुर्दे की पथरी',
       category: 'stone',
       imagePath: '/images/diseases/renal-stone.jpeg',
+      path: 'renal-stone',
       description: 'Advanced treatment for kidney stones using minimally invasive techniques.'
     },
     { 
@@ -40,6 +42,7 @@ const ServicesSection = () => {
       hindi: 'यूरेथरिक स्टोन',
       category: 'stone',
       imagePath: '/images/diseases/ureteral-stones.webp',
+      path: 'ureteric-stone',
       description: 'Specialized care for stones in the ureter connecting kidney to bladder.'
     },
     { 
@@ -48,6 +51,7 @@ const ServicesSection = () => {
       hindi: 'मूत्राशय पथरी',
       category: 'stone',
       imagePath: '/images/diseases/bladder-stones.png',
+      path: 'bladder-stone',
       description: 'Effective removal of stones formed in the urinary bladder.'
     },
     { 
@@ -56,6 +60,7 @@ const ServicesSection = () => {
       hindi: 'मूत्राशय का ट्यूमर',
       category: 'urinary',
       imagePath: '/images/diseases/bladder-tumor.webp',
+      path: 'bladder-tumor',
       description: 'Early detection and treatment of bladder cancer and tumors.'
     },
     { 
@@ -64,6 +69,7 @@ const ServicesSection = () => {
       hindi: 'प्रोस्टेट की बीमारी',
       category: 'prostate',
       imagePath: '/images/diseases/prostate.avif',
+      path: 'prostate-disease',
       description: 'Comprehensive care for enlarged prostate and prostate cancer.'
     },
     { 
@@ -72,6 +78,7 @@ const ServicesSection = () => {
       hindi: 'मूत्र रोग',
       category: 'urinary',
       imagePath: '/images/diseases/urinary-disease.jpg',
+      path: 'urinary-disease',
       description: 'Treatment for various urinary tract infections and conditions.'
     },
     { 
@@ -80,6 +87,7 @@ const ServicesSection = () => {
       hindi: 'पुरुष बांझपन',
       category: 'male',
       imagePath: '/images/diseases/male-infertility.webp',
+      path: 'male-infertility',
       description: 'Specialized diagnosis and treatment for male fertility issues.'
     },
     { 
@@ -88,6 +96,7 @@ const ServicesSection = () => {
       hindi: 'एंड्रोलॉजी समस्याएं',
       category: 'male',
       imagePath: '/images/diseases/andrology.jpg',
+      path: 'andrology-problems',
       description: 'Expert care for conditions related to male reproductive health.'
     },
     { 
@@ -96,6 +105,7 @@ const ServicesSection = () => {
       hindi: 'पुरुष यौन समस्याएं',
       category: 'male',
       imagePath: '/images/diseases/male-sexual.webp',
+      path:'male-sexual-problems',
       description: 'Discreet and effective treatment for erectile dysfunction and other sexual issues.'
     },
     { 
@@ -104,6 +114,7 @@ const ServicesSection = () => {
       hindi: 'मूत्र संबंधी सभी रोग',
       category: 'urinary',
       imagePath: '/images/diseases/urology-general.jpg',
+      path: 'all-disease-related-urology',
       description: 'Comprehensive urology care covering all urological conditions.'
     },
     { 
@@ -112,6 +123,7 @@ const ServicesSection = () => {
       hindi: 'पेशाब पर नियंत्रण ना रहना',
       category: 'urinary',
       imagePath: '/images/diseases/incontinence.jpg',
+      path: 'urinary-incontinence-treatment',
       description: 'Specialized care for inability to control urination.'
     },
     { 
@@ -120,6 +132,7 @@ const ServicesSection = () => {
       hindi: 'अतिसक्रिय मूत्राशय उपचार',
       category: 'urinary',
       imagePath: '/images/diseases/overactive-bladder.jpg',
+      path: 'overactive-bladder-treatment',
       description: 'Advanced management for frequent, urgent need to urinate.'
     },
     { 
@@ -128,6 +141,7 @@ const ServicesSection = () => {
       hindi: 'मूत्र मार्ग का अन्य अंगों से जुड़ाव',
       category: 'urinary',
       imagePath: '/images/diseases/urinary-fistula.jpg',
+      path: 'urinary-fistula',
       description: 'Surgical correction of abnormal connections between urinary tract and other organs.'
     },
     { 
@@ -136,6 +150,7 @@ const ServicesSection = () => {
       hindi: 'मूत्र मार्ग का संकरापन',
       category: 'urinary',
       imagePath: '/images/diseases/urethroplasty.jpeg',
+      path: 'urethroplasty',
       description: 'Surgical reconstruction for urethral stricture and narrowing.'
     },
     { 
@@ -144,6 +159,7 @@ const ServicesSection = () => {
       hindi: 'जन्मजात मूत्र मार्ग विकृति',
       category: 'urinary',
       imagePath: '/images/diseases/hypospadias.jpg',
+      path: 'hypospadias-udt',
       description: 'Treatment for congenital urinary tract abnormalities.'
     }
   ];
@@ -232,8 +248,8 @@ const ServicesSection = () => {
                   </div>
                 )}
                 
-                <Link href={`/services/${service.id}`} passHref>
-                  <button className={`mt-4 font-medium flex items-center transition-colors
+                <Link href={`/services/${service.path}`} passHref>
+                  <button className={`mt-4 font-medium flex items-center cursor-pointer transition-colors
                     ${service.featured ? 'text-blue-700 hover:text-blue-900' : 'text-blue-600 hover:text-blue-800'}`}>
                     Learn more
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -263,7 +279,7 @@ const ServicesSection = () => {
           <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
             Experience advanced urological care with state-of-the-art technology and personalized treatment plans.
           </p>
-          <Link href="/bookappointment" passHref>
+          <Link href="/bookconsultation" passHref>
             <button className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-medium py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
               Schedule Your Consultation
             </button>

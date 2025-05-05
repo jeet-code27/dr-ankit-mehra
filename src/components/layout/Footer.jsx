@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+// import { useState } from "react";
 import Link from "next/link";
 import { 
   Phone, 
@@ -25,11 +25,11 @@ export default function Footer() {
 
 
     const services = [
-        { href: "/services/urology-consultation", label: "Urology Consultation" },
-        { href: "/services/kidney-stone-treatment", label: "Kidney Stone Treatment" },
-        { href: "/services/prostate-treatment", label: "Prostate Treatment" },
-        { href: "/services/urinary-infection-treatment", label: "Urinary Infection Treatment" },
-        { href: "/services/laparoscopic-urology", label: "Laparoscopic Urology" }
+        { href: "/services/prostate-surgery", label: "Prostate Surgery" },
+        { href: "/services/urinary-incontinence-treatment", label: "Urinary Incontinence" },
+        { href: "/services/ureteric-stone", label: "Ureteric Stone" },
+        { href: "/services/all-disease-related-urology", label: "All Disease-Realted Urology" },
+        { href: "/services", label: "All Services" }
       ];
       
   
@@ -94,7 +94,7 @@ export default function Footer() {
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
             >
-              <Link href="/appointment" className="bg-[#25D366] hover:bg-opacity-90 text-white px-8 py-3 rounded-full font-medium transition-all shadow-lg flex items-center">
+              <Link href="/bookconsultation" className="bg-[#25D366] hover:bg-opacity-90 text-white px-8 py-3 rounded-full font-medium transition-all shadow-lg flex items-center">
                 <Calendar size={18} className="mr-2" />
                 BOOK APPOINTMENT
               </Link>

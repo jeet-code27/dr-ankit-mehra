@@ -94,7 +94,7 @@ const AboutDoctorSection = () => {
             </div>
             
             <div className="flex justify-center md:justify-start">
-              <Link href="/bookappointment" passHref>
+              <Link href="/bookconsultation" passHref>
                 <button className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-medium py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
                   Book a Consultation
                 </button>
@@ -107,4 +107,4 @@ const AboutDoctorSection = () => {
   );
 };
 
-export default AboutDoctorSection;
+export default AboutDoctorSection;    

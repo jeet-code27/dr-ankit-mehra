@@ -23,7 +23,7 @@ export default function Navbar() {
             <div className="flex items-center">
               <Phone size={18} className="mr-2" />
               <div>
-                <span className="font-medium">Emergency Helpline</span>
+                <span className="font-medium">Contact No.</span>
                 <p className="text-sm">+91 82409 70287</p>
               </div>
             </div>
@@ -40,7 +40,7 @@ export default function Navbar() {
               <Clock size={18} className="mr-2" />
               <div>
                 <span className="font-medium">Working Hours</span>
-                <p className="text-sm">Mon-Sat: 4PM - 8PM</p>
+                <p className="text-sm">Mon-Sat: 4PM - 7PM</p>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function Navbar() {
               <div className="flex items-center">
                 {/* Doctor logo image */}
                 <Image
-                  src="/images/logo.png" // Update this path later
+                  src="/images/logoo.png" // Update this path later
                   alt="Dr. Vishnu Agarwal Logo"
                   width={60}
                   height={60}
@@ -122,9 +122,9 @@ export default function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <Link href="/appointment" className="bg-[#25D366] text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition-colors shadow-md flex items-center">
+                <Link href="/bookconsultation" className="bg-[#25D366] text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition-colors shadow-md flex items-center">
                   <Calendar size={18} className="mr-2" />
-                  BOOK APPOINTMENT
+                  BOOK CONSULTATION
                 </Link>
               </motion.div>
             </motion.div>

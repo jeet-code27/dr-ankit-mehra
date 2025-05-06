@@ -8,7 +8,7 @@ const FAQItem = ({ question, answer }) => {
   return (
     <div className="border-b border-gray-200 py-6">
       <button 
-        className="flex justify-between items-center w-full text-left focus:outline-none"
+        className="flex justify-between items-center cursor-pointer w-full text-left focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="text-xl font-medium text-gray-800">{question}</span>

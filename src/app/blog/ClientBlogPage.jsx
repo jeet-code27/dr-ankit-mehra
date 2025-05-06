@@ -140,7 +140,7 @@ const ClientBlogPage = ({ blogs }) => {
             <div className="md:flex justify-between items-center">
               <div className="mb-4 md:mb-0">
                 <h3 className="text-xl font-bold">Dr. Vishnu Agrawal</h3>
-                <p className="text-blue-100">Urologist & Laparoscopic Surgeon</p>
+                <p className="text-blue-100">M.B.B.S., M.D., Urologist & Stone Specialist</p>
               </div>
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center">

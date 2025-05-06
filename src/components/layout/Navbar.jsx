@@ -47,18 +47,18 @@ export default function Navbar() {
           
           {/* Social Icons */}
           <div className="flex space-x-4">
-            <Link href="#" className="hover:opacity-80 transition-opacity">
+            <Link href="https://www.facebook.com/profile.php?id=61575199539115" target="_blank" className="hover:opacity-80 transition-opacity">
               <Facebook size={20} />
             </Link>
-            <Link href="#" className="hover:opacity-80 transition-opacity">
+            {/* <Link href="#" className="hover:opacity-80 transition-opacity">
               <Twitter size={20} />
-            </Link>
-            <Link href="#" className="hover:opacity-80 transition-opacity">
+            </Link> */}
+            <Link href="https://www.instagram.com/agrawalclinicajmer/" target="_blank" className="hover:opacity-80 transition-opacity">
               <Instagram size={20} />
             </Link>
-            <Link href="#" className="hover:opacity-80 transition-opacity">
+            {/* <Link href="#" className="hover:opacity-80 transition-opacity">
               <Youtube size={20} />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
@@ -77,14 +77,14 @@ export default function Navbar() {
                 {/* Doctor logo image */}
                 <Image
                   src="/images/logoo.png" // Update this path later
-                  alt="Dr. Vishnu Agarwal Logo"
+                  alt="Dr. Vishnu Agrawal Logo"
                   width={60}
                   height={60}
                   className="mr-2 rounded-full"
                 />
                 <span className="text-2xl font-bold">
                   <span className="text-[#0055A4]">Dr. </span>
-                  <span className="text-[#25D366] uppercase">Vishnu Agarwal</span>
+                  <span className="text-[#25D366] uppercase">Vishnu Agrawal</span>
                 </span>
               </div>
             </Link>
@@ -173,14 +173,14 @@ export default function Navbar() {
                         {/* Use Image component for logo in mobile menu */}
                         <Image
                           src="/images/logo.png" // Make sure this path is correct
-                          alt="Dr. Vishnu Agarwal Logo"
+                          alt="Dr. Vishnu Agrawal Logo"
                           width={40}
                           height={40}
                           className="mr-2 rounded-full"
                         />
                         <span className="text-xl font-bold">
                           <span className="text-[#0055A4]">Dr.</span>
-                          <span className="text-[#25D366]">Vishnu Agarwal</span>
+                          <span className="text-[#25D366]">Vishnu Agrawal</span>
                         </span>
                       </div>
                     </Link>
@@ -242,12 +242,12 @@ export default function Navbar() {
                     >
                       <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
                         <Link 
-                          href="/appointment" 
+                          href="/bookconsultation" 
                           className="bg-[#25D366] text-white px-6 py-3 rounded-full font-medium text-center block shadow-md hover:shadow-lg transition-all flex items-center justify-center"
                           onClick={toggleMenu}
                         >
                           <Calendar size={18} className="mr-2" />
-                          BOOK APPOINTMENT
+                          BOOK CONSULTATION
                         </Link>
                       </motion.div>
                     </motion.div>

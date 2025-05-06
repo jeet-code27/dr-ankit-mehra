@@ -202,7 +202,7 @@ const ServicesSection = () => {
           {categories.map(category => (
             <button
               key={category.id}
-              className={`px-4 py-2 rounded-full text-sm sm:text-base font-medium transition-all duration-300 ${
+              className={`px-4 py-2 rounded-full text-sm sm:text-base cursor-pointer font-medium transition-all duration-300 ${
                 selectedCategory === category.id 
                   ? 'bg-blue-600 text-white shadow-md' 
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -267,7 +267,7 @@ const ServicesSection = () => {
           <div className="text-center mt-10">
             <button
               onClick={() => setShowAllServices(true)}
-              className="bg-blue-50 text-blue-700 hover:bg-blue-100 font-medium py-3 px-8 rounded-full text-lg transition-all duration-300 border border-blue-200"
+              className="bg-blue-50 text-blue-700 hover:bg-blue-100 cursor-pointer font-medium py-3 px-8 rounded-full text-lg transition-all duration-300 border border-blue-200"
             >
               See More Services
             </button>
@@ -280,7 +280,7 @@ const ServicesSection = () => {
             Experience advanced urological care with state-of-the-art technology and personalized treatment plans.
           </p>
           <Link href="/bookconsultation" passHref>
-            <button className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-medium py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
+            <button className="bg-gradient-to-r from-blue-600 to-blue-800 cursor-pointer hover:from-blue-700 hover:to-blue-900 text-white font-medium py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
               Schedule Your Consultation
             </button>
           </Link>

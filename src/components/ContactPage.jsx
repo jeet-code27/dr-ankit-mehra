@@ -23,7 +23,7 @@ const ContactPage = () => {
                 <span className="text-lg font-medium text-black">+91 82409 70287</span>
               </div>
               <Link href="/bookconsultation">
-              <button className="bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 text-white font-bold py-3 px-6 rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-1 transition duration-300">
+              <button className="bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 text-white font-bold py-3 px-6 rounded-full shadow-md hover:shadow-lg cursor-pointer transform hover:-translate-y-1 transition duration-300">
                 Book Appointment
               </button>
               </Link>
@@ -62,8 +62,8 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800">Address</h3>
-                    <p className="text-gray-600 mt-1">Dr Vishnu Agrawal, Kshetrapal Hospital,</p>
-                    <p className="text-gray-600">Ajmer, Rajasthan 305001</p>
+                    <p className="text-gray-600 mt-1">4/172, Gyan marg, Makarwali Rd, near vinayak complex, Panchsheel Nagar,</p>
+                    <p className="text-gray-600">Ajmer, Rajasthan 305004</p>
                   </div>
                 </div>
                 
@@ -99,7 +99,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800">Consultation Hours</h3>
-                    <p className="text-gray-600 mt-1">Monday - Saturday: 9:00 AM - 1:00 PM & 5:00 PM – 8:30 PM</p>
+                    <p className="text-gray-600 mt-1">Monday - Saturday: 4:00 PM - 7:00 PM</p>
                     <p className="text-gray-600">Sunday: Closed</p>
                   </div>
                 </div>

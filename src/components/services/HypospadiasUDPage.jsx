@@ -79,16 +79,24 @@ const HypospadiasUDPage = () => {
             </motion.p>
             
             <motion.div 
-              variants={fadeIn}
-              className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 mt-6 md:mt-8"
-            >
-              <button className="bg-white text-blue-900 font-bold px-6 py-3 md:px-8 md:py-4 rounded-lg hover:bg-blue-50 transition-all flex items-center justify-center text-base md:text-lg">
-                <Phone className="mr-2" size={18} /> Call Now
-              </button>
-              <button className="bg-blue-500 hover:bg-blue-400 font-bold px-6 py-3 md:px-8 md:py-4 rounded-lg transition-all flex items-center justify-center text-base md:text-lg">
-                <Calendar className="mr-2" size={18} /> Book Appointment
-              </button>
-            </motion.div>
+  variants={fadeIn}
+  className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 mt-6 md:mt-8"
+>
+  {/* Call Now Button */}
+  <a href="tel:+918240970287">
+    <button className="bg-white text-blue-900 font-bold cursor-pointer px-6 py-3 md:px-8 md:py-4 rounded-lg hover:bg-blue-50 transition-all flex items-center justify-center text-base md:text-lg">
+      <Phone className="mr-2" size={18} /> Call Now
+    </button>
+  </a>
+
+  {/* Book Appointment Button */}
+  <a href="/bookconsultation">
+    <button className="bg-blue-500 hover:bg-blue-400 cursor-pointer font-bold px-6 py-3 md:px-8 md:py-4 rounded-lg transition-all flex items-center justify-center text-base md:text-lg">
+      <Calendar className="mr-2" size={18} /> Book Appointment
+    </button>
+  </a>
+</motion.div>
+
           </motion.div>
         </div>
       </div>

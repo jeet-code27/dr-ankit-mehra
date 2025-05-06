@@ -95,7 +95,7 @@ const AboutDoctorSection = () => {
             
             <div className="flex justify-center md:justify-start">
               <Link href="/bookconsultation" passHref>
-                <button className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-medium py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
+                <button className="bg-gradient-to-r from-blue-600 cursor-pointer to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-medium py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
                   Book a Consultation
                 </button>
               </Link>

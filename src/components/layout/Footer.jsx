@@ -40,7 +40,7 @@ export default function Footer() {
     // { href: "/testimonials", label: "Testimonials" },
     { href: "/blog", label: "Health Blog" },
     { href: "/contact", label: "Contact Us" },
-    { href: "/bookconsultation", label: "Book Condsultation" },
+    { href: "/bookconsultation", label: "Book Consultation" },
 
   ];
 
@@ -113,27 +113,27 @@ export default function Footer() {
                 <Stethoscope size={32} className="text-[#25D366] mr-2" />
                 <span className="text-2xl font-bold">
                   <span className="text-[#0055A4]">Dr. </span>
-                  <span className="text-[#25D366]">Vishnu Agarwal</span>
+                  <span className="text-[#25D366]">Vishnu Agrawal</span>
                 </span>
               </div>
               
               <p className="mb-6 text-gray-400 leading-relaxed">
-              Best stone specialist in Ajmer. Dr. Vishnu Agarwal helps patients live pain-free with advanced urological treatments.
+              Best stone specialist in Ajmer. Dr. Vishnu Agrawal helps patients live pain-free with advanced urological treatments.
               </p>
               
               <div className="flex space-x-4 mb-6">
-                <Link href="#" className="bg-gray-800 p-2 rounded-full hover:bg-[#0055A4] transition-colors">
+                <Link href="https://www.facebook.com/profile.php?id=61575199539115" target="_blank" className="bg-gray-800 p-2 rounded-full hover:bg-[#0055A4] transition-colors">
                   <Facebook size={18} />
                 </Link>
-                <Link href="#" className="bg-gray-800 p-2 rounded-full hover:bg-[#0055A4] transition-colors">
+                {/* <Link href="#" className="bg-gray-800 p-2 rounded-full hover:bg-[#0055A4] transition-colors">
                   <Twitter size={18} />
-                </Link>
-                <Link href="#" className="bg-gray-800 p-2 rounded-full hover:bg-[#0055A4] transition-colors">
+                </Link> */}
+                <Link href="https://www.instagram.com/agrawalclinicajmer/" target="_blank" className="bg-gray-800 p-2 rounded-full hover:bg-[#0055A4] transition-colors">
                   <Instagram size={18} />
                 </Link>
-                <Link href="#" className="bg-gray-800 p-2 rounded-full hover:bg-[#0055A4] transition-colors">
+                {/* <Link href="#" className="bg-gray-800 p-2 rounded-full hover:bg-[#0055A4] transition-colors">
                   <Youtube size={18} />
-                </Link>
+                </Link> */}
               </div>
               
               <div className="flex items-center mb-4">
@@ -220,14 +220,16 @@ export default function Footer() {
       <div className="bg-gray-950 text-gray-500 py-4">
         <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0 text-center md:text-left">
-            <p>© {new Date().getFullYear()} Dr. Vishnu Agarwal. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Dr. Vishnu Agrawal. All rights reserved.</p>
           </div>
           
           <div className="flex items-center space-x-2 hidden md:block">
             <span>Developed and Maintained by</span>
             {/* <Heart size={16} className="text-[#25D366]" fill="#25D366" />  */}
+            <a href="https://seocialmedia.in" target="_blank" rel="noopener noreferrer" className="text-[#25D366] font-bold hover:underline">
             <span className="text-[#25D366] font-bold">SEOcial Media Solutions</span>
-            <span>for better healthcare</span>
+            </a>
+            {/* <span>for better healthcare</span> */}
           </div>
         </div>
       </div>

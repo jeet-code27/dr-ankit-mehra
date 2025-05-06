@@ -66,8 +66,10 @@ const AboutDoctorSection = () => {
                   Specializations
                 </h4>
                 <ul className="text-gray-700">
-                <li className="mb-1">• Female Incompetance </li>
-                <li className="mb-1">• Eractile  Dysfunction</li>
+                  <li className="mb-1">• Prostate Surgery (turp 26 fr resectoscope, 18.5 fr resectoscope) </li>
+                  <li className="mb-1">• Kidney Stone Surgery </li>
+                  <li className="mb-1">• Female Incompetance </li>
+                  <li className="mb-1">• Eractile  Dysfunction</li>
                   <li className="mb-1">• Laparoscopic Surgery</li>
                   <li className="mb-1">• Andrology</li>
                   <li className="mb-1">• Female Urology</li>

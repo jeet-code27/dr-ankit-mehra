@@ -24,8 +24,8 @@ const HeroSection = () => {
               <br />
               <span className="relative">
                 COMPASSIONATE 
-                <span className="absolute -bottom-3 left-0 w-full h-1 bg-blue-500 opacity-70 rounded-full"></span>
-              </span> TREATMENT
+                <span className="absolute -bottom-20 md:block hidden left-0 w-full h-1 bg-blue-500 opacity-70 rounded-full"></span>
+              </span> TREATMENT 
             </h1>
             
             <p className="text-lg text-gray-700 mb-8 max-w-2xl">

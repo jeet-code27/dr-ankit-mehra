@@ -4,12 +4,18 @@ import { getAnalytics } from 'firebase/analytics';
 
 // Firebase configuration
 const firebaseConfig = {
-apiKey: "AIzaSyAHaYMT_jYnLqrPnKyUnI4ES8VzmMw_3Vg",
-authDomain: "mayurchildcarecenter.firebaseapp.com",
-projectId: "mayurchildcarecenter",
-storageBucket: "mayurchildcarecenter.firebasestorage.app",
-messagingSenderId: "118324665230",
-appId: "1:118324665230:web:c58231174106937808e2df",
+// apiKey: "AIzaSyAHaYMT_jYnLqrPnKyUnI4ES8VzmMw_3Vg",
+// authDomain: "mayurchildcarecenter.firebaseapp.com",
+// projectId: "mayurchildcarecenter",
+// storageBucket: "mayurchildcarecenter.firebasestorage.app",
+// messagingSenderId: "118324665230",
+// appId: "1:118324665230:web:c58231174106937808e2df",
+apiKey: "AIzaSyCXhqSMWdIu0dKE-X0gQuP3ipIw6-Vg7VE",
+  authDomain: "drvishnuagrawal-711c5.firebaseapp.com",
+  projectId: "drvishnuagrawal-711c5",
+  storageBucket: "drvishnuagrawal-711c5.firebasestorage.app",
+  messagingSenderId: "617526622040",
+  appId: "1:617526622040:web:7e485290f0261f1466572d",
 };
 
 // Initialize Firebase only if it hasn't been initialized already

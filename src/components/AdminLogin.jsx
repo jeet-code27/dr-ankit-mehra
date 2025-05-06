@@ -355,10 +355,10 @@ const AdminLogin = () => {
   // Login form
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-teal-100 to-teal-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 to-blue-50 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-xl shadow-lg">
           <div>
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-teal-800">
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-blue-800">
               Admin Dashboard
             </h2>
             <p className="mt-2 text-center text-sm text-gray-600">
@@ -405,7 +405,7 @@ const AdminLogin = () => {
             <div>
               <button
                 type="submit"
-                className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-teal-400 to-teal-600 hover:from-teal-500 hover:to-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out shadow-md"
+                className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out shadow-md"
               >
                 Sign in
               </button>
@@ -418,11 +418,11 @@ const AdminLogin = () => {
 
   // Admin dashboard (shown after successful login)
   return (
-    <div className="min-h-screen bg-gradient-to-r from-teal-100 to-teal-50 py-10">
+    <div className="min-h-screen bg-gradient-to-r from-blue-100 to-blue-50 py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex justify-between items-center mb-8 bg-white p-6 rounded-xl shadow-md">
           <div>
-            <h1 className="text-3xl font-bold text-teal-800">Admin Dashboard</h1>
+            <h1 className="text-3xl font-bold text-blue-800">Admin Dashboard</h1>
             <p className="text-gray-600 mt-1">Manage appointments</p>
           </div>
           <button
@@ -435,7 +435,7 @@ const AdminLogin = () => {
         
         {/* Filters */}
         <div className="bg-white p-6 rounded-xl shadow-md mb-8">
-          <h2 className="text-xl font-bold text-teal-800 mb-4 flex items-center">
+          <h2 className="text-xl font-bold text-blue-800 mb-4 flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
             </svg>
@@ -478,7 +478,7 @@ const AdminLogin = () => {
         {/* Bookings table */}
         <div className="bg-white rounded-xl shadow-md overflow-hidden mb-8">
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-bold text-teal-800 flex items-center">
+            <h2 className="text-xl font-bold text-blue-800 flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
@@ -503,7 +503,7 @@ const AdminLogin = () => {
               <p className="text-gray-600 mt-2">No bookings found matching your filters.</p>
               <button
                 onClick={clearFilters}
-                className="mt-2 text-teal-600 hover:text-teal-800 text-sm font-medium"
+                className="mt-2 text-blue-600 hover:text-blue-800 text-sm font-medium"
               >
                 Clear filters
               </button>
@@ -528,7 +528,7 @@ const AdminLogin = () => {
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
                     {filteredBookings.map((booking) => (
-                      <tr key={booking.id} className="hover:bg-teal-50 transition duration-150">
+                      <tr key={booking.id} className="hover:bg-blue-50 transition duration-150">
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="text-sm font-medium text-gray-900">{booking.fullName}</div>
                         </td>

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase/firebaseConfig'; // Import Firestore instance
 import { collection, getDocs, addDoc, query, where } from 'firebase/firestore';
+import emailjs from 'emailjs-com';
 
 const BookingSystem = () => {
   // State management
@@ -230,7 +231,6 @@ const BookingSystem = () => {
       return;
     }
     
-    // Validate personal information
     const isNameValid = validateName(fullName);
     const isPhoneValid = validatePhone(phoneNumber);
     const isEmailValid = validateEmail(email);
@@ -243,7 +243,7 @@ const BookingSystem = () => {
     setErrorMessage('');
     
     try {
-      // Add booking to Firestore with a status field
+      // Add booking to Firestore
       await addDoc(collection(db, "bookings"), {
         date: selectedDate,
         timeSlot: selectedSlot,
@@ -252,10 +252,32 @@ const BookingSystem = () => {
         email,
         location: getConsultationLocation(),
         createdAt: new Date().toISOString(),
-        status: "pending", // Add the status field with a default value
-        doctor: "Dr. Vishnu (Urologist)"
+        status: "pending"
       });
-      
+
+      // Send notification to doctor
+      const doctorTemplateParams = {
+        patient_name: fullName,
+        patient_email: email,
+        patient_phone: phoneNumber,
+        date: new Date(selectedDate).toLocaleDateString('en-US', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        }),
+        time: formatTime(selectedSlot),
+        location: getConsultationLocation(),
+        booking_time: new Date().toLocaleString()
+      };
+
+      await emailjs.send(
+        "service_7biw23k",
+        "template_j9adf4l",
+        doctorTemplateParams,
+        "Trh7kXvEwRk7q3Aeq"
+      );
+
       // Reset form
       setSelectedSlot('');
       setFullName('');
@@ -263,14 +285,11 @@ const BookingSystem = () => {
       setEmail('');
       setMessage("Booking successful! We will send a confirmation to your email shortly. Please arrive 15 minutes before your scheduled appointment time.");
       
-      // Scroll to the top to show the success message
       window.scrollTo(0, 0);
-      
-      // Refresh booked slots
       fetchBookedSlots(selectedDate);
     } catch (error) {
-      console.error("Error adding booking:", error);
-      setErrorMessage("Failed to book appointment. Please try again.");
+      console.error("Error adding booking or sending email:", error);
+      setErrorMessage("Booking was successful but we encountered an issue notifying the doctor. Please contact the clinic directly to verify your appointment.");
     } finally {
       setIsLoading(false);
     }

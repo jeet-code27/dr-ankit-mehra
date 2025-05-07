@@ -213,10 +213,10 @@ const AdminLogin = () => {
       };
 
       await emailjs.send(
-        "service_lp22woo", // Replace with your EmailJS service ID
-        "template_vxsfd8y", // Replace with your EmailJS template ID
+        "service_1g63zrq", // Replace with your EmailJS service ID
+        "template_ypomi7t", // Replace with your EmailJS template ID
         templateParams,
-        "X5eAJHZMhbpWdEfP0" // Replace with your EmailJS user ID
+        "Trh7kXvEwRk7q3Aeq" // Replace with your EmailJS user ID
       );
 
       // Refresh the bookings list
@@ -251,10 +251,10 @@ const AdminLogin = () => {
       };
 
       await emailjs.send(
-        "service_lp22woo", // Replace with your EmailJS service ID
-        "template_vxsfd8y", // Replace with your EmailJS template ID
+        "service_1g63zrq", // Replace with your EmailJS service ID
+        "template_ypomi7t", // Replace with your EmailJS template ID
         templateParams,
-        "X5eAJHZMhbpWdEfP0" // Replace with your EmailJS user ID
+        "Trh7kXvEwRk7q3Aeq" // Replace with your EmailJS user ID
       );
 
       // Refresh the bookings list

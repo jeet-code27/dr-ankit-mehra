@@ -109,7 +109,7 @@ const WhyChooseSection = () => {
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900 to-transparent p-6">
                 <div className="text-white">
                   <h3 className="text-2xl font-bold mb-1">Dr. Vishnu Agrawal</h3>
-                  <p className="text-blue-100">M.B.B.S., M.D., Urologist & Stone Specialist</p>
+                  <p className="text-blue-100">MBBS, MS, MCh Urologist & Stone Specialist</p>
                 </div>
               </div>
             </div>

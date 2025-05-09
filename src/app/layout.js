@@ -2,7 +2,7 @@
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
 import './globals.css';
-import FloatingContact from '@/components/FloatingContact';
+// import FloatingContact from '@/components/FloatingContact';
 
 // Define the default metadata for Dr. Vishnu Agrawal - Urologist
 export const metadata = {
@@ -57,7 +57,7 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar />
         <main>{children}</main>
-        <FloatingContact/>
+        {/* <FloatingContact/> */}
         <Footer />
       </body>
     </html>

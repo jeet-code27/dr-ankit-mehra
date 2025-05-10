@@ -183,9 +183,9 @@ const HeroSection = () => {
                 <span className="font-medium">+91 98290 12345</span>
               </div>
               <div className="h-5 w-px bg-gray-300 hidden sm:block"></div>
-              <div className="font-medium text-blue-600 hover:text-blue-800 transition-colors">
+              {/* <div className="font-medium text-blue-600 hover:text-blue-800 transition-colors">
                 <Link href="/emergency">Emergency Care Available</Link>
-              </div>
+              </div> */}
             </motion.div>
           </div>
           

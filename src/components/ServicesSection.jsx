@@ -2,11 +2,58 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const ServicesSection = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [showAllServices, setShowAllServices] = useState(false);
   
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const fadeInVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.8 } }
+  };
+
+  const scaleUpVariants = {
+    hidden: { scale: 0.95, opacity: 0 },
+    visible: { scale: 1, opacity: 1, transition: { duration: 0.6 } }
+  };
+
+  // Intersection Observer hooks
+  const [titleRef, titleInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2
+  });
+
+  const [servicesRef, servicesInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
+
   const categories = [
     { id: 'all', name: 'All Services' },
     { id: 'stone', name: 'Stone Problems' },
@@ -15,7 +62,7 @@ const ServicesSection = () => {
     { id: 'urinary', name: 'Urinary Conditions' }
   ];
   
-  const services = [
+ const services = [
     // New highlighted prostate surgery service (placed at the beginning to ensure it's in top 3)
     { 
       id: 16, 
@@ -163,7 +210,7 @@ const ServicesSection = () => {
       description: 'Treatment for congenital urinary tract abnormalities.'
     }
   ];
-  
+
   // Filter services based on selected category
   const filteredServices = selectedCategory === 'all' 
     ? services 
@@ -190,17 +237,44 @@ const ServicesSection = () => {
   return (
     <section className="bg-white py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-3">Our Services</h2>
-          <p className="text-xl text-gray-700 font-medium max-w-2xl mx-auto">
+        <motion.div 
+          className="text-center mb-12"
+          ref={titleRef}
+          initial="hidden"
+          animate={titleInView ? "visible" : "hidden"}
+          variants={containerVariants}
+        >
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold text-blue-800 mb-3"
+            variants={itemVariants}
+          >
+            Our Services
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-gray-700 font-medium max-w-2xl mx-auto"
+            variants={itemVariants}
+          >
             Dr. Vishnu Agrawal provides comprehensive treatment for a wide range of urological conditions
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12">
+        <motion.div 
+          className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1
+              }
+            }
+          }}
+        >
           {categories.map(category => (
-            <button
+            <motion.button
               key={category.id}
               className={`px-4 py-2 rounded-full text-sm sm:text-base cursor-pointer font-medium transition-all duration-300 ${
                 selectedCategory === category.id 
@@ -208,83 +282,150 @@ const ServicesSection = () => {
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
               onClick={() => handleCategoryChange(category.id)}
+              variants={scaleUpVariants}
+              whilehover={{ scale: 1.05 }}
+              whiletap={{ scale: 0.95 }}
             >
               {category.name}
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
         
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {displayedServices.map(service => (
-            <div 
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          ref={servicesRef}
+          initial="hidden"
+          animate={servicesInView ? "visible" : "hidden"}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1,
+                when: "beforeChildren"
+              }
+            }
+          }}
+        >
+          {displayedServices.map((service, index) => (
+            <motion.div 
               key={service.id} 
               className={`bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 group
                 ${service.featured ? 'order-first' : ''}`}
+              variants={itemVariants}
+              whilehover={{ y: -5 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.05 }}
             >
-              
               {/* Image Section */}
-              <div className="relative h-50 w-full overflow-hidden">
+              <motion.div 
+                className="relative h-50 w-full overflow-hidden"
+                whilehover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
                 <Image
                   src={service.imagePath}
                   alt={service.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover transition-transform duration-500"
                   sizes="(max-width: 750px) 90vw, (max-width: 1200px) 40vw, 33vw"
                 />
-              </div>
+              </motion.div>
               
               {/* Content Section */}
               <div className="p-5">
-                <h3 className="text-lg font-bold text-gray-900 mb-1">
+                <motion.h3 
+                  className="text-lg font-bold text-gray-900 mb-1"
+                  whilehover={{ color: '#1d4ed8' }}
+                >
                   {service.title}
-                  {service.featured && <span className="ml-2 text-sm font-medium text-blue-600 inline-block">• Only by Dr. Vishnu in ajmer</span>}
-                </h3>
+                  {service.featured && (
+                    <motion.span 
+                      className="ml-2 text-sm font-medium text-blue-600 inline-block"
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ 
+                        type: "spring",
+                        stiffness: 500,
+                        damping: 15
+                      }}
+                    >
+                      • Only by Dr. Vishnu in ajmer
+                    </motion.span>
+                  )}
+                </motion.h3>
                 <p className="text-md text-blue-700 font-medium mb-3">{service.hindi}</p>
                 <p className="text-gray-600">{service.description}</p>
                 {service.featured && (
-                  <div className="mt-3 bg-blue-50 text-blue-800 text-sm p-2 rounded">
+                  <motion.div 
+                    className="mt-3 bg-blue-50 text-blue-800 text-sm p-2 rounded"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                  >
                     First and only in Ajmer to offer this advanced procedure
-                  </div>
+                  </motion.div>
                 )}
                 
                 <Link href={`/services/${service.path}`} passHref>
-                  <button className={`mt-4 font-medium flex items-center cursor-pointer transition-colors
-                    ${service.featured ? 'text-blue-700 hover:text-blue-900' : 'text-blue-600 hover:text-blue-800'}`}>
+                  <motion.button 
+                    className={`mt-4 font-medium flex items-center cursor-pointer transition-colors
+                      ${service.featured ? 'text-blue-700 hover:text-blue-900' : 'text-blue-600 hover:text-blue-800'}`}
+                    whilehover={{ x: 5 }}
+                    whiletap={{ scale: 0.95 }}
+                  >
                     Learn more
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                     </svg>
-                  </button>
+                  </motion.button>
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         
-        {/* "See More" Button - Only show if there are more than 6 services and not all are shown */}
+        {/* "See More" Button */}
         {filteredServices.length > 6 && !showAllServices && (
-          <div className="text-center mt-10">
-            <button
+          <motion.div 
+            className="text-center mt-10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <motion.button
               onClick={() => setShowAllServices(true)}
               className="bg-blue-50 text-blue-700 hover:bg-blue-100 cursor-pointer font-medium py-3 px-8 rounded-full text-lg transition-all duration-300 border border-blue-200"
+              whilehover={{ scale: 1.05 }}
+              whiletap={{ scale: 0.95 }}
             >
               See More Services
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         )}
         
         {/* CTA */}
-        <div className="mt-16 text-center">
+        <motion.div 
+          className="mt-16 text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
           <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
             Experience advanced urological care with state-of-the-art technology and personalized treatment plans.
           </p>
           <Link href="/bookconsultation" passHref>
-            <button className="bg-gradient-to-r from-blue-600 to-blue-800 cursor-pointer hover:from-blue-700 hover:to-blue-900 text-white font-medium py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
+            <motion.button 
+              className="bg-gradient-to-r from-blue-600 to-blue-800 cursor-pointer hover:from-blue-700 hover:to-blue-900 text-white font-medium py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+              whilehover={{ scale: 1.05 }}
+              whiletap={{ scale: 0.98 }}
+            >
               Schedule Your Consultation
-            </button>
+            </motion.button>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

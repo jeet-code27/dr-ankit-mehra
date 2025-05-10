@@ -1,24 +1,55 @@
 'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
-const FAQItem = ({ question, answer }) => {
+const FAQItem = ({ question, answer, index }) => {
   const [isOpen, setIsOpen] = useState(false);
-  
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <div className="border-b border-gray-200 py-6">
+    <motion.div
+      ref={ref}
+      className="border-b border-gray-200 py-6"
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ delay: index * 0.1, duration: 0.5 }}
+    >
       <button 
-        className="flex justify-between items-center cursor-pointer w-full text-left focus:outline-none"
+        className="flex justify-between items-center cursor-pointer w-full text-left focus:outline-none group"
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
       >
-        <span className="text-xl font-medium text-gray-800">{question}</span>
-        <motion.div
-          animate={{ rotate: isOpen ? 90 : 0 }}
-          transition={{ duration: 0.3 }}
-          className="text-teal-500"
+        <motion.span 
+          className="text-xl font-medium text-gray-800 group-hover:text-blue-600 transition-colors duration-200"
+          whilehover={{ x: 5 }}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
+          {question}
+        </motion.span>
+        <motion.div
+          animate={{ 
+            rotate: isOpen ? 180 : 0,
+            color: isOpen ? '#3b82f6' : '#10b981'
+          }}
+          transition={{ duration: 0.3 }}
+          className="ml-4 flex-shrink-0"
+        >
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="24" 
+            height="24" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+            className="w-6 h-6"
+          >
+            <path d={isOpen ? "M18 15l-6-6-6 6" : "M6 9l6 6 6-6"} />
           </svg>
         </motion.div>
       </button>
@@ -26,20 +57,47 @@ const FAQItem = ({ question, answer }) => {
         {isOpen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            animate={{ 
+              height: "auto", 
+              opacity: 1,
+              transition: { 
+                height: { duration: 0.3 },
+                opacity: { duration: 0.2, delay: 0.1 }
+              }
+            }}
+            exit={{ 
+              height: 0, 
+              opacity: 0,
+              transition: { 
+                opacity: { duration: 0.1 },
+                height: { duration: 0.2, delay: 0.1 }
+              }
+            }}
             className="overflow-hidden"
           >
-            <p className="pt-6 pb-4 text-gray-600 text-lg">{answer}</p>
+            <div className="pt-4 pb-2">
+              <motion.p 
+                className="text-gray-600 text-lg"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                {answer}
+              </motion.p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };
 
 const FAQSection = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   const faqData = [
     {
       question: "What urological conditions does Dr. Vishnu Agrawal treat?",
@@ -72,56 +130,82 @@ const FAQSection = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8 ">
-      <div className="text-center mb-16">
+    <section className="bg-gradient-to-b from-blue-50 to-white py-16 md:py-24 px-4 sm:px-6 lg:px-8" ref={ref}>
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16">
+          <motion.div 
+            className="flex justify-center mb-8"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={inView ? { scale: 1, opacity: 1 } : {}}
+            transition={{ duration: 0.5, type: 'spring' }}
+          >
+            <img 
+              src="/images/faq.png" 
+              alt="FAQ Icon" 
+              className="h-32 w-auto object-contain"
+            />
+          </motion.div>
+
+          <motion.h2 
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
+            <span className="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">
+              Frequently Asked Questions
+            </span>
+          </motion.h2>
+          
+          <motion.p 
+            className="text-gray-600 max-w-2xl mx-auto text-lg md:text-xl"
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            Find answers to common questions about our urology services. Can't find what you're looking for? Contact us directly.
+          </motion.p>
+        </div>
+
         <motion.div 
-          className="flex justify-center mb-8"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5 }}
+          className="bg-white rounded-xl shadow-lg p-6 md:p-8 divide-y divide-gray-200"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.6, duration: 0.5 }}
         >
-          <img 
-            src="/images/faq.png" 
-            alt="Dr. Vishnu Agrawal Urology Clinic" 
-            className="h-32 w-auto object-contain"
-          />
+          {faqData.map((item, index) => (
+            <FAQItem 
+              key={index} 
+              question={item.question} 
+              answer={item.answer}
+              index={index}
+            />
+          ))}
         </motion.div>
 
-        <motion.h2 
-          className="text-5xl md:text-5xl font-bold text-xl md:text-2xl lg:text-4xl font-semibold bg-gradient-to-r from-blue-500 to-blue-300 inline-block text-transparent bg-clip-text leading-relaxed mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-        >
-         Your health questions matter <br className="hidden sm:block" />
-          <span className="text-xl md:text-3xl lg:text-4xl font-semibold text-black">- find answers here or contact us directly</span>
-        </motion.h2>
-        
-        <motion.p 
-          className="text-gray-600 max-w-2xl mx-auto text-lg"
+        <motion.div
+          className="text-center mt-12"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.8, duration: 0.5 }}
         >
-          If you have specific concerns about your urological health that aren't addressed here, please don't hesitate to contact our clinic directly.
-        </motion.p>
+          <p className="text-gray-600 mb-6 text-lg">
+            Still have questions? We're here to help.
+          </p>
+          <motion.a
+            href="/contact"
+            className="inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-medium py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+            whilehover={{ scale: 1.05 }}
+            whiletap={{ scale: 0.95 }}
+          >
+            Contact Us
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+          </motion.a>
+        </motion.div>
       </div>
-
-      <motion.div 
-        className="divide-y divide-gray-200 mt-10"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.5 }}
-      >
-        {faqData.map((item, index) => (
-          <FAQItem 
-            key={index} 
-            question={item.question} 
-            answer={item.answer} 
-          />
-        ))}
-      </motion.div>
-    </div>
+    </section>
   );
 };
 

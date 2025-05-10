@@ -48,7 +48,9 @@ export default function About() {
 <AboutUsHero/>
 <AboutDoctor/>
 <AboutMission/>
+<div className="bg-white">
 <AboutCoreValues/>
+</div>
     </>
   );
 }                                                                                                               

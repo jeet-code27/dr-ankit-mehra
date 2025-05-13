@@ -122,7 +122,7 @@ export default function Footer() {
               </p>
               
               <div className="flex space-x-4 mb-6">
-                <Link href="https://www.facebook.com/profile.php?id=61575199539115" target="_blank" className="bg-gray-800 p-2 rounded-full hover:bg-[#0055A4] transition-colors">
+                <Link href="https://www.facebook.com/profile.php?id=61575464253101" target="_blank" className="bg-gray-800 p-2 rounded-full hover:bg-[#0055A4] transition-colors">
                   <Facebook size={18} />
                 </Link>
                 {/* <Link href="#" className="bg-gray-800 p-2 rounded-full hover:bg-[#0055A4] transition-colors">
@@ -147,7 +147,7 @@ export default function Footer() {
                 <div className="bg-gray-800 p-2 rounded-full mr-3">
                   <Mail size={16} className="text-[#25D366]" />
                 </div>
-                <span>contact@drvishnu.com</span>
+                <span>agrawalclinicajmer@gmail.com</span>
               </div>
             </div>
             

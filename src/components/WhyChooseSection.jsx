@@ -220,7 +220,7 @@ const WhyChooseSection = () => {
               >
                 <div className="text-white">
                   <h3 className="text-2xl font-bold mb-1">Dr. Vishnu Agrawal</h3>
-                  <p className="text-blue-100">MBBS, MS, MCh Urologist & Stone Specialist</p>
+                  <p className="text-blue-100"> M.B.B.S.,M.S., M.Ch. Urologist </p>
                 </div>
               </motion.div>
             </motion.div>

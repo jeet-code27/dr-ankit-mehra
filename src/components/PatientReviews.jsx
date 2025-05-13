@@ -75,7 +75,7 @@ const PatientReviews = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            Dr. Vishnu Agrawal - Best Urologist & Stone Specialist in Ajmer
+            Dr. Vishnu Agrawal - Best Urologist in Ajmer
           </motion.strong>
           <motion.span 
             className="block text-lg md:text-xl lg:text-2xl mt-1"
@@ -83,7 +83,7 @@ const PatientReviews = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            M.B.B.S., M.D., Urologist & Stone Specialist
+            M.B.B.S.,M.S., M.Ch. Urologist 
           </motion.span>
         </motion.h3>
         

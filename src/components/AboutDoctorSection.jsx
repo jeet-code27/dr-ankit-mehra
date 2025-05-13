@@ -125,7 +125,7 @@ const AboutDoctorSection = () => {
                 transition={{ delay: 0.3 }}
               >
                 <h3 className="text-2xl font-bold text-gray-900 mb-1">Dr. Vishnu Agrawal</h3>
-                <p className="text-blue-700 font-medium mb-2">MBBS, MS, MCh Urologist & Stone Specialist</p>
+                <p className="text-blue-700 font-medium mb-2"> M.B.B.S.,M.S., M.Ch. Urologist </p>
                 <p className="text-gray-600 mb-4">Consultant Urologist & Laparoscopic Surgeon</p>
                 
                 <motion.div 

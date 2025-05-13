@@ -118,7 +118,7 @@ export default function Footer() {
               </div>
               
               <p className="mb-6 text-gray-400 leading-relaxed">
-              Best stone specialist in Ajmer. Dr. Vishnu Agrawal helps patients live pain-free with advanced urological treatments.
+              Best Urologist in Ajmer. Dr. Vishnu Agrawal helps patients live pain-free with advanced urological treatments.
               </p>
               
               <div className="flex space-x-4 mb-6">

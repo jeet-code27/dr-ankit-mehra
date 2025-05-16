@@ -195,6 +195,76 @@ const ProstateSurgeryPage = () => {
         </div>
       </div>
 
+      {/* NEW SECTION: French 18 Tool Showcase - Mobile Optimized */}
+      <div className="py-12 md:py-20 px-4 bg-blue-50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-12 md:mb-16"
+          >
+            <h2 className="text-2xl md:text-4xl font-bold text-blue-900 mb-3 md:mb-4">The Revolutionary 18 French Tool</h2>
+            <p className="text-base md:text-xl text-gray-700 max-w-3xl mx-auto">
+              See the advanced technology that makes this procedure so effective
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="flex flex-col lg:flex-row gap-8 md:gap-12 items-center"
+          >
+            <div className="lg:w-2/5">
+              <div className="bg-white p-4 rounded-xl shadow-lg">
+                <img 
+                  src="/images/diseases/18french.jpg" 
+                  alt="18 French Surgical Tool" 
+                  className="w-full rounded-lg"
+                />
+                <p className="text-sm text-gray-500 mt-2 text-center italic">
+                  The 18 French surgical instrument - only 6mm in diameter
+                </p>
+              </div>
+            </div>
+            
+            <div className="lg:w-3/5">
+              <h3 className="text-xl md:text-2xl font-bold text-blue-900 mb-4">How the 18 French Tool Works</h3>
+              
+              <p className="text-base md:text-lg text-gray-700 mb-4">
+                The 18 French tool is named after its diameter size - just 6mm wide. This innovative instrument allows for minimally invasive prostate surgery with remarkable precision.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <h4 className="font-bold text-blue-800 mb-2">Size Comparison</h4>
+                  <p className="text-sm md:text-base text-gray-600">
+                    Traditional tools: 10-12mm<br />
+                    Our 18 French tool: 6mm<br />
+                    <span className="font-semibold">50% smaller!</span>
+                  </p>
+                </div>
+                
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <h4 className="font-bold text-blue-800 mb-2">Advanced Technology</h4>
+                  <p className="text-sm md:text-base text-gray-600">
+                    High-definition camera system<br />
+                    Precision cutting elements<br />
+                    Specialized irrigation system
+                  </p>
+                </div>
+              </div>
+              
+              <p className="text-base md:text-lg text-gray-700">
+                This smaller tool size is what allows for less bleeding, faster recovery, and reduced complications compared to traditional prostate surgery methods.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
       {/* Why Choose Us Section - Mobile Optimized */}
       <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 text-white py-12 md:py-20 px-4">
         

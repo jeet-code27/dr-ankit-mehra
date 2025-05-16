@@ -61,7 +61,7 @@ const ProstateSurgeryPage = () => {
               variants={fadeIn}
               className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6"
             >
-              18 French Prostate Surgery
+              18.5 French Prostate Surgery
             </motion.h1>
             
             <motion.p 
@@ -161,13 +161,13 @@ const ProstateSurgeryPage = () => {
             <div className="lg:w-1/2">
               <img 
                 src="/images/diseases/prostate-surgery.png" 
-                alt="18 French Procedure" 
+                alt="18.5 French Procedure" 
                 className="rounded-xl shadow-lg w-full"
               />
             </div>
             
             <div className="lg:w-1/2">
-              <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-4 md:mb-6">What is 18 French Prostate Surgery?</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-4 md:mb-6">What is 18.5 French Prostate Surgery?</h2>
               
               <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6">
                 This is a modern technique that uses smaller tools (only 6mm wide) to treat enlarged prostate. The smaller size means less pain and faster healing for you.
@@ -204,7 +204,7 @@ const ProstateSurgeryPage = () => {
             viewport={{ once: true }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-2xl md:text-4xl font-bold text-blue-900 mb-3 md:mb-4">The Revolutionary 18 French Tool</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-blue-900 mb-3 md:mb-4">The Revolutionary 18.5 French Tool</h2>
             <p className="text-base md:text-xl text-gray-700 max-w-3xl mx-auto">
               See the advanced technology that makes this procedure so effective
             </p>
@@ -225,25 +225,25 @@ const ProstateSurgeryPage = () => {
                   className="w-full rounded-lg"
                 />
                 <p className="text-sm text-gray-500 mt-2 text-center italic">
-                  The 18 French surgical instrument - only 6mm in diameter
+                  The 18.5 French surgical instrument - only 6.17mm in diameter
                 </p>
               </div>
             </div>
             
             <div className="lg:w-3/5">
-              <h3 className="text-xl md:text-2xl font-bold text-blue-900 mb-4">How the 18 French Tool Works</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-blue-900 mb-4">How the 18.5 French Tool Works</h3>
               
               <p className="text-base md:text-lg text-gray-700 mb-4">
-                The 18 French tool is named after its diameter size - just 6mm wide. This innovative instrument allows for minimally invasive prostate surgery with remarkable precision.
+                The 18.5 French tool is named after its diameter size - just 6.17mm wide. This innovative instrument allows for minimally invasive prostate surgery with remarkable precision.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div className="bg-white p-4 rounded-lg shadow">
                   <h4 className="font-bold text-blue-800 mb-2">Size Comparison</h4>
                   <p className="text-sm md:text-base text-gray-600">
-                    Traditional tools: 10-12mm<br />
-                    Our 18 French tool: 6mm<br />
-                    <span className="font-semibold">50% smaller!</span>
+                    Traditional tools: 8-12mm<br />
+                    Our 18.5 French tool: 6.17mm<br />
+                    <span className="font-semibold">40% smaller!</span>
                   </p>
                 </div>
                 
@@ -278,7 +278,7 @@ const ProstateSurgeryPage = () => {
             viewport={{ once: true }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">Why Choose Our 18 French Technique?</h2>
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">Why Choose Our 18.5 French Technique?</h2>
             <p className="text-base md:text-xl text-blue-100 max-w-3xl mx-auto">
               See how our method compares to older prostate treatments
             </p>

@@ -216,7 +216,7 @@ const AboutDoctorSection = () => {
                 </h4>
                 <ul className="text-gray-700">
                   {[
-                    "Prostate Surgery (turp 26 fr resectoscope, 18.5 fr resectoscope)",
+                    "Prostate Surgery (18.5 fr)",
                     "Kidney Stone Surgery",
                     "Female Incompetance",
                     "Eractile Dysfunction",

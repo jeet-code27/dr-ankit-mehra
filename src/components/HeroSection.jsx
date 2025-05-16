@@ -279,7 +279,7 @@ const HeroSection = () => {
                     <Shield className="w-6 h-6 mr-2 text-blue-700" />
                     Prostate Surgery 
                     <motion.span 
-                      className="bg-[#25D366] text-white text-sm font-bold ml-2 px-2 py-1 rounded inline-flex items-center"
+                      className="bg-[#25D366] text-white text-sm font-bold ml-0.5 px-2 py-1 rounded inline-flex items-center"
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ 
@@ -289,7 +289,7 @@ const HeroSection = () => {
                         delay: 0.5
                       }}
                     >
-                      18 French
+                      18.5 French
                     </motion.span>
                   </motion.h3>
                   

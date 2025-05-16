@@ -66,7 +66,7 @@ const ServicesSection = () => {
     // New highlighted prostate surgery service (placed at the beginning to ensure it's in top 3)
     { 
       id: 16, 
-      title: 'Prostate Surgery (18 French)', 
+      title: 'Prostate Surgery (18.5 French)', 
       hindi: 'प्रोस्टेट सर्जरी',
       category: 'prostate',
       imagePath: '/images/diseases/prostate-surgery.png',

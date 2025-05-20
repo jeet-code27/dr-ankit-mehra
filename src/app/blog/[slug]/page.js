@@ -28,6 +28,7 @@ export async function generateMetadata({ params }) {
   return {
     title: `${blog.title}`,
     description: blog.metaDescription || blog.excerpt || blog.content.substring(0, 160),
+    keywords: blog.tags,
     openGraph: {
       title: blog.title,
       description: blog.metaDescription || blog.excerpt || blog.content.substring(0, 160),

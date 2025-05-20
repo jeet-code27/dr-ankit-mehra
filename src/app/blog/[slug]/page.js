@@ -29,6 +29,7 @@ export async function generateMetadata({ params }) {
     title: `${blog.title}`,
     description: blog.metaDescription || blog.excerpt || blog.content.substring(0, 160),
     keywords: blog.tags,
+    
     openGraph: {
       title: blog.title,
       description: blog.metaDescription || blog.excerpt || blog.content.substring(0, 160),
@@ -43,6 +44,9 @@ export async function generateMetadata({ params }) {
         },
       ],
     },
+     alternates: {
+    canonical:blog.conincalUrl,
+  },
     twitter: {
       card: 'summary_large_image',
       title: blog.title,

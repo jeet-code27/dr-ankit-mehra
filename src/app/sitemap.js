@@ -94,5 +94,9 @@ export default function sitemap() {
         url: 'https://drvishnuagrawal.in/blog/best-kidney-doctor-ajmer-dr-vishnu-agrawal',
         lastModified: new Date(),
       },
+      {
+        url: 'https://drvishnuagrawal.in/blog/best-urology-doctor-ajmer-dr-vishnu-agrawal',
+        lastModified: new Date(),
+      },
     ]
   }

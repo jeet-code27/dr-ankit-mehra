@@ -102,5 +102,9 @@ export default function sitemap() {
         url: 'https://drvishnuagrawal.in/blog/best-urology-clinic-ajmer-agrawal-clinic',
         lastModified: new Date(),
       },
+      {
+        url: 'https://drvishnuagrawal.in/blog/best-male-infertility-doctor-ajmer-dr-vishnu-agrawal',
+        lastModified: new Date(),
+      },
     ]
   }

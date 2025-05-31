@@ -72,10 +72,10 @@ const HeroSection = () => {
           className="absolute top-32 -left-24 w-64 h-64 rounded-full bg-blue-100 opacity-50"
           variants={itemVariants}
         ></motion.div>
-        <motion.div 
+        {/* <motion.div 
           className="absolute bottom-0 right-0 w-full h-1/2 bg-gradient-to-t from-white to-transparent"
           variants={itemVariants}
-        ></motion.div>
+        ></motion.div> */}
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

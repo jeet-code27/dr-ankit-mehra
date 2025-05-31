@@ -110,19 +110,7 @@ const PatientReviews = () => {
           ease: "easeInOut"
         }}
       />
-      <motion.div 
-        className="absolute bottom-0 right-0 w-40 h-40 rounded-full bg-blue-100 opacity-20 -mr-16 -mb-16"
-        animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.2, 0.3, 0.2]
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 2
-        }}
-      />
+    
     </div>
   );
 };

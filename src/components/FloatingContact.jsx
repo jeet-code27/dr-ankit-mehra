@@ -7,7 +7,7 @@ const FloatingContact = () => {
   const [showNotification, setShowNotification] = useState(false);
   const phoneNumber = '+918955966990';
   const whatsappNumber = '8955966990';
-  const instagramUsername = 'mayur_child_care_center';
+  const instagramUsername = '';
 
   useEffect(() => {
     // Show notification after 3 seconds

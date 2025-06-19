@@ -224,7 +224,7 @@ export default function Footer() {
           </div>
           
           <div className="flex items-center space-x-2 hidden md:block">
-            <span>Developed and Maintained by</span>
+            <span>Powered by</span>
             {/* <Heart size={16} className="text-[#25D366]" fill="#25D366" />  */}
             <a href="https://seocialmedia.in" target="_blank" rel="noopener noreferrer" className="text-[#25D366] font-bold hover:underline">
             <span className="text-[#25D366] font-bold">SEOcial Media Solutions</span>

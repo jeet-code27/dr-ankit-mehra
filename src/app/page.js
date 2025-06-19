@@ -35,11 +35,11 @@ export const metadata = {
       },
     ],
     type: 'website',
-    url: 'https://www.drvishnuagrawal.in',
+    url: 'https://drvishnuagrawal.in',
     siteName: 'Dr. Vishnu Agrawal Urology Clinic',
   },
   alternates: {
-    canonical: 'https://www.drvishnuagrawal.in',
+    canonical: 'https://drvishnuagrawal.in',
   },
   robots: {
     index: true,

@@ -110,5 +110,9 @@ export default function sitemap() {
         url: 'https://drvishnuagrawal.in/blog/urology-specialist-ajmer-dr-vishnu-agrawal',
         lastModified: new Date(),
       },
+       {
+        url: 'https://drvishnuagrawal.in/blog/best-urologist-ajmer-dr-vishnu-agrawal',
+        lastModified: new Date(),
+      },
     ]
   }

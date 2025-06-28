@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone, MapPin, Clock, Calendar, Facebook, Twitter, Instagram, Youtube } from "lucide-react";
+import { Menu, X, Phone, MapPin, Clock, Calendar, Facebook, Instagram,  } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {

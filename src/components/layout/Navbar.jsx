@@ -31,8 +31,8 @@ export default function Navbar() {
             <div className="flex items-center">
               <MapPin size={18} className="mr-2" />
               <div>
-                <span className="font-medium"> 4/172, Gyan marg, Makarwali Rd,</span>
-                <p className="text-sm"> Panchsheel Nagar, Ajmer, Rajasthan</p>
+                <span className="font-medium"> 4/172, Gyan marg, Makarwali Rd, near vinayak</span>
+                <p className="text-sm">complex, Panchsheel Nagar, Ajmer, Rajasthan 305004</p>
               </div>
             </div>
 
@@ -277,7 +277,7 @@ export default function Navbar() {
                     </div>
                     <div>
                       <span className="font-medium">4/172, Gyan marg, Makarwali Rd,</span>
-                      <p className="text-sm"> Panchsheel Nagar, Ajmer, Rajasthan</p>
+                      <p className="text-sm"> Panchsheel Nagar, Ajmer, Rajasthan 305004</p>
                     </div>
                   </div>
                   

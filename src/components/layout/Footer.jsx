@@ -196,7 +196,7 @@ export default function Footer() {
             {/* Column 4 - Working Hours & Newsletter */}
             <div>
               <h3 className="text-xl font-semibold mb-6 text-white relative pl-4 border-l-4 border-[#25D366]">
-                Working Hours
+                Consultation Hours
               </h3>
               
               <ul className="space-y-2 mb-8">

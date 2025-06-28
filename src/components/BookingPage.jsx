@@ -34,43 +34,43 @@ const BookingSystem = () => {
   const consultationHours = {
     0: { // Sunday
       isClosed: true,
-      location: "4/172, Gyan marg, Makarwali Rd, Panchsheel Nagar, Ajmer, Rajasthan"
+      location: "4/172, Gyan marg, Makarwali Rd, near vinayak complex, Panchsheel Nagar, Ajmer, Rajasthan 305004"
     },
     1: { // Monday
       start: '16:00',
       end: '19:00',
       isClosed: false,
-      location: "4/172, Gyan marg, Makarwali Rd, Panchsheel Nagar, Ajmer, Rajasthan"
+      location: "4/172, Gyan marg, Makarwali Rd, near vinayak complex, Panchsheel Nagar, Ajmer, Rajasthan 305004"
     },
     2: { // Tuesday
       start: '16:00',
       end: '19:00',
       isClosed: false,
-      location: "4/172, Gyan marg, Makarwali Rd, Panchsheel Nagar, Ajmer, Rajasthan"
+      location: "4/172, Gyan marg, Makarwali Rd, near vinayak complex, Panchsheel Nagar, Ajmer, Rajasthan 305004"
     },
     3: { // Wednesday
       start: '16:00',
       end: '19:00',
       isClosed: false,
-      location: "4/172, Gyan marg, Makarwali Rd, Panchsheel Nagar, Ajmer, Rajasthan"
+      location: "4/172, Gyan marg, Makarwali Rd, near vinayak complex, Panchsheel Nagar, Ajmer, Rajasthan 305004"
     },
     4: { // Thursday
       start: '16:00',
       end: '19:00',
       isClosed: false,
-      location: "4/172, Gyan marg, Makarwali Rd, Panchsheel Nagar, Ajmer, Rajasthan"
+      location: "4/172, Gyan marg, Makarwali Rd, near vinayak complex, Panchsheel Nagar, Ajmer, Rajasthan 305004"
     },
     5: { // Friday
       start: '16:00',
       end: '19:00',
       isClosed: false,
-      location: "4/172, Gyan marg, Makarwali Rd, Panchsheel Nagar, Ajmer, Rajasthan"
+      location: "4/172, Gyan marg, Makarwali Rd, near vinayak complex, Panchsheel Nagar, Ajmer, Rajasthan 305004"
     },
     6: { // Saturday
       start: '16:00',
       end: '19:00',
       isClosed: false,
-      location: "4/172, Gyan marg, Makarwali Rd, Panchsheel Nagar, Ajmer, Rajasthan"
+      location: "4/172, Gyan marg, Makarwali Rd, near vinayak complex, Panchsheel Nagar, Ajmer, Rajasthan 305004"
     }
   };
 
@@ -478,7 +478,7 @@ const BookingSystem = () => {
 
       <div className="p-4 mt-6 bg-gradient-to-r from-blue-100 to-teal-100 bg-opacity-20 rounded-md text-blue-800">
           <h3 className="font-bold text-lg mb-2">Dr. Vishnu's Clinic</h3>
-          <p className="mb-1">4/172, Gyan marg, Makarwali Rd, Panchsheel Nagar, Ajmer</p>
+          <p className="mb-1">4/172, Gyan marg, Makarwali Rd, near vinayak complex, Panchsheel Nagar, Ajmer, Rajasthan 305004</p>
           <p className="mb-1">Phone: +91 82409 70287</p>
           <p className="font-medium mt-2">Consultation Hours: Monday to Saturday, 4PM - 7PM</p>
         </div>

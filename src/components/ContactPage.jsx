@@ -171,7 +171,7 @@ const ContactPage = () => {
                       <p className="text-gray-600">Ajmer, Rajasthan 305004</p>
                     </div>
                   </motion.div>
-                  
+
                   <motion.div 
                     className="flex items-start"
                     variants={itemVariants}
@@ -198,7 +198,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-800">Email</h3>
-                      <p className="text-gray-600 mt-1">vishnu.agrawal@gmail.com</p>
+                      <p className="text-gray-600 mt-1">agrawalclinicajmer@gmail.com</p>
                     </div>
                   </motion.div>
                   

@@ -24,7 +24,7 @@ const BookingSystem = () => {
   const [emailError, setEmailError] = useState('');
 
   // Check if we're on client side and set Firestore as ready
-  useEffect(() => {
+   useEffect(() => {
     if (typeof window !== 'undefined') {
       setFirestoreReady(true);
     }
@@ -477,7 +477,7 @@ const BookingSystem = () => {
       </form>
 
       <div className="p-4 mt-6 bg-gradient-to-r from-blue-100 to-teal-100 bg-opacity-20 rounded-md text-blue-800">
-          <h3 className="font-bold text-lg mb-2">Dr. Vishnu's Clinic</h3>
+          <h3 className="font-bold text-lg mb-2">Agrawal Clinic</h3>
           <p className="mb-1">4/172, Gyan marg, Makarwali Rd, near vinayak complex, Panchsheel Nagar, Ajmer, Rajasthan 305004</p>
           <p className="mb-1">Phone: +91 82409 70287</p>
           <p className="font-medium mt-2">Consultation Hours: Monday to Saturday, 4PM - 7PM</p>

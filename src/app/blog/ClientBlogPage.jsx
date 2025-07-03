@@ -313,20 +313,7 @@ const ClientBlogPage = ({ blogs }) => {
                   </div>
                 </div>
               </motion.div>
-              
-              {/* <motion.div
-                ref={membershipsRef}
-                initial={{ opacity: 0, y: 30 }}
-                animate={membershipsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-              >
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Professional Memberships</h3>
-                <div className="flex flex-wrap gap-3">
-                  <span className="bg-blue-50 text-blue-600 px-3 py-1 rounded-full">Urological Society of India</span>
-                  <span className="bg-teal-50 text-teal-600 px-3 py-1 rounded-full">Indian Medical Association</span>
-                  <span className="bg-blue-50 text-blue-600 px-3 py-1 rounded-full">Endourology Society</span>
-                </div>
-              </motion.div> */}
+            
             </div>
           </div>
         </div>
@@ -335,4 +322,4 @@ const ClientBlogPage = ({ blogs }) => {
   );
 };
 
-export default ClientBlogPage;
+export default ClientBlogPage; 

@@ -36,7 +36,7 @@ const AdminLogin = () => {
   // Refs for tables
   const bookingsTableRef = useRef(null);
   
-  // Admin credentials - in a real app, these would not be hardcoded
+
   const ADMIN_USERNAME = 'admin';
   const ADMIN_PASSWORD = '12345';
 

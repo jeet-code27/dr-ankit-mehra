@@ -328,13 +328,14 @@ const BookingSystem = () => {
           <li>Please enter a valid email to receive a confirmation email.</li>
         </ul>
       </div>
-      
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <center>
+      <form onSubmit={handleSubmit} className="space-y-6 ">
         {/* Clinic Information */}
         
         
         {/* Date Selection */}
-        <div className='w-[50%] lg:w-[40%]'>
+        <div className='max-w-[350px]  '>
+          <center>
           <label className="block text-red-600 font-bold mb-2">
             Please Select Date for Your Consultation*
           </label>
@@ -346,6 +347,7 @@ const BookingSystem = () => {
             className="shadow border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required
           />
+          </center>
         </div>
         
         {/* Time Slot Selection */}
@@ -475,11 +477,11 @@ const BookingSystem = () => {
           </div>
         )}
       </form>
-
+      </center>
       <div className="p-4 mt-6 bg-gradient-to-r from-blue-100 to-teal-100 bg-opacity-20 rounded-md text-blue-800">
           <h3 className="font-bold text-lg mb-2">Agrawal Clinic</h3>
           <p className="mb-1">4/172, Gyan marg, Makarwali Rd, near vinayak complex, Panchsheel Nagar, Ajmer, Rajasthan 305004</p>
-          <p className="mb-1">Phone: +91 82409 70287</p>
+          <p className="mb-1">  <a href="tel:+918240970287">Phone: +91 82409 70287</a></p>
           <p className="font-medium mt-2">Consultation Hours: Monday to Saturday, 4PM - 7PM</p>
         </div>
     </div>

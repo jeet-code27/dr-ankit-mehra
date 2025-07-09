@@ -293,7 +293,7 @@ const ServicesSection = () => {
         
         {/* Services Grid */}
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          className="flex flex-wrap gap-8 justify-center"
           ref={servicesRef}
           initial="hidden"
           animate={servicesInView ? "visible" : "hidden"}
@@ -311,7 +311,7 @@ const ServicesSection = () => {
           {displayedServices.map((service, index) => (
             <motion.div 
               key={service.id} 
-              className={`bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 group
+              className={` w-[31%]   shadow-all  min-w-[300px]
                 ${service.featured ? 'order-first' : ''}`}
               variants={itemVariants}
               whilehover={{ y: -5 }}
@@ -321,7 +321,7 @@ const ServicesSection = () => {
             >
               {/* Image Section */}
               <motion.div 
-                className="relative h-50 w-full overflow-hidden"
+                className="relative h-50 w-full rounded-2xl overflow-hidden"
                 whilehover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
@@ -329,7 +329,7 @@ const ServicesSection = () => {
                   src={service.imagePath}
                   alt={service.title}
                   fill
-                  className="object-cover transition-transform duration-500"
+                  className="object-cover  transition-transform duration-500"
                   sizes="(max-width: 750px) 90vw, (max-width: 1200px) 40vw, 33vw"
                 />
               </motion.div>

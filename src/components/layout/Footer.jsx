@@ -140,14 +140,19 @@ export default function Footer() {
                 <div className="bg-gray-800 p-2 rounded-full mr-3">
                   <Phone size={16} className="text-[#25D366]" />
                 </div>
-                <span>+91 82409 70287</span>
+                <span><a href="tel:+918240970287">+91 82409 70287</a></span>
               </div>
               
               <div className="flex items-center">
                 <div className="bg-gray-800 p-2 rounded-full mr-3">
                   <Mail size={16} className="text-[#25D366]" />
                 </div>
-                <span>agrawalclinicajmer@gmail.com</span>
+                <a  href="https://mail.google.com/mail/?view=cm&to=agrawalclinicajmer@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+   
+  >agrawalclinicajmer@gmail.com</a>
+
               </div>
             </div>
             

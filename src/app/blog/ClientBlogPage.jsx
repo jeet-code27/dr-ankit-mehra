@@ -207,6 +207,7 @@ const ClientBlogPage = ({ blogs }) => {
                     </span>
                   ))}
                 </div>
+                <div className='flex justify-center'>
                 <Link
                   href={`/blog/${blog.slug}`}
                   className="inline-flex items-center text-sm font-medium bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 text-white px-4 py-2 rounded-lg hover:opacity-90 transition duration-300"
@@ -217,6 +218,7 @@ const ClientBlogPage = ({ blogs }) => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </Link>
+                </div>
               </div>
             </article>
           ))}

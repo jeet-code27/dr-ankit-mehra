@@ -145,6 +145,7 @@ const AboutDoctor = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={buttonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
+                className='flex flex-col sm:flex-row sm:justify-start justify-center items-center'
               >
                 <button className="bg-blue-800 text-white px-6 py-3 rounded-lg font-medium text-lg hover:bg-blue-900 cursor-pointer transition-colors duration-300 mt-4">
                   Book Consultation

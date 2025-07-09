@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { IoBagAddSharp } from "react-icons/io5";
 
 const AboutDoctorSection = () => {
   // Animation variants
@@ -129,7 +130,7 @@ const AboutDoctorSection = () => {
                 <p className="text-gray-600 mb-4">Consultant Urologist & Laparoscopic Surgeon</p>
                 
                 <motion.div 
-                  className="flex justify-center space-x-4 mb-2"
+                  className="flex justify-center flex-col space-y-1 items-center lg:flex-row space-x-4 mb-2"
                   initial="hidden"
                   animate="visible"
                   variants={{
@@ -155,9 +156,7 @@ const AboutDoctorSection = () => {
                     className="flex items-center"
                     variants={itemVariants}
                   >
-                    <svg className="w-5 h-5 text-blue-600 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" />
-                    </svg>
+                   <IoBagAddSharp className='text-[#155DFC]'/>
                     <span className="text-gray-700">10000+ Surgeries</span>
                   </motion.div>
                 </motion.div>

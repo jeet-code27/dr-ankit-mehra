@@ -130,7 +130,7 @@ const HeroSection = () => {
             </motion.div>
             
             <motion.div 
-              className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mb-12"
+              className="flex flex-col items-center sm:flex-row gap-5 sm:justify-center justify-center lg:justify-start mb-12"
               ref={buttonsRef}
               initial="hidden"
               animate={buttonsInView ? "visible" : "hidden"}
@@ -180,7 +180,9 @@ const HeroSection = () => {
             >
               <div className="flex items-center">
                 <Phone className="w-5 h-5 text-blue-600 mr-2" />
-                <span className="font-medium">+91 98290 12345</span>
+                <span className="font-medium">
+  <a href="tel:+918240970287">+91 82409 70287</a>
+</span>
               </div>
               <div className="h-5 w-px bg-gray-300 hidden sm:block"></div>
               {/* <div className="font-medium text-blue-600 hover:text-blue-800 transition-colors">
@@ -304,7 +306,7 @@ const HeroSection = () => {
                   
                   {/* Benefits Grid */}
                   <motion.div 
-                    className="grid grid-cols-2 gap-2 mb-4"
+                    className="grid lg:grid-cols-2  gap-2 mb-4"
                     initial="hidden"
                     animate="visible"
                     variants={{
@@ -325,7 +327,7 @@ const HeroSection = () => {
                     ].map((benefit, index) => (
                       <motion.div 
                         key={index}
-                        className="flex items-start bg-blue-50 p-2 rounded"
+                        className="flex items-start text-gray-700 bg-blue-50 p-2 rounded"
                         variants={{
                           hidden: { opacity: 0, y: 10 },
                           visible: { opacity: 1, y: 0 }

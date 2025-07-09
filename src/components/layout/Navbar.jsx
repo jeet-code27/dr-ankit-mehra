@@ -24,7 +24,8 @@ export default function Navbar() {
               <Phone size={18} className="mr-2" />
               <div>
                 <span className="font-medium">Contact No.</span>
-                <p className="text-sm">+91 82409 70287</p>
+                <br></br>
+                <a href="tel:+918240970287" className="text-sm">+91 82409 70287</a>
               </div>
             </div>
             
@@ -267,7 +268,7 @@ export default function Navbar() {
                     </div>
                     <div>
                       <span className="font-medium">Emergency Helpline</span>
-                      <p className="text-sm">+91 82409 70287</p>
+                      <a href="tel:+918240970287"> <p className="text-sm">+91 82409 70287</p></a>
                     </div>
                   </div>
                   

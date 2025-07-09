@@ -101,7 +101,7 @@ const ContactPage = () => {
                   Comprehensive treatment for all urinary and reproductive health conditions with personalized care.
                 </motion.p>
                 <motion.div 
-                  className="flex items-center space-x-2 mb-4"
+                  className="flex items-center lg:justify-start justify-center space-x-2 mb-4"
                   variants={itemVariants}
                 >
                   <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 p-2 rounded-full">
@@ -109,9 +109,9 @@ const ContactPage = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
-                  <span className="text-lg font-medium text-black">+91 82409 70287</span>
+                  <span className="text-lg font-medium text-black"><a href="tel:+918240970287" >+91 82409 70287</a></span>
                 </motion.div>
-                <motion.div variants={itemVariants}>
+                <motion.div className='flex lg:justify-start justify-center' variants={itemVariants}>
                   <Link href="/bookconsultation">
                     <button className="bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 text-white font-bold py-3 px-6 rounded-full shadow-md hover:shadow-lg cursor-pointer transform hover:-translate-y-1 transition duration-300">
                       Book Appointment
@@ -183,7 +183,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-800">Phone</h3>
-                      <p className="text-gray-600 mt-1">+91 82409 70287</p>
+                      <p className="text-gray-600 mt-1"><a href="tel:+918240970287">+91 82409 70287</a></p>
                     </div>
                   </motion.div>
                   
@@ -198,7 +198,12 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-800">Email</h3>
-                      <p className="text-gray-600 mt-1">agrawalclinicajmer@gmail.com</p>
+                      <a
+  href="https://mail.google.com/mail/?view=cm&to=agrawalclinicajmer@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  
+> <p className="text-gray-600 mt-1">agrawalclinicajmer@gmail.com</p></a>
                     </div>
                   </motion.div>
                   

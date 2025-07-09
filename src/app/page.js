@@ -277,6 +277,12 @@ const structuredData = {
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData)
+        }}
+      />
       <HeroSection/>
       <AboutDoctorSection/>
       <ServicesSection/>

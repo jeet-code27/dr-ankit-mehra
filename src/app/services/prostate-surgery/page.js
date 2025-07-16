@@ -10,7 +10,7 @@ export const metadata = {
     'first HoLEP surgery Ajmer',
     'Dr. Vishnu Agrawal exclusive BPH treatment',
     'best prostate surgeon in Ajmer',
-    'BPH laser treatment only in Ajmer',
+    'BPH laser treatment only in Ajmer',  
     'minimally invasive prostate surgery Ajmer',
     'first-time TURP in Ajmer',
     'enlarged prostate specialist Ajmer',

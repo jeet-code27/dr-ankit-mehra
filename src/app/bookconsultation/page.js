@@ -1,7 +1,7 @@
 import BookingSystem from "@/components/BookingPage";
 
 export const metadata = {
-  title: 'Book best Urology Consultation Online - Dr. Vishnu Agrawal, Ajmer',
+  title: 'Book Urology Consultation Online - Dr. Vishnu Agrawal, Ajmer',
   description: 'Schedule an appointment with leading urologist Dr. Vishnu Agrawal for kidney stone, prostate, and male health treatments. Fast, secure online booking available 24/7.',
   keywords: [
     'urologist appointment Ajmer',

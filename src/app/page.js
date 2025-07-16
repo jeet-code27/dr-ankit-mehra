@@ -6,7 +6,7 @@ import ServicesSection from "@/components/ServicesSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
 
 export const metadata = {
-  title: 'Best Urologist in Ajmer | Dr. Vishnu Agrawal - Kidney & Prostate Specialist',
+  title: 'Best Urologist in Ajmer | Dr. Vishnu Agrawal - Prostate Specialist',
   description: 'Dr. Vishnu Agrawal is a leading urologist in Ajmer providing advanced treatment for kidney stones, prostate enlargement, male infertility, and urinary disorders. Book your appointment today.',
   keywords: [
     'best urologist in Ajmer',

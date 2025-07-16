@@ -1,127 +1,198 @@
 export default function sitemap() {
-    return [
-      {
-        url: 'https://drvishnuagrawal.in',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/about',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/blog',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/contact',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/bookconsultation',
-        lastModified: new Date(),
-      },
-      // Service pages
-      {
-        url: 'https://drvishnuagrawal.in/services/prostate-surgery',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/services/renal-stone',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/services/ureteric-stone',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/services/bladder-stone',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/services/bladder-tumor',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/services/prostate-disease',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/services/urinary-disease',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/services/male-infertility',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/services/andrology-problems',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/services/male-sexual-problems',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/services/all-disease-related-urology',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/services/urinary-incontinence-treatment',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/services/overactive-bladder-treatment',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/services/urinary-fistula',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/services/urethroplasty',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/services/hypospadias-udt',
-        lastModified: new Date(),
-      },
-      // Blog post
-      {
-        url: 'https://drvishnuagrawal.in/blog/urology-health-tips-ajmer-urologist',
-        lastModified: new Date(),
-      },
-       {
-        url: 'https://drvishnuagrawal.in/blog/best-kidney-doctor-ajmer-dr-vishnu-agrawal',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/blog/best-urology-doctor-ajmer-dr-vishnu-agrawal',
-        lastModified: new Date(),
-      },
-       {
-        url: 'https://drvishnuagrawal.in/blog/best-urology-clinic-ajmer-agrawal-clinic',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/blog/best-male-infertility-doctor-ajmer-dr-vishnu-agrawal',
-        lastModified: new Date(),
-      },
-       {
-        url: 'https://drvishnuagrawal.in/blog/urology-specialist-ajmer-dr-vishnu-agrawal',
-        lastModified: new Date(),
-      },
-       {
-        url: 'https://drvishnuagrawal.in/blog/best-urologist-ajmer-dr-vishnu-agrawal',
-        lastModified: new Date(),
-      },
-      
-      {
-        url: 'https://drvishnuagrawal.in/blog/uti-prevention-treatment-ajmer',
-        lastModified: new Date(),
-      },
-      {
-        url: 'https://drvishnuagrawal.in/blog/best-urologist-in-ajmer-dr-vishnu-agrawal',
-        lastModified: new Date(),
-      },
-    ]
-  }
+  const baseUrl = 'https://drvishnuagrawal.in';
+  const currentDate = new Date();
+  
+  return [
+    // Main Pages - High Priority
+    {
+      url: baseUrl,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/bookconsultation`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+
+    // Service Pages - High Priority
+    {
+      url: `${baseUrl}/services/prostate-surgery`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/renal-stone`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/ureteric-stone`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services/bladder-stone`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services/bladder-tumor`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/prostate-disease`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/urinary-disease`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services/male-infertility`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services/andrology-problems`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/services/male-sexual-problems`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/services/all-disease-related-urology`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/services/urinary-incontinence-treatment`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/services/overactive-bladder-treatment`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/services/urinary-fistula`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/services/urethroplasty`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/services/hypospadias-udt`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+
+    // All Blog Posts - High Priority (0.9)
+    {
+      url: `${baseUrl}/blog/urology-health-tips-ajmer-urologist`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/best-kidney-doctor-ajmer-dr-vishnu-agrawal`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/best-urology-doctor-ajmer-dr-vishnu-agrawal`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/best-urology-clinic-ajmer-agrawal-clinic`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/best-male-infertility-doctor-ajmer-dr-vishnu-agrawal`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/urology-specialist-ajmer-dr-vishnu-agrawal`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/best-urologist-ajmer-dr-vishnu-agrawal`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/uti-prevention-treatment-ajmer`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/best-urologist-in-ajmer-dr-vishnu-agrawal`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/best-urologist-ajmer-consult-dr-vishnu-agrawal`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+  ];
+}

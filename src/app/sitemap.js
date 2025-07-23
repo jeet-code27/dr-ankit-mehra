@@ -194,5 +194,11 @@ export default function sitemap() {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+     {
+      url: `${baseUrl}blog/top-urologist-ajmer-dr-vishnu-agrawal`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
   ];
 }

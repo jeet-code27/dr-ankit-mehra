@@ -53,6 +53,12 @@ export async function generateMetadata({ params }) {
       description: blog.metaDescription || blog.excerpt || blog.content.substring(0, 160),
       images: [blog.image || '/images/urology-placeholder.jpg'],
     },
+     other: {
+    'application-name': 'Bone & Joints Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
   };
 }
 

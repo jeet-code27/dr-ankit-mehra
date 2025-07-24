@@ -40,7 +40,22 @@ export const metadata = {
     title: 'Regain Your Sexual Confidence | Advanced Men Health Treatments',
     description: 'Effective solutions for ED, performance anxiety and hormonal imbalances - personalized care with guaranteed privacy.',
     images: ['/images/male-sexual-health-twitter.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 
 export default function MaleSexualProblems() {

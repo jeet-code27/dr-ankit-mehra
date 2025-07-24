@@ -40,7 +40,22 @@ export const metadata = {
     title: 'Laser Ureteric Stone Treatment | Same-Day Discharge in Ajmer',
     description: 'Breakthrough 0.8mm laser scopes remove blocked ureter stones without cuts - 95% success rate.',
     images: ['/images/ureteric-stone-twitter.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 
 export default function UratericStone() {

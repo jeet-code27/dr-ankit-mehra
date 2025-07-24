@@ -40,7 +40,22 @@ export const metadata = {
     title: 'Control Your Bladder Again | Effective OAB Treatments',
     description: 'Breakthrough therapies for urgency, frequency and leakage - regain your confidence and sleep through the night.',
     images: ['/images/oab-treatment-twitter.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 
 export default function OveractiveBladderTreatment() {

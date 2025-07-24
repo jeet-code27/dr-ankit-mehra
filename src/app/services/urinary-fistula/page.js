@@ -40,7 +40,22 @@ export const metadata = {
     title: 'Urinary Fistula Repair Expert | 95% Success Rate | Ajmer',
     description: 'Specialized surgical correction for all types of urinary fistulas - including post-surgical and obstetric cases.',
     images: ['/images/urinary-fistula-twitter.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 
 export default function UrinaryFistula() {

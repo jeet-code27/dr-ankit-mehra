@@ -37,7 +37,22 @@ export const metadata = {
     title: 'Contact Urology Specialist in Ajmer | Dr. Vishnu Agrawal',
     description: 'Clinic location, appointment booking and contact information for premier urology care in Rajasthan',
     images: ['/images/contact-twitter-card.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 
 export default function Contact() { 

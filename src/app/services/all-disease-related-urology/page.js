@@ -40,7 +40,22 @@ export const metadata = {
     title: 'Complete Urological Care | From Diagnosis to Treatment',
     description: 'Expert management of all urinary system diseases and male health conditions - personalized treatment plans for optimal outcomes.',
     images: ['/images/urology-center-twitter.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 
 export default function AllDiseaseRelatedUrology() {

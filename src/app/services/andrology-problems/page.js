@@ -40,7 +40,22 @@ export const metadata = {
     title: 'Expert Male Health Care | From Fertility to Sexual Function',
     description: 'Specialized treatments for all andrological conditions - personalized care with guaranteed privacy and dignity.',
     images: ['/images/andrology-clinic-twitter.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 
 export default function AndrologyProblems() {

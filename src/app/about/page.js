@@ -39,7 +39,22 @@ export const metadata = {
     title: 'About Best Urologist in Ajmer | Dr. Vishnu Agrawal',
     description: 'Meet Ajmer\'s top kidney and prostate specialist - his qualifications, treatment philosophy and clinic values',
     images: ['/images/about-twitter-card.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 
 export default function About() {   

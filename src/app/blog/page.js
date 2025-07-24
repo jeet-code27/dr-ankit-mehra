@@ -13,16 +13,25 @@ function getBlogs() {
 export const metadata = {
   title: 'Urology Health Blogs by Dr. Vishnu Agrawal',
   description: 'Expert articles on urological conditions, treatments, and men\'s health by Dr. Vishnu Agrawal - Urologist in Ajmer (Rajasthan) India',
-  authors: [{ name: 'Dr. Vishnu Agrawal', url: 'https://drvishnuagrawal.com' }],
+  authors: [{ name: 'Dr. Vishnu Agrawal'}],
   keywords: 'urology, kidney health, laparoscopic surgery, urologist, Ajmer, Dr. Vishnu Agrawal, andrology, uro-oncology',
   openGraph: {
     title: 'Urology Health Blogs by Dr. Vishnu Agrawal',
     description: 'Expert articles on urological conditions, treatments, and men\'s health by Dr. Vishnu Agrawal',
     type: 'website',
-    url: 'https://drvishnuagrawal.com/blog',
+    url: 'https://drvishnuagrawal.in/blog',
   },
   alternates: {
-    canonical: 'https://www.drvishnuagrawal.com/blog',
+    canonical: 'https://drvishnuagrawal.in/blog',
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
   },
 };
 

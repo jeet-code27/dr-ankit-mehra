@@ -40,7 +40,22 @@ export const metadata = {
     title: 'Ajmer’s First Laser Prostate Surgery | Only by Dr. Vishnu Agrawal',
     description: 'Pioneering HoLEP & TURP prostate treatments in Ajmer with minimal pain and quick recovery.',
     images: ['/images/prostate-surgery-twitter.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 export default function prostateSurgery() {
   return (

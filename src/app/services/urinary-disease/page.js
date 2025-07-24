@@ -40,7 +40,22 @@ export const metadata = {
     title: 'Expert Urinary Disorder Treatment in Ajmer | Urology Specialist',
     description: 'Advanced solutions for urinary infections, incontinence, prostate issues and complex urological conditions.',
     images: ['/images/urinary-disease-twitter.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 
 export default function UrinaryDisease() {

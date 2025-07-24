@@ -40,7 +40,22 @@ export const metadata = {
     title: 'Stop Urine Leakage Permanently | Advanced Incontinence Treatments',
     description: 'Customized solutions for stress/urge incontinence - including minimally invasive slings and revolutionary bladder therapies.',
     images: ['/images/incontinence-twitter.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 
 export default function UrinaryIncontinenceTreatment() {    

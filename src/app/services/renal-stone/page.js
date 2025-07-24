@@ -41,7 +41,22 @@ export const metadata = {
     title: 'Painless Kidney Stone Treatment | Ajmer’s Laser Lithotripsy Specialist',
     description: 'Breakthrough RIRS and PCNL techniques for instant stone relief - no cuts, no scars.',
     images: ['/images/renal-stone-twitter.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 
 export default function RenalStone() {

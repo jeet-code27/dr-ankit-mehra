@@ -40,7 +40,22 @@ export const metadata = {
     title: 'Permanent Urethral Stricture Solution | High Success Rate Surgery',
     description: 'Specialized reconstruction techniques for failed urethrotomies and complex strictures - restoring normal urination.',
     images: ['/images/urethroplasty-twitter.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 
 export default function Urethroplasty() {

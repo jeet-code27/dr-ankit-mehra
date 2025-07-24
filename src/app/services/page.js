@@ -3,7 +3,7 @@ import ServicesSection from "@/components/ServicesSection";
 
 
 export const metadata = {
-  title: 'Best Kidney Stone & Prostate Treatment in Ajmer - Dr. Vishnu Agrawal',
+  title: 'Best Prostate Treatment in Ajmer - Dr. Vishnu Agrawal',
   description: 'Comprehensive urology services in Ajmer including advanced kidney stone treatment, prostate care, male infertility solutions, and urinary disorder management. Latest laser and minimally invasive techniques.',
   keywords: [
     'best urology services in Ajmer',
@@ -42,7 +42,22 @@ export const metadata = {
     title: 'Advanced Urology Services in Ajmer | Kidney & Prostate Care',
     description: 'Comprehensive urology treatments including laser stone removal, prostate surgery and male health solutions',
     images: ['/images/services-twitter-card.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 
 export default function Services() {

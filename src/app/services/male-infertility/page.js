@@ -40,7 +40,22 @@ export const metadata = {
     title: 'Male Fertility Solutions | From Diagnosis to Fatherhood',
     description: 'Advanced techniques for sperm retrieval, quality improvement and surgical corrections - giving hope to infertile couples.',
     images: ['/images/male-fertility-twitter.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 
 export default function MaleInfertility() {

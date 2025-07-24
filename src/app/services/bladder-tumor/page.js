@@ -40,7 +40,22 @@ export const metadata = {
     title: 'Bladder Tumor Excellence in Ajmer | 98% Success Rate',
     description: 'Pioneering blue-light cystoscopy and laser tumor ablation for complete cancer removal while preserving bladder function.',
     images: ['/images/bladder-tumor-twitter.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 
 export default function BladderTumor() {

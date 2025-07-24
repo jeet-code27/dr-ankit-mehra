@@ -40,7 +40,22 @@ export const metadata = {
     title: 'Advanced Hypospadias & UDT Treatments | From Infancy to Adulthood',
     description: 'Specialized reconstructive surgeries for congenital urogenital conditions - ensuring proper development and function.',
     images: ['/images/hypospadias-twitter.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 
 export default function HypospadiasUDT() {

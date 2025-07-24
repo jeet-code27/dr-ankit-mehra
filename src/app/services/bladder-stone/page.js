@@ -40,7 +40,22 @@ export const metadata = {
     title: 'Laser Bladder Stone Treatment | No Cuts, No Scars in Ajmer',
     description: 'Breakthrough laser cystolitholapaxy removes bladder stones without surgery - 97% success rate.',
     images: ['/images/bladder-stone-twitter.jpg'],
-  }
+  },
+   robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+   other: {
+    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
+    'author': 'Dr. Vishnu Agrawal',
+    'generator': 'Next.js',
+    'theme-color': '#ffffff',
+  },
 };
 
 export default function BladderStone() {

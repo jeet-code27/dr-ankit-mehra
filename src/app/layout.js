@@ -3,6 +3,7 @@ import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
 import './globals.css';
 import Script from 'next/script';
+import FloatingContactButtons from '@/components/layout/FloatingContactButtons';
 // import FloatingContact from '@/components/FloatingContact';
 
 // Define the default metadata for Dr. Vishnu Agrawal - Urologist
@@ -73,6 +74,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main>{children}</main>
         {/* <FloatingContact/> */}
+        <FloatingContactButtons />
         <Footer />
       </body>
     </html>

@@ -67,10 +67,10 @@ const AboutHero = ({
   });
 
   return (
-    <div className="w-full" ref={ref}>
+    <div className="w-full " ref={ref}>
       {/* Modern Gradient Background with Abstract Shapes */}
       <motion.div 
-        className="relative w-full py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 overflow-hidden"
+        className="relative  w-full py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 overflow-hidden"
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={containerVariants}

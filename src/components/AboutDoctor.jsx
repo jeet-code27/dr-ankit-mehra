@@ -71,7 +71,7 @@ const AboutDoctor = () => {
             className="rounded-lg overflow-hidden shadow-xl"
           >
             <img 
-              src="images/drvishnu.png" 
+              src="images/drvishnu1.png" 
               alt="Dr. Vishnu Agrawal" 
               className="w-full h-full object-cover"
             />

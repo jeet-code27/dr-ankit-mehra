@@ -85,10 +85,12 @@ const AboutDoctorSection = () => {
           </motion.p>
         </motion.div>
         
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+        <div 
+        className="flex flex-col lg:flex-row items-center gap-12">
           {/* Left Image with Credentials */}
           <motion.div 
             className="w-full lg:w-2/5"
+            
             ref={imageRef}
             initial="hidden"
             animate={imageInView ? "visible" : "hidden"}
@@ -104,17 +106,18 @@ const AboutDoctorSection = () => {
               }
             }}
           >
-            <div className="relative rounded-lg overflow-hidden shadow-xl bg-white p-6 hover:shadow-2xl transition-shadow duration-300">
+            <div 
+            className="relative rounded-lg overflow-hidden shadow-xl  bg-gray-100 p-6 hover:shadow-2xl transition-shadow duration-300">
               <motion.div 
-                className="relative w-full aspect-square mb-6"
+                className="relative w-full rounded-lg aspect-square mb-17 "
                 whilehover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/images/drvishnu.png" 
+                  src="/images/drvishnu1.png" 
                   alt="Dr. Vishnu Agrawal"
                   fill
-                  className="rounded-lg object-cover"
+                  className="rounded-lg object-cover "
                   sizes="(max-width: 768px) 100vw, 40vw"
                 />
               </motion.div>
@@ -213,7 +216,7 @@ const AboutDoctorSection = () => {
                   </svg>
                   Specializations
                 </h4>
-                <ul className="text-gray-700">
+                <ul className="text-gray-700 ">
                   {[
                     "Prostate Surgery (18.5 fr)",
                     "Kidney Stone Surgery",
@@ -227,12 +230,12 @@ const AboutDoctorSection = () => {
                   ].map((item, index) => (
                     <motion.li 
                       key={index}
-                      className="mb-1"
+                      className="mb-1 border-b-2 p-2 border-b-gray-100 rounded-lg"
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.05 }}
                     >
-                      • {item}
+                      {item}
                     </motion.li>
                   ))}
                 </ul>
@@ -249,7 +252,7 @@ const AboutDoctorSection = () => {
                   </svg>
                   Patient Care
                 </h4>
-                <ul className="text-gray-700">
+                <ul className="text-gray-700  ">
                   {[
                     "Patient-Centric Approach",
                     "Advanced Diagnostic Methods",
@@ -259,12 +262,12 @@ const AboutDoctorSection = () => {
                   ].map((item, index) => (
                     <motion.li 
                       key={index}
-                      className="mb-1"
+                      className="mb-1 border-b-2 p-2 border-b-gray-100 rounded-lg"
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.05 + 0.2 }}
                     >
-                      • {item}
+                    {item}
                     </motion.li>
                   ))}
                 </ul>

@@ -151,7 +151,7 @@ const ClientBlogPage = ({ blogs }) => {
             >
               <div className="aspect-square w-full h-full relative">
                 <Image
-                  src="/images/drvishnu.png"
+                  src="/images/drvishnu1.png"
                   alt="Dr. Vishnu Agrawal - Urologist in Ajmer"
                   fill
                   className="object-cover"

@@ -369,6 +369,7 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
+      <hr className='mt-8'/>
     </section>
   );
 };

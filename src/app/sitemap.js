@@ -200,5 +200,11 @@ export default function sitemap() {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+ {
+      url: `${baseUrl}blog/best-urology-specialist-ajmer-dr.-vishnu-agrawal`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
   ];
 }

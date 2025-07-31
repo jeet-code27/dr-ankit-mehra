@@ -126,7 +126,7 @@ const ContactPage = () => {
                 <div className="rounded-full bg-[#C3E1F2] overflow-hidden">
                   <div className="relative w-full" style={{ maxHeight: '650px' }}>
                     <Image
-                      src="/images/drvishnu.png"
+                      src="/images/drvishnu1.png"
                       alt="Dr. Vishnu Agrawal"
                       width={650}
                       height={650}

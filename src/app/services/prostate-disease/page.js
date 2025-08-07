@@ -38,6 +38,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Prostate Health Solutions in Ajmer | BPH to Cancer Care',
+    
     description: 'Advanced Rezum, laser, and biopsy techniques for all prostate conditions - preserving urinary and sexual function.',
     images: ['/images/prostate-disease-twitter.jpg'],
   },
@@ -53,6 +54,8 @@ export const metadata = {
    other: {
     'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
     'author': 'Dr. Vishnu Agrawal',
+     'publisher': 'Dr. Vishnu Agrawal',
+    'publisher-url': 'https://drvishnuagrawal.in',
     'generator': 'Next.js',
     'theme-color': '#ffffff',
   },

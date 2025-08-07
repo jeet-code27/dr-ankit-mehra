@@ -1,12 +1,12 @@
-import fs from 'fs';
-import path from 'path';
-import Link from 'next/link';
-import Image from 'next/image';
+import fs from "fs";
+import path from "path";
+import Link from "next/link";
+import Image from "next/image";
 
 // Function to read blogs data
 function getBlogs() {
-  const filePath = path.join(process.cwd(), 'public', 'blogs.json');
-  const fileData = fs.readFileSync(filePath, 'utf-8');
+  const filePath = path.join(process.cwd(), "public", "blogs.json");
+  const fileData = fs.readFileSync(filePath, "utf-8");
   const blogs = JSON.parse(fileData);
   return blogs;
 }
@@ -15,50 +15,64 @@ function getBlogs() {
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
-  
+
   const blogs = getBlogs();
   const blog = blogs.find((blog) => blog.slug === slug);
-  
+
   if (!blog) {
     return {
-      title: 'Blog Not Found',
+      title: "Blog Not Found",
     };
   }
-  
+
   return {
     title: `${blog.title}`,
-    description: blog.metaDescription || blog.excerpt || blog.content.substring(0, 160),
+    description:
+      blog.metaDescription || blog.excerpt || blog.content.substring(0, 160),
     keywords: blog.tags,
-    
+
     openGraph: {
       title: blog.title,
-      description: blog.metaDescription || blog.excerpt || blog.content.substring(0, 160),
-      type: 'article',
+      description:
+        blog.metaDescription || blog.excerpt || blog.content.substring(0, 160),
+      type: "article",
       url: `https://drvishnuagrawal.in/blog/${blog.slug}`,
       images: [
         {
-          url: blog.image || '/images/urology-placeholder.jpg',
+          url: blog.image || "/images/urology-placeholder.jpg",
           width: 1200,
           height: 630,
           alt: blog.alt || blog.title,
         },
       ],
     },
-     alternates: {
-    canonical:blog.conincalUrl,
-  },
-    twitter: {
-      card: 'summary_large_image',
-      title: blog.title,
-      description: blog.metaDescription || blog.excerpt || blog.content.substring(0, 160),
-      images: [blog.image || '/images/urology-placeholder.jpg'],
+    alternates: {
+      canonical: blog.conincalUrl,
     },
-     other: {
-    'application-name': 'Bone & Joints Clinic',
-    'author': 'Dr. Vishnu Agrawal',
-    'generator': 'Next.js',
-    'theme-color': '#ffffff',
-  },
+    twitter: {
+      card: "summary_large_image",
+      title: blog.title,
+      description:
+        blog.metaDescription || blog.excerpt || blog.content.substring(0, 160),
+      images: [blog.image || "/images/urology-placeholder.jpg"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+      },
+    },
+    other: {
+      "application-name": "Dr. Vishnu Agrawal - Urology Clinic",
+      author: "Dr. Vishnu Agrawal",
+      Publisher: "Dr. Vishnu Agrawal",
+      "publisher-url": "https://drvishnuagrawal.in",
+      generator: "Next.js",
+      "theme-color": "#ffffff",
+    },
   };
 }
 
@@ -135,18 +149,22 @@ function BlogContent({ content }) {
 export default async function SingleBlogPage({ params }) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
-  
+
   const blogs = getBlogs();
   const blog = blogs.find((blog) => blog.slug === slug);
-  
+
   if (!blog) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-teal-50 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-xl shadow-lg overflow-hidden p-6 border border-blue-100">
-            <h1 className="text-4xl font-bold bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 bg-clip-text text-transparent mb-4">Blog Not Found</h1>
-            <p className="text-gray-700 mb-4">Could not find blog with slug: {slug}</p>
-            <Link 
+            <h1 className="text-4xl font-bold bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 bg-clip-text text-transparent mb-4">
+              Blog Not Found
+            </h1>
+            <p className="text-gray-700 mb-4">
+              Could not find blog with slug: {slug}
+            </p>
+            <Link
               href="/blog"
               className="inline-block bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 text-white px-4 py-2 rounded-lg hover:opacity-90 transition duration-300"
             >
@@ -158,17 +176,17 @@ export default async function SingleBlogPage({ params }) {
     );
   }
 
-  const formattedDate = new Date(blog.date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+  const formattedDate = new Date(blog.date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   });
 
   return (
     <article className="min-h-screen bg-gradient-to-b from-blue-50 to-teal-50">
       <div className="relative w-full h-80 md:h-96 max-w-6xl mx-auto">
-        <Image 
-          src={blog.image || '/images/urology-blog-hero.jpg'} 
+        <Image
+          src={blog.image || "/images/urology-blog-hero.jpg"}
           alt={blog.alt || blog.title}
           fill
           priority
@@ -176,10 +194,12 @@ export default async function SingleBlogPage({ params }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-70 rounded-lg"></div>
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-2 drop-shadow-md">{blog.title}</h1>
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-2 drop-shadow-md">
+            {blog.title}
+          </h1>
         </div>
       </div>
-      
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
         <div className="bg-white rounded-xl shadow-lg overflow-hidden p-6 md:p-10 border border-blue-100">
           <div className="flex items-center mb-8 pb-4 border-b border-blue-100">
@@ -191,25 +211,30 @@ export default async function SingleBlogPage({ params }) {
               </div>
               <div>
                 <p className="font-medium text-gray-900">Dr. Vishnu Agrawal</p>
-                <p className="text-sm text-gray-500">Published on {formattedDate}</p>
+                <p className="text-sm text-gray-500">
+                  Published on {formattedDate}
+                </p>
               </div>
             </div>
           </div>
-          
+
           {blog.tags && (
             <div className="flex flex-wrap gap-2 mb-6">
               {blog.tags.map((tag, index) => (
-                <span key={index} className="inline-block bg-gradient-to-r from-blue-100 to-teal-100 text-blue-700 text-xs px-3 py-1 rounded-full border border-blue-200 shadow-sm">
+                <span
+                  key={index}
+                  className="inline-block bg-gradient-to-r from-blue-100 to-teal-100 text-blue-700 text-xs px-3 py-1 rounded-full border border-blue-200 shadow-sm"
+                >
                   {tag}
                 </span>
               ))}
             </div>
           )}
-          
+
           <BlogContent content={blog.content} />
-          
+           <div><a className="bg-[#25D366] text-center text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition-colors shadow-md flex items-center" href="/bookconsultation"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"  className="text-center lucide lucide-calendar mr-2" aria-hidden="true"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>BOOK CONSULTATION</a></div>
           <div className="mt-10 pt-6 border-t border-blue-100">
-            <Link 
+            <Link
               href="/blog"
               className="inline-block bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 text-white px-6 py-3 rounded-lg hover:opacity-90 transition duration-300 shadow-md"
             >

@@ -394,8 +394,11 @@ const ClientBlogPage = ({ blogs }) => {
                     />
                   </svg>
                   <div>
-                    <h4 className="font-semibold">Kshetrapal Hospital</h4>
-                    <p className="text-blue-100">Ajmer, Rajasthan</p>
+                    <h4 className="font-semibold">Agrawal Clinic address 📍</h4>
+                    <p className="text-blue-100 text-wrap">
+                      4/172, Gyan marg, Makarwali Rd, near vinayak complex,
+                      Panchsheel Nagar, Ajmer, Rajasthan 305004
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start">

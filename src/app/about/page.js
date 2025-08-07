@@ -40,20 +40,22 @@ export const metadata = {
     description: 'Meet Ajmer\'s top kidney and prostate specialist - his qualifications, treatment philosophy and clinic values',
     images: ['/images/about-twitter-card.jpg'],
   },
-   robots: {
+  robots: {
     index: true,
     follow: true,
     googleBot: {
       index: true,
       follow: true,
-      'max-image-preview': 'large',
+      "max-image-preview": "large",
     },
   },
-   other: {
-    'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
-    'author': 'Dr. Vishnu Agrawal',
-    'generator': 'Next.js',
-    'theme-color': '#ffffff',
+  other: {
+    "application-name": "Dr. Vishnu Agrawal - Urology Clinic",
+    author: "Dr. Vishnu Agrawal",
+    Publisher: "Dr. Vishnu Agrawal",
+    "publisher-url": "https://drvishnuagrawal.in",
+    generator: "Next.js",
+    "theme-color": "#ffffff",
   },
 };
 

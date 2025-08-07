@@ -53,6 +53,8 @@ export const metadata = {
    other: {
     'application-name': 'Dr. Vishnu Agrawal Urology Clinic',
     'author': 'Dr. Vishnu Agrawal',
+    'publisher': 'Dr. Vishnu Agrawal',
+    'publisher-url': 'https://drvishnuagrawal.in',
     'generator': 'Next.js',
     'theme-color': '#ffffff',
   },

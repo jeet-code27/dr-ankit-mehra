@@ -195,19 +195,19 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}blog/top-urologist-ajmer-dr-vishnu-agrawal`,
+      url: `${baseUrl}/blog/top-urologist-ajmer-dr-vishnu-agrawal`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}blog/best-urology-specialist-ajmer-dr.-vishnu-agrawal`,
+      url: `${baseUrl}/blog/best-urology-specialist-ajmer-dr.-vishnu-agrawal`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
      {
-      url: `${baseUrl}blog/urinary-incontinence-treatment-ajmer-dr-vishnu-agrawal`,
+      url: `${baseUrl}/blog/urinary-incontinence-treatment-ajmer-dr-vishnu-agrawal`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,

@@ -220,8 +220,8 @@ const AboutDoctorSection = () => {
                   {[
                     "Prostate Surgery (18.5 fr)",
                     "Kidney Stone Surgery",
-                    "Female Incompetance",
-                    "Eractile Dysfunction",
+                    "Female Incontinence",
+                    "Erectile Dysfunction",
                     "Laparoscopic Surgery",
                     "Andrology",
                     "Female Urology",

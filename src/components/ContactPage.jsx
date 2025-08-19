@@ -124,14 +124,14 @@ const ContactPage = () => {
                 variants={slideInFromRight}
               >
                 <div className="rounded-full bg-[#C3E1F2] overflow-hidden">
-                  <div className="relative w-full" style={{ maxHeight: '650px' }}>
+                  <div className="relative w-full" style={{ maxHeight: '500px' }}>
                     <Image
                       src="/images/drvishnu1.png"
                       alt="Dr. Vishnu Agrawal"
                       width={650}
                       height={650}
                       priority
-                      className="w-full h-auto max-h-[650px]"
+                      className="w-full h-auto max-h-[450px]"
                     />
                   </div>
                 </div>

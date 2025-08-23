@@ -1,377 +1,203 @@
 'use client';
 import Link from 'next/link';
-import { ChevronRight, Phone, Calendar, ArrowRight, Check, Shield, Trophy } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useState, useEffect, useRef } from 'react';
+import { ChevronLeft, ChevronRight, Phone, Calendar, MapPin, Award } from 'lucide-react';
 
-const HeroSection = () => {
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.2
+export default function HeroSection() {
+  const slides = [
+    {
+      id: 1,
+      image: '/images/home/woman-beauty-clinic-face-treatment-scaled.jpg',
+    },
+    {
+      id: 2,
+      image: '/images/home/doctor-performing-laser-hair-removal-patient-skin-scaled.jpg',
+    },
+    {
+      id: 3,
+      image: '/images/home/person-dealing-with-rosacea-scaled.jpg',
+    },
+    {
+      id: 4,
+      image: '/images/home/head-leaning.jpeg',
+    },
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const containerRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(0);
+  const slideInterval = 5000;
+  const timerRef = useRef(null);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.clientWidth);
       }
+    };
+
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    updateWidth();
+    checkScreenSize();
+    
+    window.addEventListener('resize', updateWidth);
+    window.addEventListener('resize', checkScreenSize);
+    
+    return () => {
+      window.removeEventListener('resize', updateWidth);
+      window.removeEventListener('resize', checkScreenSize);
+    };
+  }, []);
+
+  useEffect(() => {
+    stopAutoSlide();
+    if (containerWidth > 0 && !isHovered) {
+      startAutoSlide();
     }
+    return () => stopAutoSlide();
+  }, [containerWidth, slides.length, isHovered]);
+
+  const startAutoSlide = () => {
+    timerRef.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, slideInterval);
   };
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+  const stopAutoSlide = () => {
+    clearInterval(timerRef.current);
   };
 
-  const fadeInVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.8 } }
+  const handlePrev = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  const scaleUpVariants = {
-    hidden: { scale: 0.95, opacity: 0 },
-    visible: { scale: 1, opacity: 1, transition: { duration: 0.6 } }
+  const handleNext = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
-  // Intersection Observer hooks
-  const [titleRef, titleInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.2
-  });
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
 
-  const [highlightRef, highlightInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.2
-  });
+  const sliderStyle = {
+    transform: `translateX(-${currentSlide * containerWidth}px)`,
+    transition: 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+    display: 'flex',
+    width: `${slides.length * containerWidth}px`,
+    height: '100%',
+  };
 
-  const [buttonsRef, buttonsInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
+  const slideStyle = {
+    flexShrink: 0,
+    width: containerWidth ? `${containerWidth}px` : '100%',
+    height: '100%',
+    position: 'relative',
+  };
 
   return (
-    <section className="relative w-full bg-gradient-to-b from-blue-50 to-white overflow-hidden py-16 md:py-24">
-      {/* Background Elements with Animation */}
-      <motion.div 
-        className="absolute top-0 left-0 w-full h-full overflow-hidden z-0"
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-      >
-        <motion.div 
-          className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-blue-100 opacity-70"
-          variants={itemVariants}
-        ></motion.div>
-        <motion.div 
-          className="absolute top-32 -left-24 w-64 h-64 rounded-full bg-blue-100 opacity-50"
-          variants={itemVariants}
-        ></motion.div>
-        {/* <motion.div 
-          className="absolute bottom-0 right-0 w-full h-1/2 bg-gradient-to-t from-white to-transparent"
-          variants={itemVariants}
-        ></motion.div> */}
-      </motion.div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          {/* Main Content */}
-          <div className="w-full lg:w-3/5 text-center lg:text-left">
-            <motion.div
-              initial="hidden"
-              animate={titleInView ? "visible" : "hidden"}
-              variants={fadeInVariants}
-              ref={titleRef}
-            >
-              <motion.div 
-                className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-800 font-medium text-sm mb-6"
-                initial={{ scale: 0.9 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.3 }}
-              >
-                Advanced Urology Care in Ajmer
-              </motion.div>
-              
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                <motion.span 
-                  className="text-blue-700"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  EXPERT
-                </motion.span> UROLOGY CARE,
-                <br />
-                <motion.span 
-                  className="relative"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  COMPASSIONATE 
-                  <span className="absolute -bottom-20 md:block hidden left-0 w-full h-1 bg-blue-500 opacity-70 rounded-full"></span>
-                </motion.span> TREATMENT 
-              </h1>
-              
-              <motion.p 
-                className="text-lg text-gray-700 mb-8 max-w-2xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-              >
-                Providing advanced solutions for kidney stones, prostate issues, and urological health. 
-                <span className="font-bold text-blue-800"> Trust Dr. Vishnu Agrawal</span>, your partner in care.
-              </motion.p>
-            </motion.div>
-            
-            <motion.div 
-              className="flex flex-col items-center sm:flex-row gap-5 sm:justify-center justify-center lg:justify-start mb-12"
-              ref={buttonsRef}
-              initial="hidden"
-              animate={buttonsInView ? "visible" : "hidden"}
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.1
-                  }
-                }
-              }}
-            >
-              <motion.div variants={scaleUpVariants}>
-                <Link href="/bookconsultation" passHref>
-                  <button 
-                    className="flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-medium py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
-                    whilehover={{ scale: 1.05 }}
-                    whiletap={{ scale: 0.98 }}
-                  >
-                    <Calendar className="w-5 h-5 mr-2" />
-                    Book Consultation
-                    <ChevronRight className="w-5 h-5 ml-1" />
-                  </button>
-                </Link>
-              </motion.div>
-              <motion.div variants={scaleUpVariants}>
-                <Link href="/services" passHref>
-                  <button 
-                    className="flex items-center justify-center bg-white hover:bg-gray-50 text-blue-800 font-medium py-3 px-8 rounded-full text-lg border-2 border-blue-300 transition-all duration-300 hover:border-blue-500 hover:-translate-y-1"
-                    whilehover={{ scale: 1.05 }}
-                    whiletap={{ scale: 0.98 }}
-                  >
-                    Our Services
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </button>
-                </Link>
-              </motion.div>
-            </motion.div>
-            
-            {/* Contact Quick Info */}
-            <motion.div 
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-gray-700"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-            >
-              <div className="flex items-center">
-                <Phone className="w-5 h-5 text-blue-600 mr-2" />
-                <span className="font-medium">
-  <a href="tel:+918240970287">+91 82409 70287</a>
-</span>
+    <section
+      ref={containerRef}
+      className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-blue-900 to-teal-800"
+      aria-label="Hero Section"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {containerWidth > 0 && (
+        <div style={sliderStyle}>
+          {slides.map((slide) => (
+            <div key={slide.id} style={slideStyle}>
+              <div className="relative w-full h-full">
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transition-transform duration-700 hover:scale-105"
+                  style={{
+                    backgroundImage: `url(${slide.image})`,
+                    zIndex: 0,
+                  }}
+                />
               </div>
-              <div className="h-5 w-px bg-gray-300 hidden sm:block"></div>
-              {/* <div className="font-medium text-blue-600 hover:text-blue-800 transition-colors">
-                <Link href="/emergency">Emergency Care Available</Link>
-              </div> */}
-            </motion.div>
-          </div>
-          
-          {/* Prostate Surgery Highlight Box with Exclusive Tag */}
-          <motion.div 
-            className="w-full lg:w-2/5"
-            ref={highlightRef}
-            initial="hidden"
-            animate={highlightInView ? "visible" : "hidden"}
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { 
-                opacity: 1, 
-                y: 0,
-                transition: { 
-                  duration: 0.6,
-                  ease: "easeOut"
-                }
-              }
-            }}
-          >
-            <div className="relative bg-gradient-to-br from-blue-600 to-blue-900 rounded-2xl shadow-2xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
-              {/* Decorative elements */}
-              <motion.div 
-                className="absolute top-0 right-0 w-32 h-32 bg-blue-400 rounded-full opacity-20 -mr-10 -mt-10"
-                animate={{
-                  scale: [1, 1.1, 1],
-                  opacity: [0.2, 0.3, 0.2]
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              ></motion.div>
-              <motion.div 
-                className="absolute bottom-0 left-0 w-24 h-24 bg-blue-400 rounded-full opacity-20 -ml-10 -mb-10"
-                animate={{
-                  scale: [1, 1.1, 1],
-                  opacity: [0.2, 0.3, 0.2]
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 2
-                }}
-              ></motion.div>
-              
-              {/* Prominent Exclusive Banner at the top of the box */}
-              <motion.div 
-                className="w-full bg-[#25D366] py-2 px-4 flex items-center justify-center"
-                initial={{ y: -20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4 }}
-              >
-                <Trophy className="w-5 h-5 text-yellow-300 mr-2" />
-                <span className="text-white font-bold uppercase text-sm">Exclusive in Ajmer</span>
-                <Trophy className="w-5 h-5 text-yellow-300 ml-2" />
-              </motion.div>
-              
-              {/* Content container */}
-              <div className="p-6">
-                <motion.div 
-                  className="bg-white bg-opacity-90 rounded-xl p-6 backdrop-blur-sm"
-                  initial={{ scale: 0.95 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  <motion.div 
-                    className="flex items-center mb-4"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.3 }}
-                  >
-                    <div className="w-12 h-12 rounded-full bg-blue-700 flex items-center justify-center mr-3">
-                      <span className="text-white font-bold text-lg">Dr.</span>
-                    </div>
-                    <div>
-                      <p className="text-gray-900 font-bold text-lg">Dr. Vishnu Agrawal</p>
-                      <p className="text-blue-800">Urologist Specialist</p>
-                    </div>
-                  </motion.div>
-                
-                  <motion.h3 
-                    className="text-3xl font-bold text-blue-900 mb-3 flex items-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                  >
-                    <Shield className="w-6 h-6 mr-2 text-blue-700" />
-                    Prostate Surgery 
-                    <motion.span 
-                      className="bg-[#25D366] text-white text-sm font-bold ml-0.5 px-2 py-1 rounded inline-flex items-center"
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ 
-                        type: "spring",
-                        stiffness: 500,
-                        damping: 15,
-                        delay: 0.5
-                      }}
-                    >
-                      18.5 French
-                    </motion.span>
-                  </motion.h3>
-                  
-                  <motion.p 
-                    className="text-lg text-blue-800 font-medium mb-4"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.6 }}
-                  >
-                    Advanced minimally invasive technique with breakthrough benefits
-                  </motion.p>
-                  
-                  {/* Benefits Grid */}
-                  <motion.div 
-                    className="grid lg:grid-cols-2  gap-2 mb-4"
-                    initial="hidden"
-                    animate="visible"
-                    variants={{
-                      hidden: { opacity: 0 },
-                      visible: {
-                        opacity: 1,
-                        transition: {
-                          staggerChildren: 0.1
-                        }
-                      }
-                    }}
-                  >
-                    {[
-                      "Minimal chances of stricture",
-                      "Minimal burning after surgery",
-                      "Faster recovery time",
-                      "Reduced hospital stay"
-                    ].map((benefit, index) => (
-                      <motion.div 
-                        key={index}
-                        className="flex items-start text-gray-700 bg-blue-50 p-2 rounded"
-                        variants={{
-                          hidden: { opacity: 0, y: 10 },
-                          visible: { opacity: 1, y: 0 }
-                        }}
-                        whilehover={{ scale: 1.02 }}
-                      >
-                        <Check className="w-5 h-5 text-green-600 mr-1 flex-shrink-0" />
-                        <span className="text-sm font-medium">{benefit}</span>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                  
-                  <motion.div
-                    whilehover={{ scale: 1.02 }}
-                    whiletap={{ scale: 0.98 }}
-                  >
-                    <Link href="/services/prostate-surgery" passHref>
-                      <button className="w-full bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-bold py-3 rounded-lg transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl">
-                        Discover More
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </button>
-                    </Link>
-                  </motion.div>
-                </motion.div>
-              </div>
-              
-              {/* Bottom banner */}
-              <motion.div 
-                className="bg-[#25D366] py-2 px-4 text-center"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.8 }}
-              >
-                <p className="font-bold text-white">
-                  First & Only Specialist to Perform This Procedure in Ajmer
-                </p>
-              </motion.div>
             </div>
-          </motion.div>
+          ))}
         </div>
+      )}
+
+      {/* Navigation Buttons */}
+      {/* Large screens: center vertically */}
+      <button
+        onClick={handlePrev}
+        className="hidden sm:flex absolute left-6 top-1/2 transform -translate-y-1/2 bg-white/10 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/20 transition-all duration-300 z-20 focus:outline-none focus:ring-2 focus:ring-teal-400 group"
+        aria-label="Previous Slide"
+      >
+        <ChevronLeft className="w-6 h-6 group-hover:scale-110 transition-transform duration-200" />
+      </button>
+      <button
+        onClick={handleNext}
+        className="hidden sm:flex absolute right-6 top-1/2 transform -translate-y-1/2 bg-white/10 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/20 transition-all duration-300 z-20 focus:outline-none focus:ring-2 focus:ring-teal-400 group"
+        aria-label="Next Slide"
+      >
+        <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform duration-200" />
+      </button>
+
+      {/* Small screens: buttons at bottom */}
+      <div className="flex sm:hidden absolute inset-x-0 bottom-6 justify-between px-6 z-20">
+        <button
+          onClick={handlePrev}
+          className="bg-white/10 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-400 group"
+          aria-label="Previous Slide"
+        >
+          <ChevronLeft className="w-6 h-6 group-hover:scale-110 transition-transform duration-200" />
+        </button>
+        <button
+          onClick={handleNext}
+          className="bg-white/10 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-400 group"
+          aria-label="Next Slide"
+        >
+          <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform duration-200" />
+        </button>
       </div>
-      <hr className='mt-8'/>
+
+      {/* Progress Bar */}
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20 z-20">
+        <div
+          className="h-full bg-gradient-to-r from-teal-400 to-blue-500 transition-all duration-300"
+          style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
+        />
+      </div>
+
+      {/* Slide Indicators */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              currentSlide === index ? 'bg-white' : 'bg-white/50'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 1s ease-out;
+        }
+      `}</style>
     </section>
   );
-};
-
-export default HeroSection;
+}

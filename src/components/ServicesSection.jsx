@@ -215,7 +215,7 @@ const ServicesSection = () => {
   ];
 
   const filteredServices =
-    selectedCategory === "all"
+    selectedCategory == "all"
       ? services
       : services.filter((service) => service.category === selectedCategory);
 

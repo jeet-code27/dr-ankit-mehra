@@ -66,26 +66,7 @@ const PatientReviews = () => {
           variants={itemVariants}
         />
         
-        <motion.h3 
-          className="text-xl md:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-blue-500 to-blue-300 inline-block text-transparent bg-clip-text leading-relaxed"
-          variants={itemVariants}
-        >
-          <motion.strong 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-          >
-            Dr. Vishnu Agrawal - Best Urologist in Ajmer
-          </motion.strong>
-          <motion.span 
-            className="block text-lg md:text-xl lg:text-2xl mt-1"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-          >
-            M.B.B.S.,M.S., M.Ch. Urologist 
-          </motion.span>
-        </motion.h3>
+       
         
         <motion.div
           ref={widgetRef}

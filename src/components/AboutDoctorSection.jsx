@@ -1,299 +1,215 @@
-'use client';
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { IoBagAddSharp } from "react-icons/io5";
+"use client";
+
+import React, { useEffect, useRef } from 'react';
+import Head from 'next/head';
 
 const AboutDoctorSection = () => {
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.2
+  const statsRef = useRef([]);
+
+  useEffect(() => {
+    // Add smooth scroll behavior
+    const handleScroll = (e) => {
+      e.preventDefault();
+      const targetId = e.currentTarget.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
+        });
       }
-    }
-  };
+    };
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
+    // Add event listeners to anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(anchor => {
+      anchor.addEventListener('click', handleScroll);
+    });
+
+    // Add animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    if (statsRef.current) {
+      statsRef.current.forEach(el => {
+        if (el) {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(20px)';
+          el.style.transition = 'all 0.6s ease';
+          observer.observe(el);
+        }
+      });
+    }
+
+    // Cleanup event listeners
+    return () => {
+      anchorLinks.forEach(anchor => {
+        anchor.removeEventListener('click', handleScroll);
+      });
+      if (statsRef.current) {
+        statsRef.current.forEach(el => {
+          if (el) observer.unobserve(el);
+        });
       }
-    }
-  };
-
-  const fadeInVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.8 } }
-  };
-
-  const scaleUpVariants = {
-    hidden: { scale: 0.95, opacity: 0 },
-    visible: { scale: 1, opacity: 1, transition: { duration: 0.6 } }
-  };
-
-  // Intersection Observer hooks
-  const [titleRef, titleInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.2
-  });
-
-  const [imageRef, imageInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.2
-  });
-
-  const [contentRef, contentInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
-
-  const [specializationsRef, specializationsInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
+    };
+  }, []);
 
   return (
-    <section className="w-full bg-gradient-to-b from-white to-blue-50 py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <motion.div 
-          className="text-center mb-12"
-          ref={titleRef}
-          initial="hidden"
-          animate={titleInView ? "visible" : "hidden"}
-          variants={containerVariants}
-        >
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-blue-800 mb-2"
-            variants={itemVariants}
-          >
-            Best Urologist in Ajmer
-          </motion.h2>
-          <motion.p 
-            className="text-xl text-gray-700 font-medium"
-            variants={itemVariants}
-          >
-            Top Urological Care by Urology Expert
-          </motion.p>
-        </motion.div>
+    <>
+    
+       
+         
         
-        <div 
-        className="flex flex-col lg:flex-row items-center gap-12">
-          {/* Left Image with Credentials */}
-          <motion.div 
-            className="w-full lg:w-2/5"
-            
-            ref={imageRef}
-            initial="hidden"
-            animate={imageInView ? "visible" : "hidden"}
-            variants={{
-              hidden: { opacity: 0, x: -50 },
-              visible: { 
-                opacity: 1, 
-                x: 0,
-                transition: { 
-                  duration: 0.6,
-                  ease: "easeOut"
-                }
-              }
-            }}
-          >
-            <div 
-            className="relative rounded-lg overflow-hidden shadow-xl  bg-gray-100 p-6 hover:shadow-2xl transition-shadow duration-300">
-              <motion.div 
-                className="relative w-full rounded-lg aspect-square mb-17 "
-                whilehover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Image
-                  src="/images/drvishnu1.png" 
-                  alt="Dr. Vishnu Agrawal"
-                  fill
-                  className="rounded-lg object-cover "
-                  sizes="(max-width: 768px) 100vw, 40vw"
-                />
-              </motion.div>
+     
+      <div className="bg-gray-50">
+        {/* Main Content */}
+        <main className="container mx-auto px-6 py-12">
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="grid md:grid-cols-2 gap-0">
+              {/* Left Side - Doctor's Photo and Info */}
+              <div className="gradient-bg p-8 md:p-12 flex flex-col items-center justify-center">
+               <div className="relative mb-6 group overflow-hidden rounded-lg max-w-sm mx-auto">
+  <img 
+    src="/images/home/dr-ankit-mehra.jpeg" 
+    alt="Dr. Ankit Mehra" 
+    className="w-full aspect-square object-cover border-8 border-white shadow-2xl transform transition-transform duration-500 group-hover:scale-110"
+  />
+</div>
+
+
+                <div className="text-center">
+                  <h1 className="text-3xl font-bold text-gray-800 mb-2">Dr. Ankit Mehra</h1>
+                  <p className="text-lg text-gray-600 font-medium">MD in Skin & VD</p>
+                  <p className="text-sm text-gray-500 mt-2 px-4">
+                    Venereology and Dermatology Specialist
+                  </p>
+                </div>
+              </div>
               
-              <motion.div 
-                className="text-center"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-              >
-                <h3 className="text-2xl font-bold text-gray-900 mb-1">Dr. Vishnu Agrawal</h3>
-                <p className="text-blue-700 font-medium mb-2"> M.B.B.S.,M.S., M.Ch. Urologist </p>
-                <p className="text-gray-600 mb-4">Consultant Urologist & Laparoscopic Surgeon</p>
+              {/* Right Side - Clinic Information */}
+              <div className="p-8 md:p-12">
+                <div className="mb-6">
+                  <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                    Welcome to Dr. Ankit Mehra’s Dermatology Clinic in Ajmer
+                  </h2>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    Where expertise, innovation, and compassionate care unite to offer comprehensive solutions for all your skin and hair needs. Dr. Ankit Mehra brings over 12 years of experience in the field, with a background as a former Assistant Professor at JLN Medical College, Ajmer.
+                  </p>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    Having conducted over 8,000 consultations and performed more than 500 laser and skin treatments, Dr. Mehra is a trusted expert who combines clinical precision with a personalized approach to patient care.
+                  </p>
+                  <p className="text-gray-600 leading-relaxed">
+                    Our clinic specializes in diagnosing, treating, and managing a wide range of dermatological concerns. We are dedicated to enhancing your skin and hair health by utilizing advanced technology and customized treatment plans designed to boost your confidence.
+                  </p>
+                </div>
                 
-                <motion.div 
-                  className="flex justify-center flex-col space-y-1 items-center lg:flex-row space-x-4 mb-2"
-                  initial="hidden"
-                  animate="visible"
-                  variants={{
-                    hidden: { opacity: 0 },
-                    visible: {
-                      opacity: 1,
-                      transition: {
-                        staggerChildren: 0.1
-                      }
-                    }
-                  }}
-                >
-                  <motion.div 
-                    className="flex items-center"
-                    variants={itemVariants}
+                {/* Stats Grid */}
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div 
+                    ref={el => statsRef.current[0] = el}
+                    className="bg-blue-50 rounded-lg p-4 hover-lift"
                   >
-                    <svg className="w-5 h-5 text-blue-600 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-gray-700">15+ Years Experience</span>
-                  </motion.div>
-                  <motion.div 
-                    className="flex items-center"
-                    variants={itemVariants}
+                    <div className="flex items-center mb-2">
+                      <i className="fas fa-calendar-check text-blue-600 mr-2"></i>
+                      <span className="text-2xl font-bold text-gray-800">12+</span>
+                    </div>
+                    <p className="text-sm text-gray-600">Years Experience</p>
+                  </div>
+                  <div 
+                    ref={el => statsRef.current[1] = el}
+                    className="bg-green-50 rounded-lg p-4 hover-lift"
                   >
-                   <IoBagAddSharp className='text-[#155DFC]'/>
-                    <span className="text-gray-700">10000+ Surgeries</span>
-                  </motion.div>
-                </motion.div>
-              </motion.div>
+                    <div className="flex items-center mb-2">
+                      <i className="fas fa-chalkboard-teacher text-green-600 mr-2"></i>
+                      <span className="text-2xl font-bold text-gray-800">Former</span>
+                    </div>
+                    <p className="text-sm text-gray-600">Assistant Professor</p>
+                  </div>
+                  <div 
+                    ref={el => statsRef.current[2] = el}
+                    className="bg-purple-50 rounded-lg p-4 hover-lift"
+                  >
+                    <div className="flex items-center mb-2">
+                      <i className="fas fa-comments text-purple-600 mr-2"></i>
+                      <span className="text-2xl font-bold text-gray-800">8000+</span>
+                    </div>
+                    <p className="text-sm text-gray-600">Consultations</p>
+                  </div>
+                  <div 
+                    ref={el => statsRef.current[3] = el}
+                    className="bg-orange-50 rounded-lg p-4 hover-lift"
+                  >
+                    <div className="flex items-center mb-2">
+                      <i className="fas fa-laser text-orange-600 mr-2"></i>
+                      <span className="text-2xl font-bold text-gray-800">500+</span>
+                    </div>
+                    <p className="text-sm text-gray-600">Laser Treatments</p>
+                  </div>
+                </div>
+                
+                {/* Specializations */}
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-3">Our Specializations</h3>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                      <i className="fas fa-check-circle text-green-500 mr-1"></i>Acne Treatment
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                      <i className="fas fa-check-circle text-green-500 mr-1"></i>Anti-Aging
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                      <i className="fas fa-check-circle text-green-500 mr-1"></i>Hair Loss
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                      <i className="fas fa-check-circle text-green-500 mr-1"></i>Skin Cancer
+                    </span>
+                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                      <i className="fas fa-check-circle text-green-500 mr-1"></i>Laser Therapy
+                    </span>
+                  </div>
+                </div>
+                
+                {/* Read More Button */}
+                <div className="flex justify-center">
+                  <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 flex items-center space-x-2 hover-lift">
+                    <span>READ MORE</span>
+                    <i className="fas fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
             </div>
-          </motion.div>
-          
-          {/* Right Content */}
-          <motion.div 
-            className="w-full lg:w-3/5"
-            ref={contentRef}
-            initial="hidden"
-            animate={contentInView ? "visible" : "hidden"}
-            variants={containerVariants}
-          >
-            <motion.p 
-              className="text-lg text-gray-700 mb-6 leading-relaxed"
-              variants={itemVariants}
-            >
-              Dr. Vishnu Agrawal is one of the best urologists in Ajmer, specializing in advanced technology for Laparoscopic Surgery, Andrology, Female Urology, Uro-Oncology, and Kidney Surgery. With over 15+ years of experience in the field, Dr. Vishnu Agrawal is highly skilled and knowledgeable in treating various urological conditions with care and precision.
-            </motion.p>
-            
-            <motion.p 
-              className="text-lg text-gray-700 mb-8 leading-relaxed"
-              variants={itemVariants}
-            >
-              Currently practicing at Kshetrapal Hospital, Dr. Vishnu Agrawal provides expert consultation and treatment in Urology, Kidney Disorders, and Female Urology. As a specialist urologist and consultant laparoscopic surgeon, he is known for his advanced techniques and patient-centric approach. His commitment to offering the best urological care makes him a trusted name in Ajmer.
-            </motion.p>
-            
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8"
-              ref={specializationsRef}
-              initial="hidden"
-              animate={specializationsInView ? "visible" : "hidden"}
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.1,
-                    when: "beforeChildren"
-                  }
-                }
-              }}
-            >
-              <motion.div 
-                className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-                variants={scaleUpVariants}
-                whilehover={{ y: -5 }}
-              >
-                <h4 className="text-blue-800 font-bold mb-2 flex items-center">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  Specializations
-                </h4>
-                <ul className="text-gray-700 ">
-                  {[
-                    "Prostate Surgery (18.5 fr)",
-                    "Kidney Stone Surgery",
-                    "Female Incontinence",
-                    "Erectile Dysfunction",
-                    "Laparoscopic Surgery",
-                    "Andrology",
-                    "Female Urology",
-                    "Uro-Oncology",
-                    "Kidney Surgery"
-                  ].map((item, index) => (
-                    <motion.li 
-                      key={index}
-                      className="mb-1 border-b-2 p-2 border-b-gray-100 rounded-lg"
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.05 }}
-                    >
-                      {item}
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
-              
-              <motion.div 
-                className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-                variants={scaleUpVariants}
-                whilehover={{ y: -5 }}
-              >
-                <h4 className="text-blue-800 font-bold mb-2 flex items-center">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                  </svg>
-                  Patient Care
-                </h4>
-                <ul className="text-gray-700  ">
-                  {[
-                    "Patient-Centric Approach",
-                    "Advanced Diagnostic Methods",
-                    "Minimally Invasive Procedures",
-                    "Personalized Treatment Plans",
-                    "Comprehensive Follow-up Care"
-                  ].map((item, index) => (
-                    <motion.li 
-                      key={index}
-                      className="mb-1 border-b-2 p-2 border-b-gray-100 rounded-lg"
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.05 + 0.2 }}
-                    >
-                    {item}
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
-            </motion.div>
-            
-            <motion.div 
-              className="flex justify-center md:justify-start"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-            >
-              <Link href="/bookconsultation" passHref>
-                <motion.button 
-                  className="bg-gradient-to-r from-blue-600 cursor-pointer to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-medium py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-                  whilehover={{ scale: 1.05 }}
-                  whiletap={{ scale: 0.98 }}
-                >
-                  Book a Consultation
-                </motion.button>
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
+          </div>
+        </main>
       </div>
-    </section>
+          
+        <style jsx global>{`
+          body {
+            font-family: 'Inter', sans-serif;
+          }
+          .gradient-bg {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+          }
+          .hover-lift {
+            transition: all 0.3s ease;
+          }
+          .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+          }
+        `}</style>
+       
+
+    </>
   );
 };
 

@@ -1,8 +1,14 @@
+import AboutDoctor from "@/components/AboutDoctor";
 import AboutDoctorSection from "@/components/AboutDoctorSection";
-import FAQSection from "@/components/FAQSection";
+import ExpertTeam from "@/components/ExpertTeam";
+ 
+ 
+import GallerySection from "@/components/GallerySection";
+ 
 import HeroSection from "@/components/HeroSection";
 import PatientReviews from "@/components/PatientReviews";
-import ServicesSection from "@/components/ServicesSection";
+ 
+ 
 import WhyChooseSection from "@/components/WhyChooseSection";
 
 export const metadata = {
@@ -291,12 +297,14 @@ export default function Home() {
       />
       <HeroSection />
       <AboutDoctorSection />
-      <ServicesSection />
+      <AboutDoctor/>
+    <ExpertTeam/>
+     
       <WhyChooseSection />
-      <PatientReviews />
-      <div className="bg-gradient-to-b from-white to-blue-50">
-        <FAQSection />
-      </div>
+         <PatientReviews />
+       <GallerySection/>
+   
+      
     </>
   );
 }

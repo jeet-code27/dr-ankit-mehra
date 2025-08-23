@@ -25,22 +25,21 @@ export default function Footer() {
 
 
     const services = [
-        { href: "/services/prostate-surgery", label: "Prostate Surgery" },
-        { href: "/services/urinary-incontinence-treatment", label: "Urinary Incontinence" },
-        { href: "/services/ureteric-stone", label: "Ureteric Stone" },
-        { href: "/services/all-disease-related-urology", label: "All Disease-Realted Urology" },
-        { href: "/services", label: "All Services" }
+        { href: "/skin-treatments", label: "Skin Treatments" },
+        { href: "/hair-treatments-2", label: "Hair Treatments" },
+        { href: "/laser-treatments", label: "Laser Treatments" },
+       
       ];
       
   
   const quickLinks = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About Us" },
-    { href: "/services", label: "Our Services" },
-    // { href: "/testimonials", label: "Testimonials" },
-    { href: "/blog", label: "Health Blog" },
-    { href: "/contact", label: "Contact Us" },
-    { href: "/bookconsultation", label: "Book Consultation" },
+    { href: "/about-us", label: "About Us" },
+    
+    { href: "/blogs", label: "Blogs" },
+    { href: "/contact-us", label: "Contact Us" },
+    { href: "/gallery-2", label: "Gallery" },
+    
 
   ];
 
@@ -57,78 +56,34 @@ export default function Footer() {
   return (
     <footer className="relative">
       {/* Appointment Banner */}
-      <div className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 py-12 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <div className="absolute top-10 left-10 w-20 h-20 rounded-full bg-white"></div>
-          <div className="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-white"></div>
-          <div className="absolute top-1/2 left-1/3 w-16 h-16 rounded-full bg-white"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-6 md:mb-0 text-center md:text-left">
-              <motion.h2 
-                className="text-2xl md:text-3xl font-bold text-white mb-2"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                Need a Medical Consultation?
-              </motion.h2>
-              <motion.p 
-                className="text-white text-opacity-90 max-w-xl"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                Our dedicated team of healthcare professionals is ready to help you. Schedule an appointment today.
-              </motion.p>
-            </div>
-            
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <Link href="/bookconsultation" className="bg-[#25D366] hover:bg-opacity-90 text-white px-8 py-3 rounded-full font-medium transition-all shadow-lg flex items-center">
-                <Calendar size={18} className="mr-2" />
-                BOOK APPOINTMENT
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </div>
+       
       
       {/* Main Footer Content */}
-      <div className="bg-gray-900 text-gray-300 pt-16 pb-8">
+      <div className="bg-gradient-to-tr from-[#8ec5fc] to-[#e0c3fc] text-gray-300 pt-16 pb-8">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Column 1 - About */}
             <div>
               <div className="flex items-center mb-6">
-                <Stethoscope size={32} className="text-[#25D366] mr-2" />
+                <Stethoscope size={32} className="text-green-700  mr-2" />
                 <span className="text-2xl font-bold">
-                  <span className="text-[#0055A4]">Dr. </span>
-                  <span className="text-[#25D366]">Vishnu Agrawal</span>
+                  
+                  <span className="text-[#0055A4]">Dr. Ankit Mehra</span>
                 </span>
               </div>
               
-              <p className="mb-6 text-gray-400 leading-relaxed">
-              Best Urologist in Ajmer. Dr. Vishnu Agrawal helps patients live pain-free with advanced urological treatments.
+              <p className="mb-6 text-gray-800 leading-relaxed">
+             Best Dermatologist in Ajmer. Dr. Ankit Mehra brings 12+ years of expertise in advanced skin, hair, and laser treatments—helping you achieve healthy, glowing skin.
               </p>
               
               <div className="flex space-x-4 mb-6">
-                <Link href="https://www.facebook.com/profile.php?id=61575464253101" target="_blank" className="bg-gray-800 p-2 rounded-full hover:bg-[#0055A4] transition-colors">
+                <Link href="https://www.facebook.com/drankitmeherda" target="_blank" className="bg-[#0068C3] p-2 rounded-full hover:bg-[#0055A4] transition-colors">
                   <Facebook size={18} />
                 </Link>
                 {/* <Link href="#" className="bg-gray-800 p-2 rounded-full hover:bg-[#0055A4] transition-colors">
                   <Twitter size={18} />
                 </Link> */}
-                <Link href="https://www.instagram.com/agrawalclinicajmer/" target="_blank" className="bg-gray-800 p-2 rounded-full hover:bg-[#0055A4] transition-colors">
+                <Link href="https://www.instagram.com/drankitmehra/" target="_blank" className="bg-[#0068C3] p-2 rounded-full hover:bg-[#0055A4] transition-colors">
                   <Instagram size={18} />
                 </Link>
                 {/* <Link href="#" className="bg-gray-800 p-2 rounded-full hover:bg-[#0055A4] transition-colors">
@@ -137,37 +92,42 @@ export default function Footer() {
               </div>
               
               <div className="flex items-center mb-4">
-                <div className="bg-gray-800 p-2 rounded-full mr-3">
-                  <Phone size={16} className="text-[#25D366]" />
+                <div className=" bg-[#0068C3] hover:bg-[#0055A4] cursor-pointer transition-colors p-2 rounded-full mr-3">
+                  <Phone size={16} className="text-white " />
                 </div>
-                <span><a href="tel:+918240970287">+91 82409 70287</a></span>
+                <span><a className="text-gray-800" href="tel:+919697041111">+91 96970 41111</a></span>
               </div>
               
               <div className="flex items-center">
-                <div className="bg-gray-800 p-2 rounded-full mr-3">
-                  <Mail size={16} className="text-[#25D366]" />
+                <div className="bg-[#0068C3] hover:bg-[#0055A4] transition-colors cursor-pointer p-2 rounded-full mr-3">
+                  <Mail size={16} className="text-white" />
                 </div>
-                <a  href="https://mail.google.com/mail/?view=cm&to=agrawalclinicajmer@gmail.com"
+                <a  href="https://mail.google.com/mail/?view=cm&to=ankit456.mehra@gmail.com"
   target="_blank"
   rel="noopener noreferrer"
+  className="text-gray-800"
    
-  >agrawalclinicajmer@gmail.com</a>
+  >ankit456.mehra@gmail.com</a>
 
               </div>
             </div>
             
             {/* Column 2 - Our Services */}
             <div>
-              <h3 className="text-xl font-semibold mb-6 text-white relative pl-4 border-l-4 border-[#25D366]">
-                Our Services
-              </h3>
+             <h3 
+  className="text-xl font-semibold mb-6 text-white relative pl-4 border-l-4 border-green-700"
+  style={{ textShadow: "2px 4px 4px rgba(0, 55, 252, 0.9)" }}
+>
+  Our Services
+</h3>
+
               
               <ul className="space-y-3">
                 {services.map((service, index) => (
                   <li key={index}>
                     <Link 
                       href={service.href} 
-                      className="flex items-center text-gray-400 hover:text-[#25D366] transition-colors"
+                      className="flex items-center text-gray-700 hover:text-blue-900 hover:font-bold transition-colors"
                     >
                       <ArrowRight size={16} className="mr-2" />
                       {service.label}
@@ -179,7 +139,8 @@ export default function Footer() {
             
             {/* Column 3 - Quick Links */}
             <div>
-              <h3 className="text-xl font-semibold mb-6 text-white relative pl-4 border-l-4 border-[#25D366]">
+              <h3 className="text-xl font-semibold mb-6 text-white relative pl-4 border-l-4 border-green-700"
+  style={{ textShadow: "2px 4px 4px rgba(0, 55, 252, 0.9)" }}>
                 Quick Links
               </h3>
               
@@ -188,7 +149,7 @@ export default function Footer() {
                   <li key={index}>
                     <Link 
                       href={link.href} 
-                      className="flex items-center text-gray-400 hover:text-[#25D366] transition-colors"
+                      className="flex items-center text-gray-700 hover:text-blue-900 hover:font-bold transition-colors"
                     >
                       <ArrowRight size={16} className="mr-2" />
                       {link.label}
@@ -200,15 +161,16 @@ export default function Footer() {
             
             {/* Column 4 - Working Hours & Newsletter */}
             <div>
-              <h3 className="text-xl font-semibold mb-6 text-white relative pl-4 border-l-4 border-[#25D366]">
+              <h3 className="text-xl font-semibold mb-6 text-white relative pl-4 border-l-4 border-green-700"
+  style={{ textShadow: "2px 2px 4px rgba(0, 55, 252, 0.9)" }}>
                 Consultation Hours
               </h3>
               
               <ul className="space-y-2 mb-8">
                 {workingHours.map((item, index) => (
-                  <li key={index} className="flex justify-between text-gray-400">
+                  <li key={index} className="flex justify-between text-gray-700">
                     <span>{item.day}</span>
-                    <span className={item.day === "Sunday" ? "text-[#25D366]" : ""}>
+                    <span className={item.day === "Sunday" ? "text-gray-700" : ""}>
                       {item.hours}
                     </span>
                   </li>
@@ -222,10 +184,10 @@ export default function Footer() {
       </div>
       
       {/* Bottom Bar */}
-      <div className="bg-gray-950 text-gray-500 py-4">
+      <div className="bg-blue-900  py-4">
         <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0 text-center md:text-left">
-            <p>© {new Date().getFullYear()} Dr. Vishnu Agrawal. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Dr. Ankit Mehra, All rights reserved.</p>
           </div>
           
           <div className="flex items-center space-x-2 hidden md:block">

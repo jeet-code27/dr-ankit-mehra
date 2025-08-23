@@ -32,7 +32,7 @@ export const metadata = {
     "urinary tract infection specialist",
   ],
   openGraph: {
-    title: "Best Urologist in Ajmer | Dr. Vishnu Agrawal",
+    title: "Best Dermatologist &amp; Skin specialist in Ajmer | Dr. Ankit Mehra",
     description:
       "Expert urology care for kidney stones, prostate issues, male infertility and urinary disorders in Ajmer",
     url: "https://drvishnuagrawal.in",

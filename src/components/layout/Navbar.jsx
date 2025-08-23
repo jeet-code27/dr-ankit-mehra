@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -14,80 +13,48 @@ import {
   Instagram,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import ServicesDropdown from "../ServiceDropDown";
+ 
+import TopNavbar from "./TopNevbar";
+import SkinTreatments from "../SkinTreatments";
+import HairTreatments from "../HairTreatments";
+import LaserTreatments from "../LaserTreatments";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [isSkinOpen, setIsSkinOpen] = useState(false);
+  const [isHairOpen, setIsHairOpen] = useState(false);
+  const [isLaserOpen, setIsLaserOpen] = useState(false);
+  
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  // Treatment conditions arrays
+  const skinConditions = [
+    { label: "Skin Rejuvenation", slug: "skin-rejuvenation" },
+    { label: "Anti-Aging Treatments", slug: "anti-aging-treatments" },
+    { label: "Pigmentation Treatment", slug: "pigmentation-treatment" },
+    { label: "Scar Reduction", slug: "scar-reduction" },
+    { label: "Acne Treatment", slug: "acne-treatment" },
+  ];
+
+  const hairConditions = [
+    { label: "PRP Therapy", slug: "prp-therapy" },
+    { label: "Hair Loss Treatments", slug: "hair-loss-treatments" },
+    { label: "Scalp Micropigmentation", slug: "scalp-micropigmentation" },
+  ];
+
+  const laserConditions = [
+    { label: "Laser Hair Removal", slug: "laser-hair-removal" },
+    { label: "Laser Skin Resurfacing", slug: "laser-skin-resurfacing" },
+    { label: "Laser Tattoo Removal", slug: "laser-tattoo-removal" },
+  ];
+
   return (
     <>
       {/* Top Bar - Hidden on Mobile */}
-      <div className="hidden md:block bg-[#0055A4] text-white py-3">
-        <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-          {/* Left Section */}
-          <div className="flex space-x-8 items-center">
-            <div className="flex items-center">
-              <Phone size={18} className="mr-2" />
-              <div>
-                <span className="font-medium">Contact No.</span>
-                <br></br>
-                <a href="tel:+918240970287" className="text-sm">
-                  +91 82409 70287
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-center">
-              <MapPin size={18} className="mr-2" />
-              <div>
-                <span className="font-medium">
-                  4/172, Gyan marg, Makarwali Rd, near vinayak
-                </span>
-                <p className="text-sm">
-                  complex, Panchsheel Nagar, Ajmer, Rajasthan 305004
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center">
-              <Clock size={18} className="mr-2" />
-              <div>
-                <span className="font-medium">Working Hours</span>
-                <p className="text-sm">Mon-Sat: 4PM - 7PM</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Social Icons */}
-          <div className="flex space-x-4">
-            <Link
-              href="https://www.facebook.com/profile.php?id=61575464253101"
-              target="_blank"
-              className="hover:opacity-80 transition-opacity"
-            >
-              <Facebook size={20} />
-            </Link>
-            {/* <Link href="#" className="hover:opacity-80 transition-opacity">
-              <Twitter size={20} />
-            </Link> */}
-            <Link
-              href="https://www.instagram.com/agrawalclinicajmer/"
-              target="_blank"
-              className="hover:opacity-80 transition-opacity"
-            >
-              <Instagram size={20} />
-            </Link>
-            {/* <Link href="#" className="hover:opacity-80 transition-opacity">
-              <Youtube size={20} />
-            </Link> */}
-          </div>
-        </div>
-      </div>
-
+      <TopNavbar/>
+      
       {/* Main Navbar */}
       <div className="bg-white shadow-md py-4">
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
@@ -101,22 +68,22 @@ export default function Navbar() {
               <div className="flex items-center">
                 {/* Doctor logo image */}
                 <Image
-                  src="/images/logoo.png" // Update this path later
-                  alt="Dr. Vishnu Agrawal Logo"
+                  src="/images/logo.jpeg" // Update this path later
+                  alt="Dr. Ankit Mehra Logo"
                   width={60}
                   height={60}
                   className="mr-2 rounded-full"
                 />
                 <span className="text-2xl font-bold">
                   <span className="text-[#0055A4]">Dr. </span>
-                  <span className="text-[#25D366] uppercase">
-                    Vishnu Agrawal
+                  <span className="text-[#0055A4] uppercase">
+                      Ankit Mehra
                   </span>
                 </span>
               </div>
             </Link>
           </motion.div>
-
+          
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6">
             <motion.div
@@ -133,48 +100,38 @@ export default function Navbar() {
                 href="/"
                 className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors"
               >
-                HOME
+                Home
               </Link>
-
+              <SkinTreatments/>
+              <HairTreatments/>
+              <LaserTreatments/>
               <Link
-                href="/about"
+                href="/about-us"
                 className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors"
               >
-                ABOUT US
+                About Us
               </Link>
-
-              {/* Direct Services Link Instead of Dropdown */}
-              <ServicesDropdown />
-
               <Link
                 href="/blog"
                 className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors"
               >
-                BLOG
+                Blogs
               </Link>
-
               <Link
-                href="/contact"
+                href="/gallery-2"
                 className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors"
               >
-                CONTACT US
+               Gallery
               </Link>
-
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              <Link
+                href="/contact-us"
+                className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors"
               >
-                <Link
-                  href="/bookconsultation"
-                  className="bg-[#25D366] text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition-colors shadow-md flex items-center"
-                >
-                  <Calendar size={18} className="mr-2" />
-                  BOOK CONSULTATION
-                </Link>
-              </motion.div>
+                Contact Us
+              </Link>
             </motion.div>
           </div>
-
+          
           {/* Mobile Menu Button */}
           <motion.button
             className="md:hidden text-gray-800 p-1 rounded-md focus:outline-none"
@@ -185,7 +142,7 @@ export default function Navbar() {
           </motion.button>
         </div>
       </div>
-
+      
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
@@ -217,15 +174,15 @@ export default function Navbar() {
                       <div className="flex items-center">
                         {/* Use Image component for logo in mobile menu */}
                         <Image
-                          src="/images/logo.png" // Make sure this path is correct
-                          alt="Dr. Vishnu Agrawal Logo"
+                          src="/images/logo.jpeg" // Make sure this path is correct
+                          alt="Dr. Ankit Mehra Logo"
                           width={40}
                           height={40}
                           className="mr-2 rounded-full"
                         />
                         <span className="text-xl font-bold">
                           <span className="text-[#0055A4]">Dr.</span>
-                          <span className="text-[#25D366]">Vishnu Agrawal</span>
+                          <span className="text-[#25D366]"> Ankit Mehra</span>
                         </span>
                       </div>
                     </Link>
@@ -238,11 +195,11 @@ export default function Navbar() {
                     <X size={24} />
                   </motion.button>
                 </div>
-
+                
                 {/* Mobile Menu Links */}
                 <div className="flex flex-col">
                   <motion.div
-                    className="flex flex-col space-y-6"
+                    className="flex flex-col space-y-0"
                     initial="closed"
                     animate="open"
                     variants={{
@@ -260,107 +217,196 @@ export default function Navbar() {
                       },
                     }}
                   >
-                    <>
-                      <motion.div
-                        variants={{
-                          open: { opacity: 1, y: 0 },
-                          closed: { opacity: 0, y: 20 },
-                        }}
-                      >
-                        <Link
-                          href={"/"}
-                          className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors py-3 border-b border-gray-100 block"
-                          onClick={toggleMenu}
-                        >
-                          HOME
-                        </Link>
-                      </motion.div>
-
-                      <motion.div
-                        variants={{
-                          open: { opacity: 1, y: 0 },
-                          closed: { opacity: 0, y: 20 },
-                        }}
-                      >
-                        <Link
-                          href={"/about"}
-                          className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors py-3 border-b border-gray-100 block"
-                          onClick={toggleMenu}
-                        >
-                          ABOUT US
-                        </Link>
-                      </motion.div>
-
-                      {/* <motion.div
-                        variants={{
-                          open: { opacity: 1, y: 0 },
-                          closed: { opacity: 0, y: 20 },
-                        }}
-                      >
-                        <Link
-                          href={"/services"}
-                          className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors py-3 border-b border-gray-100 block"
-                          onClick={toggleMenu}
-                        >
-                          SERVICES
-                        </Link>
-                      </motion.div> */}
-                      <ServicesDropdown />
-
-                      <motion.div
-                        variants={{
-                          open: { opacity: 1, y: 0 },
-                          closed: { opacity: 0, y: 20 },
-                        }}
-                      >
-                        <Link
-                          href={"/blog"}
-                          className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors py-3 border-b border-gray-100 block"
-                          onClick={toggleMenu}
-                        >
-                          BLOG
-                        </Link>
-                      </motion.div>
-
-                      <motion.div
-                        variants={{
-                          open: { opacity: 1, y: 0 },
-                          closed: { opacity: 0, y: 20 },
-                        }}
-                      >
-                        <Link
-                          href={"/contact"}
-                          className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors py-3 border-b border-gray-100 block"
-                          onClick={toggleMenu}
-                        >
-                          CONTACT US
-                        </Link>
-                      </motion.div>
-                    </>
+                    {/* Home Link */}
                     <motion.div
                       variants={{
                         open: { opacity: 1, y: 0 },
                         closed: { opacity: 0, y: 20 },
                       }}
-                      className="mt-4"
                     >
-                      <motion.div
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.98 }}
+                      <Link
+                        href={"/"}
+                        className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors py-3 border-b border-gray-100 block"
+                        onClick={toggleMenu}
                       >
-                        <Link
-                          href="/bookconsultation"
-                          className="bg-[#25D366] text-white px-6 py-3 rounded-full font-medium text-center block shadow-md hover:shadow-lg transition-all flex items-center justify-center"
-                          onClick={toggleMenu}
+                        HOME
+                      </Link>
+                    </motion.div>
+
+                    {/* Skin Treatments Dropdown */}
+                    <motion.div
+                      variants={{
+                        open: { opacity: 1, y: 0 },
+                        closed: { opacity: 0, y: 20 },
+                      }}
+                    >
+                      <div className="py-3 border-b border-gray-100">
+                        <div 
+                          className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors flex justify-between items-center cursor-pointer"
+                          onClick={() => setIsSkinOpen(!isSkinOpen)}
                         >
-                          <Calendar size={18} className="mr-2" />
-                          BOOK CONSULTATION
-                        </Link>
-                      </motion.div>
+                          <span>Skin Treatments</span>
+                          <img
+                            src="/images/chevron-down.png"
+                            alt="Toggle Dropdown"
+                            className={`w-4 h-4 transition-transform duration-300 ${isSkinOpen ? "rotate-180" : "rotate-0"}`}
+                          />
+                        </div>
+                        {isSkinOpen && (
+                          <div className="mt-2 ml-4">
+                            {skinConditions.map((item) => (
+                              <Link
+                                key={item.slug}
+                                href={`/${item.slug}`}
+                                className="block py-2 text-gray-600 hover:text-[#0055A4] transition-colors"
+                                onClick={toggleMenu}
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
+
+                    {/* Hair Treatments Dropdown */}
+                    <motion.div
+                      variants={{
+                        open: { opacity: 1, y: 0 },
+                        closed: { opacity: 0, y: 20 },
+                      }}
+                    >
+                      <div className="py-3 border-b border-gray-100">
+                        <div 
+                          className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors flex justify-between items-center cursor-pointer"
+                          onClick={() => setIsHairOpen(!isHairOpen)}
+                        >
+                          <span>Hair Treatments</span>
+                          <img
+                            src="/images/chevron-down.png"
+                            alt="Toggle Dropdown"
+                            className={`w-4 h-4 transition-transform duration-300 ${isHairOpen ? "rotate-180" : "rotate-0"}`}
+                          />
+                        </div>
+                        {isHairOpen && (
+                          <div className="mt-2 ml-4">
+                            {hairConditions.map((item) => (
+                              <Link
+                                key={item.slug}
+                                href={`/${item.slug}`}
+                                className="block py-2 text-gray-600 hover:text-[#0055A4] transition-colors"
+                                onClick={toggleMenu}
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
+
+                    {/* Laser Treatments Dropdown */}
+                    <motion.div
+                      variants={{
+                        open: { opacity: 1, y: 0 },
+                        closed: { opacity: 0, y: 20 },
+                      }}
+                    >
+                      <div className="py-3 border-b border-gray-100">
+                        <div 
+                          className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors flex justify-between items-center cursor-pointer"
+                          onClick={() => setIsLaserOpen(!isLaserOpen)}
+                        >
+                          <span>Laser Treatments</span>
+                          <img
+                            src="/images/chevron-down.png"
+                            alt="Toggle Dropdown"
+                            className={`w-4 h-4 transition-transform duration-300 ${isLaserOpen ? "rotate-180" : "rotate-0"}`}
+                          />
+                        </div>
+                        {isLaserOpen && (
+                          <div className="mt-2 ml-4">
+                            {laserConditions.map((item) => (
+                              <Link
+                                key={item.slug}
+                                href={`/${item.slug}`}
+                                className="block py-2 text-gray-600 hover:text-[#0055A4] transition-colors"
+                                onClick={toggleMenu}
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
+
+                    {/* About Us Link */}
+                    <motion.div
+                      variants={{
+                        open: { opacity: 1, y: 0 },
+                        closed: { opacity: 0, y: 20 },
+                      }}
+                    >
+                      <Link
+                        href={"/about-us"}
+                        className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors py-3 border-b border-gray-100 block"
+                        onClick={toggleMenu}
+                      >
+                        ABOUT US
+                      </Link>
+                    </motion.div>
+
+                    {/* Blog Link */}
+                    <motion.div
+                      variants={{
+                        open: { opacity: 1, y: 0 },
+                        closed: { opacity: 0, y: 20 },
+                      }}
+                    >
+                      <Link
+                        href={"/blog"}
+                        className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors py-3 border-b border-gray-100 block"
+                        onClick={toggleMenu}
+                      >
+                        BLOG
+                      </Link>
+                    </motion.div>
+
+                    {/* Gallery Link */}
+                    <motion.div
+                      variants={{
+                        open: { opacity: 1, y: 0 },
+                        closed: { opacity: 0, y: 20 },
+                      }}
+                    >
+                      <Link
+                        href={"/gallery-2"}
+                        className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors py-3 border-b border-gray-100 block"
+                        onClick={toggleMenu}
+                      >
+                        GALLERY
+                      </Link>
+                    </motion.div>
+
+                    {/* Contact Us Link */}
+                    <motion.div
+                      variants={{
+                        open: { opacity: 1, y: 0 },
+                        closed: { opacity: 0, y: 20 },
+                      }}
+                    >
+                      <Link
+                        href={"/contact-us"}
+                        className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors py-3 border-b border-gray-100 block"
+                        onClick={toggleMenu}
+                      >
+                        CONTACT US
+                      </Link>
                     </motion.div>
                   </motion.div>
                 </div>
-
+                
                 {/* Contact Info in Mobile Menu - Using Lucide Icons */}
                 <motion.div
                   className="mt-12 space-y-6 text-gray-700 border-t border-gray-100 pt-6"
@@ -376,26 +422,24 @@ export default function Navbar() {
                       <span className="font-medium">Emergency Helpline</span>
                       <a href="tel:+918240970287">
                         {" "}
-                        <p className="text-sm">+91 82409 70287</p>
+                        <p className="text-sm">+91 96970 41111</p>
                       </a>
                     </div>
                   </div>
-
                   <div className="flex items-start">
                     <div className="bg-[#0055A4] bg-opacity-10 p-2 rounded-full mr-3 flex-shrink-0">
                       <MapPin size={18} className="text-white" />
                     </div>
                     <div>
                       <span className="font-medium">
-                        4/172, Gyan marg, Makarwali Rd,
+                       62, Lane no 2, opp. Hotel Ambassador, Nagina Bagh,
                       </span>
                       <p className="text-sm">
                         {" "}
-                        Panchsheel Nagar, Ajmer, Rajasthan 305004
+                       Muslim Mochi Mohalla, Ajmer, Rajasthan 305001
                       </p>
                     </div>
                   </div>
-
                   <div className="flex items-start">
                     <div className="bg-[#0055A4] bg-opacity-10 p-2 rounded-full mr-3 flex-shrink-0">
                       <Clock size={18} className="text-white" />

@@ -4,7 +4,7 @@ const FloatingContactButtons = () => {
   return (
     <div className="fixed top-1/3 right-0 flex  flex-col z-50">
       <a
-        href="https://wa.me/+918240970287"
+        href="https://wa.me/+919697041111"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center w-11 h-12 rounded-tl-lg bg-[#18e60a]   shadow-md  hover:opacity-90 transition-all"
@@ -17,7 +17,7 @@ const FloatingContactButtons = () => {
         />
       </a>
       <a
-        href="tel:+918240970287"
+        href="tel:+9196970 41111"
         className="flex items-center justify-center w-11 h-12 bg-[#1a5aee] rounded-bl-lg  shadow-md  hover:opacity-90 transition-all"
         aria-label="Call us"
       >

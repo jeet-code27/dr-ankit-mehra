@@ -212,5 +212,11 @@ export default function sitemap() {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+        {
+      url: `${baseUrl}/blog/best-kidney-disease-treatment-ajmer`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
   ];
 }

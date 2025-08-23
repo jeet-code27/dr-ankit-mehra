@@ -6,7 +6,7 @@ export default  function AboutDoctor() {
       <div className="max-w-5xl mx-auto">
         {/* Header Section */}
         <div className="text-justify mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          <h1 className="text-4xl text-center md:text-5xl font-bold text-gray-800 mb-4">
             Best Dermatologist in Ajmer <br></br> Dr. Ankit Mehra
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">

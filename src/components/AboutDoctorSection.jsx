@@ -113,49 +113,7 @@ const AboutDoctorSection = () => {
                   </p>
                 </div>
                 
-                {/* Stats Grid */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div 
-                    ref={el => statsRef.current[0] = el}
-                    className="bg-blue-50 rounded-lg p-4 hover-lift"
-                  >
-                    <div className="flex items-center mb-2">
-                      <i className="fas fa-calendar-check text-blue-600 mr-2"></i>
-                      <span className="text-2xl font-bold text-gray-800">12+</span>
-                    </div>
-                    <p className="text-sm text-gray-600">Years Experience</p>
-                  </div>
-                  <div 
-                    ref={el => statsRef.current[1] = el}
-                    className="bg-green-50 rounded-lg p-4 hover-lift"
-                  >
-                    <div className="flex items-center mb-2">
-                      <i className="fas fa-chalkboard-teacher text-green-600 mr-2"></i>
-                      <span className="text-2xl font-bold text-gray-800">Former</span>
-                    </div>
-                    <p className="text-sm text-gray-600">Assistant Professor</p>
-                  </div>
-                  <div 
-                    ref={el => statsRef.current[2] = el}
-                    className="bg-purple-50 rounded-lg p-4 hover-lift"
-                  >
-                    <div className="flex items-center mb-2">
-                      <i className="fas fa-comments text-purple-600 mr-2"></i>
-                      <span className="text-2xl font-bold text-gray-800">8000+</span>
-                    </div>
-                    <p className="text-sm text-gray-600">Consultations</p>
-                  </div>
-                  <div 
-                    ref={el => statsRef.current[3] = el}
-                    className="bg-orange-50 rounded-lg p-4 hover-lift"
-                  >
-                    <div className="flex items-center mb-2">
-                      <i className="fas fa-laser text-orange-600 mr-2"></i>
-                      <span className="text-2xl font-bold text-gray-800">500+</span>
-                    </div>
-                    <p className="text-sm text-gray-600">Laser Treatments</p>
-                  </div>
-                </div>
+                 
                 
                 {/* Specializations */}
                 <div className="mb-6">

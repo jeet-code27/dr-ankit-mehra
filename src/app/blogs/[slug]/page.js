@@ -184,15 +184,15 @@ export default async function SingleBlogPage({ params }) {
 
   return (
     <article className="min-h-screen bg-gradient-to-b from-blue-50 to-teal-50">
-      <div className="relative w-full h-80 md:h-96 max-w-6xl mx-auto">
+      <div className="relative w-full h-80 md:h-120 max-w-6xl mx-auto">
         <Image
-          src={blog.image || "/images/urology-blog-hero.jpg"}
+          src={blog.image || "/images/home/dermatologist-blog-hero.jpg"}
           alt={blog.alt || blog.title}
           fill
           priority
           className="object-cover rounded-lg shadow-lg"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-70 rounded-lg"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-400 to-transparent opacity-70 rounded-lg"></div>
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-2 drop-shadow-md">
             {blog.title}
@@ -210,7 +210,7 @@ export default async function SingleBlogPage({ params }) {
                 </div>
               </div>
               <div>
-                <p className="font-medium text-gray-900">Dr. Vishnu Agrawal</p>
+                <p className="font-medium text-gray-900">Dr. Ankit Mehra</p>
                 <p className="text-sm text-gray-500">
                   Published on {formattedDate}
                 </p>
@@ -237,10 +237,10 @@ export default async function SingleBlogPage({ params }) {
            </svg>BOOK CONSULTATION</a></div>
           <div className="mt-10 pt-6 border-t border-blue-100">
             <Link
-              href="/blog"
+              href="/blogs"
               className="inline-block bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 text-white px-6 py-3 rounded-lg hover:opacity-90 transition duration-300 shadow-md"
             >
-              ← Back to All Urology Blogs
+              ← Back to All Dermatologist Blogs
             </Link>
           </div>
         </div>

@@ -287,6 +287,24 @@ const structuredData = {
 };
 
 export default function Home() {
+    const slides = [
+    {
+      id: 1,
+      image: '/images/home/woman-beauty-clinic-face-treatment-scaled.jpg',
+    },
+    {
+      id: 2,
+      image: '/images/home/doctor-performing-laser-hair-removal-patient-skin-scaled.jpg',
+    },
+    {
+      id: 3,
+      image: '/images/home/person-dealing-with-rosacea-scaled.jpg',
+    },
+    {
+      id: 4,
+      image: '/images/home/head-leaning.jpeg',
+    },
+  ];
   return (
     <>
       <script
@@ -295,7 +313,7 @@ export default function Home() {
           __html: JSON.stringify(structuredData),
         }}
       />
-      <HeroSection />
+      <HeroSection  slides={slides}/>
       <AboutDoctorSection />
       <AboutDoctor/>
     <ExpertTeam/>

@@ -1,7 +1,9 @@
-import AboutCoreValues from "@/components/AboutCoreValues";
+ 
 import AboutDoctor from "@/components/AboutDoctor";
-import AboutMission from "@/components/AboutMission";
-import AboutUsHero from "@/components/AboutUsHero";
+import AboutDoctorSection from "@/components/AboutDoctorSection";
+import PatientReviews from "@/components/PatientReviews";
+ 
+ 
 
 export const metadata = {
   title: 'Best Urologist in Ajmer | About Dr. Vishnu Agrawal',
@@ -62,12 +64,14 @@ export const metadata = {
 export default function About() {   
   return (
     < >
-<AboutUsHero/>
+ 
+
+<AboutDoctorSection/>
 <AboutDoctor/>
-<AboutMission/>
-<div className="bg-white">
-<AboutCoreValues/>
-</div>
+ <PatientReviews/>
+ 
+ 
+ 
     </>
   );
 }                                                                                                               

@@ -112,7 +112,7 @@ export default function Navbar() {
                 About Us
               </Link>
               <Link
-                href="/blog"
+                href="/blogs"
                 className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors"
               >
                 Blogs

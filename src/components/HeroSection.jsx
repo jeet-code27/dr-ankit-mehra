@@ -3,25 +3,8 @@ import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Phone, Calendar, MapPin, Award } from 'lucide-react';
 
-export default function HeroSection() {
-  const slides = [
-    {
-      id: 1,
-      image: '/images/home/woman-beauty-clinic-face-treatment-scaled.jpg',
-    },
-    {
-      id: 2,
-      image: '/images/home/doctor-performing-laser-hair-removal-patient-skin-scaled.jpg',
-    },
-    {
-      id: 3,
-      image: '/images/home/person-dealing-with-rosacea-scaled.jpg',
-    },
-    {
-      id: 4,
-      image: '/images/home/head-leaning.jpeg',
-    },
-  ];
+export default function HeroSection({slides}) {
+
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);

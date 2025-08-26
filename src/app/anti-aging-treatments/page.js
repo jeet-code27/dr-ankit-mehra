@@ -1,7 +1,70 @@
+import Link from 'next/link';
 import React from 'react';
+export const metadata = {
+  title: "Anti-Aging Treatments for Youthful Appearance | Dr. Ankit Mehra",
+  description:
+    "Reverse signs of aging with customized anti-aging treatments. Reduce wrinkles, fine lines, and sagging skin for a refreshed look.",
+  keywords: [
+    "anti-aging treatments",
+    "wrinkle reduction",
+    "fine lines treatment",
+    "sagging skin treatment",
+    "botox treatment Ajmer",
+    "dermal fillers",
+    "skin tightening",
+    "non-surgical facelift",
+    "Dr. Ankit Mehra anti-aging solutions",
+    "youthful skin care Ajmer"
+  ],
+  openGraph: {
+    title: "Anti-Aging Treatments for Youthful Appearance | Dr. Ankit Mehra",
+    description:
+      "Reverse signs of aging with customized anti-aging treatments. Reduce wrinkles, fine lines, and sagging skin for a refreshed look.",
+    images: [
+      {
+        url: "/images/freepik-export-20241105082539mxHQ-scaled.jpeg", // replace with actual image path
+        width: 2560,
+        height: 1451,
+        alt: "Anti-Aging Treatments - Dr. Ankit Mehra",
+      },
+    ],
+    type: "article",
+    url: "https://drankitmehra.com/anti-aging-treatments/",
+    siteName: "Dr. Ankit Mehra | Dermatologist in Ajmer",
+  },
+  alternates: {
+    canonical: "https://drankitmehra.com/anti-aging-treatments/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Anti-Aging Treatments for Youthful Appearance | Dr. Ankit Mehra",
+    description:
+      "Reverse signs of aging with customized anti-aging treatments. Reduce wrinkles, fine lines, and sagging skin for a refreshed look.",
+    images: ["/images/freepik-export-20241105082539mxHQ-scaled.jpeg"], // replace with actual image path
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": "-1",
+      "max-video-preview": "-1",
+    },
+  },
+  other: {
+    "application-name": "Dr. Ankit Mehra - Anti-Aging Treatments",
+    author: "Dr. Ankit Mehra",
+    Publisher: "Dr. Ankit Mehra",
+    "publisher-url": "https://drankitmehra.com",
+    generator: "WordPress",
+    "theme-color": "#ffffff",
+  },
+};
 
 const AntiAgingTreatmentComponent = () => {
-  // 抗衰老治疗信息数据
+  
   const antiAgingInfo = {
     title: "Anti-Aging Treatments",
     description: "Anti-aging treatments are designed to combat the visible signs of aging, such as wrinkles, fine lines, and loss of skin elasticity. These procedures range from non-invasive techniques like injectables and laser therapy to more comprehensive surgical options, all aimed at restoring a more youthful appearance.",
@@ -57,9 +120,9 @@ const AntiAgingTreatmentComponent = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        {/* 主卡片容器 */}
+     
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          {/* 图片部分 */}
+     
           <div className="relative h-96 md:h-[500px] overflow-hidden">
             <img 
               src={antiAgingInfo.image} 
@@ -73,16 +136,16 @@ const AntiAgingTreatmentComponent = () => {
             </div>
           </div>
 
-          {/* 内容部分 */}
+         
           <div className="p-6 md:p-8">
-            {/* 描述部分 */}
+          
             <div className="mb-10">
               <p className="text-gray-700 text-lg leading-relaxed">
                 {antiAgingInfo.description}
               </p>
             </div>
 
-            {/* 信息网格部分 */}
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {antiAgingInfo.details.map((section, index) => (
                 <div 
@@ -107,16 +170,17 @@ const AntiAgingTreatmentComponent = () => {
               ))}
             </div>
 
-            {/* 行动号召按钮 */}
+      
             <div className="mt-10 text-center">
+               <Link href={"/bookconsultation"}>
               <button className="bg-gradient-to-r from-indigo-500 to-blue-600 text-white font-semibold py-3 px-8 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300">
                 Book Your Anti-Aging Consultation
               </button>
+              </Link>
             </div>
           </div>
         </div>
-
-        {/* 底部信息部分 */}
+ 
         <div className="mt-8 bg-white rounded-xl p-6 shadow-md">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-4 md:mb-0">

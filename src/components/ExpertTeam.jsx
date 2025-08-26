@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react';
-
+import Link from "next/link";
 const ExpertTeam = () => {
   const [selectedDoctor, setSelectedDoctor] = useState(null);
 
@@ -12,7 +12,8 @@ const ExpertTeam = () => {
       experience: "3+3 Years Residency Experience",
       position: "Former Resident at JLN Medical College, Ajmer",
       image: "apurva-mehra.jpeg",
-      bio: "Dr. Apurva Mehra is a dedicated neuropsychiatrist with extensive training in mental health and neurological disorders. With over 6 years of combined residency experience, she brings expertise in diagnosing and treating complex neuropsychiatric conditions."
+      bio: "Dr. Apurva Mehra is a dedicated neuropsychiatrist with extensive training in mental health and neurological disorders. With over 6 years of combined residency experience, she brings expertise in diagnosing and treating complex neuropsychiatric conditions.",
+      url:"/apurva-mehra"
     },
     {
       id: 2,
@@ -21,7 +22,8 @@ const ExpertTeam = () => {
       experience: "Senior Professor & Head",
       position: "Department of Skin, JLN Medical College, Ajmer",
       image: "ashok-meherda.jpeg",
-      bio: "Dr. Ashok Meherda is a renowned dermatologist with decades of experience in skin and venereal diseases. As a senior professor and department head, he has contributed significantly to medical education and patient care."
+      bio: "Dr. Ashok Meherda is a renowned dermatologist with decades of experience in skin and venereal diseases. As a senior professor and department head, he has contributed significantly to medical education and patient care.",
+     url:"/dr-ashok-meherda"
     },
     {
       id: 3,
@@ -30,26 +32,21 @@ const ExpertTeam = () => {
       experience: "Senior Professor & Unit Head",
       position: "Janana Hospital, Ajmer",
       image: "kanti-meherda.jpeg",
-      bio: "Dr. Kanti Meherda is a distinguished gynecologist specializing in women's health. With her role as senior professor and unit head, she has been instrumental in advancing gynecological care and education."
+      bio: "Dr. Kanti Meherda is a distinguished gynecologist specializing in women's health. With her role as senior professor and unit head, she has been instrumental in advancing gynecological care and education.",
+     url:"/dr-kanti-meherda"
     }
   ];
 
-  const handleReadMore = (doctor) => {
-    setSelectedDoctor(doctor);
-  };
-
-  const closeModal = () => {
-    setSelectedDoctor(null);
-  };
+ 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4">
+    <div className="min-h-screen bg-[#EFF5FE] py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             Our Expert Care Team
-          </h1>
+          </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Meet our distinguished team of medical professionals dedicated to providing exceptional healthcare services
           </p>
@@ -102,26 +99,27 @@ const ExpertTeam = () => {
                   </div>
                 </div>
 
-                {/* Read More Button */}
-                <button
-                  onClick={() => handleReadMore(doctor)}
-                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                >
-                  Read More
-                  <svg 
-                    className="inline-block w-4 h-4 ml-2" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth="2" 
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
+     <Link
+  href={doctor.url}
+  
+  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center"
+>
+  Read More
+  <svg 
+    className="inline-block w-4 h-4 ml-2" 
+    fill="none" 
+    stroke="currentColor" 
+    viewBox="0 0 24 24"
+  >
+    <path 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeWidth="2" 
+      d="M9 5l7 7-7 7"
+    />
+  </svg>
+</Link>
+
               </div>
             </div>
           ))}

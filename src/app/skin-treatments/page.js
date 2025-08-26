@@ -1,4 +1,67 @@
 import React from 'react';
+ import Link from "next/link";
+export const metadata = {
+  title: "Comprehensive Skin Treatments for Radiant Skin | Dr. Ankit Mehra",
+  description:
+    "Explore skin treatments for acne, pigmentation, scars, and more. Achieve healthy, glowing skin with expert care at Dr. Ankit Mehra's clinic.",
+  keywords: [
+    "skin treatments",
+    "acne treatment Ajmer",
+    "pigmentation removal",
+    "scar reduction",
+    "glowing skin care",
+    "Dr. Ankit Mehra skin clinic",
+    "laser skin treatment",
+    "dermatologist for acne",
+    "skin rejuvenation Ajmer",
+    "dermatology services Rajasthan",
+  ],
+  openGraph: {
+    title: "Comprehensive Skin Treatments for Radiant Skin | Dr. Ankit Mehra",
+    description:
+      "Explore skin treatments for acne, pigmentation, scars, and more. Achieve healthy, glowing skin with expert care at Dr. Ankit Mehra's clinic.",
+    images: [
+      {
+        url: "/images/freepik__expand__4159-qwlpkxdugmq9yrcq0grvg0fqvkvxehzrlpoigcnrks.png", // Replace with actual image path
+        width: 1200,
+        height: 630,
+        alt: "Skin Treatments - Dr. Ankit Mehra",
+      },
+    ],
+    type: "article",
+    url: "https://drankitmehra.com/skin-treatments/",
+    siteName: "Dr. Ankit Mehra | Dermatologist in Ajmer",
+  },
+  alternates: {
+    canonical: "https://drankitmehra.com/skin-treatments/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Comprehensive Skin Treatments for Radiant Skin | Dr. Ankit Mehra",
+    description:
+      "Explore skin treatments for acne, pigmentation, scars, and more. Achieve healthy, glowing skin with expert care at Dr. Ankit Mehra's clinic.",
+    images: ["/images/freepik__expand__4159-qwlpkxdugmq9yrcq0grvg0fqvkvxehzrlpoigcnrks.png"], // Replace with actual image path
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": "-1",
+      "max-video-preview": "-1",
+    },
+  },
+  other: {
+    "application-name": "Dr. Ankit Mehra - Skin Treatments",
+    author: "Dr. Ankit Mehra",
+    Publisher: "Dr. Ankit Mehra",
+    "publisher-url": "https://drankitmehra.com",
+    generator: "WordPress",
+    "theme-color": "#ffffff",
+  },
+};
 
 const SkinTreatmentsPage = () => {
   const treatments = [
@@ -8,7 +71,7 @@ const SkinTreatmentsPage = () => {
       description: "Enhance your skin texture and radiance with advanced chemical peels and innovative treatments",
       image: "young-beautiful-girl-lies-beautician-s-table-receives-procedures-scaled-qwlpr8v570ly32hd4hh19tk1zi61z4x4ivqz277fwg.jpg",
       features: ["Chemical Peels", "Texture Improvement", "Radiance Boost"],
-      url : ""
+      url : "/skin-rejuvenation"
     },
     {
       id: 2,
@@ -16,7 +79,7 @@ const SkinTreatmentsPage = () => {
       description: "Combat wrinkles and fine lines with cutting-edge laser therapies and age-defying solutions",
       image: "head-leaning.jpeg",
       features: ["Laser Therapy", "Wrinkle Reduction", "Age Defying"],
-         url : ""
+         url : "/anti-aging-treatments"
     },
     {
       id: 3,
@@ -24,7 +87,7 @@ const SkinTreatmentsPage = () => {
       description: "Effectively treat dark spots and uneven skin tone with specialized chemical treatments",
       image: "woman-beauty-clinic-face-treatment-scaled.jpg",
       features: ["Dark Spot Removal", "Even Tone", "Chemical Solutions"],
-         url : ""
+         url : "/pigmentation-treatment"
     },
     {
       id: 4,
@@ -32,7 +95,7 @@ const SkinTreatmentsPage = () => {
       description: "Minimize appearance of scars using advanced microneedling and targeted therapies",
       image: "surgeon-drawing-lines-womans-abdomen-liposuction-cellulite-removal-scaled-qwlnjz4s1iv4w9bhzxk8xf5v50ge06dq8mxvl8tqho.jpg",
       features: ["Microneedling", "Scar Minimization", "Skin Renewal"],
-         url : ""
+         url : "/scar-reduction"
     },
     {
       id: 5,
@@ -40,7 +103,7 @@ const SkinTreatmentsPage = () => {
       description: "Clear your skin with effective medications and specialized acne-fighting treatments",
       image: "person-dealing-with-rosacea-scaled.jpg",
       features: ["Medication", "Acne Control", "Clear Skin"],
-         url : ""
+         url : "/acne-treatment"
     }
   ];
 
@@ -65,20 +128,7 @@ const SkinTreatmentsPage = () => {
         </div>
       </div>
 
-      {/* CTA Section */}
-      <div className="max-w-4xl mx-auto mt-20 text-center">
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Ready to Transform Your Skin?
-          </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Schedule a consultation with our expert dermatologists to find the perfect treatment for your skin concerns.
-          </p>
-          <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 px-8 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300">
-            Book Consultation
-          </button>
-        </div>
-      </div>
+     
     </div>
   );
 };
@@ -121,12 +171,14 @@ const TreatmentCard = ({ treatment }) => {
         </div>
 
         {/* Learn More Button */}
+         <Link href={treatment.url}  >
         <button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:shadow-md transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
           <span>LEARN MORE</span>
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
+        </Link>
       </div>
     </div>
   );

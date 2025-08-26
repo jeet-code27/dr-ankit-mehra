@@ -440,15 +440,6 @@ export default function Navbar() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-start">
-                    <div className="bg-[#0055A4] bg-opacity-10 p-2 rounded-full mr-3 flex-shrink-0">
-                      <Clock size={18} className="text-white" />
-                    </div>
-                    <div>
-                      <span className="font-medium">Working Hours</span>
-                      <p className="text-sm">Mon-Sat: 4PM - 8PM</p>
-                    </div>
-                  </div>
                 </motion.div>
               </div>
             </motion.div>

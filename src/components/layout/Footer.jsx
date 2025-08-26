@@ -161,21 +161,15 @@ export default function Footer() {
             
             {/* Column 4 - Working Hours & Newsletter */}
             <div>
-              <h3 className="text-xl font-semibold mb-6 text-white relative pl-4 border-l-4 border-green-700"
-  style={{ textShadow: "2px 2px 4px rgba(0, 55, 252, 0.9)" }}>
-                Consultation Hours
-              </h3>
-              
-              <ul className="space-y-2 mb-8">
-                {workingHours.map((item, index) => (
-                  <li key={index} className="flex justify-between text-gray-700">
-                    <span>{item.day}</span>
-                    <span className={item.day === "Sunday" ? "text-gray-700" : ""}>
-                      {item.hours}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1501.6345985601388!2d74.63457247447309!3d26.471548361953225!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396be7ec6b89ce17%3A0x9014bae9b1d9ff78!2zRHIgQW5raXQgTWVocmEoTUQgU2tpbiAmIFZEKSDgpJrgpLDgpY3gpK7gpLDgpYvgpJcs4KSv4KWM4KSo4KSw4KWL4KSXIOCkj-CkteCkgiDgpLjgpYzgpKjgpY3gpKbgpLDgpY3gpK_gpLDgpYvgpJcg4KS14KS_4KS24KWH4KS34KSc4KWN4KSeKFNlbmlvciBTa2luIFNwZWNpYWxpc3QgRGVybWF0b2xvZ2lzdCAmIENvc21ldG9sb2dpc3Qp!5e0!3m2!1sen!2sus!4v1756189343393!5m2!1sen!2sus" 
+                  className="w-full h-full"
+                  style={{ border: 0 }}
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Dr. Ankit Mehra Dermatology Clinic Location"
+                ></iframe>
               
           
             </div>
@@ -186,12 +180,12 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="bg-blue-900  py-4">
         <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0 text-center md:text-left">
+          <div className="mb-4 md:mb-0 text-white text-center md:text-left">
             <p>© {new Date().getFullYear()} Dr. Ankit Mehra, All rights reserved.</p>
           </div>
           
           <div className="flex items-center space-x-2 hidden md:block">
-            <span>Powered by</span>
+            <span className="text-white">Powered by</span>
             {/* <Heart size={16} className="text-[#25D366]" fill="#25D366" />  */}
             <a href="https://seocialmedia.in" target="_blank" rel="noopener noreferrer" className="text-[#25D366] font-bold hover:underline">
             <span className="text-[#25D366] font-bold">SEOcial Media Solutions</span>

@@ -46,7 +46,7 @@ const PatientReviews = () => {
   });
 
   return (
-    <div className="w-full px-4 py-8 md:py-12 lg:py-16 relative bg-white">
+    <div className="w-full px-4 py-8 md:py-12 lg:py-16 relative bg-[#EFF5FE]">
       <motion.div 
         className="text-center mb-8 md:mb-12 lg:mb-16 relative z-30"
         ref={titleRef}

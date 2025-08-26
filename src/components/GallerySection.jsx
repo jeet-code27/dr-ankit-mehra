@@ -128,8 +128,8 @@ const GallerySection = () => {
 
   return (
     <>
-      <div className='bg-[#F7F6FF]'>
-        <section className="max-w-7xl bg-[#F7F6FF] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div className='bg-[#EFF5FE]'>
+        <section className="max-w-7xl   mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 relative inline-block mb-4">
               Our Gallery

@@ -2,11 +2,11 @@ import React from 'react';
 
 const WhyChooseSection = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100  py-16 px-4 flex items-center justify-center">
+    <div className="min-h-screen bg-[#EFF5FE]  py-16 px-4 flex items-center justify-center">
       <div className="max-w-7xl w-full bg-white rounded-2xl shadow-xl overflow-hidden">
         {/* Header Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 py-8 px-6 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">Why Choose Dr. Ankit Mehra?</h1>
+        <div className="bg-gradient-to-r from-blue-400 to-indigo-500 py-8 px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Why Choose Dr. Ankit Mehra?</h2>
           <div className="w-24 h-1 bg-white mx-auto rounded-full"></div>
         </div>
         

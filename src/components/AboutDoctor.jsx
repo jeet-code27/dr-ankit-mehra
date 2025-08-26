@@ -1,8 +1,9 @@
+import Link from 'next/link';
 import React from 'react';
 
 export default  function AboutDoctor() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#EFF5FE] py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         {/* Header Section */}
         <div className="text-justify mb-16">
@@ -140,12 +141,14 @@ export default  function AboutDoctor() {
                     Expert Dermatological Care
                   </li>
                 </ul>
+                <Link href={"/skin-treatments"}>
                 <button className="text-blue-600 font-semibold flex items-center hover:text-blue-800 transition-colors duration-300">
                   Read More
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
+                </Link> 
               </div>
             </div>
 
@@ -187,12 +190,14 @@ export default  function AboutDoctor() {
                     Hair Fall Control Treatments
                   </li>
                 </ul>
+                <Link href={"/hair-treatments-2"}>
                 <button className="text-purple-600 font-semibold flex items-center hover:text-purple-800 transition-colors duration-300">
                   Read More
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
+                 </Link>
               </div>
             </div>
 
@@ -228,12 +233,14 @@ export default  function AboutDoctor() {
                     Laser Treatment for Acne Scars
                   </li>
                 </ul>
+                 <Link href={"/laser-treatments"}>
                 <button className="text-red-600 font-semibold flex items-center hover:text-red-800 transition-colors duration-300">
                   Read More
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -241,9 +248,11 @@ export default  function AboutDoctor() {
 
         {/* Call to Action */}
         <div className="text-center">
+           <Link href={"/bookconsultation"}>
           <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
             Book Your Consultation
           </button>
+          </Link>
           <p className="mt-4 text-gray-600">
             Personalized treatment plans for all your dermatological needs
           </p>

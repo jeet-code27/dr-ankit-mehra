@@ -1,6 +1,72 @@
+import Link from 'next/link';
 import React from 'react';
+
+export const metadata = {
+  title: "Laser Tattoo Removal In Ajmer | Dr. Ankit Mehra",
+  description:
+    "Remove unwanted tattoos with advanced laser technology. Precise and effective treatment for all tattoo sizes and colors.",
+  keywords: [
+    "laser tattoo removal Ajmer",
+    "tattoo removal clinic Ajmer",
+    "permanent tattoo removal Ajmer",
+    "best laser tattoo removal Ajmer",
+    "unwanted tattoo removal Ajmer",
+    "painless tattoo removal Ajmer",
+    "tattoo removal treatment Ajmer",
+    "dermatologist tattoo removal Ajmer",
+    "safe tattoo removal Ajmer",
+    "laser treatment for tattoo removal"
+  ],
+  openGraph: {
+    title: "Laser Tattoo Removal In Ajmer | Dr. Ankit Mehra",
+    description:
+      "Remove unwanted tattoos with advanced laser technology. Precise and effective treatment for all tattoo sizes and colors.",
+    images: [
+      {
+        url: "/images/2149445992-1024x683.jpg", // Replace with actual image path
+        width: 1200,
+        height: 630,
+        alt: "Laser Tattoo Removal Treatment in Ajmer",
+      },
+    ],
+    type: "article",
+    url: "https://drankitmehra.com/laser-tattoo-removal/",
+    siteName: "Dr. Ankit Mehra | Dermatologist in Ajmer",
+  },
+  alternates: {
+    canonical: "https://drankitmehra.com/laser-tattoo-removal/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Laser Tattoo Removal In Ajmer | Dr. Ankit Mehra",
+    description:
+      "Remove unwanted tattoos with advanced laser technology. Precise and effective treatment for all tattoo sizes and colors.",
+    images: ["/images/2149445992-1024x683.jpg"], // Replace with actual path
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": "-1",
+      "max-video-preview": "-1",
+    },
+  },
+  other: {
+    "application-name": "Dr. Ankit Mehra - Laser Tattoo Removal",
+    author: "Dr. Ankit Mehra",
+    publisher: "Dr. Ankit Mehra",
+    "publisher-url": "https://drankitmehra.com",
+    generator: "WordPress",
+    "theme-color": "#ffffff",
+  },
+};
+
+
 const LaserTattooRemoval= () => {
-  // 激光纹身去除信息数据
+   
   const skinInfo = {
     title: "Laser Tattoo Removal",
     description: "Laser tattoo removal uses targeted laser energy to break down tattoo pigments, which are then gradually cleared by the body's natural processes.",
@@ -43,9 +109,9 @@ const LaserTattooRemoval= () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        {/* 主卡片容器 */}
+       
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          {/* 图片部分 */}
+        
           <div className="relative h-96 md:h-[500px] overflow-hidden">
             <img 
               src={skinInfo.image} 
@@ -58,15 +124,15 @@ const LaserTattooRemoval= () => {
               <p className="text-lg md:text-xl opacity-90">Advanced Tattoo Removal Solutions</p>
             </div>
           </div>
-          {/* 内容部分 */}
+        
           <div className="p-6 md:p-8">
-            {/* 描述部分 */}
+           
             <div className="mb-10">
               <p className="text-gray-700 text-lg leading-relaxed">
                 {skinInfo.description}
               </p>
             </div>
-            {/* 信息网格部分 */}
+          
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {skinInfo.details.map((section, index) => (
                 <div 
@@ -90,15 +156,17 @@ const LaserTattooRemoval= () => {
                 </div>
               ))}
             </div>
-            {/* 行动号召按钮 */}
+         
             <div className="mt-10 text-center">
+                <Link href={"/bookconsultation"}>
               <button className="bg-gradient-to-r from-indigo-500 to-blue-600 text-white font-semibold py-3 px-8 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300">
                 Book Your Tattoo Removal Consultation
               </button>
+              </Link>
             </div>
           </div>
         </div>
-        {/* 底部信息部分 */}
+     
         <div className="mt-8 bg-white rounded-xl p-6 shadow-md">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-4 md:mb-0">

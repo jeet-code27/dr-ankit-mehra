@@ -91,10 +91,10 @@ const ClientBlogPage = ({ blogs }) => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <Link 
-              href="/contact" 
+              href="/bookconsultation" 
               className="inline-block bg-gradient-to-r from-indigo-600 to-blue-500 text-white font-medium px-8 py-3 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300"
             >
-              Book an Appointment
+              Book an Consultation
             </Link>
           </motion.div>
         </div>

@@ -6,41 +6,43 @@ import PatientReviews from "@/components/PatientReviews";
  
 
 export const metadata = {
-  title: 'Best Urologist in Ajmer | About Dr. Vishnu Agrawal',
-  description: 'Learn about Dr. Vishnu Agrawal, the top urologist in Ajmer with extensive experience in kidney stone treatment, prostate care, and male health services. Our patient-centered approach sets us apart.',
+  title: "About - Best dermatology clinic in Ajmer | Dr. Ankit Mehra",
+  description:
+    "Learn about Dr. Ankit Mehra's expertise, team, and advanced treatments. Committed to providing exceptional care for your skin and hair.",
   keywords: [
-    'best urologist in Ajmer about',
-    'top kidney doctor Ajmer profile',
-    'about Dr. Vishnu Agrawal urologist',
-    'kidney stone specialist background',
-    'prostate treatment expert Ajmer',
-    'male infertility doctor experience',
-    'urology clinic mission statement',
-    'Dr. Vishnu Agrawal qualifications',
-    'best urology hospital values',
-    'patient care philosophy Ajmer'
+    "dermatology clinic Ajmer",
+    "best skin specialist Ajmer",
+    "Dr. Ankit Mehra",
+    "cosmetic treatments Ajmer",
+    "hair fall treatment Ajmer",
+    "skin care expert Ajmer",
+    "advanced dermatology services Ajmer",
   ],
   openGraph: {
-    title: 'About Top Urologist in Ajmer | Dr. Vishnu Agrawal Kidney Specialist',
-    description: 'Discover the qualifications, mission and values of Ajmer\'s leading urologist Dr. Vishnu Agrawal - specializing in advanced kidney and prostate treatments',
-    url: 'https://drvishnuagrawal.in/about',
+    title: "About - Best dermatology clinic in Ajmer | Dr. Ankit Mehra",
+    description:
+      "Learn about Dr. Ankit Mehra's expertise, team, and advanced treatments. Committed to providing exceptional care for your skin and hair.",
     images: [
       {
-        url: '/images/about-og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Dr. Vishnu Agrawal in his clinic',
+        url: "/images/WhatsApp-Image-2024-11-22-at-10.36.42-e1746422645483.jpeg", // Replace with actual image path
+        width: 800,
+        height: 600,
+        alt: "Dr. Ankit Mehra - Dermatologist in Ajmer",
       },
     ],
+    type: "article",
+    url: "https://drankitmehra.com/about-us/",
+    siteName: "Dr. Ankit Mehra | Dermatologist in Ajmer",
   },
   alternates: {
-    canonical: 'https://drvishnuagrawal.in/about',
+    canonical: "https://drankitmehra.com/about-us/",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'About Best Urologist in Ajmer | Dr. Vishnu Agrawal',
-    description: 'Meet Ajmer\'s top kidney and prostate specialist - his qualifications, treatment philosophy and clinic values',
-    images: ['/images/about-twitter-card.jpg'],
+    card: "summary_large_image",
+    title: "About - Best dermatology clinic in Ajmer | Dr. Ankit Mehra",
+    description:
+      "Learn about Dr. Ankit Mehra's expertise, team, and advanced treatments. Committed to providing exceptional care for your skin and hair.",
+    images: ["/images/WhatsApp-Image-2024-11-22-at-10.36.42-e1746422645483.jpeg"], // Replace with actual image path
   },
   robots: {
     index: true,
@@ -49,17 +51,20 @@ export const metadata = {
       index: true,
       follow: true,
       "max-image-preview": "large",
+      "max-snippet": "-1",
+      "max-video-preview": "-1",
     },
   },
   other: {
-    "application-name": "Dr. Vishnu Agrawal - Urology Clinic",
-    author: "Dr. Vishnu Agrawal",
-    Publisher: "Dr. Vishnu Agrawal",
-    "publisher-url": "https://drvishnuagrawal.in",
-    generator: "Next.js",
+    "application-name": "Dr. Ankit Mehra - Dermatology Clinic",
+    author: "Dr. Ankit Mehra",
+    Publisher: "Dr. Ankit Mehra",
+    "publisher-url": "https://drankitmehra.com",
+    generator: "WordPress",
     "theme-color": "#ffffff",
   },
 };
+
 
 export default function About() {   
   return (

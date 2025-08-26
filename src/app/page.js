@@ -12,50 +12,49 @@ import PatientReviews from "@/components/PatientReviews";
 import WhyChooseSection from "@/components/WhyChooseSection";
 
 export const metadata = {
-  title: "Best Urologist in Ajmer | Dr. Vishnu Agrawal - Prostate Specialist",
+  title: "Best Gastroenterologist in Ajmer | Dr. Ankit Mehra - Liver & Digestive Specialist",
   description:
-    "Dr. Vishnu Agrawal is a leading urologist in Ajmer providing advanced treatment for kidney stones, prostate enlargement, male infertility, and urinary disorders. Book your appointment today.",
+    "Dr. Ankit Mehra is a leading gastroenterologist in Ajmer offering expert treatment for liver diseases, digestive disorders, and endoscopic procedures. Book your appointment today.",
   keywords: [
-    "best urologist in Ajmer",
-    "top kidney stone specialist",
-    "prostate treatment Ajmer",
-    "male infertility doctor",
-    "urinary problems specialist",
-    "Dr. Vishnu Agrawal",
-    "laser kidney stone treatment",
-    "urology clinic near me",
-    "best urology hospital Ajmer",
-    "erectile dysfunction treatment",
-    "urinary tract infection specialist",
-    "pediatric urologist Ajmer",
-    "BPH treatment Rajasthan",
+    "best gastroenterologist in Ajmer",
+    "liver specialist Ajmer",
+    "digestive disorders doctor",
+    "endoscopy expert Ajmer",
+    "Dr. Ankit Mehra",
+    "gastro clinic Ajmer",
+    "hepatologist Ajmer",
+    "colonoscopy specialist Ajmer",
+    "stomach pain doctor Ajmer",
+    "GI disorders treatment",
+    "pancreatitis treatment Ajmer",
+    "IBD treatment specialist",
+    "gastrointestinal surgeon Ajmer",
   ],
   openGraph: {
-    title: "Dr. Vishnu Agrawal | Best Urologist & Kidney Specialist in Ajmer",
+    title: "Dr. Ankit Mehra | Best Gastroenterologist & Liver Specialist in Ajmer",
     description:
-      "Advanced urology care for kidney stones, prostate issues, male infertility and urinary disorders. State-of-the-art treatments with high success rates.",
+      "Advanced gastro care for liver, pancreas, and digestive system disorders with state-of-the-art treatment and high success rates.",
     images: [
       {
-        url: "/images/dr-vishnu-profile.jpg",
+        url: "/images/dr-ankit-profile.jpg", // Replace with actual image path
         width: 800,
         height: 600,
-        alt: "Dr. Vishnu Agrawal - Urologist Ajmer",
+        alt: "Dr. Ankit Mehra - Gastroenterologist Ajmer",
       },
     ],
     type: "website",
-    url: "https://drvishnuagrawal.in",
-    siteName: "Dr. Vishnu Agrawal Urology Clinic",
+    url: "https://drankitmehra.com",
+    siteName: "Dr. Ankit Mehra Gastro Clinic",
   },
   alternates: {
-    canonical: "https://drvishnuagrawal.in",
+    canonical: "https://drankitmehra.com",
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "Top Urologist in Ajmer | Dr. Vishnu Agrawal",
+    title: "Top Gastroenterologist in Ajmer | Dr. Ankit Mehra",
     description:
-      "Specialized urology care for kidney, prostate and male health issues in Ajmer",
-    images: ["/images/dr-vishnu-twitter-card.jpg"],
+      "Expert treatment for liver and digestive issues by Dr. Ankit Mehra in Ajmer.",
+    images: ["/images/dr-ankit-twitter-card.jpg"], // Replace with actual image path
   },
   robots: {
     index: true,
@@ -67,14 +66,15 @@ export const metadata = {
     },
   },
   other: {
-    "application-name": "Dr. Vishnu Agrawal - Urology Clinic",
-    author: "Dr. Vishnu Agrawal",
-    Publisher: "Dr. Vishnu Agrawal",
-    "publisher-url": "https://drvishnuagrawal.in",
+    "application-name": "Dr. Ankit Mehra - Gastroenterology Clinic",
+    author: "Dr. Ankit Mehra",
+    Publisher: "Dr. Ankit Mehra",
+    "publisher-url": "https://drankitmehra.com",
     generator: "Next.js",
     "theme-color": "#ffffff",
   },
 };
+
 
 // Schema.org structured data
 const structuredData = {

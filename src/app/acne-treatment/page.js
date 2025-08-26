@@ -1,6 +1,70 @@
+import Link from 'next/link';
 import React from 'react';
+export const metadata = {
+  title: "Best Acne Treatment in Ajmer | Dr. Ankit Mehra (MD in Skin & VD)",
+  description:
+    "Get rid of acne and prevent future breakouts with targeted treatments. Best Acne Treatment in Ajmer at Dr. Ankit Mehra's clinic.",
+  keywords: [
+    "best acne treatment in Ajmer",
+    "acne treatment Ajmer",
+    "pimple treatment Ajmer",
+    "acne scar removal",
+    "dermatologist for acne Ajmer",
+    "skin doctor Ajmer",
+    "acne prevention treatments",
+    "advanced acne therapy",
+    "Dr. Ankit Mehra acne treatment",
+    "clear skin solutions Ajmer"
+  ],
+  openGraph: {
+    title: "Best Acne Treatment in Ajmer | Dr. Ankit Mehra (MD in Skin & VD)",
+    description:
+      "Get rid of acne and prevent future breakouts with targeted treatments. Best Acne Treatment in Ajmer at Dr. Ankit Mehra's clinic.",
+    images: [
+      {
+        url: "/images/person-dealing-with-rosacea-scaled.jpg", // replace with actual path
+        width: 2560,
+        height: 1706,
+        alt: "Acne Treatment at Dr. Ankit Mehra's Clinic",
+      },
+    ],
+    type: "article",
+    url: "https://drankitmehra.com/acne-treatment/",
+    siteName: "Dr. Ankit Mehra | Dermatologist in Ajmer",
+  },
+  alternates: {
+    canonical: "https://drankitmehra.com/acne-treatment/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Best Acne Treatment in Ajmer | Dr. Ankit Mehra (MD in Skin & VD)",
+    description:
+      "Get rid of acne and prevent future breakouts with targeted treatments. Best Acne Treatment in Ajmer at Dr. Ankit Mehra's clinic.",
+    images: ["/images/person-dealing-with-rosacea-scaled.jpg"], // replace with actual path
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": "-1",
+      "max-video-preview": "-1",
+    },
+  },
+  other: {
+    "application-name": "Dr. Ankit Mehra - Acne Treatment",
+    author: "Dr. Ankit Mehra",
+    publisher: "Dr. Ankit Mehra",
+    "publisher-url": "https://drankitmehra.com",
+    generator: "WordPress",
+    "theme-color": "#ffffff",
+  },
+};
+
 const Acnetreatment = () => {
-  // 痤疮治疗信息数据
+ 
   const skinInfo = {
     title: "Acne Treatment",
     description: "Acne treatment focuses on reducing pimples, blackheads, and other issues caused by clogged pores. Methods include topical and oral medications, chemical peels, and laser therapy to effectively manage acne and improve skin health.",
@@ -51,9 +115,9 @@ const Acnetreatment = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        {/* 主卡片容器 */}
+  
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          {/* 图片部分 */}
+          
           <div className="relative h-96 md:h-[500px] overflow-hidden">
             <img 
               src={skinInfo.image} 
@@ -66,15 +130,15 @@ const Acnetreatment = () => {
               <p className="text-lg md:text-xl opacity-90">Advanced Acne Treatments</p>
             </div>
           </div>
-          {/* 内容部分 */}
+          
           <div className="p-6 md:p-8">
-            {/* 描述部分 */}
+            
             <div className="mb-10">
               <p className="text-gray-700 text-lg leading-relaxed">
                 {skinInfo.description}
               </p>
             </div>
-            {/* 信息网格部分 */}
+       
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {skinInfo.details.map((section, index) => (
                 <div 
@@ -98,15 +162,17 @@ const Acnetreatment = () => {
                 </div>
               ))}
             </div>
-            {/* 行动号召按钮 */}
+           
             <div className="mt-10 text-center">
+              <Link href={"/bookconsultation"}>
               <button className="bg-gradient-to-r from-indigo-500 to-blue-600 text-white font-semibold py-3 px-8 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300">
                 Book Your Acne Treatment Consultation
               </button>
+              </Link>
             </div>
           </div>
         </div>
-        {/* 底部信息部分 */}
+        
         <div className="mt-8 bg-white rounded-xl p-6 shadow-md">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-4 md:mb-0">

@@ -1,6 +1,70 @@
+import Link from 'next/link';
 import React from 'react';
+export const metadata = {
+  title: "Pigmentation Treatments for Even Skin Tone | Dr. Ankit Mehra",
+  description:
+    "Reduce pigmentation and achieve a balanced, glowing complexion. Advanced treatments for dark spots, melasma, and uneven skin tone.",
+  keywords: [
+    "pigmentation treatment",
+    "melasma treatment",
+    "dark spots removal",
+    "skin brightening Ajmer",
+    "hyperpigmentation treatment",
+    "laser pigmentation removal",
+    "chemical peels pigmentation",
+    "even skin tone treatment",
+    "Dr. Ankit Mehra pigmentation care",
+    "glowing skin treatments"
+  ],
+  openGraph: {
+    title: "Pigmentation Treatments for Even Skin Tone | Dr. Ankit Mehra",
+    description:
+      "Reduce pigmentation and achieve a balanced, glowing complexion. Advanced treatments for dark spots, melasma, and uneven skin tone.",
+    images: [
+      {
+        url: "/images/woman-beauty-clinic-face-treatment-scaled.jpg", // replace with actual path
+        width: 2560,
+        height: 1707,
+        alt: "Pigmentation Treatment - Dr. Ankit Mehra",
+      },
+    ],
+    type: "article",
+    url: "https://drankitmehra.com/pigmentation-treatment/",
+    siteName: "Dr. Ankit Mehra | Dermatologist in Ajmer",
+  },
+  alternates: {
+    canonical: "https://drankitmehra.com/pigmentation-treatment/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pigmentation Treatments for Even Skin Tone | Dr. Ankit Mehra",
+    description:
+      "Reduce pigmentation and achieve a balanced, glowing complexion. Advanced treatments for dark spots, melasma, and uneven skin tone.",
+    images: ["/images/woman-beauty-clinic-face-treatment-scaled.jpg"], // replace with actual path
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": "-1",
+      "max-video-preview": "-1",
+    },
+  },
+  other: {
+    "application-name": "Dr. Ankit Mehra - Pigmentation Treatments",
+    author: "Dr. Ankit Mehra",
+    publisher: "Dr. Ankit Mehra",
+    "publisher-url": "https://drankitmehra.com",
+    generator: "WordPress",
+    "theme-color": "#ffffff",
+  },
+};
+
 const SkinRejuvenationComponent = () => {
-  // 色素沉着治疗信息数据
+  
   const skinInfo = {
     title: "Pigmentation Treatment",
     description: "This treatment targets dark spots and uneven skin tone, often using chemical peels, laser therapy, and topical preparations.",
@@ -45,9 +109,9 @@ const SkinRejuvenationComponent = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        {/* 主卡片容器 */}
+     
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          {/* 图片部分 */}
+          
           <div className="relative h-96 md:h-[500px] overflow-hidden">
             <img 
               src={skinInfo.image} 
@@ -60,15 +124,15 @@ const SkinRejuvenationComponent = () => {
               <p className="text-lg md:text-xl opacity-90">Advanced Pigmentation Treatments</p>
             </div>
           </div>
-          {/* 内容部分 */}
+        
           <div className="p-6 md:p-8">
-            {/* 描述部分 */}
+          
             <div className="mb-10">
               <p className="text-gray-700 text-lg leading-relaxed">
                 {skinInfo.description}
               </p>
             </div>
-            {/* 信息网格部分 */}
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {skinInfo.details.map((section, index) => (
                 <div 
@@ -92,15 +156,17 @@ const SkinRejuvenationComponent = () => {
                 </div>
               ))}
             </div>
-            {/* 行动号召按钮 */}
+       
             <div className="mt-10 text-center">
+                <Link href={"/bookconsultation"}>
               <button className="bg-gradient-to-r from-indigo-500 to-blue-600 text-white font-semibold py-3 px-8 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300">
                 Book Your Pigmentation Consultation
               </button>
+              </Link>
             </div>
           </div>
         </div>
-        {/* 底部信息部分 */}
+       
         <div className="mt-8 bg-white rounded-xl p-6 shadow-md">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-4 md:mb-0">

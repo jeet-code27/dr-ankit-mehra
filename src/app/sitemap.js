@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://drvishnuagrawal.in";
+  const baseUrl = "https://drankitmehra.com";
   const currentDate = new Date();
 
   return [
@@ -11,19 +11,19 @@ export default function sitemap() {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/about`,
+      url: `${baseUrl}/about-us`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog`,
+      url: `${baseUrl}/blogs`,
       lastModified: currentDate,
       changeFrequency: "daily",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/contact`,
+      url: `${baseUrl}/contact-us`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.8,
@@ -35,188 +35,201 @@ export default function sitemap() {
       priority: 0.9,
     },
 
-    // Service Pages - High Priority
+    
     {
-      url: `${baseUrl}/services/prostate-surgery`,
-      lastModified: currentDate,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services/renal-stone`,
-      lastModified: currentDate,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services/ureteric-stone`,
+      url: `${baseUrl}/skin-treatments`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/bladder-stone`,
-      lastModified: currentDate,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/bladder-tumor`,
+      url: `${baseUrl}/skin-rejuvenation`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/services/prostate-disease`,
+      url: `${baseUrl}/anti-aging-treatments`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/services/urinary-disease`,
+      url: `${baseUrl}/pigmentation-treatment`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/male-infertility`,
+      url: `${baseUrl}/scar-reduction`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/andrology-problems`,
+      url: `${baseUrl}/acne-treatment`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/services/male-sexual-problems`,
+      url: `${baseUrl}/hair-treatments-2`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/services/all-disease-related-urology`,
+      url: `${baseUrl}/prp-therapy`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/services/urinary-incontinence-treatment`,
+      url: `${baseUrl}/hair-loss-treatments`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/services/overactive-bladder-treatment`,
+      url: `${baseUrl}/scalp-micropigmentation`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/services/urinary-fistula`,
+      url: `${baseUrl}/laser-treatments`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/services/urethroplasty`,
+      url: `${baseUrl}/laser-hair-removal`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/services/hypospadias-udt`,
+      url: `${baseUrl}/laser-skin-resurfacing`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.6,
     },
-
+     {
+      url: `${baseUrl}/laser-tattoo-removal`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/about-us`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+        {
+      url: `${baseUrl}/gallery-2`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+      
     // All Blog Posts - High Priority (0.9)
     {
-      url: `${baseUrl}/blog/urology-health-tips-ajmer-urologist`,
+      url: `${baseUrl}/blogs/common-skin-problems-and-home-remedies`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog/best-kidney-doctor-ajmer-dr-vishnu-agrawal`,
+      url: `${baseUrl}/blogs/hair-fall-treatment-in-ajmer-best-hair-specialist-for-hair-loss`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog/best-urology-doctor-ajmer-dr-vishnu-agrawal`,
+      url: `${baseUrl}/blogs/laser-treatment-for-acne-scars-what-to-expect`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog/best-urology-clinic-ajmer-agrawal-clinic`,
+      url: `${baseUrl}/blogs/top-skin-treatments-to-achieve-a-natural-glow-expert-advice-by-dr-ankit-mehra-md-skin-vd`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog/best-male-infertility-doctor-ajmer-dr-vishnu-agrawal`,
+      url: `${baseUrl}/blogs/best-skin-care-clinic-in-ajmer`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog/urology-specialist-ajmer-dr-vishnu-agrawal`,
+      url: `${baseUrl}/blogs/daily-skin-care-routine-for-oily-dry-and-sensitive-skin-types`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog/best-urologist-ajmer-dr-vishnu-agrawal`,
+      url: `${baseUrl}/blogs/benefits-of-laser-treatments-skin-rejuvenation`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog/uti-prevention-treatment-ajmer`,
+      url: `${baseUrl}/blogs/skin-problems-causes-signs-and-treatment-options`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog/best-urologist-in-ajmer-dr-vishnu-agrawal`,
+      url: `${baseUrl}/blogs/hair-loss-common-causes-by-dr-ankit-mehra-best-dermatologist-in-ajmer`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog/best-urologist-ajmer-consult-dr-vishnu-agrawal`,
+      url: `${baseUrl}/blogs/best-dermatologist-in-ajmer-for-healthy-glowing-skin`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog/top-urologist-ajmer-dr-vishnu-agrawal`,
+      url: `${baseUrl}/blogs/best-skin-care-doctor-in-ajmer-dr-ankit-mehra-dermatologist`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog/best-urology-specialist-ajmer-dr.-vishnu-agrawal`,
+      url: `${baseUrl}/blogs/top-dermatology-clinic-in-ajmer-best-dermatologist-dr-ankit-mehra`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
      {
-      url: `${baseUrl}/blog/urinary-incontinence-treatment-ajmer-dr-vishnu-agrawal`,
+      url: `${baseUrl}/blogs/skin-care-treatments-best-dermatologist-in-ajmer-dr-ankit-mehra`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
         {
-      url: `${baseUrl}/blog/best-kidney-disease-treatment-ajmer`,
+      url: `${baseUrl}/blogs/best-dermatologist-skin-specialist-in-ajmer-dr-ankit-mehra`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
+        {
+      url: `${baseUrl}/blogs/how-to-find-the-best-dermatologist-in-ajmer-dr-ankit-mehra`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+        {
+      url: `${baseUrl}/blogs/understanding-vitiligo-causes-symptoms-and-treatment-options`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+         
   ];
 }

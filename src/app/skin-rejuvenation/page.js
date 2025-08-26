@@ -1,6 +1,70 @@
+import Link from 'next/link';
 import React from 'react';
+export const metadata = {
+  title: "Skin Rejuvenation for a Radiant, Youthful Glow | Dr. Ankit Mehra",
+  description:
+    "Refresh your skin with advanced rejuvenation techniques. Achieve smoother, brighter, and healthier skin at Dr. Ankit Mehra's clinic.",
+  keywords: [
+    "skin rejuvenation",
+    "skin glow treatment Ajmer",
+    "anti-aging treatments",
+    "face rejuvenation",
+    "laser skin rejuvenation",
+    "collagen boost treatment",
+    "Dr. Ankit Mehra skin clinic",
+    "dermatology treatments for aging",
+    "facial rejuvenation Ajmer",
+    "radiant skin care solutions"
+  ],
+  openGraph: {
+    title: "Skin Rejuvenation for a Radiant, Youthful Glow | Dr. Ankit Mehra",
+    description:
+      "Refresh your skin with advanced rejuvenation techniques. Achieve smoother, brighter, and healthier skin at Dr. Ankit Mehra's clinic.",
+    images: [
+      {
+        url: "/images/young-beautiful-girl-lies-beautician-s-table-receives-procedures-scaled.jpg", // replace with actual image path
+        width: 2560,
+        height: 1707,
+        alt: "Skin Rejuvenation - Dr. Ankit Mehra",
+      },
+    ],
+    type: "article",
+    url: "https://drankitmehra.com/skin-rejuvenation/",
+    siteName: "Dr. Ankit Mehra | Dermatologist in Ajmer",
+  },
+  alternates: {
+    canonical: "https://drankitmehra.com/skin-rejuvenation/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Skin Rejuvenation for a Radiant, Youthful Glow | Dr. Ankit Mehra",
+    description:
+      "Refresh your skin with advanced rejuvenation techniques. Achieve smoother, brighter, and healthier skin at Dr. Ankit Mehra's clinic.",
+    images: ["/images/young-beautiful-girl-lies-beautician-s-table-receives-procedures-scaled.jpg"], // replace with actual image path
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": "-1",
+      "max-video-preview": "-1",
+    },
+  },
+  other: {
+    "application-name": "Dr. Ankit Mehra - Skin Rejuvenation",
+    author: "Dr. Ankit Mehra",
+    Publisher: "Dr. Ankit Mehra",
+    "publisher-url": "https://drankitmehra.com",
+    generator: "WordPress",
+    "theme-color": "#ffffff",
+  },
+};
+
 const SkinRejuvenationComponent = () => {
-  // 皮肤焕新信息数据
+  
   const skinInfo = {
     title: "Skin Rejuvenation",
     description: "Skin rejuvenation refers to treatments that aim to restore a youthful appearance to the skin by addressing issues like wrinkles, fine lines, uneven texture, and pigmentation. These treatments often involve chemical peels, laser therapy, or other advanced techniques to improve skin quality and radiance.",
@@ -51,9 +115,9 @@ const SkinRejuvenationComponent = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        {/* 主卡片容器 */}
+      
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          {/* 图片部分 */}
+         
           <div className="relative h-96 md:h-[500px] overflow-hidden">
             <img 
               src={skinInfo.image} 
@@ -66,15 +130,15 @@ const SkinRejuvenationComponent = () => {
               <p className="text-lg md:text-xl opacity-90">Advanced Skin Rejuvenation Treatments</p>
             </div>
           </div>
-          {/* 内容部分 */}
+         
           <div className="p-6 md:p-8">
-            {/* 描述部分 */}
+           
             <div className="mb-10">
               <p className="text-gray-700 text-lg leading-relaxed">
                 {skinInfo.description}
               </p>
             </div>
-            {/* 信息网格部分 */}
+           
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {skinInfo.details.map((section, index) => (
                 <div 
@@ -98,15 +162,18 @@ const SkinRejuvenationComponent = () => {
                 </div>
               ))}
             </div>
-            {/* 行动号召按钮 */}
+   
             <div className="mt-10 text-center">
+                <Link href={"/bookconsultation"}>
               <button className="bg-gradient-to-r from-indigo-500 to-blue-600 text-white font-semibold py-3 px-8 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300">
                 Schedule a Consultation
               </button>
+              </Link>
+             
             </div>
           </div>
         </div>
-        {/* 底部信息部分 */}
+       
         <div className="mt-8 bg-white rounded-xl p-6 shadow-md">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-4 md:mb-0">

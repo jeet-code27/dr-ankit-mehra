@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 const AboutDoctorSection = () => {
   const statsRef = useRef([]);
@@ -71,7 +72,7 @@ const AboutDoctorSection = () => {
          
         
      
-      <div className="bg-gray-50">
+      <div className="bg-[#EFF5FE]">
         {/* Main Content */}
         <main className="container mx-auto px-6 py-12">
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
@@ -88,7 +89,7 @@ const AboutDoctorSection = () => {
 
 
                 <div className="text-center">
-                  <h1 className="text-3xl font-bold text-gray-800 mb-2">Dr. Ankit Mehra</h1>
+                  <h2 className="text-3xl font-bold text-gray-800 mb-2">Dr. Ankit Mehra</h2>
                   <p className="text-lg text-gray-600 font-medium">MD in Skin & VD</p>
                   <p className="text-sm text-gray-500 mt-2 px-4">
                     Venereology and Dermatology Specialist
@@ -139,10 +140,12 @@ const AboutDoctorSection = () => {
                 
                 {/* Read More Button */}
                 <div className="flex justify-center">
+                  <Link href={"/about-us"}>
                   <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 flex items-center space-x-2 hover-lift">
                     <span>READ MORE</span>
                     <i className="fas fa-arrow-right"></i>
                   </button>
+                  </Link>
                 </div>
               </div>
             </div>

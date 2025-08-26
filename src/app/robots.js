@@ -7,6 +7,6 @@ export default function robots() {
           disallow: ['/private/', '/admin/']
         }
       ],
-      sitemap: 'https://drvishnuagrawal.in/sitemap.xml',
+      sitemap: 'https://drankitmehra.com/sitemap.xml',
     }
   }

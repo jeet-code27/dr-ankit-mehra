@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from "next/link";
+import Image from 'next/image';
 export const metadata = {
   title: "Advanced Hair Treatments for All Hair Concerns | Dr. Ankit Mehra",
   description:
@@ -120,10 +121,12 @@ const TreatmentCard = ({ treatment }) => {
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
       {/* Image Section */}
       <div className="relative h-64 overflow-hidden">
-        <img 
+        <Image
           src={`/images/home/${treatment.image}`} 
           alt={treatment.title}
           className="w-full h-full object-cover"
+          width={500}
+          height={500}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
       </div>

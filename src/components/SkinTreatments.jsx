@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
-
+import Image from "next/image";
 const conditions = [
   { label: "Skin Rejuvenation", slug: "skin-rejuvenation" },
   { label: "Anti-Aging Treatments", slug: "anti-aging-treatments" },
@@ -57,12 +57,14 @@ export default function SkinTreatments() {
           className="focus:outline-none"
           aria-label="Toggle skin treatments dropdown"
         >
-          <img
+          <Image
             src="/images/chevron-down.png"
             alt="Toggle Dropdown"
             className={`w-4 h-4 transition-transform duration-300 ${
               isOpen ? "rotate-180" : "rotate-0"
             }`}
+            width={16}
+            height={16}
           />
         </button>
       </div>

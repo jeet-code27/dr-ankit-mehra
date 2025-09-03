@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const WhyChooseSection = () => {
@@ -16,10 +18,12 @@ const WhyChooseSection = () => {
           <div className="flex flex-col md:flex-row items-center mb-10">
             <div className="mb-6 md:mb-0 md:mr-8">
               <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-blue-100 shadow-lg">
-                <img 
+                <Image
                   src="/images/home/dr-ankit-mehra.jpeg" 
                   alt="Dr. Ankit Mehra" 
                   className="w-full h-full object-cover"
+                  width={192}
+                  height={192}
                 />
               </div>
             </div>
@@ -100,9 +104,11 @@ const WhyChooseSection = () => {
         
         {/* CTA Button */}
         <div className="px-8 pb-8 text-center">
+          <Link href="/bookconsultation">  
           <button className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105">
             Book an Appointment
           </button>
+          </Link>
         </div>
       </div>
     </div>

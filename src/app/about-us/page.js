@@ -1,9 +1,6 @@
- 
 import AboutDoctor from "@/components/AboutDoctor";
 import AboutDoctorSection from "@/components/AboutDoctorSection";
 import PatientReviews from "@/components/PatientReviews";
- 
- 
 
 export const metadata = {
   title: "About - Best dermatology clinic in Ajmer | Dr. Ankit Mehra",
@@ -42,7 +39,9 @@ export const metadata = {
     title: "About - Best dermatology clinic in Ajmer | Dr. Ankit Mehra",
     description:
       "Learn about Dr. Ankit Mehra's expertise, team, and advanced treatments. Committed to providing exceptional care for your skin and hair.",
-    images: ["/images/WhatsApp-Image-2024-11-22-at-10.36.42-e1746422645483.jpeg"], // Replace with actual image path
+    images: [
+      "/images/WhatsApp-Image-2024-11-22-at-10.36.42-e1746422645483.jpeg",
+    ], // Replace with actual image path
   },
   robots: {
     index: true,
@@ -65,18 +64,12 @@ export const metadata = {
   },
 };
 
-
-export default function About() {   
+export default function About() {
   return (
-    < >
- 
-
-<AboutDoctorSection/>
-<AboutDoctor/>
- <PatientReviews/>
- 
- 
- 
+    <>
+      <AboutDoctorSection />
+      <AboutDoctor />
+      <PatientReviews />
     </>
   );
-}                                                                                                               
+}

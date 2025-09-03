@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image';
 export const metadata = {
   title: "Skin Rejuvenation for a Radiant, Youthful Glow | Dr. Ankit Mehra",
   description:
@@ -119,10 +120,12 @@ const SkinRejuvenationComponent = () => {
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
          
           <div className="relative h-96 md:h-[500px] overflow-hidden">
-            <img 
+            <Image
               src={skinInfo.image} 
               alt="Skin rejuvenation treatment showing a woman receiving facial treatment with professional equipment"
               className="w-full h-full object-cover"
+              width={1200}
+              height={500}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
             <div className="absolute bottom-0 left-0 right-0 p-8 text-white">

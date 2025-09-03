@@ -36,10 +36,10 @@ export async function generateMetadata({ params }) {
       description:
         blog.metaDescription || blog.excerpt || blog.content.substring(0, 160),
       type: "article",
-      url: `https://drvishnuagrawal.in/blog/${blog.slug}`,
+      url: `https://drankitmehra.com//blogs/${blog.slug}`,
       images: [
         {
-          url: blog.image || "/images/urology-placeholder.jpg",
+          url: blog.image || "/images/placeholder.jpg",
           width: 1200,
           height: 630,
           alt: blog.alt || blog.title,
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }) {
       title: blog.title,
       description:
         blog.metaDescription || blog.excerpt || blog.content.substring(0, 160),
-      images: [blog.image || "/images/urology-placeholder.jpg"],
+      images: [blog.image || "/images/placeholder.jpg"],
     },
     robots: {
       index: true,
@@ -66,10 +66,10 @@ export async function generateMetadata({ params }) {
       },
     },
     other: {
-      "application-name": "Dr. Vishnu Agrawal - Urology Clinic",
-      author: "Dr. Vishnu Agrawal",
-      Publisher: "Dr. Vishnu Agrawal",
-      "publisher-url": "https://drvishnuagrawal.in",
+      "application-name": "Dr.Ankit Mehra",
+      author: "Dr.Ankit Mehra",
+      Publisher: "Dr.Ankit Mehra",
+      "publisher-url": "https://drankitmehra.com",
       generator: "Next.js",
       "theme-color": "#ffffff",
     },

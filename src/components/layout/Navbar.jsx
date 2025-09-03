@@ -246,7 +246,7 @@ export default function Navbar() {
                           onClick={() => setIsSkinOpen(!isSkinOpen)}
                         >
                           <span>Skin Treatments</span>
-                          <img
+                          <Image
                             src="/images/chevron-down.png"
                             alt="Toggle Dropdown"
                             className={`w-4 h-4 transition-transform duration-300 ${isSkinOpen ? "rotate-180" : "rotate-0"}`}
@@ -282,10 +282,12 @@ export default function Navbar() {
                           onClick={() => setIsHairOpen(!isHairOpen)}
                         >
                           <span>Hair Treatments</span>
-                          <img
+                          <Image
                             src="/images/chevron-down.png"
                             alt="Toggle Dropdown"
                             className={`w-4 h-4 transition-transform duration-300 ${isHairOpen ? "rotate-180" : "rotate-0"}`}
+                            width={16}
+                            height={16}
                           />
                         </div>
                         {isHairOpen && (
@@ -318,10 +320,12 @@ export default function Navbar() {
                           onClick={() => setIsLaserOpen(!isLaserOpen)}
                         >
                           <span>Laser Treatments</span>
-                          <img
+                         <Image
                             src="/images/chevron-down.png"
                             alt="Toggle Dropdown"
-                            className={`w-4 h-4 transition-transform duration-300 ${isLaserOpen ? "rotate-180" : "rotate-0"}`}
+                            className={`w-4 h-4 transition-transform duration-300 ${isHairOpen ? "rotate-180" : "rotate-0"}`}
+                            width={16}
+                            height={16}
                           />
                         </div>
                         {isLaserOpen && (

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const FloatingContactButtons = () => {
@@ -10,10 +11,12 @@ const FloatingContactButtons = () => {
         className="flex items-center justify-center w-11 h-12 rounded-tl-lg bg-[#18e60a]   shadow-md  hover:opacity-90 transition-all"
         aria-label="Chat on WhatsApp"
       >
-        <img
-          src="https://img.icons8.com/ios-filled/24/ffffff/whatsapp.png"
+        <Image
+          src="/images/home/whatsapp.png"
           alt="WhatsApp"
           className="w-8 h-8"
+          width={24}
+          height={24}
         />
       </a>
       <a
@@ -21,10 +24,12 @@ const FloatingContactButtons = () => {
         className="flex items-center justify-center w-11 h-12 bg-[#1a5aee] rounded-bl-lg  shadow-md  hover:opacity-90 transition-all"
         aria-label="Call us"
       >
-        <img
-          src="https://img.icons8.com/ios-filled/24/ffffff/phone.png"
+        <Image
+          src="/images/home/phone.png"
           alt="Phone"
           className="w-6 h-6"
+          width={24}
+          height={24}
         />
       </a>
     </div>

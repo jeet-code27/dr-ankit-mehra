@@ -12,48 +12,49 @@ import PatientReviews from "@/components/PatientReviews";
 import WhyChooseSection from "@/components/WhyChooseSection";
 
 export const metadata = {
-  title: "Best Gastroenterologist in Ajmer | Dr. Ankit Mehra - Liver & Digestive Specialist",
+  title: "Best Dermatologist in Ajmer | Dr. Ankit Mehra - Skin, Hair & Cosmetology Specialist",
   description:
-    "Dr. Ankit Mehra is a leading gastroenterologist in Ajmer offering expert treatment for liver diseases, digestive disorders, and endoscopic procedures. Book your appointment today.",
+    "Dr. Ankit Mehra (MD Skin & VD) is a senior dermatologist in Ajmer, specializing in skin, hair, venereology, and cosmetology treatments. Book an appointment for acne, hair loss, laser therapy, and aesthetic procedures.",
   keywords: [
-    "best gastroenterologist in Ajmer",
-    "liver specialist Ajmer",
-    "digestive disorders doctor",
-    "endoscopy expert Ajmer",
+    "best dermatologist in Ajmer",
+    "skin specialist Ajmer",
+    "cosmetologist in Ajmer",
+    "hair loss treatment Ajmer",
+    "laser skin treatment Ajmer",
     "Dr. Ankit Mehra",
-    "gastro clinic Ajmer",
-    "hepatologist Ajmer",
-    "colonoscopy specialist Ajmer",
-    "stomach pain doctor Ajmer",
-    "GI disorders treatment",
-    "pancreatitis treatment Ajmer",
-    "IBD treatment specialist",
-    "gastrointestinal surgeon Ajmer",
+    "skin doctor Ajmer",
+    "acne scar treatment Ajmer",
+    "skin rejuvenation Ajmer",
+    "venereologist Ajmer",
+    "aesthetic dermatologist Ajmer",
+    "botox and fillers Ajmer",
+    "pigmentation treatment Ajmer",
+    "tattoo removal Ajmer",
   ],
   openGraph: {
-    title: "Dr. Ankit Mehra | Best Gastroenterologist & Liver Specialist in Ajmer",
+    title: "Dr. Ankit Mehra | Best Dermatologist, Cosmetologist & Skin Specialist in Ajmer",
     description:
-      "Advanced gastro care for liver, pancreas, and digestive system disorders with state-of-the-art treatment and high success rates.",
+      "Get advanced skin, hair, laser, and cosmetology treatments with Dr. Ankit Mehra, MD Skin & VD. Trusted by thousands of patients in Ajmer for dermatology and aesthetic care.",
     images: [
       {
-        url: "/images/dr-ankit-profile.jpg", // Replace with actual image path
+        url: "/images/home/dr-ankit-mehra.jpeg", // Replace with actual image path
         width: 800,
         height: 600,
-        alt: "Dr. Ankit Mehra - Gastroenterologist Ajmer",
+        alt: "Dr. Ankit Mehra - Dermatologist in Ajmer",
       },
     ],
     type: "website",
     url: "https://drankitmehra.com",
-    siteName: "Dr. Ankit Mehra Gastro Clinic",
+    siteName: "Dr. Ankit Mehra Skin & Cosmetology Clinic",
   },
   alternates: {
     canonical: "https://drankitmehra.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Top Gastroenterologist in Ajmer | Dr. Ankit Mehra",
+    title: "Top Dermatologist in Ajmer | Dr. Ankit Mehra",
     description:
-      "Expert treatment for liver and digestive issues by Dr. Ankit Mehra in Ajmer.",
+      "Expert skin, hair, and cosmetology treatments by Dr. Ankit Mehra (MD Skin & VD) in Ajmer.",
     images: ["/images/dr-ankit-twitter-card.jpg"], // Replace with actual image path
   },
   robots: {
@@ -66,7 +67,7 @@ export const metadata = {
     },
   },
   other: {
-    "application-name": "Dr. Ankit Mehra - Gastroenterology Clinic",
+    "application-name": "Dr. Ankit Mehra - Dermatology & Cosmetology Clinic",
     author: "Dr. Ankit Mehra",
     Publisher: "Dr. Ankit Mehra",
     "publisher-url": "https://drankitmehra.com",
@@ -76,59 +77,76 @@ export const metadata = {
 };
 
 
+
 // Schema.org structured data
+// Schema.org structured data for Dr. Ankit Mehra (Dermatologist)
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "MedicalOrganization",
-      "@id": "https://drvishnuagrawal.in/#organization",
-      name: "Dr. Vishnu Agrawal Urology Clinic",
-      url: "https://drvishnuagrawal.in",
+      "@id": "https://drankitmehra.com/#organization",
+      name: "Dr. Ankit Mehra Skin & Cosmetology Clinic",
+      url: "https://drankitmehra.com/",
       logo: {
         "@type": "ImageObject",
-        url: "https://drvishnuagrawal.in/images/dr-vishnu-profile.jpg",
+        url: "https://drankitmehra.com/images/home/dr-ankit-mehra.jpeg",
         width: 800,
         height: 600,
       },
-      sameAs: ["https://drvishnuagrawal.in"],
+      sameAs: [
+        "https://www.facebook.com",
+        "https://www.instagram.com",
+        "https://www.linkedin.com" // replace with actual profiles if available
+      ],
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+91-82409-70287",
+        telephone: "+91-9697041111",
+        
         contactType: "customer service",
         availableLanguage: ["English", "Hindi"],
       },
       address: {
         "@type": "PostalAddress",
-        streetAddress: "4/172, Gyan marg, Makarwali Rd, near vinayak complex",
-        addressLocality: "Panchsheel Nagar",
+        streetAddress: "62, Lane no 2, Opp. Hotel Ambassador, Nagina Bagh, Muslim Mochi Mohalla",
+        addressLocality: "Ajmer",
         addressRegion: "Rajasthan",
-        postalCode: "305004",
+        postalCode: "305001",
         addressCountry: "IN",
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: 26.4499,
-        longitude: 74.6399,
+        latitude: 26.4715641,
+        longitude: 74.6352111,
       },
-      medicalSpecialty: "Urology",
+      medicalSpecialty: [
+        "Dermatology",
+        "Cosmetology",
+        "Venereology",
+        "Trichology"
+      ],
       priceRange: "₹₹₹",
     },
     {
       "@type": "Physician",
-      "@id": "https://drvishnuagrawal.in/#physician",
-      name: "Dr. Vishnu Agrawal",
-      givenName: "Vishnu",
-      familyName: "Agrawal",
+      "@id": "https://drankitmehra.com/#physician",
+      name: "Dr. Ankit Mehra",
+      givenName: "Ankit",
+      familyName: "Mehra",
       honorificPrefix: "Dr.",
-      jobTitle: "Urologist",
-      medicalSpecialty: "Urology",
+      jobTitle: "Dermatologist, Cosmetologist & Venereologist",
+      medicalSpecialty: [
+        "Dermatology",
+        "Cosmetic Dermatology",
+        "Venereology",
+        "Hair Restoration"
+      ],
       worksFor: {
-        "@id": "https://drvishnuagrawal.in/#organization",
+        "@id": "https://drankitmehra.com/#organization",
       },
       alumniOf: {
         "@type": "EducationalOrganization",
-        name: "Medical College",
+        name: "JLN Medical College, Ajmer",
       },
       hasCredential: [
         {
@@ -139,152 +157,84 @@ const structuredData = {
         {
           "@type": "EducationalOccupationalCredential",
           credentialCategory: "degree",
-          name: "M.S.",
-        },
-        {
-          "@type": "EducationalOccupationalCredential",
-          credentialCategory: "degree",
-          name: "M.Ch. Urologist",
-        },
+          name: "M.D. Skin & VD",
+        }
       ],
       knowsAbout: [
-        "Kidney Stone Treatment",
-        "Prostate Treatment",
-        "Male Infertility",
-        "Urinary Disorders",
-        "Erectile Dysfunction",
-        "Urinary Tract Infections",
-        "Pediatric Urology",
-        "BPH Treatment",
+        "Acne & Scar Treatment",
+        "Pigmentation Treatment",
+        "Laser Skin Therapy",
+        "Hair Loss Treatment",
+        "PRP Therapy",
+        "Botox & Fillers",
+        "Tattoo Removal",
+        "Venereal Diseases"
       ],
       telephone: "+91-82409-70287",
-      email: "agrawalclinicajmer@gmail.com",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "4/172, Gyan marg, Makarwali Rd, near vinayak complex",
-        addressLocality: "Panchsheel Nagar",
+        streetAddress: "62, Lane no 2, Opp. Hotel Ambassador, Nagina Bagh, Ajmer",
+        addressLocality: "Ajmer",
         addressRegion: "Rajasthan",
-        postalCode: "305004",
+        postalCode: "305001",
         addressCountry: "IN",
       },
       availableService: [
         {
           "@type": "MedicalProcedure",
-          name: "Kidney Stone Treatment",
-          description: "Advanced laser treatment for kidney stones",
+          name: "Acne & Scar Reduction",
+          description: "Advanced treatment for acne and scar removal using lasers and medication",
         },
         {
           "@type": "MedicalProcedure",
-          name: "Prostate Treatment",
-          description: "Treatment for prostate enlargement and related issues",
+          name: "Hair Loss Treatment",
+          description: "PRP therapy and advanced trichology solutions",
         },
         {
           "@type": "MedicalProcedure",
-          name: "Male Infertility Treatment",
-          description: "Comprehensive treatment for male fertility issues",
+          name: "Laser Therapy",
+          description: "Tattoo removal, hair removal, pigmentation treatment, skin rejuvenation",
         },
         {
           "@type": "MedicalProcedure",
-          name: "Urinary Disorder Treatment",
-          description: "Treatment for various urinary tract disorders",
-        },
+          name: "Cosmetic Dermatology",
+          description: "Botox, fillers, anti-aging, and skin contouring treatments",
+        }
       ],
-    },
-    {
-      "@type": "MedicalBusiness",
-      "@id": "https://drvishnuagrawal.in/#medicalbusiness",
-      name: "Dr. Vishnu Agrawal Urology Clinic",
-      image: "https://drvishnuagrawal.in/images/dr-vishnu-profile.jpg",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "4/172, Gyan marg, Makarwali Rd, near vinayak complex",
-        addressLocality: "Panchsheel Nagar",
-        addressRegion: "Rajasthan",
-        postalCode: "305004",
-        addressCountry: "IN",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 26.4499,
-        longitude: 74.6399,
-      },
-      telephone: "+91-82409-70287",
-      email: "agrawalclinicajmer@gmail.com",
-      url: "https://drvishnuagrawal.in",
-      openingHoursSpecification: [
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "Monday",
-          opens: "16:00",
-          closes: "19:00",
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "Tuesday",
-          opens: "16:00",
-          closes: "19:00",
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "Wednesday",
-          opens: "16:00",
-          closes: "19:00",
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "Thursday",
-          opens: "16:00",
-          closes: "19:00",
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "Friday",
-          opens: "16:00",
-          closes: "19:00",
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "Saturday",
-          opens: "16:00",
-          closes: "19:00",
-        },
-      ],
-      priceRange: "₹₹₹",
-      paymentAccepted: ["Cash", "Credit Card", "Debit Card", "UPI"],
-      currenciesAccepted: "INR",
     },
     {
       "@type": "WebSite",
-      "@id": "https://drvishnuagrawal.in/#website",
-      url: "https://drvishnuagrawal.in",
-      name: "Dr. Vishnu Agrawal Urology Clinic",
+      "@id": "https://drankitmehra.com/#website",
+      url: "https://drankitmehra.com",
+      name: "Dr. Ankit Mehra Skin & Cosmetology Clinic",
       description:
-        "Best Urologist in Ajmer providing advanced treatment for kidney stones, prostate enlargement, male infertility, and urinary disorders",
+        "Best dermatologist in Ajmer providing advanced skin, hair, laser, cosmetology and venereology treatments.",
       publisher: {
-        "@id": "https://drvishnuagrawal.in/#organization",
+        "@id": "https://drankitmehra.com/#organization",
       },
       inLanguage: "en-IN",
     },
     {
       "@type": "WebPage",
-      "@id": "https://drvishnuagrawal.in/#webpage",
-      url: "https://drvishnuagrawal.in",
-      name: "Best Urologist in Ajmer | Dr. Vishnu Agrawal - Kidney & Prostate Specialist",
+      "@id": "https://drankitmehra.com/#webpage",
+      url: "https://drankitmehra.com",
+      name: "Best Dermatologist in Ajmer | Dr. Ankit Mehra - Skin, Hair & Cosmetology Specialist",
       description:
-        "Dr. Vishnu Agrawal is a leading urologist in Ajmer providing advanced treatment for kidney stones, prostate enlargement, male infertility, and urinary disorders. Book your appointment today.",
+        "Dr. Ankit Mehra (MD Skin & VD) is a senior skin specialist in Ajmer offering treatments for acne, hair loss, pigmentation, laser therapy, and cosmetic dermatology.",
       isPartOf: {
-        "@id": "https://drvishnuagrawal.in/#website",
+        "@id": "https://drankitmehra.com/#website",
       },
       about: {
-        "@id": "https://drvishnuagrawal.in/#physician",
+        "@id": "https://drankitmehra.com/#physician",
       },
       mainEntity: {
-        "@id": "https://drvishnuagrawal.in/#physician",
+        "@id": "https://drankitmehra.com/#physician",
       },
       inLanguage: "en-IN",
     },
   ],
 };
+
 
 export default function Home() {
     const slides = [

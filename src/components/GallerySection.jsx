@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-
+import Image from 'next/image'
 const GallerySection = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -147,9 +147,12 @@ const GallerySection = () => {
                 key={item.id}
                 onClick={() => openLightbox(index)}
               >
-                <img 
-                  src={`/images/home/${item.src}`} 
-                  alt={item.alt} 
+                <Image
+                  src={`/images/home/${item.src}`}
+                  alt={item.alt}
+                  layout="responsive"
+                  width={500}
+                  height={300}
                   className="w-full h-64 object-cover transition-transform duration-400 group-hover:scale-105"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent text-white p-4 pt-2 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
@@ -166,10 +169,14 @@ const GallerySection = () => {
           <div className="fixed inset-0 bg-black/85 z-50 flex items-center justify-center p-4" onClick={closeLightbox}>
             <span className="absolute top-5 right-8 text-white text-4xl font-bold cursor-pointer transition-colors duration-300 z-[1001] hover:text-red-500" onClick={closeLightbox}>&times;</span>
             <button className="absolute top-1/2 left-8 -translate-y-1/2 bg-white/20 text-white border-0 text-3xl w-12 h-12 rounded-full cursor-pointer flex items-center justify-center transition-all duration-300 z-[1001] hover:bg-white/40 hover:scale-110" onClick={goToPrev}>&#10094;</button>
-            <img 
-              className="max-w-[90%] max-h-[80vh] object-contain rounded-lg shadow-2xl animate-zoomIn" 
-              src={`/images/home/${galleryItems[currentIndex].src}`} 
-              alt={galleryItems[currentIndex].alt} 
+            <Image
+              className="max-w-[90%] max-h-[80vh] object-contain rounded-lg shadow-2xl animate-zoomIn"
+              src={`/images/home/${galleryItems[currentIndex].src}`}
+              alt={galleryItems[currentIndex].alt}
+              layout="fill"
+              objectFit="contain"
+             
+             
             />
             <button className="absolute top-1/2 right-8 -translate-y-1/2 bg-white/20 text-white border-0 text-3xl w-12 h-12 rounded-full cursor-pointer flex items-center justify-center transition-all duration-300 z-[1001] hover:bg-white/40 hover:scale-110" onClick={goToNext}>&#10095;</button>
             <div className="absolute bottom-8 left-0 right-0 text-center text-white text-xl px-5">

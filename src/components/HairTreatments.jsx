@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -55,12 +56,15 @@ export default function HairTreatments() {
           className="focus:outline-none"
           aria-label="Toggle hair treatments dropdown"
         >
-          <img
+          <Image
             src="/images/chevron-down.png"
             alt="Toggle Dropdown"
             className={`w-4 h-4 transition-transform duration-300 ${
               isOpen ? "rotate-180" : "rotate-0"
             }`}
+
+            width={16}
+            height={16  }
           />
         </button>
       </div>

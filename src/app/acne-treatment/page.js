@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 export const metadata = {
@@ -119,7 +120,7 @@ const Acnetreatment = () => {
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           
           <div className="relative h-96 md:h-[500px] overflow-hidden">
-            <img 
+            <Image
               src={skinInfo.image} 
               alt="Acne treatment showing professional procedures to manage acne and improve skin health"
               className="w-full h-full object-cover"

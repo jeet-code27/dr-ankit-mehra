@@ -1,5 +1,6 @@
-import React from 'react';
- import Link from "next/link";
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 export const metadata = {
   title: "Comprehensive Skin Treatments for Radiant Skin | Dr. Ankit Mehra",
   description:
@@ -40,7 +41,9 @@ export const metadata = {
     title: "Comprehensive Skin Treatments for Radiant Skin | Dr. Ankit Mehra",
     description:
       "Explore skin treatments for acne, pigmentation, scars, and more. Achieve healthy, glowing skin with expert care at Dr. Ankit Mehra's clinic.",
-    images: ["/images/freepik__expand__4159-qwlpkxdugmq9yrcq0grvg0fqvkvxehzrlpoigcnrks.png"], // Replace with actual image path
+    images: [
+      "/images/freepik__expand__4159-qwlpkxdugmq9yrcq0grvg0fqvkvxehzrlpoigcnrks.png",
+    ], // Replace with actual image path
   },
   robots: {
     index: true,
@@ -68,43 +71,50 @@ const SkinTreatmentsPage = () => {
     {
       id: 1,
       title: "Skin Rejuvenation",
-      description: "Enhance your skin texture and radiance with advanced chemical peels and innovative treatments",
-      image: "young-beautiful-girl-lies-beautician-s-table-receives-procedures-scaled-qwlpr8v570ly32hd4hh19tk1zi61z4x4ivqz277fwg.jpg",
+      description:
+        "Enhance your skin texture and radiance with advanced chemical peels and innovative treatments",
+      image:
+        "young-beautiful-girl-lies-beautician-s-table-receives-procedures-scaled-qwlpr8v570ly32hd4hh19tk1zi61z4x4ivqz277fwg.jpg",
       features: ["Chemical Peels", "Texture Improvement", "Radiance Boost"],
-      url : "/skin-rejuvenation"
+      url: "/skin-rejuvenation",
     },
     {
       id: 2,
       title: "Anti-Aging Treatments",
-      description: "Combat wrinkles and fine lines with cutting-edge laser therapies and age-defying solutions",
+      description:
+        "Combat wrinkles and fine lines with cutting-edge laser therapies and age-defying solutions",
       image: "head-leaning.jpeg",
       features: ["Laser Therapy", "Wrinkle Reduction", "Age Defying"],
-         url : "/anti-aging-treatments"
+      url: "/anti-aging-treatments",
     },
     {
       id: 3,
       title: "Pigmentation Treatment",
-      description: "Effectively treat dark spots and uneven skin tone with specialized chemical treatments",
+      description:
+        "Effectively treat dark spots and uneven skin tone with specialized chemical treatments",
       image: "woman-beauty-clinic-face-treatment-scaled.jpg",
       features: ["Dark Spot Removal", "Even Tone", "Chemical Solutions"],
-         url : "/pigmentation-treatment"
+      url: "/pigmentation-treatment",
     },
     {
       id: 4,
       title: "Scar Reduction",
-      description: "Minimize appearance of scars using advanced microneedling and targeted therapies",
-      image: "surgeon-drawing-lines-womans-abdomen-liposuction-cellulite-removal-scaled-qwlnjz4s1iv4w9bhzxk8xf5v50ge06dq8mxvl8tqho.jpg",
+      description:
+        "Minimize appearance of scars using advanced microneedling and targeted therapies",
+      image:
+        "surgeon-drawing-lines-womans-abdomen-liposuction-cellulite-removal-scaled-qwlnjz4s1iv4w9bhzxk8xf5v50ge06dq8mxvl8tqho.jpg",
       features: ["Microneedling", "Scar Minimization", "Skin Renewal"],
-         url : "/scar-reduction"
+      url: "/scar-reduction",
     },
     {
       id: 5,
       title: "Acne Treatment",
-      description: "Clear your skin with effective medications and specialized acne-fighting treatments",
+      description:
+        "Clear your skin with effective medications and specialized acne-fighting treatments",
       image: "person-dealing-with-rosacea-scaled.jpg",
       features: ["Medication", "Acne Control", "Clear Skin"],
-         url : "/acne-treatment"
-    }
+      url: "/acne-treatment",
+    },
   ];
 
   return (
@@ -115,7 +125,8 @@ const SkinTreatmentsPage = () => {
           Skin Treatments
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Discover our comprehensive range of advanced skin treatments designed to enhance your natural beauty and address various skin concerns.
+          Discover our comprehensive range of advanced skin treatments designed
+          to enhance your natural beauty and address various skin concerns.
         </p>
       </div>
 
@@ -127,8 +138,6 @@ const SkinTreatmentsPage = () => {
           ))}
         </div>
       </div>
-
-     
     </div>
   );
 };
@@ -138,11 +147,16 @@ const TreatmentCard = ({ treatment }) => {
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
       {/* Image Section */}
       <div className="relative h-64 overflow-hidden">
-        <img 
-          src={`/images/home/${treatment.image}`} 
-          alt={treatment.title}
-          className="w-full h-full object-cover"
-        />
+        <div className="relative w-[500px] h-[300px]">
+          <Image
+            src={`/images/home/${treatment.image}`}
+            alt={treatment.title}
+            className="object-cover"
+            fill
+            priority // optional for faster loading
+          />
+        </div>
+
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
       </div>
 
@@ -151,7 +165,7 @@ const TreatmentCard = ({ treatment }) => {
         <h3 className="text-2xl font-bold text-gray-900 mb-3">
           {treatment.title}
         </h3>
-        
+
         <p className="text-gray-600 mb-4 leading-relaxed">
           {treatment.description}
         </p>
@@ -160,7 +174,7 @@ const TreatmentCard = ({ treatment }) => {
         <div className="mb-6">
           <div className="flex flex-wrap gap-2">
             {treatment.features.map((feature, index) => (
-              <span 
+              <span
                 key={index}
                 className="inline-block bg-purple-100 text-purple-700 text-sm font-medium px-3 py-1 rounded-full"
               >
@@ -171,13 +185,23 @@ const TreatmentCard = ({ treatment }) => {
         </div>
 
         {/* Learn More Button */}
-         <Link href={treatment.url}  >
-        <button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:shadow-md transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
-          <span>LEARN MORE</span>
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
+        <Link href={treatment.url}>
+          <button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:shadow-md transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+            <span>LEARN MORE</span>
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
         </Link>
       </div>
     </div>

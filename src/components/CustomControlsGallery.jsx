@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-
+import Image from 'next/image';
 const DermatologyGallery = () => {
   const [activeIndex, setActiveIndex] = useState(1); // Start with second image as active
   
@@ -75,10 +75,12 @@ const DermatologyGallery = () => {
                     className={`absolute top-0 left-0 w-full h-full transition-all duration-700 ease-in-out ${positionClass}`}
                     data-carousel-item={index === activeIndex ? "active" : undefined}
                   >
-                    <img
+                    <Image
                       src={image}
                       className="absolute block w-full h-full object-cover"
                       alt={`Dermatology treatment ${index + 1}`}
+                      width={500}
+                      height={500}
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
                       <p className="text-sm font-medium">Advanced Dermatological Treatment</p>

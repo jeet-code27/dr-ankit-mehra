@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -115,10 +116,12 @@ const ScalpMicropigmentation = () => {
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           
           <div className="relative h-96 md:h-[500px] overflow-hidden">
-            <img 
+            <Image
               src={skinInfo.image} 
               alt="Scalp Micropigmentation procedure showing cosmetic tattooing technique to simulate hair follicles"
               className="w-full h-full object-cover"
+              width={1200}
+              height={500}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
             <div className="absolute bottom-0 left-0 right-0 p-8 text-white">

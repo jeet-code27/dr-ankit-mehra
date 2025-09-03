@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'; 
 export const metadata = {
   title: "Dr. Kanti Meherda | Senior Gynecologist in Ajmer | Janana Hospital",
   description:
@@ -30,16 +31,14 @@ const DoctorProfile = () => {
       <div className="max-w-4xl w-full bg-white rounded-lg shadow-md overflow-hidden">
         {/* Doctor image section at the top */}
         <div className="bg-gray-100 p-6 flex flex-col items-center justify-center">
-           
-             <img
-                      src="/images/home/kanti-meherda.jpeg" // Replace with actual image path
-                      alt="Dr. Kanti Meherda"
-                      width={650}
-                      height={650}
-                      priority
-                      className="w-full max-w-[400px] rounded-2xl h-auto max-h-[300px]"
-                    />
-          
+          <Image
+            src="/images/home/kanti-meherda.jpeg" // Replace with actual image path
+            alt="Dr. Kanti Meherda"
+            width={650}
+            height={650}
+            priority
+          />
+                 
           <div className="text-center">
             <h2 className="text-xl font-bold text-gray-800">Dr. Kanti Meherda</h2>
             <p className="text-gray-600">MS Gynecology</p>

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -70,7 +71,7 @@ const DoctorProfile = () => {
         {/* Doctor image section at the top */}
         <div className="bg-gray-100 p-6 flex flex-col items-center justify-center">
            
-             <img
+             <Image
                       src="/images/home/ashok-meherda.jpeg" // Replace with actual image path
                       alt="Dr. Ashok Meherda"
                       width={650}

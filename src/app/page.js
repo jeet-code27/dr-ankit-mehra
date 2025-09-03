@@ -12,7 +12,7 @@ import PatientReviews from "@/components/PatientReviews";
 import WhyChooseSection from "@/components/WhyChooseSection";
 
 export const metadata = {
-  title: "Best Dermatologist in Ajmer | Dr. Ankit Mehra - Skin, Hair & Cosmetology Specialist",
+  title: "Best Dermatologist in Ajmer | Dr. Ankit Mehra",
   description:
     "Dr. Ankit Mehra (MD Skin & VD) is a senior dermatologist in Ajmer, specializing in skin, hair, venereology, and cosmetology treatments. Book an appointment for acne, hair loss, laser therapy, and aesthetic procedures.",
   keywords: [

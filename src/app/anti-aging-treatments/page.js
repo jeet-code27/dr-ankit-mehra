@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+
 export const metadata = {
   title: "Anti-Aging Treatments for Youthful Appearance | Dr. Ankit Mehra",
   description:
@@ -23,7 +24,7 @@ export const metadata = {
       "Reverse signs of aging with customized anti-aging treatments. Reduce wrinkles, fine lines, and sagging skin for a refreshed look.",
     images: [
       {
-        url: "/images/freepik-export-20241105082539mxHQ-scaled.jpeg", // replace with actual image path
+        url: "/images/freepik-export-20241105082539mxHQ-scaled.jpeg",
         width: 2560,
         height: 1451,
         alt: "Anti-Aging Treatments - Dr. Ankit Mehra",
@@ -41,7 +42,7 @@ export const metadata = {
     title: "Anti-Aging Treatments for Youthful Appearance | Dr. Ankit Mehra",
     description:
       "Reverse signs of aging with customized anti-aging treatments. Reduce wrinkles, fine lines, and sagging skin for a refreshed look.",
-    images: ["/images/freepik-export-20241105082539mxHQ-scaled.jpeg"], // replace with actual image path
+    images: ["/images/freepik-export-20241105082539mxHQ-scaled.jpeg"],
   },
   robots: {
     index: true,
@@ -64,12 +65,23 @@ export const metadata = {
   },
 };
 
-const AntiAgingTreatmentComponent = () => {
+const AntiAgingTreatmentComponent = () =>
+{
   const antiAgingInfo = {
     title: "Anti-Aging Treatments",
     description:
       "Anti-aging treatments are designed to combat the visible signs of aging, such as wrinkles, fine lines, and loss of skin elasticity. These procedures range from non-invasive techniques like injectables and laser therapy to more comprehensive surgical options, all aimed at restoring a more youthful appearance.",
     image: "/images/home/head-leaning.jpeg",
+    benefits: [
+      "Reduces fine lines & wrinkles",
+      "Restores skin firmness & elasticity",
+      "Improves skin texture & tone",
+      "Minimizes pigmentation & age spots",
+      "Non-surgical & minimally invasive",
+      "Boosts collagen production",
+      "Enhances natural facial contours",
+      "Promotes youthful & radiant skin",
+    ],
     details: [
       {
         category: "Symptoms",
@@ -122,10 +134,9 @@ const AntiAgingTreatmentComponent = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+          {/* Hero Section */}
           <div className="relative h-96 md:h-[500px] overflow-hidden">
             <div className="relative w-full h-[500px]">
-              {" "}
-              {/* Control height here */}
               <Image
                 src={antiAgingInfo.image}
                 alt="Woman receiving anti-aging treatment with medical professional using injections in a clinical setting"
@@ -145,14 +156,17 @@ const AntiAgingTreatmentComponent = () => {
             </div>
           </div>
 
+          {/* Content */}
           <div className="p-6 md:p-8">
+            {/* Description */}
             <div className="mb-10">
               <p className="text-gray-700 text-lg leading-relaxed">
                 {antiAgingInfo.description}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Symptoms / Causes / Risks / Prevention */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               {antiAgingInfo.details.map((section, index) => (
                 <div
                   key={index}
@@ -186,6 +200,37 @@ const AntiAgingTreatmentComponent = () => {
               ))}
             </div>
 
+            {/* Benefits Section */}
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold text-indigo-800 mb-6">
+                ✨ Benefits of Anti-Aging Treatments
+              </h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {antiAgingInfo.benefits.map((benefit, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start bg-gradient-to-br from-blue-50 to-indigo-50 p-4 rounded-lg border border-indigo-100 shadow-sm"
+                  >
+                    <svg
+                      className="w-5 h-5 text-indigo-500 mr-3 mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-700">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* CTA Button */}
             <div className="mt-10 text-center">
               <Link href={"/bookconsultation"}>
                 <button className="bg-gradient-to-r from-indigo-500 to-blue-600 text-white font-semibold py-3 px-8 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300">
@@ -196,6 +241,7 @@ const AntiAgingTreatmentComponent = () => {
           </div>
         </div>
 
+        {/* Footer Badge Section */}
         <div className="mt-8 bg-white rounded-xl p-6 shadow-md">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-4 md:mb-0">

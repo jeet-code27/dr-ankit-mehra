@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+
 export const metadata = {
   title: "Laser Skin Resurfacing Treatments in Ajmer | Dr. Ankit Mehra",
   description:
@@ -23,7 +24,7 @@ export const metadata = {
       "Rejuvenate your skin with advanced laser skin resurfacing. Reduce wrinkles, scars, and blemishes with precise and effective laser technology.",
     images: [
       {
-        url: "/images/23487-1024x683.jpg", // replace with actual path
+        url: "/images/23487-1024x683.jpg",
         width: 1200,
         height: 630,
         alt: "Laser Skin Resurfacing Treatment in Ajmer",
@@ -41,7 +42,7 @@ export const metadata = {
     title: "Laser Skin Resurfacing Treatments in Ajmer | Dr. Ankit Mehra",
     description:
       "Rejuvenate your skin with advanced laser skin resurfacing. Reduce wrinkles, scars, and blemishes with precise and effective laser technology.",
-    images: ["/images/23487-1024x683.jpg"], // replace with actual path
+    images: ["/images/23487-1024x683.jpg"],
   },
   robots: {
     index: true,
@@ -64,30 +65,21 @@ export const metadata = {
   },
 };
 
-
-const LaserSkinResurfacing = () => {
-   
+const LaserSkinResurfacing = () =>
+{
   const skinInfo = {
     title: "Laser Skin Resurfacing",
-    description: "This treatment removes damaged skin layers to treat wrinkles, uneven skin tone, and sun damage while promoting collagen growth.",
+    description:
+      "This treatment removes damaged skin layers to treat wrinkles, uneven skin tone, and sun damage while promoting collagen growth.",
     image: "/images/home/laserSkinResurfacing.jpg",
     details: [
       {
         category: "Symptoms",
-        items: [
-          "Wrinkles",
-          "Fine lines",
-          "Uneven texture",
-          "Age spots"
-        ]
+        items: ["Wrinkles", "Fine lines", "Uneven texture", "Age spots"],
       },
       {
         category: "Causes",
-        items: [
-          "Sun damage",
-          "Aging",
-          "Environmental factors"
-        ]
+        items: ["Sun damage", "Aging", "Environmental factors"],
       },
       {
         category: "Risks",
@@ -95,8 +87,8 @@ const LaserSkinResurfacing = () => {
           "Scarring",
           "Redness",
           "Pigmentation changes",
-          "Potential skin infection"
-        ]
+          "Potential skin infection",
+        ],
       },
       {
         category: "Prevention",
@@ -104,20 +96,27 @@ const LaserSkinResurfacing = () => {
           "Use sunscreen after treatment",
           "Avoid harsh skincare products",
           "Moisturize the skin",
-          "Limit sun exposure"
-        ]
-      }
-    ]
+          "Limit sun exposure",
+        ],
+      },
+    ],
+    benefits: [
+      "Reduces wrinkles and fine lines",
+      "Improves skin tone and texture",
+      "Stimulates collagen production",
+      "Minimizes scars and blemishes",
+      "Restores youthful skin appearance",
+    ],
   };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-        
+          {/* Hero Image */}
           <div className="relative h-96 md:h-[500px] overflow-hidden">
-            <Image 
-              src={skinInfo.image} 
+            <Image
+              src={skinInfo.image}
               alt="Laser skin resurfacing treatment showing professional procedure to remove damaged skin layers"
               className="w-full h-full object-cover"
               width={1200}
@@ -125,23 +124,28 @@ const LaserSkinResurfacing = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
             <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-              <h1 className="text-4xl md:text-5xl font-bold mb-2">{skinInfo.title}</h1>
-              <p className="text-lg md:text-xl opacity-90">Advanced Skin Resurfacing Solutions</p>
+              <h1 className="text-4xl md:text-5xl font-bold mb-2">
+                {skinInfo.title}
+              </h1>
+              <p className="text-lg md:text-xl opacity-90">
+                Advanced Skin Resurfacing Solutions
+              </p>
             </div>
           </div>
-          
+
+          {/* Description */}
           <div className="p-6 md:p-8">
-           
             <div className="mb-10">
               <p className="text-gray-700 text-lg leading-relaxed">
                 {skinInfo.description}
               </p>
             </div>
-           
+
+            {/* Details Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {skinInfo.details.map((section, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-indigo-100 shadow-sm"
                 >
                   <h3 className="text-xl font-bold text-indigo-800 mb-4 flex items-center">
@@ -151,8 +155,18 @@ const LaserSkinResurfacing = () => {
                   <ul className="space-y-2">
                     {section.items.map((item, itemIndex) => (
                       <li key={itemIndex} className="flex items-start">
-                        <svg className="w-5 h-5 text-indigo-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        <svg
+                          className="w-5 h-5 text-indigo-500 mr-2 mt-0.5 flex-shrink-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
                         </svg>
                         <span className="text-gray-700">{item}</span>
                       </li>
@@ -161,33 +175,89 @@ const LaserSkinResurfacing = () => {
                 </div>
               ))}
             </div>
-           
+
+            {/* ✅ Benefits Section */}
+            <div className="my-12">
+              <h2 className="text-2xl font-bold text-indigo-800 mb-6">
+                ✨ Benefits of Laser Skin Resurfacing
+              </h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {skinInfo.benefits.map((benefit, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start bg-gradient-to-br from-blue-50 to-indigo-50 p-4 rounded-lg border border-indigo-100 shadow-sm"
+                  >
+                    <svg
+                      className="w-5 h-5 text-indigo-500 mr-3 mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-700">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* CTA */}
             <div className="mt-10 text-center">
-               <Link href={"/bookconsultation"}>
-              <button className="bg-gradient-to-r from-indigo-500 to-blue-600 text-white font-semibold py-3 px-8 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300">
-                Book Your Laser Skin Resurfacing Consultation
-              </button>
+              <Link href={"/bookconsultation"}>
+                <button className="bg-gradient-to-r from-indigo-500 to-blue-600 text-white font-semibold py-3 px-8 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                  Book Your Laser Skin Resurfacing Consultation
+                </button>
               </Link>
             </div>
           </div>
         </div>
-        
+
+        {/* Footer Info */}
         <div className="mt-8 bg-white rounded-xl p-6 shadow-md">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-4 md:mb-0">
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Professional Laser Skin Resurfacing</h3>
-              <p className="text-gray-600">All procedures performed by certified dermatologists</p>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">
+                Professional Laser Skin Resurfacing
+              </h3>
+              <p className="text-gray-600">
+                All procedures performed by certified dermatologist
+              </p>
             </div>
             <div className="flex items-center space-x-4">
               <div className="flex items-center">
-                <svg className="w-5 h-5 text-green-500 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                <svg
+                  className="w-5 h-5 text-green-500 mr-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
                 </svg>
                 <span className="text-gray-700">FDA Approved</span>
               </div>
               <div className="flex items-center">
-                <svg className="w-5 h-5 text-green-500 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                <svg
+                  className="w-5 h-5 text-green-500 mr-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
                 </svg>
                 <span className="text-gray-700">Safe & Effective</span>
               </div>
@@ -198,4 +268,5 @@ const LaserSkinResurfacing = () => {
     </div>
   );
 };
+
 export default LaserSkinResurfacing;

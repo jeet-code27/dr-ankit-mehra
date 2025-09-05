@@ -128,12 +128,12 @@ const GallerySection = () => {
 
   return (
     <>
-      <div className='bg-[#EFF5FE]'>
+      <div className='bg-[#FFF9F9]'>
         <section className="max-w-7xl   mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 relative inline-block mb-4">
               Our Gallery
-              <span className="absolute bottom-0 left-1/4 w-1/2 h-1 bg-gradient-to-r from-blue-500 to-purple-400 rounded-full"></span>
+              <span className="absolute bottom-0 left-1/4 w-1/2 h-1 bg-gradient-to-r from-[#B9826C] to-[#B9826C] rounded-full"></span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">
               Explore our collection of stunning images showcasing our work, events, and special moments
@@ -155,7 +155,7 @@ const GallerySection = () => {
                   height={300}
                   className="w-full h-64 object-cover transition-transform duration-400 group-hover:scale-105"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent text-white p-4 pt-2 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#B9826C]/80 to-transparent text-white p-4 pt-2 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
                   <h3 className="m-0 mb-1 text-xl">{item.title}</h3>
                   <p className="m-0 text-sm opacity-80">{item.description}</p>
                 </div>

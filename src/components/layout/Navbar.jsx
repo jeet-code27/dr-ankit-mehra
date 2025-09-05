@@ -7,14 +7,11 @@ import {
   X,
   Phone,
   MapPin,
-  Clock,
-  Calendar,
-  Facebook,
-  Instagram,
+  
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
  
-import TopNavbar from "./TopNevbar";
+ 
 import SkinTreatments from "../SkinTreatments";
 import HairTreatments from "../HairTreatments";
 import LaserTreatments from "../LaserTreatments";
@@ -52,11 +49,10 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top Bar - Hidden on Mobile */}
-      <TopNavbar/>
+      
       
       {/* Main Navbar */}
-      <div className="bg-white shadow-md py-4">
+      <div className="bg-[#F2C8A7] shadow-md py-4">
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
           {/* Logo */}
           <motion.div
@@ -72,7 +68,7 @@ export default function Navbar() {
                   alt="Dr. Ankit Mehra Logo"
                   width={60}
                   height={60}
-                  className="mr-2 rounded-full"
+                  className="mr-2  "
                 />
                 <span className="text-2xl font-bold">
                   <span className="text-[#0055A4]">Dr. </span>
@@ -249,7 +245,9 @@ export default function Navbar() {
                           <Image
                             src="/images/chevron-down.png"
                             alt="Toggle Dropdown"
-                            className={`w-4 h-4 transition-transform duration-300 ${isSkinOpen ? "rotate-180" : "rotate-0"}`}
+                            height={4}
+                            width={4}
+                            className={`  transition-transform duration-300 ${isSkinOpen ? "rotate-180" : "rotate-0"}`}
                           />
                         </div>
                         {isSkinOpen && (

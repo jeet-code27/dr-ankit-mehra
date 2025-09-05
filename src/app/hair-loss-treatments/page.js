@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+
 export const metadata = {
   title: "Effective Hair Loss Treatments for Healthy Hair | Dr. Ankit Mehra",
   description:
@@ -23,7 +24,7 @@ export const metadata = {
       "Combat hair loss with proven treatments and personalized care. Regain confidence with tailored solutions at Dr. Ankit Mehra's clinic.",
     images: [
       {
-        url: "/images/mature-man-going-through-follicular-unit-extraction-process-scaled.jpg", // replace with actual image path
+        url: "/images/mature-man-going-through-follicular-unit-extraction-process-scaled.jpg",
         width: 1200,
         height: 630,
         alt: "Hair Loss Treatment",
@@ -43,7 +44,7 @@ export const metadata = {
       "Combat hair loss with proven treatments and personalized care. Regain confidence with tailored solutions at Dr. Ankit Mehra's clinic.",
     images: [
       "/images/mature-man-going-through-follicular-unit-extraction-process-scaled.jpg",
-    ], // replace with actual image path
+    ],
   },
   robots: {
     index: true,
@@ -66,7 +67,8 @@ export const metadata = {
   },
 };
 
-const HairLossTreatments = () => {
+const HairLossTreatments = () =>
+{
   const skinInfo = {
     title: "Hair Loss Treatments",
     description:
@@ -80,12 +82,7 @@ const HairLossTreatments = () => {
       },
       {
         category: "Causes",
-        items: [
-          "Genetics",
-          "Hormonal imbalance",
-          "Poor scalp health",
-          "Stress",
-        ],
+        items: ["Genetics", "Hormonal imbalance", "Poor scalp health", "Stress"],
       },
       {
         category: "Risks",
@@ -101,15 +98,23 @@ const HairLossTreatments = () => {
         ],
       },
     ],
+    benefits: [
+      "Boosts natural hair growth",
+      "Improves hair density and thickness",
+      "Restores confidence and self-esteem",
+      "Personalized treatment for lasting results",
+      "Safe, non-invasive procedures available",
+      "Reduces hair fall and strengthens roots",
+    ],
   };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+          {/* Hero Image */}
           <div className="relative h-96 md:h-[500px] overflow-hidden">
             <div className="relative w-full h-[500px]">
-              {" "}
-              {/* set a fixed or responsive height */}
               <Image
                 src={skinInfo.image}
                 alt="Hair loss treatment showing professional procedures to address thinning hair and scalp health"
@@ -128,6 +133,7 @@ const HairLossTreatments = () => {
             </div>
           </div>
 
+          {/* Description */}
           <div className="p-6 md:p-8">
             <div className="mb-10">
               <p className="text-gray-700 text-lg leading-relaxed">
@@ -135,6 +141,7 @@ const HairLossTreatments = () => {
               </p>
             </div>
 
+            {/* Details Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {skinInfo.details.map((section, index) => (
                 <div
@@ -169,6 +176,37 @@ const HairLossTreatments = () => {
               ))}
             </div>
 
+            {/* ✅ Benefits Section */}
+            <div className="mb-12 mt-12">
+              <h2 className="text-2xl font-bold text-indigo-800 mb-6">
+                ✨ Benefits of Hair Loss Treatments
+              </h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {skinInfo.benefits.map((benefit, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start bg-gradient-to-br from-blue-50 to-indigo-50 p-4 rounded-lg border border-indigo-100 shadow-sm"
+                  >
+                    <svg
+                      className="w-5 h-5 text-indigo-500 mr-3 mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-700">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* CTA Button */}
             <div className="mt-10 text-center">
               <Link href={"/bookconsultation"}>
                 <button className="bg-gradient-to-r from-indigo-500 to-blue-600 text-white font-semibold py-3 px-8 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300">
@@ -179,6 +217,7 @@ const HairLossTreatments = () => {
           </div>
         </div>
 
+        {/* Bottom Section */}
         <div className="mt-8 bg-white rounded-xl p-6 shadow-md">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-4 md:mb-0">
@@ -229,4 +268,5 @@ const HairLossTreatments = () => {
     </div>
   );
 };
+
 export default HairLossTreatments;

@@ -1,5 +1,10 @@
 import AboutDoctor from "@/components/AboutDoctor";
 import AboutDoctorSection from "@/components/AboutDoctorSection";
+import Appointment from "@/components/Appointment";
+import BeforeAfter from "@/components/BeforeAfter";
+import CardGrid from "@/components/CardGrid";
+import DermatologyBenefits from "@/components/DermatologyBenefits";
+
 import ExpertTeam from "@/components/ExpertTeam";
  
  
@@ -7,6 +12,8 @@ import GallerySection from "@/components/GallerySection";
  
 import HeroSection from "@/components/HeroSection";
 import PatientReviews from "@/components/PatientReviews";
+import ServiceCards from "@/components/ServiceCards";
+import ServiceSlider from "@/components/ServiceSlider";
  
  
 import WhyChooseSection from "@/components/WhyChooseSection";
@@ -255,6 +262,8 @@ export default function Home() {
       image: '/images/home/head-leaning.jpeg',
     },
   ];
+  
+
   return (
     <>
       <script
@@ -266,11 +275,16 @@ export default function Home() {
       <HeroSection  slides={slides}/>
       <AboutDoctorSection />
       <AboutDoctor/>
-    <ExpertTeam/>
-     
+    {/* <ExpertTeam/> */}
+    
+     <ServiceSlider/>
+     <CardGrid/>
+     <ServiceCards/>
+     <DermatologyBenefits/>
       <WhyChooseSection />
          <PatientReviews />
        <GallerySection/>
+      <Appointment />
    
       
     </>

@@ -8,10 +8,10 @@ export default function AboutDoctor() {
       <div className="max-w-5xl mx-auto">
         {/* Header Section */}
         <div className="text-justify mb-16">
-          <h1 className="text-4xl text-center md:text-5xl font-bold text-gray-800 mb-4">
+          <h1 className="text-4xl md:text-5xl text-[#a86e54] text-center font-serif max-w-4xl mx-auto leading-snug mb-6">
             Best Dermatologist in Ajmer <br></br> Dr. Ankit Mehra
           </h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
+          <p className="text-lg   text-gray-600 max-w-3xl mx-auto mb-6">
             Your journey to radiant skin, healthy hair, and advanced laser
             treatments begins here! Dr. Ankit Mehra is a renowned dermatologist
             at Ajmer who specializes in offering tailored solutions to all your
@@ -187,7 +187,7 @@ export default function AboutDoctor() {
                     Skin Treatment
                   </h3>
                 </div>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 mb-4 text-justify">
                   Dr. Mehra provides a full spectrum of skin care treatments,
                   addressing conditions such as acne, eczema, psoriasis,
                   pigmentation, and more. Our clinic employs cutting-edge
@@ -303,7 +303,7 @@ export default function AboutDoctor() {
                     Hair Treatments
                   </h3>
                 </div>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 mb-4 text-justify">
                   At Dr. Ankit Mehra's clinic, we offer advanced and
                   personalized hair treatment solutions tailored to your
                   specific needs. With years of experience in dermatology, Dr.
@@ -419,7 +419,7 @@ export default function AboutDoctor() {
                     Laser Treatments
                   </h3>
                 </div>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 mb-4 text-justify">
                   Discover the power of advanced laser technology at Dr. Ankit
                   Mehra's dermatology clinic. Specializing in safe, effective,
                   and minimally invasive laser treatments, Dr. Mehra offers

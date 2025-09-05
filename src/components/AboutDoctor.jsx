@@ -4,7 +4,7 @@ import React from "react";
 
 export default function AboutDoctor() {
   return (
-    <div className="min-h-screen bg-[#EFF5FE] py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen  bg-[#FEF7F8] py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         {/* Header Section */}
         <div className="text-justify mb-16">

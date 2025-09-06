@@ -7,36 +7,46 @@ export default function WhyChooseSection()
     <section className="bg-[#FFF9F9] py-16 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
+        {/* Right Image (shows first on mobile, second on desktop) */}
+        <div className="flex justify-center order-1 md:order-2">
+          <img
+            src="/images/all-solution.png" // replace with real image of Dr. Mehra in /public
+            alt="Dr. Ankit Mehra"
+            className="rounded-3xl shadow-md"
+          />
+        </div>
+
         {/* Left Content */}
-        <div>
-          <p className="text-[#B77A5D] font-medium mb-2">• Why Choose Us</p>
+        <div className="order-2 md:order-1">
+          <p className="text-[#B77A5D] font-medium mb-2">• Why Choose </p>
           <h2
             className="text-4xl md:text-5xl font-bold text-[#B77A5D] mb-6"
             style={{ fontFamily: "Butler, Georgia, serif" }}
           >
-            Why choose us
+            Dr. Ankit Mehra
           </h2>
 
           {/* Highlights */}
           <div className="space-y-6 text-gray-700">
             <div>
               <h3 className="font-semibold text-lg text-gray-900">
-                Advanced Technology & Treatments
+                Experienced & Trusted Dermatologist
               </h3>
               <p>
-                We bring you the latest FDA-approved lasers, tools, and
-                techniques to ensure safe, effective, and evidence-based
-                results.
+                Dr. Ankit Mehra, MD (Skin & VD), is a former Assistant Professor at
+                JLN Medical College, Ajmer, with 12+ years of experience and more
+                than 8,000 successful consultations.
               </p>
             </div>
 
             <div>
               <h3 className="font-semibold text-lg text-gray-900">
-                One-Stop Skin & Aesthetic Destination
+                Complete Skin, Hair & Aesthetic Solutions
               </h3>
               <p>
-                From acne to anti-aging, laser to hair removal — all your
-                dermatology and cosmetic needs under one roof.
+                From acne, pigmentation, and scars to advanced laser treatments,
+                anti-aging, and PRP therapy — all your dermatology and cosmetic needs
+                under one roof.
               </p>
             </div>
           </div>
@@ -50,12 +60,12 @@ export default function WhyChooseSection()
               </div>
               <div>
                 <h4 className="text-[#B77A5D] font-semibold text-lg mb-1">
-                  Personalized, compassionate care
+                  Personalized & Patient-Centered Care
                 </h4>
                 <p className="text-gray-600">
-                  We believe that every patient is unique. That's why we take
-                  the time to understand your specific needs and tailor
-                  treatment plans.
+                  Every patient is unique. Dr. Mehra takes time to understand your
+                  skin and hair concerns, creating tailored treatment plans for
+                  effective results.
                 </p>
               </div>
             </div>
@@ -67,26 +77,18 @@ export default function WhyChooseSection()
               </div>
               <div>
                 <h4 className="text-[#B77A5D] font-semibold text-lg mb-1">
-                  Comprehensive care for all skin needs
+                  Advanced Technology & Proven Results
                 </h4>
                 <p className="text-gray-600">
-                  Whether you're seeking medical dermatology, cosmetic
-                  treatments, or preventive care, we offer a comprehensive range
-                  of services.
+                  Expert in lasers, microneedling, PRP, and the latest
+                  cosmetic techniques, Dr. Mehra delivers safe, modern, and
+                  evidence-based treatments.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Right Image */}
-        <div className="flex justify-center">
-          <img
-            src="/why-choose-us.jpg" // replace with your image path
-            alt="Doctor"
-            className="rounded-3xl shadow-md"
-          />
-        </div>
       </div>
     </section>
   );

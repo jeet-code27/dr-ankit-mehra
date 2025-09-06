@@ -11,7 +11,7 @@ export default function StatsSection()
     });
 
     return (
-        <section ref={ref} className="max-w-7xl  border-t border-gray-300 w-full py-12 px-6">
+        <section ref={ref} className="max-w-7xl  font-serif border-t border-gray-300 w-full py-12 px-6">
             <div className="   mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 text-center">
 
                 {/* Item 1 */}

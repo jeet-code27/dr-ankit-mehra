@@ -49,7 +49,7 @@ const ServiceSlider = () =>
             >
                 {services.map((service, index) => (
                     <SwiperSlide key={index}>
-                        <div className="bg-white rounded-2xl shadow-md overflow-hidden">
+                        <div className="bg-[#F9F0EB] rounded-2xl shadow-md overflow-hidden">
                             <img
                                 src={service.image}
                                 alt={service.name}

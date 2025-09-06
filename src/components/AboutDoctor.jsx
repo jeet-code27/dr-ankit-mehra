@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import SpecializedServices from "./SpecializedServices";
 
 export default function AboutDoctor() {
   return (
     <div className="min-h-screen  bg-[#FEF7F8] py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto">
+      <div className="  mx-auto">
         {/* Header Section */}
         <div className="text-justify mb-16">
           <h1 className="text-4xl md:text-5xl text-[#a86e54] text-center font-serif max-w-4xl mx-auto leading-snug mb-6">
@@ -32,129 +33,16 @@ export default function AboutDoctor() {
           </p>
         </div>
 
-        {/* Services Section */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
-            Our Specialized Services
-          </h2>
-          <div className="space-y-8">
-            {/* Service 1 */}
-            <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4 mt-1">
-                  <span className="text-blue-600 font-bold">1</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
-                    Skin Rejuvenation
-                  </h3>
-                  <p className="text-justify text-gray-600">
-                    Dr. Mehra provides innovative skin rejuvenation treatments,
-                    such as chemical peels and laser therapy, to address fine
-                    lines, wrinkles, and dull skin. These treatments are ideal
-                    for patients looking for the Best Skin Care Treatment in
-                    Ajmer, offering glowing and youthful skin with minimal
-                    downtime.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Service 2 */}
-            <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-4 mt-1">
-                  <span className="text-purple-600 font-bold">2</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
-                    Treatment for Pigmentation
-                  </h3>
-                  <p className="text-justify text-gray-600">
-                    For concerns like melasma, freckles, or dark spots, Dr.
-                    Mehra offers cutting-edge pigmentation therapies. His
-                    expertise in this field has earned him a reputation for
-                    providing the Best Skin Care Treatment in Ajmer, with
-                    solutions designed to enhance your complexion.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Service 3 */}
-            <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-red-100 flex items-center justify-center mr-4 mt-1">
-                  <span className="text-red-600 font-bold">3</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
-                    Scar Reduction and Acne Treatment
-                  </h3>
-                  <p className="text-justify text-gray-600">
-                    Whether it's acne scars or other types of marks, Dr. Mehra
-                    employs advanced techniques such as microneedling and laser
-                    treatments to improve skin texture. As the Best
-                    Dermatologist in Ajmer, his customized acne solutions
-                    address the root cause of breakouts, ensuring long-term
-                    relief.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Service 4 */}
-            <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-4 mt-1">
-                  <span className="text-green-600 font-bold">4</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
-                    Cosmetic Dermatology
-                  </h3>
-                  <p className="text-justify text-gray-600">
-                    Dr. Mehra is also recognized as the Best Cosmetologist in
-                    Ajmer, offering a wide range of non-surgical aesthetic
-                    treatments like lip fillers, PRP therapy, and skin
-                    lightening solutions. These services enhance your natural
-                    beauty and boost your confidence.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Service 5 */}
-            <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center mr-4 mt-1">
-                  <span className="text-yellow-600 font-bold">5</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
-                    Hair Loss and Sexual Health Treatments
-                  </h3>
-                  <p className="text-justify text-gray-600">
-                    Dr. Mehra provides proven treatments for hair thinning and
-                    loss, such as PRP therapy and mesotherapy. Additionally, his
-                    expertise in venereal diseases ensures confidential and
-                    effective care for patients seeking solutions for sexual
-                    health concerns.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Comprehensive Services Section */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
-            Comprehensive Services Offered by Dr. Ankit Mehra
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="   ">
+          <h1 className="text-4xl md:text-5xl text-[#a86e54] text-center font-serif max-w-4xl mx-auto leading-snug mb-6">
+            Comprehensive Services Offered by<br></br> Dr. Ankit Mehra
+          </h1>
+<div className="flex justify-center w-full">
+          <div className="grid max-w-7xl grid-cols-1 md:grid-cols-3 gap-8">
             {/* Skin Treatment Card */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div className="bg-[#F9F0EB] rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
               {/* Image Space */}
               <div className="h-48 bg-gradient-to-r from-blue-100 to-indigo-100">
                 <Image
@@ -167,21 +55,14 @@ export default function AboutDoctor() {
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                    <svg
-                      className="w-6 h-6 text-blue-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  <div className="w-10 h-10 rounded-full   flex items-center justify-center mr-4">
+                  
+                      <Image
+                        src="/images/skin-care_4383086.png"
+                        alt="Hairstyle Icon"
+                        width={100}
+                        height={100}
                       />
-                    </svg>
                   </div>
                   <h3 className="text-xl font-bold text-gray-800">
                     Skin Treatment
@@ -270,7 +151,7 @@ export default function AboutDoctor() {
             </div>
 
             {/* Hair Treatments Card */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div className="bg-[#F9F0EB] rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
               {/* Image Space */}
               <div className="h-48 bg-gradient-to-r from-blue-100 to-indigo-100">
                 <Image
@@ -283,22 +164,15 @@ export default function AboutDoctor() {
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-4">
-                    <svg
-                      className="w-6 h-6 text-purple-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                    <div className="w-10 h-10 rounded-full   flex items-center justify-center mr-4">
+
+                      <Image
+                        src="/images/hair_5498789.png"
+                        alt="Hairstyle Icon"
+                        width={100}
+                        height={100}
                       />
-                    </svg>
-                  </div>
+                    </div>
                   <h3 className="text-xl font-bold text-gray-800">
                     Hair Treatments
                   </h3>
@@ -386,7 +260,7 @@ export default function AboutDoctor() {
             </div>
 
             {/* Laser Treatment Card */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div className="bg-[#F9F0EB] rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
               {/* Image Space */}
               <div className="h-48 bg-gradient-to-r from-blue-100 to-indigo-100">
                 <Image
@@ -399,22 +273,15 @@ export default function AboutDoctor() {
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mr-4">
-                    <svg
-                      className="w-6 h-6 text-red-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                    <div className="w-10 h-10 rounded-full   flex items-center justify-center mr-4">
+
+                      <Image
+                        src="/images/laser-surgery_2464617.png"
+                        alt="Hairstyle Icon"
+                        width={100}
+                        height={100}
                       />
-                    </svg>
-                  </div>
+                    </div>
                   <h3 className="text-xl font-bold text-gray-800">
                     Laser Treatments
                   </h3>
@@ -485,12 +352,20 @@ export default function AboutDoctor() {
               </div>
             </div>
           </div>
+          </div>
         </div>
+
+        
+         
+         <SpecializedServices/>
+       
+
+      
 
         {/* Call to Action */}
         <div className="text-center">
           <Link href={"/bookconsultation"}>
-            <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+            <button className="bg-[#FAF2F0] border-[#BF7F62] border hover:text-white  hover:bg-[#BF7F62]  font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
               Book Your Consultation
             </button>
           </Link>

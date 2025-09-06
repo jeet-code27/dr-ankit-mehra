@@ -1,9 +1,10 @@
+import Image from 'next/image';
 import React from 'react';
 
 const DermatologyBenefits = () =>
 {
     return (
-        <div className='flex justify-center bg-[#FAF2F0]' >
+        <div className='flex justify-center  bg-[#FEF7F8]' >
             <div className='max-w-7xl rounded-[40]' style={{ backgroundColor: '#bf7f62', color: 'white', padding: '40px 20px', fontFamily: "'Georgia', serif" }}>
             <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 40px' }}>
                 <p style={{ fontWeight: 'bold', fontSize: '18px', margin: '0 0 10px' }}>• Our Benefits</p>
@@ -30,61 +31,43 @@ const DermatologyBenefits = () =>
                 <div style={{ flex: '1', minWidth: '250px' }}>
                     <BenefitItem
                         icon={
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="30"
-                                height="30"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="#bf7f62"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M17 21v-2a4 4 0 00-3-3.87M7 21v-2a4 4 0 013-3.87M16 7a4 4 0 11-8 0 4 4 0 018 0z"
+                                <Image
+                                    src="/images/946369-removebg-preview.png" // put your image inside /public/images
+                                    alt="Expert Dermatologist"
+                                    width={30}
+                                    height={30}
+                                    className="object-contain"
                                 />
-                            </svg>
+                                 
                         }
                         title="Expert Dermatologist"
-                        description="Care by Dr. Meenal Makkar, gold medalist & globally trained."
+                            description="Care by Dr. Ankit Mehra, MD (Skin & VD), former Assistant Professor at JLN Medical College with 12+ years of expertise."
                     />
                     <BenefitItem
                         icon={
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="30"
-                                height="30"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="#bf7f62"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M9 12h6m-6 4h6m-6-8h6M9 21h6a2 2 0 002-2v-3H7v3a2 2 0 002 2zM7 7h10V5a2 2 0 00-2-2H9a2 2 0 00-2 2v2z"
+                                <Image
+                                    src="/images/icon-benefit-2.png" // put your image inside /public/images
+                                    alt="icon-benefit-2"
+                                    width={30}
+                                    height={30}
+                                    className="object-contain"
                                 />
-                            </svg>
                         }
                         title="Personalized Treatments"
-                        description="Custom plans for your unique skin, hair & aesthetic needs."
+                            description="Tailored solutions for acne, pigmentation, scars, hair loss, and cosmetic needs."
                     />
                     <BenefitItem
                         icon={
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="30"
-                                height="30"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="#bf7f62"
-                            >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 22c4 0 7-3 7-7H5c0 4 3 7 7 7zM10 10h4v2h-4v-2z" />
-                            </svg>
+                                <Image
+                                    src="/images/personalized-treatments.png" // put your image inside /public/images
+                                    alt="personalized-treatments"
+                                    width={30}
+                                    height={30}
+                                    className="object-contain"
+                                />
                         }
                         title="Safe & Hygienic"
-                        description="Top-tier safety, hygiene, and medical standards."
+                            description="Modern clinic setup with top-tier hygiene, medical protocols & patient safety."
                     />
                 </div>
 
@@ -101,66 +84,42 @@ const DermatologyBenefits = () =>
                 <div style={{ flex: '1', minWidth: '250px' }}>
                     <BenefitItem
                         icon={
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="30"
-                                height="30"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="#bf7f62"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M3 10h18M3 6h18M3 14h18M3 18h18"
+                                <Image
+                                    src="/images/icon-benefit-4.png" // put your image inside /public/images
+                                    alt="icon-benefit-4"
+                                    width={30}
+                                    height={30}
+                                    className="object-contain"
                                 />
-                            </svg>
                         }
                         title="Complete Skin & Hair Care"
-                        description="Aesthetic, pediatric, and hair treatments—all in one place."
+                            description="Comprehensive treatments including skin rejuvenation, acne, pigmentation, anti-aging, and PRP therapy for hair."
                     />
                     <BenefitItem
                         icon={
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="30"
-                                height="30"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="#bf7f62"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M14 10h-4v4h4v-4zM12 12v6m0-6L8.5 15m3.5-3L15.5 15"
+                                <Image
+                                    src="/images/review1.png" // put your image inside /public/images
+                                    alt="review1"
+                                    width={30}
+                                    height={30}
+                                    className="object-contain"
                                 />
-                            </svg>
                         }
                         title="Positive Patient Reviews"
                         description="Trusted by patients with glowing reviews for exceptional care."
                     />
                     <BenefitItem
                         icon={
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="30"
-                                height="30"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="#bf7f62"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M12 8v4l3 3m6-3a9 9 0 11-9-9 9 9 0 019 9z"
+                                <Image
+                                    src="/images/icon-benefit-6.png" // put your image inside /public/images
+                                    alt="icon-benefit-6"
+                                    width={30}
+                                    height={30}
+                                    className="object-contain"
                                 />
-                            </svg>
                         }
                         title="Advanced Technology"
-                        description="USFDA-approved lasers & cutting-edge techniques."
+                            description=" Expert in PRP, microneedling & latest cosmetic dermatology techniques."
                     />
                 </div>
             </div>

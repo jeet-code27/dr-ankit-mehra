@@ -17,67 +17,67 @@ const SpecializedServices = () =>
             img: '/images/skin-rejuvenation-1.webp',
             title: 'Skin Rejuvenation',
             text: 'Skin rejuvenation treatments like chemical peels and lasers reduce wrinkles, dullness, and pigmentation. While mild side effects may occur, preventive care with sunscreen, hydration, and healthy habits helps maintain radiant, youthful skin.',
-            url: '#',
+        url: '/skin-rejuvenation',
         },
         {
             img: '/images/antiaging.webp',
             title: 'Anti-Aging Treatments',
             text: 'Anti-aging treatments address wrinkles, fine lines, and skin elasticity loss through non-invasive methods like injectables and lasers or surgical options, all focused on restoring youthful appearance and improving skin quality.',
-            url: '#',
+          url: '/anti-aging-treatments',
         },
         {
             img: '/images/images_Post-Inflammatory Marks .jpg',
             title: 'Pigmentation Treatment',
             text: 'This treatment improves uneven skin tone and reduces dark spots using chemical peels, laser therapy, and topical solutions, helping restore clearer, brighter, and healthier-looking skin with enhanced radiance and smoothness.',
-            url: '#',
+          url: '/pigmentation-treatment',
         },
         {
             img: '/images/scar-revision-before-after.jpg',
             title: 'Scar Reduction',
             text: 'Scar reduction treatments help minimize scars from acne, injuries, or surgery. Techniques like microneedling, laser therapy, and dermal fillers improve skin texture, smoothness, and appearance, restoring clearer and healthier skin overall.',
-            url: '#',
+          url: '/scar-reduction',
         },
         {
             img: '/images/acne-scar-treatment.png',
             title: 'Acne Treatment',
             text: 'Acne treatments address pimples, blackheads, and clogged pores using topical or oral medications, chemical peels, and laser therapy, aiming to control breakouts, reduce inflammation, and improve overall skin health and clarity.',
-            url: '#',
+          url: '/acne-treatment',
         },
         {
             img: '/images/PRP-result-4-final.jpg',
             title: 'Platelet - Rich Plasma',
             text: 'Platelet - rich plasma(PRP) therapy involves injecting the patient\'s own plasma into the scalp, stimulating hair growth, strengthening follicles, and improving scalp health for natural, effective, and long- lasting hair restoration results.',
-            url: '#',
+          url: '/prp-therapy',
         },
         {
             img: '/images/before-and-after-comparison-of-male-hair-regrowth-showcasing-the-effectiveness-of-a-hair-treatment-solution-photo.jpg',
             title: 'Hair Loss Treatments',
             text: 'Hair loss treatments focus on slowing hair thinning, encouraging regrowth, and boosting density. Options include medications, topical solutions, and PRP therapy, all designed to restore healthier, fuller, and stronger hair naturally.',
-            url: '#',
+          url: '/hair-loss-treatments',
         },
         {
             img: '/images/organic-scalp-pigmentation.png',
             title: 'Scalp Micropigmentation',
             text: 'Scalp Micropigmentation is a cosmetic tattooing method that replicates tiny hair follicles, creating the illusion of thicker, fuller hair and providing a natural-looking solution for hair loss or thinning.',
-            url: '#',
+          url: '/scalp-micropigmentation',
         },
         {
             img: '/images/hair-remover.jpg',
             title: 'Laser Hair Removal',
             text: 'Laser hair removal targets hair follicles to slow or stop unwanted growth, offering long-term results across multiple body areas while enhancing smoothness, confidence, and convenience with minimal maintenance required.',
-            url: '#',
+          url: '/laser-hair-removal',
         },
         {
             img: '/images/Unlocking-the-Basics-of-CO2-Laser-Skin-Resurfacing.jpg',
             title: 'Laser Skin Resurfacing',
             text: 'Skin resurfacing treatments remove damaged layers to reduce wrinkles, sun damage, and uneven tone, while stimulating collagen production, improving texture, and restoring smoother, healthier, and more youthful-looking skin overall.',
-            url: '#',
+          url: '/laser-skin-resurfacing',
         },
         {
             img: '/images/unwanted-tattoo-2.jpg',
             title: 'Laser Tattoo Removal',
             text: 'Laser tattoo removal applies focused energy to break down ink pigments, which the body gradually clears, effectively fading unwanted tattoos and restoring natural skin appearance with minimal risk or scarring.',
-            url: '#',
+          url: '/laser-tattoo-removal',
         }
     ];
     const itemsToShow = showAll ? carouselItems : carouselItems.slice(0, 4);
@@ -104,7 +104,7 @@ const SpecializedServices = () =>
           flex-direction: column;
           border: 5px solid rgba(0, 0, 0, 0.1);
           border-radius: 10px;
-          background: white;
+          background: #F9F0EB;
           color: rgb(49, 65, 88);
           height: 100%;
           overflow: hidden;
@@ -115,7 +115,7 @@ const SpecializedServices = () =>
           height: 200px;
           overflow: hidden;
           position: relative;
-          background-color: #f0f0f0; /* Placeholder background */
+          background-color: #F9F0EB; /* Placeholder background */
         }
         
         .service-card img {
@@ -168,9 +168,9 @@ const SpecializedServices = () =>
         }
         
         .view-more-btn {
-          background-color: rgb(0, 132, 209);
-          color: white;
-          border: none;
+          background-color:  #FEF7F8;
+          color:  #BF7F62;
+          border: 1px solid #BF7F62;
           border-radius: 5px;
           padding: 0.75rem 1.5rem;
           font-size: 1rem;
@@ -179,9 +179,7 @@ const SpecializedServices = () =>
           margin-top: 1rem;
         }
         
-        .view-more-btn:hover {
-          background-color: rgb(0, 100, 180);
-        }
+        
         
         /* Dark mode styles */
         .dark .service-card {
@@ -327,12 +325,14 @@ const SpecializedServices = () =>
                     ))}
                 </div>
                 {carouselItems.length > 4 && (
+                  <div className='flex justify-center'>
                     <button
                         className="view-more-btn"
                         onClick={() => setShowAll(!showAll)}
                     >
                         {showAll ? "View Less Services" : "View More Services"}
                     </button>
+            </div>
                 )}
             </div>
             {/* For medium screens and larger - show carousel */}

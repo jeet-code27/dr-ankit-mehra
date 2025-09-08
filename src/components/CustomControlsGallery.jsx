@@ -42,11 +42,11 @@ const DermatologyGallery = () => {
   }, []);
   
   return (
-    <div className="py-12 bg-gradient-to-br from-blue-50 to-indigo-50">
+    <div className="py-12 bg-[#FEF7F8] font-serif">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Treatment Gallery</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#BF7F62] mb-4">Treatment Gallery</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Explore our state-of-the-art facilities and the range of advanced dermatological treatments we offer at Dr. Mehra's clinic.
           </p>
@@ -91,10 +91,10 @@ const DermatologyGallery = () => {
             </div>
             
             {/* Custom controls */}
-            <div className="flex justify-between items-center p-4 bg-gray-50">
+            <div className="flex justify-between items-center p-4  bg-[#F9F0EB]">
               <button
                 type="button"
-                className="flex items-center justify-center p-2 rounded-full bg-white shadow-md hover:bg-blue-50 transition-colors focus:outline-none"
+                className="flex items-center justify-center p-2 rounded-full bg-[#F9F0EB] shadow-md hover:bg-blue-50 transition-colors focus:outline-none"
                 onClick={prevSlide}
                 aria-label="Previous slide"
               >
@@ -120,7 +120,7 @@ const DermatologyGallery = () => {
               
               <button
                 type="button"
-                className="flex items-center justify-center p-2 rounded-full bg-white shadow-md hover:bg-blue-50 transition-colors focus:outline-none"
+                className="flex items-center justify-center p-2 rounded-full bg-[#F9F0EB] shadow-md hover:bg-blue-50 transition-colors focus:outline-none"
                 onClick={nextSlide}
                 aria-label="Next slide"
               >
@@ -132,7 +132,7 @@ const DermatologyGallery = () => {
           </div>
           
           {/* Gallery Info */}
-          <div className="p-6 bg-white">
+          <div className="p-6 bg-[#F9F0EB]">
             <h3 className="text-xl font-semibold text-gray-800 mb-2">Our Advanced Treatments</h3>
             <h1 className="text-gray-600">
               Dr. Mehra specializes in cutting-edge dermatological procedures using the latest technology. With over 500 successful laser and skin treatments performed, our clinic offers personalized solutions for all your skin and hair concerns.
@@ -142,15 +142,15 @@ const DermatologyGallery = () => {
         
         {/* Stats Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 max-w-4xl mx-auto">
-          <div className="bg-white p-6 rounded-lg shadow-md text-center">
+          <div className="bg-[#F9F0EB] p-6 rounded-lg shadow-md text-center">
             <div className="text-3xl font-bold text-blue-600 mb-2">12+</div>
             <div className="text-gray-700">Years Experience</div>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md text-center">
+          <div className="bg-[#F9F0EB] p-6 rounded-lg shadow-md text-center">
             <div className="text-3xl font-bold text-blue-600 mb-2">8,000+</div>
             <div className="text-gray-700">Consultations</div>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md text-center">
+          <div className="bg-[#F9F0EB] p-6 rounded-lg shadow-md text-center">
             <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
             <div className="text-gray-700">Laser Treatments</div>
           </div>

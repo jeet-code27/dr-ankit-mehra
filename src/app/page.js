@@ -1,8 +1,8 @@
 import AboutDoctor from "@/components/AboutDoctor";
 import AboutDoctorSection from "@/components/AboutDoctorSection";
- 
+import ExpertCards from "@/components/ExpertCards";
 import BeforeAfter from "@/components/BeforeAfter";
-import CardGrid from "@/components/CardGrid";
+ 
 import DermatologyBenefits from "@/components/DermatologyBenefits";
 
 import ExpertTeam from "@/components/ExpertTeam";
@@ -282,6 +282,7 @@ export default function Home() {
      {/* <ServiceSlider/> */}
      {/* <CardGrid/> */}
      {/* <ServiceCards/> */}
+      <ExpertCards/>
      <DermatologyBenefits/>
       <WhyChooseSection />
          <PatientReviews />

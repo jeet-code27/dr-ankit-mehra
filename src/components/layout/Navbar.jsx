@@ -151,7 +151,7 @@ export default function Navbar() {
           >
             {/* Menu Content */}
             <motion.div
-              className="fixed top-0 left-0 h-full w-4/5 max-w-sm bg-white z-50 shadow-xl overflow-y-auto"
+              className="fixed top-0 left-0 h-full w-4/5 max-w-sm bg-[#FFF9F9] font-serif z-50 shadow-xl overflow-y-auto"
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}

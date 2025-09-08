@@ -219,17 +219,17 @@ const ContactForm = () => {
 
   return (
     <motion.div 
-      className="bg-white rounded-xl shadow-xl overflow-hidden mb-12"
+      className="bg-white rounded-xl   overflow-hidden mb-12"
       variants={scaleUpVariants}
       initial="hidden"
       animate="visible"
     >
       <div className="p-8">
-        <h2 className="text-2xl font-bold mb-6 bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 text-transparent bg-clip-text text-center">
+        <h2 className="text-2xl font-bold mb-6   font-serif  text-[#BF7F62] text-center">
           Book Your Consultation
         </h2>
         <motion.p 
-          className="text-gray-600 text-center mb-8"
+          className="text-gray-600 font-serif text-center mb-8"
           variants={itemVariants}
         >
           Personalized treatment plans for all your dermatological needs
@@ -388,10 +388,11 @@ const ContactForm = () => {
               className="text-center"
               variants={itemVariants}
             >
+            
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 text-white font-bold py-3 px-8 rounded-full shadow-md hover:shadow-lg cursor-pointer transform hover:-translate-y-1 transition duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="bg-[#FAF2F0] border-[#BF7F62] border hover:text-white hover:bg-[#BF7F62] font-serif font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105"
               >
                 {isSubmitting ? 'Submitting...' : 'Book Consultation'}
               </button>

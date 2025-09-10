@@ -85,7 +85,7 @@ const SpecializedServices = () =>
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
-      <h1 className="text-4xl pb-10 md:text-5xl text-[#a86e54] text-center font-serif w-full mx-auto leading-snug">
+      <h1 className="text-4xl  pb-10 md:text-5xl text-[#a86e54] text-center font-serif w-full mx-auto leading-snug">
         Our Specialized Services
       </h1>
 

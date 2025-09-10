@@ -1,8 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import Image from "next/image";
-import StickyInsideContainer from "@/components/StickyInsideContainer";
 
+import React from "react"; 
+import StickyInsideContainer from "@/components/StickyInsideContainer";
 export const metadata = {
   title: "Effective Hair Loss Treatments for Healthy Hair | Dr. Ankit Mehra",
   description:

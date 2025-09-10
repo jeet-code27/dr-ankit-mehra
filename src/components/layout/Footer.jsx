@@ -119,6 +119,9 @@ export default function Footer()
           Copyright © 2025 All Rights Reserved.
         </p>
 
+        <div>Powered by <Link target="_blank" href={'https://seocialmedia.in/'} > <span className="hover:underline cursor-pointer">SEOcial Media Solutions</span></Link>
+
+</div>
         <div className="flex items-center space-x-3 mt-4 md:mt-0">
           <p className="text-sm">Follow Us On Social</p>
           <div className="flex space-x-3">

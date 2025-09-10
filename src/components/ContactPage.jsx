@@ -127,7 +127,7 @@ const ContactPage = () => {
             {/* Banner with Gradient Text instead of Gradient Background */}
             <AnimatedSection variants={containerVariants}>
               <motion.div
-                className="bg-[#F1D3C0] rounded-xl overflow-hidden mb-12"
+                className="bg-[#F9F0EB] rounded-xl overflow-hidden mb-12"
                 variants={scaleUpVariants}
               >
                 <div className="md:flex items-center justify-center">
@@ -180,15 +180,15 @@ const ContactPage = () => {
                     className="md:w-1/2 flex items-center justify-center p-6"
                     variants={slideInFromRight}
                   >
-                    <div className="rounded-3xl bg-[#C3E1F2] overflow-hidden">
-                      <div className="relative w-full" style={{ maxHeight: "500px" }}>
+                    <div className="rounded-3xl overflow-hidden">
+                      <div className="relative w-full max-h-[500px]">
                         <Image
-                          src="/images/home/dr-ankit-mehra.jpeg"
+                          src="/images/home/dr-ankit-mehra.jpg"
                           alt="Dr. Ankit Mehra"
                           width={650}
                           height={650}
                           priority
-                          className="w-full h-auto max-h-[300px]"
+                          className="w-full h-auto max-h-[300px] object-cover"
                         />
                       </div>
                     </div>
@@ -200,7 +200,7 @@ const ContactPage = () => {
             {/* About Section */}
             <AnimatedSection variants={containerVariants}>
               <motion.div
-                className="bg-[#F1D3C0] rounded-xl overflow-hidden mb-12 text-center md:text-left"
+                className="bg-[#F9F0EB] rounded-xl overflow-hidden mb-12 text-center md:text-left"
                 variants={scaleUpVariants}
               >
                 <div className="p-8">
@@ -231,7 +231,7 @@ const ContactPage = () => {
             {/* Specialized Services */}
             <AnimatedSection variants={containerVariants}>
               <motion.div
-                className="rounded-xl bg-[#F1D3C0] overflow-hidden mb-12 text-center md:text-left"
+                className="rounded-xl bg-[#F9F0EB] overflow-hidden mb-12 text-center md:text-left"
                 variants={scaleUpVariants}
               >
                 <div className="p-8">

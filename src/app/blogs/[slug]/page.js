@@ -84,7 +84,8 @@ function BlogContent({ content }) {
       font-weight: 700;
       margin-top: 2rem;
       margin-bottom: 1rem;
-      color: #0369a1;
+      color: #B97E63;
+      font-family: serif;
       line-height: 1.2;
     }
     
@@ -93,7 +94,7 @@ function BlogContent({ content }) {
       font-weight: 600;
       margin-top: 1.5rem;
       margin-bottom: 0.75rem;
-      color:rgb(23, 14, 184);
+      color: #BF7F62;
       line-height: 1.3;
     }
     
@@ -156,7 +157,7 @@ export default async function SingleBlogPage({ params }) {
   if (!blog) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-teal-50 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="bg-white rounded-xl shadow-lg overflow-hidden p-6 border border-blue-100">
             <h1 className="text-4xl font-bold bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 bg-clip-text text-transparent mb-4">
               Blog Not Found
@@ -192,7 +193,7 @@ export default async function SingleBlogPage({ params }) {
           priority
           className="object-cover rounded-lg shadow-lg"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-blue-400 to-transparent opacity-70 rounded-lg"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#B97A57] to-transparent opacity-70 rounded-lg"></div>
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-2 drop-shadow-md">
             {blog.title}
@@ -200,17 +201,17 @@ export default async function SingleBlogPage({ params }) {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div className="bg-white rounded-xl shadow-lg overflow-hidden p-6 md:p-10 border border-blue-100">
           <div className="flex items-center mb-8 pb-4 border-b border-blue-100">
             <div className="flex items-center">
               <div className="mr-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 rounded-full flex items-center justify-center text-white font-bold shadow-md">
+                <div className="w-12 h-12 bg-[#B97A57] rounded-full flex items-center justify-center text-white font-bold shadow-md">
                   {blog.author.charAt(0)}
                 </div>
               </div>
               <div>
-                <p className="font-medium text-gray-900">Dr. Ankit Mehra</p>
+                <p className="font-medium text-gray-900"> {blog.author}</p>
                 <p className="text-sm text-gray-500">
                   Published on {formattedDate}
                 </p>
@@ -223,7 +224,7 @@ export default async function SingleBlogPage({ params }) {
               {blog.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="inline-block bg-gradient-to-r from-blue-100 to-teal-100 text-blue-700 text-xs px-3 py-1 rounded-full border border-blue-200 shadow-sm"
+                  className="inline-block bg-[#F9F0EB]    text-[#B97E63] text-xs px-3 py-1 rounded-full border border-blue-200 shadow-sm"
                 >
                   {tag}
                 </span>
@@ -235,14 +236,14 @@ export default async function SingleBlogPage({ params }) {
            <div> 
           <Link 
               href="/bookconsultation" 
-              className="inline-block bg-gradient-to-r from-indigo-600 to-blue-500 text-white font-medium px-8 py-3 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+              className="bg-[#FAF2F0]  border-[#BF7F62] border hover:text-white  hover:bg-[#BF7F62]  font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg"
             >
               Book an Consultation
             </Link></div>
           <div className="mt-10 pt-6 border-t border-blue-100">
             <Link
               href="/blogs"
-              className="inline-block bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 text-white px-6 py-3 rounded-lg hover:opacity-90 transition duration-300 shadow-md"
+              className="bg-[#B97A57] hover:bg-[#684e39] transition-colors duration-300 inline-flex items-center gap-2 text-white px-6 sm:px-7 py-3 rounded-md font-medium text-sm"
             >
               ← Back to All Dermatologist Blogs
             </Link>

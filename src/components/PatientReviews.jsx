@@ -55,7 +55,7 @@ const PatientReviews = () => {
         variants={containerVariants}
       >
         <motion.h2 
-          className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 md:mb-4 lg:mb-6 text-black leading-tight font-playfair"
+          className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 md:mb-4 lg:mb-6 text-[#BF7F62] font-serif leading-tight font-playfair"
           variants={itemVariants}
         >
           Patient Reviews

@@ -65,46 +65,22 @@ const ClientBlogPage = ({ blogs }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <motion.h1 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-          >
+    <div className="min-h-screen bg-[#FEF7F8] py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+      
+ <div>
+          <h1 className="text-4xl md:text-5xl text-[#a86e54] text-center font-serif max-w-6xl mx-auto leading-snug mb-2">
             Welcome to Dr. Ankit Mehra's Dermatology Clinic
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-gray-700 max-w-3xl mx-auto mb-8"
-          >
-            Where expertise, innovation, and compassionate care unite to offer comprehensive solutions for all your skin and hair needs.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <Link 
-              href="/bookconsultation" 
-              className="inline-block bg-gradient-to-r from-indigo-600 to-blue-500 text-white font-medium px-8 py-3 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300"
-            >
-              Book an Consultation
-            </Link>
-          </motion.div>
+          </h1>
+          <h2 className="flex   text-gray-700 font-serif text-xl mb-7 justify-center">
+            Where expertise, innovation, and compassionate care unite to offer comprehensive solutions for all your skin and hair needs.</h2>
         </div>
-
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {currentBlogs.map((blog, blogIndex) => (
             <article
               key={`${blog.id}-${blogIndex}`}
-              className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl group"
+              className="bg-[#F9F0EB] rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl group"
             >
               <div className="relative aspect-video w-full overflow-hidden">
                 <Image
@@ -116,7 +92,7 @@ const ClientBlogPage = ({ blogs }) => {
                   priority={blog.id <= 3}
                 />
                 {blog.tags?.[0] && (
-                  <span className="absolute top-4 left-4 bg-gradient-to-r from-indigo-500 to-blue-600 text-white text-xs px-3 py-1 rounded-full">
+                  <span className="absolute top-4 left-4 bg-[#A86E54]  text-white text-xs px-3 py-1 rounded-full">
                     {blog.tags[0]}
                   </span>
                 )}
@@ -145,31 +121,44 @@ const ClientBlogPage = ({ blogs }) => {
                     })}
                   </span>
                   <span className="mx-2 text-gray-400">•</span>
-                  <span className="text-indigo-600">{blog.author}</span>
+                  <span className="">{blog.author}</span>
                 </div>
-                <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors duration-300">
+                <h2 className="text-xl font-bold text-[#A86E54] mb-3 font-serif group-hover:text-gray-700 transition-colors duration-300">
                   <Link href={`/blogs/${blog.slug}`}>{blog.title}</Link>
                 </h2>
-                <p className="text-gray-700 mb-5 line-clamp-3">
+                <p className="text-gray-700 mb-5 line-clamp-3 font-serif">
                   {blog.excerpt || blog.content?.substring(0, 150)}...
                 </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {blog.tags?.slice(1).map((tag, tagIndex) => (
+                <div className="flex flex-wrap font-serif gap-2">
+                  {blog.tags?.slice(1,5).map((tag, tagIndex) => (
                     <span
                       key={`${tag}-${tagIndex}`}
-                      className="inline-block bg-indigo-50 text-indigo-600 text-xs px-2 py-1 rounded-full"
+                      className="text-gray-600 flex space-y-1   mb-1"
                     >
-                      #{tag}
+                      <svg
+                        className="w-5 h-5 text-green-500 mr-2 mt-0.5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>{tag}
                     </span>
                   ))}
                 </div>
-                <div className="flex justify-center">
+                <div className="flex font-serif justify-center">
                   <Link
                     href={`/blogs/${blog.slug}`}
-                    className="inline-flex items-center text-sm font-medium bg-gradient-to-r from-indigo-500 to-blue-600 text-white px-4 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                    className="text-[#A86E54] font-semibold flex items-center hover:text-[#A86E54] transition-colors duration-300"
                     aria-label={`Read more about ${blog.title}`}
                   >
-                    Read Full Article
+                    Read More
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4 ml-2"
@@ -190,14 +179,14 @@ const ClientBlogPage = ({ blogs }) => {
             </article>
           ))}
         </div>
-        
+      
         {/* Pagination Controls */}
         {totalPages > 1 && (
           <div className="flex justify-center items-center gap-2 mt-10">
             <button
               onClick={() => goToPage(currentPage - 1)}
               disabled={currentPage === 1}
-              className="px-3 py-1 rounded bg-indigo-100 text-indigo-600 hover:bg-indigo-200 disabled:opacity-50"
+              className="px-3 py-1 rounded bg-[#F9F0EB] text-[#A86E54] hover:bg-[#A86E54]/20 disabled:opacity-50"
             >
               Prev
             </button>
@@ -207,8 +196,8 @@ const ClientBlogPage = ({ blogs }) => {
                 onClick={() => goToPage(i + 1)}
                 className={`px-3 py-1 rounded ${
                   currentPage === i + 1
-                    ? "bg-indigo-600 text-white"
-                    : "bg-indigo-100 text-indigo-600 hover:bg-indigo-200"
+                  ? "bg-[#F9F0EB] text-[#A86E54] border font-bold"
+                  : "bg-[#F9F0EB] text-[#A86E54] hover:bg-[#A86E54]/20"
                 }`}
               >
                 {i + 1}
@@ -217,7 +206,7 @@ const ClientBlogPage = ({ blogs }) => {
             <button
               onClick={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className="px-3 py-1 rounded bg-indigo-100 text-indigo-600 hover:bg-indigo-200 disabled:opacity-50"
+              className="px-3 py-1 rounded bg-[#F9F0EB] text-[#A86E54] hover:bg-[#A86E54]/20 disabled:opacity-50"
             >
               Next
             </button>
@@ -225,7 +214,7 @@ const ClientBlogPage = ({ blogs }) => {
         )}
         
         {/* Doctor Info Section */}
-        <div className="mt-20 bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div className="mt-20 bg-[#F9F0EB] rounded-2xl shadow-xl overflow-hidden">
           <div className="md:flex">
             <motion.div
               ref={doctorInfoRef}
@@ -234,7 +223,7 @@ const ClientBlogPage = ({ blogs }) => {
                 doctorInfoInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }
               }
               transition={{ duration: 0.8 }}
-              className="md:w-1/3 bg-gradient-to-r from-indigo-500 to-blue-600 p-8 text-white"
+              className="md:w-1/3 bg-[#B97A57] p-8 text-white"
             >
               <h3 className="text-2xl font-bold mb-4">
                 About Dr. Ankit Mehra
@@ -259,7 +248,7 @@ const ClientBlogPage = ({ blogs }) => {
                     />
                   </svg>
                   <div>
-                    <h4 className="font-semibold">Clinic Address 📍</h4>
+                    <h4 className="font-semibold">Clinic Address </h4>
                     <p className="text-blue-100 text-wrap">
                       Dermatology Clinic, Ajmer
                     </p>
@@ -338,16 +327,16 @@ const ClientBlogPage = ({ blogs }) => {
                 }
                 transition={{ duration: 0.7, delay: 0.1 }}
               >
-                <h3 className="text-2xl font-bold text-indigo-800 mb-4">
+                <h3 className="text-3xl font-serif  text-[#B97A57] mb-4">
                   Our Specialized Services
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   <div className="flex items-start">
-                    <div className="bg-indigo-100 p-3 rounded-lg mr-4">
-                      <Sparkles className="h-6 w-6 text-indigo-600" />
+                    <div className="bg-[#f4e5de] p-3 rounded-lg mr-4">
+                      <Sparkles className="h-6 w-6 text-[#B97A57]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">
+                      <h4 className="font-semibold text-[#B97A57] ">
                         Skin Rejuvenation
                       </h4>
                       <p className="text-gray-600">
@@ -356,11 +345,11 @@ const ClientBlogPage = ({ blogs }) => {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                      <Palette className="h-6 w-6 text-blue-600" />
+                    <div className="bg-[#f4e5de] p-3 rounded-lg mr-4">
+                      <Palette className="h-6 w-6 text-[#B97A57]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">
+                      <h4 className="font-semibold text-[#B97A57] ">
                         Treatment for Pigmentation
                       </h4>
                       <p className="text-gray-600">
@@ -369,11 +358,11 @@ const ClientBlogPage = ({ blogs }) => {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="bg-indigo-100 p-3 rounded-lg mr-4">
-                      <Droplet className="h-6 w-6 text-indigo-600" />
+                    <div className="bg-[#f4e5de] p-3 rounded-lg mr-4">
+                      <Droplet className="h-6 w-6 text-[#B97A57]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">
+                      <h4 className="font-semibold text-[#B97A57] ">
                         Scar Reduction and Acne Treatment
                       </h4>
                       <p className="text-gray-600">
@@ -382,11 +371,11 @@ const ClientBlogPage = ({ blogs }) => {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                      <Camera className="h-6 w-6 text-blue-600" />
+                    <div className="bg-[#f4e5de] p-3 rounded-lg mr-4">
+                      <Camera className="h-6 w-6 text-[#B97A57]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">
+                      <h4 className="font-semibold text-[#B97A57] ">
                         Cosmetic Dermatology
                       </h4>
                       <p className="text-gray-600">
@@ -395,11 +384,11 @@ const ClientBlogPage = ({ blogs }) => {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="bg-indigo-100 p-3 rounded-lg mr-4">
-                      <Scissors className="h-6 w-6 text-indigo-600" />
+                    <div className="bg-[#f4e5de] p-3 rounded-lg mr-4">
+                      <Scissors className="h-6 w-6 text-[#B97A57]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">
+                      <h4 className="font-semibold text-[#B97A57] ">
                         Hair Loss and Sexual Health Treatments
                       </h4>
                       <p className="text-gray-600">
@@ -413,46 +402,7 @@ const ClientBlogPage = ({ blogs }) => {
           </div>
         </div>
         
-        {/* Footer Section */}
-        <div className="mt-8 bg-white rounded-xl p-6 shadow-md">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-4 md:mb-0">
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Professional Dermatology Services</h3>
-              <p className="text-gray-600">All procedures performed by certified dermatology professionals</p>
-            </div>
-            <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <div className="flex items-center">
-                <svg className="w-5 h-5 text-green-500 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-700">Certified Specialists</span>
-              </div>
-              <div className="flex items-center">
-                <svg className="w-5 h-5 text-green-500 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-700">Advanced Technology</span>
-              </div>
-            </div>
-          </div>
-          <div className="mt-6 pt-6 border-t border-gray-200 text-center">
-            <p className="text-gray-700 mb-2">Contact Dr. Ankit Mehra:</p>
-            <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-6">
-              <a href="tel:+919697041111" className="flex items-center text-indigo-600 hover:text-indigo-800">
-                <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                +91 96970 41111
-              </a>
-              <a href="mailto:ankit456.mehra@gmail.com" className="flex items-center text-indigo-600 hover:text-indigo-800">
-                <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                ankit456.mehra@gmail.com
-              </a>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ const CardGrid = () =>
                         <h1 style={{ fontSize: '3rem', margin: '0 0 20px' }}>
                             Our Expert Care Team
                         </h1>
-                        <p style={{ fontSize: '1.15rem', fontWeight: '400', margin: '0' }}>
+                        <p className='text-justify' style={{ fontSize: '1.15rem', fontWeight: '400', margin: '0' }}>
                             Meet our distinguished team of medical professionals dedicated to providing exceptional healthcare services
                         </p>
                     </div>

@@ -27,12 +27,12 @@ export default function WhyChooseSection()
           </h2>
 
           {/* Highlights */}
-          <div className="space-y-6 text-gray-700">
+          <div className="space-y-6  text-gray-700">
             <div>
               <h3 className="font-semibold text-lg text-gray-900">
                 Experienced & Trusted Dermatologist
               </h3>
-              <p>
+              <p className="text-justify">
                 Dr. Ankit Mehra, MD (Skin & VD), is a former Assistant Professor at
                 JLN Medical College, Ajmer, with 12+ years of experience and more
                 than 8,000 successful consultations.
@@ -43,7 +43,7 @@ export default function WhyChooseSection()
               <h3 className="font-semibold text-lg text-gray-900">
                 Complete Skin, Hair & Aesthetic Solutions
               </h3>
-              <p>
+              <p className="text-justify">
                 From acne, pigmentation, and scars to advanced laser treatments,
                 anti-aging, and PRP therapy — all your dermatology and cosmetic needs
                 under one roof.
@@ -62,7 +62,7 @@ export default function WhyChooseSection()
                 <h4 className="text-[#B77A5D] font-semibold text-lg mb-1">
                   Personalized & Patient-Centered Care
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-justify">
                   Every patient is unique. Dr. Mehra takes time to understand your
                   skin and hair concerns, creating tailored treatment plans for
                   effective results.
@@ -79,7 +79,7 @@ export default function WhyChooseSection()
                 <h4 className="text-[#B77A5D] font-semibold text-lg mb-1">
                   Advanced Technology & Proven Results
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-justify">
                   Expert in lasers, microneedling, PRP, and the latest
                   cosmetic techniques, Dr. Mehra delivers safe, modern, and
                   evidence-based treatments.

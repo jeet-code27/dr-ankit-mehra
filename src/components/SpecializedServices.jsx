@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
 const SpecializedServices = () =>
 {
   const [showAll, setShowAll] = useState(false);
@@ -79,262 +80,46 @@ const SpecializedServices = () =>
       url: '/laser-tattoo-removal',
     }
   ];
+
   const itemsToShow = showAll ? carouselItems : carouselItems.slice(0, 4);
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
-      <style jsx>{`
-        .services-container {
-          width: 100%;
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-        
-        .services-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-          gap: 1.5rem;
-          margin-bottom: 2rem;
-        }
-        
-        .service-card {
-          display: flex;
-          flex-direction: column;
-          border: 5px solid rgba(0, 0, 0, 0.1);
-          border-radius: 10px;
-          background: #F9F0EB;
-          color: rgb(49, 65, 88);
-          height: 100%;
-          overflow: hidden;
-        }
-        
-        .service-card .img-container {
-          width: 100%;
-          height: 200px;
-          overflow: hidden;
-          position: relative;
-          background-color: #F9F0EB; /* Placeholder background */
-          aspect-ratio: 16/9; /* Maintain consistent aspect ratio */
-        }
-        
-        .service-card img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          opacity: 0;
-          transition: opacity 0.3s ease-in-out;
-          display: block; /* Prevent inline spacing issues */
-        }
-        
-        .service-card img.loaded {
-          opacity: 1;
-        }
-        
-        .service-card-content {
-          padding: 1rem;
-          display: flex;
-          flex-direction: column;
-          flex-grow: 1;
-          color: black;
-        }
-        
-        .service-card h2 {
-          font-size: 1.2rem;
-          font-weight: 300;
-          margin: 0 0 0.5rem 0;
-        }
-        
-        .service-card p {
-          margin: 0 0 1rem 0;
-          font-size: 0.9rem;
-          flex-grow: 1;
-        }
-        
-        .service-card a {
-          text-decoration: none;
-          text-transform: lowercase;
-          border: 1px solid rgb(0, 132, 209);
-          color: rgb(0, 132, 209);
-          border-radius: 3px;
-          padding: 0.25rem 0.5rem;
-          align-self: flex-start;
-          transition: 150ms ease-in-out;
-        }
-        
-        .service-card a:hover,
-        .service-card a:focus-visible {
-          background-color: rgb(0, 132, 209);
-          color: white;
-          outline: none;
-        }
-        
-        .view-more-btn {
-          background-color:  #FEF7F8;
-          color:  #BF7F62;
-          border: 1px solid #BF7F62;
-          border-radius: 5px;
-          padding: 0.75rem 1.5rem;
-          font-size: 1rem;
-          cursor: pointer;
-          transition: background-color 150ms ease-in-out;
-          margin-top: 1rem;
-        }
-        
-        
-        
-        /* Dark mode styles */
-        .dark .service-card {
-          background: rgba(255, 255, 255, 0.05);
-          color: white;
-          border-color: rgba(255, 255, 255, 0.15);
-        }
-        
-        .dark .service-card a {
-          color: white;
-          border-color: white;
-        }
-        
-        .dark .service-card a:hover,
-        .dark .service-card a:focus-visible {
-          background-color: white;
-          color: rgb(0, 132, 209);
-        }
-        
-        /* Carousel styles for larger screens */
-        @media (min-width: 768px) {
-          .carousel-container {
-            position: relative;
-            width: 100%;
-            max-width: 1200px;
-            height: 450px;
-            overflow: hidden;
-          }
-          
-          .carousel {
-            display: flex;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            animation: marquee 40s linear infinite;
-          }
-          
-          .carousel:hover {
-            animation-play-state: paused;
-          }
-          
-          .carousel-item {
-            flex: 0 0 280px;
-            margin-right: 2rem;
-            display: flex;
-            flex-direction: column;
-            border: 2px solid rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            background: white;
-            color: rgb(49, 65, 88);
-            height: 450px;
-            overflow: hidden;
-          }
-          
-          .carousel-item .img-container {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-            background-color: #f0f0f0; /* Placeholder background */
-            aspect-ratio: 16/9; /* Maintain consistent aspect ratio */
-          }
-          
-          .carousel-item img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            display: block; /* Prevent inline spacing issues */
-          }
-          
-          .carousel-item img.loaded {
-            opacity: 1;
-          }
-          
-          .carousel-item-content {
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            overflow: hidden;
-          }
-          
-          .carousel-item h2 {
-            font-size: 1.2rem;
-            font-weight: 300;
-            margin: 0 0 0.5rem 0;
-          }
-          
-          .carousel-item p {
-            margin: 0 0 1rem 0;
-            font-size: 0.9rem;
-            flex-grow: 1;
-            overflow: hidden;
-          }
-          
-          .carousel-item a {
-            text-decoration: none;
-            text-transform: lowercase;
-            border: 1px solid rgb(0, 132, 209);
-            color: rgb(0, 132, 209);
-            border-radius: 3px;
-            padding: 0.25rem 0.5rem;
-            align-self: flex-start;
-            transition: 150ms ease-in-out;
-          }
-          
-          .carousel-item a:hover,
-          .carousel-item a:focus-visible {
-            background-color: rgb(0, 132, 209);
-            color: white;
-            outline: none;
-          }
-          
-          @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-1 * (280px + 2rem) * 6)); }
-          }
-        }
-      `}</style>
-      <h1 className="text-4xl pb-10 md:text-5xl text-[#a86e54] text-center font-serif  w-full mx-auto leading-snug  ">
+      <h1 className="text-4xl pb-10 md:text-5xl text-[#a86e54] text-center font-serif w-full mx-auto leading-snug">
         Our Specialized Services
       </h1>
-      <div className="services-container md:hidden">
-        <div className="services-grid">
+
+      {/* Mobile Grid View */}
+      <div className="w-full max-w-6xl md:hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
           {itemsToShow.map((item, index) => (
-            <article key={index} className="service-card">
-              <div className="img-container">
+            <article key={index} className="flex flex-col border-5 border-gray-100 rounded-xl bg-[#F9F0EB] text-gray-800 h-full overflow-hidden">
+              <div className="aspect-video bg-gray-200 overflow-hidden">
                 <img
                   src={item.img}
                   alt={item.title}
                   onLoad={() => handleImageLoad(index)}
-                  className={loadedImages[index] ? 'loaded' : ''}
+                  className={`w-full h-full object-cover transition-opacity duration-300 ${loadedImages[index] ? 'opacity-100' : 'opacity-0'}`}
                 />
               </div>
-              <div className="service-card-content">
-                <h2  >{item.title}</h2>
-                <p>{item.text}</p>
-                <a href={item.url}>Read more</a>
+              <div className="p-4 flex flex-col flex-grow">
+                <h2 className="text-xl font-light mb-2">{item.title}</h2>
+                <p className="text-sm text-justify mb-4 flex-grow">{item.text}</p>
+                <a
+                  href={item.url}
+                  className="text-[#684E39] border border-blue-500 rounded px-3 py-1 text-sm self-start hover:bg-blue-500 hover:text-white transition-colors duration-150"
+                >
+                  Read more
+                </a>
               </div>
             </article>
           ))}
         </div>
+
         {carouselItems.length > 4 && (
-          <div className='flex justify-center'>
+          <div className="flex justify-center">
             <button
-              className="view-more-btn"
+              className="bg-[#FEF7F8] text-[#BF7F62] border border-[#BF7F62] rounded-lg px-6 py-3 text-base cursor-pointer hover:bg-[#BF7F62] hover:text-white transition-colors duration-150 mt-4"
               onClick={() => setShowAll(!showAll)}
             >
               {showAll ? "View Less Services" : "View More Services"}
@@ -342,29 +127,51 @@ const SpecializedServices = () =>
           </div>
         )}
       </div>
-      {/* For medium screens and larger - show carousel */}
-      <div className="hidden md:block carousel-container">
-        <div className="carousel">
-          {carouselItems.map((item, index) => (
-            <article key={index} className="carousel-item">
-              <div className="img-container">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  onLoad={() => handleImageLoad(index)}
-                  className={loadedImages[index] ? 'loaded' : ''}
-                />
-              </div>
-              <div className="carousel-item-content">
-                <h2>{item.title}</h2>
-                <p>{item.text}</p>
-                <Link href={item.url} className='hover:text-blue-500  '>Read more</Link>
-              </div>
-            </article>
-          ))}
+
+      {/* Desktop Carousel */}
+      <div className="hidden md:block w-full max-w-6xl">
+        <div className="relative h-[450px] overflow-hidden">
+          <div className="flex absolute top-0 left-0 h-full animate-marquee hover:animation-pause">
+            {carouselItems.map((item, index) => (
+              <article key={index} className="flex-shrink-0 w-[280px] mr-8 flex flex-col border-2 border-gray-100 rounded-xl bg-white text-gray-800 h-[450px] overflow-hidden">
+                <div className="aspect-video bg-gray-200 overflow-hidden">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    onLoad={() => handleImageLoad(index)}
+                    className={`w-full h-full object-cover transition-opacity duration-300 ${loadedImages[index] ? 'opacity-100' : 'opacity-0'}`}
+                  />
+                </div>
+                <div className="p-4 flex flex-col flex-grow overflow-hidden">
+                  <h2 className="text-xl font-light mb-2">{item.title}</h2>
+                  <p className="text-sm mb-4 flex-grow overflow-hidden">{item.text}</p>
+                  <Link
+                    href={item.url}
+                    className="text-blue-500 border border-blue-500 rounded px-3 py-1 text-sm self-start hover:bg-blue-500 hover:text-white transition-colors duration-150"
+                  >
+                    Read more
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
+
+      <style jsx global>{`
+                @keyframes marquee {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(calc(-1 * (280px + 2rem) * 6)); }
+                }
+                .animate-marquee {
+                    animation: marquee 40s linear infinite;
+                }
+                .hover\\:animation-pause:hover {
+                    animation-play-state: paused;
+                }
+            `}</style>
     </div>
   );
 };
+
 export default SpecializedServices;

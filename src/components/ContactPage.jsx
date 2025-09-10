@@ -181,15 +181,14 @@ const ContactPage = () => {
                     variants={slideInFromRight}
                   >
                     <div className="rounded-3xl overflow-hidden">
-                      <div className="relative w-full max-h-[500px]">
-                        <Image
-                          src="/images/home/dr-ankit-mehra.jpg"
-                          alt="Dr. Ankit Mehra"
-                          width={650}
-                          height={650}
-                          priority
-                          className="w-full h-auto max-h-[300px] object-cover"
-                        />
+                      <div className="relative   w-full max-h-[500px]">
+                       <Image
+                                           src="/images/home/dr-ankit-mehra.jpeg"
+                                           alt="Dr. Ankit Mehra"
+                                           className="w-full aspect-square object-cover border-8 border-[#F2C8A7] shadow-2xl transform transition-transform duration-500 rounded-3xl group-hover:scale-110"
+                                           width={150}
+                                           height={150}
+                                         />
                       </div>
                     </div>
                   </motion.div>
@@ -208,7 +207,7 @@ const ContactPage = () => {
                     Best Dermatologist in Ajmer
                   </h2>
                   <motion.p
-                    className="text-gray-600 mb-4 font-serif"
+                    className="text-gray-600 text-justify mb-4 font-serif"
                     variants={itemVariants}
                   >
                     Dr. Ankit Mehra, MD Skin & VD, is widely regarded as the Best
@@ -216,7 +215,7 @@ const ContactPage = () => {
                     and cosmetic concerns.
                   </motion.p>
                   <motion.p
-                    className="text-gray-600 font-serif"
+                    className="text-gray-600 text-justify font-serif"
                     variants={itemVariants}
                   >
                     Having conducted over 8,000 consultations and performed more than

@@ -115,7 +115,7 @@ export default function Footer()
 
       {/* Bottom Section */}
       <div className="border-t border-white/30 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6">
-        <p className="text-sm text-center md:text-left">
+        <p className="text-sm order-1 text-center md:text-left">
           Copyright © 2025 All Rights Reserved.
         </p>
 

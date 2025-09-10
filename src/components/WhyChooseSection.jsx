@@ -4,7 +4,7 @@ import { FaRegHeart, FaStarOfDavid } from "react-icons/fa";
 export default function WhyChooseSection()
 {
   return (
-    <section className="bg-[#FFF9F9] py-16 px-6">
+    <section className="bg-[#FFF9F9] py-16 px-0  sm:px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
         {/* Right Image (shows first on mobile, second on desktop) */}
@@ -52,40 +52,42 @@ export default function WhyChooseSection()
           </div>
 
           {/* Cards */}
-          <div className="mt-10 space-y-8">
+          <div className="mt-10 space-y-0   sm:space-y-8">
             {/* Card 1 */}
-            <div className="flex items-start gap-4 border-t pt-6">
-              <div className="bg-[#FDF1EC] p-4 rounded-xl">
+            <div className="flex flex-col sm:flex-row  items-start gap-4 border-t pt-6">
+              <div className="sm:w-fit w-full   flex sm:justify-start justify-center ">
+              <div className="bg-[#FDF1EC]    max-w-fit p-4 rounded-xl">
                 <FaRegHeart className="text-2xl text-[#B77A5D]" />
+              </div>
               </div>
               <div>
                 <h4 className="text-[#B77A5D] font-semibold text-lg mb-1">
                   Personalized & Patient-Centered Care
                 </h4>
                 <p className="text-gray-600 text-justify">
-                  Every patient is unique. Dr. Mehra takes time to understand your
-                  skin and hair concerns, creating tailored treatment plans for
-                  effective results.
+                  Every patient is unique. Dr. Mehra takes time to understand your skin and
+                  hair concerns, creating tailored treatment plans for effective results.
                 </p>
               </div>
             </div>
 
+
             {/* Card 2 */}
-            <div className="flex items-start gap-4 border-t pt-6">
-              <div className="bg-[#FDF1EC] p-4 rounded-xl">
+            <div className="flex flex-col sm:flex-row items-start gap-4 border-t pt-6">
+              <div className="bg-[#FDF1EC] p-4 rounded-xl mx-auto sm:mx-0">
                 <FaStarOfDavid className="text-2xl text-[#B77A5D]" />
               </div>
               <div>
-                <h4 className="text-[#B77A5D] font-semibold text-lg mb-1">
+                <h4 className="text-[#B77A5D] font-semibold text-lg mb-1 text-center sm:text-left">
                   Advanced Technology & Proven Results
                 </h4>
                 <p className="text-gray-600 text-justify">
-                  Expert in lasers, microneedling, PRP, and the latest
-                  cosmetic techniques, Dr. Mehra delivers safe, modern, and
-                  evidence-based treatments.
+                  Expert in lasers, microneedling, PRP, and the latest cosmetic techniques,
+                  Dr. Mehra delivers safe, modern, and evidence-based treatments.
                 </p>
               </div>
             </div>
+
           </div>
         </div>
 

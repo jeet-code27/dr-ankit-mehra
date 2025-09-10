@@ -94,7 +94,7 @@ export default function Navbar() {
             >
               <Link
                 href="/"
-                className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors"
+                className="text-gray-700 font-medium hover:text-[#00796B] transition-colors"
               >
                 Home
               </Link>
@@ -103,25 +103,25 @@ export default function Navbar() {
               <LaserTreatments/>
               <Link
                 href="/about-us"
-                className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors"
+                className="text-gray-700 font-medium hover:text-[#00796B] transition-colors"
               >
                 About Us
               </Link>
               <Link
                 href="/blogs"
-                className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors"
+                className="text-gray-700 font-medium hover:text-[#00796B] transition-colors"
               >
                 Blogs
               </Link>
               <Link
                 href="/gallery-2"
-                className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors"
+                className="text-gray-700 font-medium hover:text-[#00796B] transition-colors"
               >
                Gallery
               </Link>
               <Link
                 href="/contact-us"
-                className="text-gray-700 font-medium hover:text-[#0055A4] transition-colors"
+                className="text-gray-700 font-medium hover:text-[#00796B] transition-colors"
               >
                 Contact Us
               </Link>

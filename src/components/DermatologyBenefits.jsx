@@ -8,9 +8,9 @@ const DermatologyBenefits = () =>
             <div className='max-w-7xl rounded-[40]' style={{ backgroundColor: '#bf7f62', color: 'white', padding: '40px 20px', fontFamily: "'Georgia', serif" }}>
             <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 40px' }}>
                 <p style={{ fontWeight: 'bold', fontSize: '18px', margin: '0 0 10px' }}>• Our Benefits</p>
-                <h1 style={{ fontSize: '3rem', margin: '0 0 20px' }}>
+                <h2 style={{ fontSize: '3rem', margin: '0 0 20px' }}>
                     Exceptional dermatology, every step of the way
-                </h1>
+                </h2>
                 <p style={{ fontSize: '1.15rem', fontWeight: '400', margin: '0' }}>
                     Experience personalized care, advanced treatments, and visible results with our expert dermatology services.
                 </p>

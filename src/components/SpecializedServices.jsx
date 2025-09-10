@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
@@ -9,7 +10,7 @@ const SpecializedServices = () =>
 
   const handleImageLoad = (index) =>
   {
-    setLoadedImages(prev => ({ ...prev, [index]: true }));
+    setLoadedImages((prev) => ({ ...prev, [index]: true }));
   };
 
   const carouselItems = [
@@ -46,7 +47,7 @@ const SpecializedServices = () =>
     {
       img: '/images/PRP-result-4-final.jpg',
       title: 'Platelet - Rich Plasma',
-      text: 'Platelet - rich plasma(PRP) therapy involves injecting the patient\'s own plasma into the scalp, stimulating hair growth, strengthening follicles, and improving scalp health for natural, effective, and long- lasting hair restoration results.',
+      text: "Platelet - rich plasma(PRP) therapy involves injecting the patient's own plasma into the scalp, stimulating hair growth, strengthening follicles, and improving scalp health for natural, effective, and long- lasting hair restoration results.",
       url: '/prp-therapy',
     },
     {
@@ -78,39 +79,50 @@ const SpecializedServices = () =>
       title: 'Laser Tattoo Removal',
       text: 'Laser tattoo removal applies focused energy to break down ink pigments, which the body gradually clears, effectively fading unwanted tattoos and restoring natural skin appearance with minimal risk or scarring.',
       url: '/laser-tattoo-removal',
-    }
+    },
   ];
 
   const itemsToShow = showAll ? carouselItems : carouselItems.slice(0, 4);
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
-      <h1 className="text-4xl  pb-10 md:text-5xl text-[#a86e54] text-center font-serif w-full mx-auto leading-snug">
+      <h2 className="text-4xl md:text-5xl text-[#a86e54] text-center font-serif pb-10">
         Our Specialized Services
-      </h1>
+      </h2>
 
-      {/* Mobile Grid View */}
+      {/* Mobile Grid */}
       <div className="w-full max-w-6xl md:hidden">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
           {itemsToShow.map((item, index) => (
-            <article key={index} className="flex flex-col border-5 border-gray-100 rounded-xl bg-[#F9F0EB] text-gray-800 h-full overflow-hidden">
-              <div className="aspect-video bg-gray-200 overflow-hidden">
-                <img
+            <article
+              key={index}
+              className="flex flex-col border border-black/10 rounded-lg bg-[#F9F0EB] text-slate-800 overflow-hidden"
+            >
+              <div className="relative w-full h-52 bg-gray-100">
+                <Image
                   src={item.img}
                   alt={item.title}
-                  onLoad={() => handleImageLoad(index)}
-                  className={`w-full h-full object-cover transition-opacity duration-300 ${loadedImages[index] ? 'opacity-100' : 'opacity-0'}`}
+                  fill
+                  sizes="100vw"
+                  onLoadingComplete={() => handleImageLoad(index)} // ✅ correct way in next/image
+                  className={`object-cover transition-opacity duration-300 ${loadedImages[index] ? "opacity-100" : "opacity-0"
+                    }`}
                 />
+                {!loadedImages[index] && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-200 text-gray-500">
+                    Loading...
+                  </div>
+                )}
               </div>
-              <div className="p-4 flex flex-col flex-grow">
-                <h2 className="text-xl font-light mb-2">{item.title}</h2>
-                <p className="text-sm text-justify mb-4 flex-grow">{item.text}</p>
-                <a
+              <div className="flex flex-col flex-grow p-4 text-black">
+                <h2 className="text-lg font-light mb-2">{item.title}</h2>
+                <p className="text-sm mb-4 flex-grow">{item.text}</p>
+                <Link
                   href={item.url}
-                  className="text-[#684E39] border border-blue-500 rounded px-3 py-1 text-sm self-start hover:bg-blue-500 hover:text-white transition-colors duration-150"
+                  className="  w-fit text-[#684E39] font-bold  rounded px-2 py-1 text-sm hover:bg-sky-600 hover:text-white transition"
                 >
-                  Read more
-                </a>
+                  Read more &#8811;
+                </Link>
               </div>
             </article>
           ))}
@@ -119,57 +131,69 @@ const SpecializedServices = () =>
         {carouselItems.length > 4 && (
           <div className="flex justify-center">
             <button
-              className="bg-[#FEF7F8] text-[#BF7F62] border border-[#BF7F62] rounded-lg px-6 py-3 text-base cursor-pointer hover:bg-[#BF7F62] hover:text-white transition-colors duration-150 mt-4"
+              className="bg-[#FEF7F8] text-[#BF7F62] border border-[#BF7F62] rounded-md px-6 py-2 hover:bg-[#BF7F62] hover:text-white transition"
               onClick={() => setShowAll(!showAll)}
             >
-              {showAll ? "View Less Services" : "View More Services"}
+              {showAll ? 'View Less Services' : 'View More Services'}
             </button>
           </div>
         )}
       </div>
 
       {/* Desktop Carousel */}
-      <div className="hidden md:block w-full max-w-6xl">
-        <div className="relative h-[450px] overflow-hidden">
-          <div className="flex absolute top-0 left-0 h-full animate-marquee hover:animation-pause">
-            {carouselItems.map((item, index) => (
-              <article key={index} className="flex-shrink-0 w-[280px] mr-8 flex flex-col border-2 border-gray-100 rounded-xl bg-white text-gray-800 h-[450px] overflow-hidden">
-                <div className="aspect-video bg-gray-200 overflow-hidden">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    onLoad={() => handleImageLoad(index)}
-                    className={`w-full h-full object-cover transition-opacity duration-300 ${loadedImages[index] ? 'opacity-100' : 'opacity-0'}`}
-                  />
-                </div>
-                <div className="p-4 flex flex-col flex-grow overflow-hidden">
-                  <h2 className="text-xl font-light mb-2">{item.title}</h2>
-                  <p className="text-sm mb-4 flex-grow overflow-hidden">{item.text}</p>
-                  <Link
-                    href={item.url}
-                    className="text-blue-500 border border-blue-500 rounded px-3 py-1 text-sm self-start hover:bg-blue-500 hover:text-white transition-colors duration-150"
-                  >
-                    Read more
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
+      <div className="hidden md:block w-full max-w-6xl overflow-hidden relative h-[450px]">
+        <div className="flex absolute top-0 left-0 h-full animate-[marquee_40s_linear_infinite] hover:[animation-play-state:paused]">
+          {carouselItems.map((item, index) => (
+            <article
+              key={index}
+              className="flex flex-col flex-none w-72 mr-8 border border-black/10 rounded-lg bg-white text-slate-800 h-[450px] overflow-hidden"
+            >
+              <div className="relative w-full h-52 bg-gray-100">
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  fill
+                  sizes="100vw"
+                  onLoadingComplete={() => handleImageLoad(index)} // ✅ correct way in next/image
+                  className={`object-cover transition-opacity duration-300 ${loadedImages[index] ? "opacity-100" : "opacity-0"
+                    }`}
+                />
+                {!loadedImages[index] && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-200 text-gray-500">
+                    Loading...
+                  </div>
+                )}
+              </div>
+
+              <div className="flex flex-col flex-grow sm:p-4 p-0">
+                <h2 className="text-lg font-light mb-2">{item.title}</h2>
+                <p className="text-sm text-justify   mb-4 flex-grow overflow-hidden">
+                  {item.text}
+                </p>
+                <Link
+                  href={item.url}
+                  className="   w-fit  text-[#684E39] font-bold rounded px-2 py-1 text-sm   transition"
+                >
+                  <span className='hover:text-gray-900'>
+                    Read more &#8811; </span>
+                </Link>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
 
+      {/* Tailwind Keyframes */}
       <style jsx global>{`
-                @keyframes marquee {
-                    0% { transform: translateX(0); }
-                    100% { transform: translateX(calc(-1 * (280px + 2rem) * 6)); }
-                }
-                .animate-marquee {
-                    animation: marquee 40s linear infinite;
-                }
-                .hover\\:animation-pause:hover {
-                    animation-play-state: paused;
-                }
-            `}</style>
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-1 * (280px + 2rem) * 6));
+          }
+        }
+      `}</style>
     </div>
   );
 };

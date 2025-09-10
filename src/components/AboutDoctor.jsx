@@ -35,10 +35,10 @@ export default function AboutDoctor() {
 
 
         {/* Comprehensive Services Section */}
-        <div className="   ">
-          <h1 className="text-4xl md:text-5xl text-[#a86e54] text-center font-serif max-w-4xl mx-auto leading-snug mb-6">
+        <div>
+          <h2 className="text-4xl md:text-5xl text-[#a86e54] text-center font-serif max-w-4xl mx-auto leading-snug mb-6">
             Comprehensive Services Offered by<br></br> Dr. Ankit Mehra
-          </h1>
+          </h2>
 <div className="flex justify-center w-full">
           <div className="grid max-w-7xl grid-cols-1 md:grid-cols-3 gap-8">
             {/* Skin Treatment Card */}
@@ -369,9 +369,7 @@ export default function AboutDoctor() {
               Book Your Consultation
             </button>
           </Link>
-          <p className="mt-4 text-gray-600">
-            Personalized treatment plans for all your dermatological needs
-          </p>
+          
         </div>
       </div>
     </div>

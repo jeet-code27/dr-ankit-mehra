@@ -23,7 +23,7 @@ const ContactInfoSection = () =>
                             </svg>
                             Contact Us
                         </div>
-                        <p>
+                        <p className='text-[#684E39]'>
                             <span className="font-semibold">Email: </span>
                             <a
                                 href="mailto:ankit456.mehra@gmail.com"
@@ -33,7 +33,7 @@ const ContactInfoSection = () =>
                             </a>
 
                         </p>
-                        <p>
+                        <p className='text-[#684E39]'>
                             <span className="font-semibold">Phone: </span>
                             <a
                                 href="tel:+919697041111"
@@ -65,6 +65,7 @@ const ContactInfoSection = () =>
                          
                         <Link href="https://www.google.com/maps/place/Dr+Ankit+Mehra(MD+Skin+%26+VD)+%E0%A4%9A%E0%A4%B0%E0%A5%8D%E0%A4%AE%E0%A4%B0%E0%A5%8B%E0%A4%97,%E0%A4%AF%E0%A5%8C%E0%A4%A8%E0%A4%B0%E0%A5%8B%E0%A4%97+%E0%A4%8F%E0%A4%B5%E0%A4%82+%E0%A4%B8%E0%A5%8C%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%B0%E0%A5%8B%E0%A4%97+%E0%A4%B5%E0%A4%BF%E0%A4%B6%E0%A5%87%E0%A4%B7%E0%A4%9C%E0%A5%8D%E0%A4%9E(Senior+Skin+Specialist+Dermatologist+%26+Cosmetologist)/@26.4715689,74.6326362,17z/data=!3m1!4b1!4m6!3m5!1s0x396be7ec6b89ce17:0x9014bae9b1d9ff78!8m2!3d26.4715641!4d74.6352111!16s%2Fg%2F11mn889n60?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D" passHref 
                         target='_blank'
+                            className='text-[#684E39]'
                         >
                            
                                 62, Lane no 2, opp. Hotel Ambassador, Nagina Bagh,
@@ -90,7 +91,7 @@ const ContactInfoSection = () =>
                             </svg>
                             Working Hours
                         </div>
-                        <p className="text-[#6a5a52] leading-relaxed text-sm sm:text-base max-w-xs sm:max-w-none">
+                        <p className=" text-[#684E39] leading-relaxed text-sm sm:text-base max-w-xs sm:max-w-none">
                             Monday – Saturday : 11 am - 2 pm, 5 - 7 pm<br />
                             Sunday : 11 am - 2 pm
                         </p>

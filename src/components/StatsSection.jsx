@@ -13,7 +13,6 @@ export default function StatsSection()
     return (
         <section ref={ref} className="max-w-7xl  font-serif border-t border-gray-300 w-full py-12 px-6">
             <div className="   mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 text-center">
-
                 {/* Item 1 */}
                 <div className="flex flex-col items-center">
                     <FaCircleNotch className="text-4xl text-[#B77A5D] mb-3" />

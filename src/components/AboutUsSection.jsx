@@ -69,7 +69,7 @@ const AboutUsSection = () =>
                                         className="object-contain"
                                     />
                                      
-                                    <p className="text-5xl font-serif font-semibold leading-none tracking-tight select-text mb-1">10+</p>
+                                    <p className="text-5xl font-serif font-semibold leading-none tracking-tight select-text mb-1">12+</p>
                                     <p className="text-center text-xs font-sans font-semibold leading-snug" style={{ lineHeight: '1.2' }}>
                                         Years Of<br />Experience
                                     </p>
@@ -77,7 +77,7 @@ const AboutUsSection = () =>
                             </div>
                         </div>
 
-                        <div className="flex flex-wrap gap-4 sm:gap-6">
+                        <div className="flex sm:justify-start justify-center flex-wrap gap-4 sm:gap-6">
                             <Link href={'/about-us'} >
                             <button
                                 aria-label="Read More"

@@ -133,7 +133,7 @@ const ContactPage = () => {
                 <div className="md:flex items-center justify-center">
                   {/* Left Section */}
                   <motion.div
-                    className="md:w-1/2 p-8 text-center md:text-left"
+                    className="md:w-1/2 p-0 sm:p-8  text-justify md:text-left"
                     variants={slideInFromLeft}
                   >
                     <h1 className="text-3xl font-serif font-bold mb-4 bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 text-[#B97E63] bg-clip-text">
@@ -186,9 +186,9 @@ const ContactPage = () => {
                                            src="/images/home/dr-ankit-mehra.jpeg"
                                            alt="Dr. Ankit Mehra"
                                            className="w-full aspect-square object-cover border-8 border-[#F2C8A7] shadow-2xl transform transition-transform duration-500 rounded-3xl group-hover:scale-110"
-                                           width={150}
-                                           height={150}
-                                         />
+                                           width={200}
+                                           height={200}
+ />
                       </div>
                     </div>
                   </motion.div>

@@ -18,16 +18,19 @@ const CardGrid = () =>
             ],
             url: '/apurva-mehra',
         },
-        {
-            title: 'Dr. Ashok Meherda',
-            img: '/images/home/ashok-meherda.jpeg',
+         {
+            title: 'Dr. Anju Depan',
+            img: '/images/home/anju-depan.jpg',
             text: [
-                { label: "Qualifications:", value: "MD, Skin & VD" },
-                { label: "Experience:", value: "Senior Professor & Head" },
-                { label: "Position:", value: "Department of Skin, JLN Medical College, Ajmer" }
+                { label: "Qualifications:", value: "MBBS, MS (Obstetrics & Gynaecology)" },
+                { label: "Education:", value: "MBBS – 2006, MS – 2013, SN Medical College" },
+                { label: "Speciality :", value: "Laparoscopic surgery" },
+                { label: "Experience:", value: "Ex-Senior Resident & Ex-Assistant Professor" },
+                { label: "Position:", value: "Janana Hospital, Ajmer" }
             ],
-            url: '/dr-ashok-meherda',
+            url: '/dr-anju-depan',
         },
+       
         {
             title: 'Dr. Kanti Meherda',
             img: '/images/home/kanti-meherda.jpeg',
@@ -37,6 +40,16 @@ const CardGrid = () =>
                 { label: "Position:", value: "Janana Hospital, Ajmer" }
             ],
             url: '/dr-kanti-meherda',
+        },
+         {
+            title: 'Dr. Ashok Meherda',
+            img: '/images/home/ashok-meherda.jpeg',
+            text: [
+                { label: "Qualifications:", value: "MD, Skin & VD" },
+                { label: "Experience:", value: "Senior Professor & Head" },
+                { label: "Position:", value: "Department of Skin, JLN Medical College, Ajmer" }
+            ],
+            url: '/dr-ashok-meherda',
         },
     ];
 
@@ -60,11 +73,11 @@ const CardGrid = () =>
                 className="pb-25 flex justify-center items-center font-mono"
                 style={{ fontFamily: "'Georgia', serif" }}
             >
-                <div className="container w-[90%] flex flex-wrap align-center justify-between gap-5">
+                <div className="container w-[95%] max-w-[1600px] flex flex-wrap align-center justify-center gap-5 xl:justify-between">
                     {cards.map((card, index) => (
                         <div
                             key={index}
-                            className="relative w-[400px] h-[400px] overflow-hidden rounded-lg cursor-pointer group"
+                            className="relative w-[350px] xl:w-[23%] xl:min-w-[320px] h-[400px] overflow-hidden rounded-lg cursor-pointer group"
                             onClick={() => setActiveCard(index)}
                         >
                             {/* Face 1 */}
@@ -105,21 +118,21 @@ const CardGrid = () =>
 
                                 {/* Content */}
                                 <div className="flex-1 flex flex-col justify-center items-start w-full text-left space-y-3">
-                                    <h3 className="text-center w-full text-2xl pb-2 bg-gray-200 rounded-2xl">
+                                    <h3 className="text-center w-full text-xl pb-2 bg-gray-200 rounded-2xl">
                                         {card.title}
                                     </h3>
                                     {card.text.map((item, idx) => (
-                                        <div key={idx} className="flex text-white">
-                                            <span className="font-semibold w-28">{item.label}</span>
-                                            <span className="pl-4">{item.value}</span>
+                                        <div key={idx} className="flex text-white text-sm">
+                                            <span className="font-semibold w-24 flex-shrink-0 mr-2">{item.label}</span>
+                                            <span className="pl-3 flex-1">{item.value}</span>
                                         </div>
                                     ))}
                                 </div>
 
                                 {/* Button */}
                                 <Link
-                                    href={card.url}   // ✅ fixed here
-                                    className="mt-6 inline-block border border-gray-800 px-5 py-2 rounded-lg font-semibold text-gray-800 hover:bg-[#5A4232] hover:text-white transition-colors duration-300"
+                                    href={card.url}
+                                    className="mt-4 inline-block border border-gray-800 px-4 py-2 rounded-lg font-semibold text-gray-800 hover:bg-[#5A4232] hover:text-white transition-colors duration-300 text-sm"
                                 >
                                     Read More
                                 </Link>
@@ -132,4 +145,4 @@ const CardGrid = () =>
     );
 };
 
-export default CardGrid;
+export default CardGrid;import Image from 'next/image';

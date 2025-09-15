@@ -10,13 +10,10 @@ const AboutUsSection = () =>
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                     {/* Left Column - Content */}
                     <div className="flex-1 w-full">
-                        <p className="flex items-center text-sm mb-4">
-                            <span className="block w-3 h-3 rounded-full bg-[#b97e63] mr-2"></span>
-                            About Us
-                        </p>
-                        <h1 className="text-3xl sm:text-4xl font-serif font-semibold mb-6 max-w-full leading-snug">
+                       
+                        <h2 className="text-3xl sm:text-4xl font-serif font-semibold mb-6 max-w-full leading-snug">
                             Welcome to Dr. Ankit Mehra’s Dermatology Clinic in Ajmer
-                        </h1>
+                        </h2>
                         <p className="text-gray-900 text-justify mb-8 leading-relaxed text-sm sm:text-base font-sans">
                             Where expertise, innovation, and compassionate care unite to offer comprehensive solutions for all your skin and hair needs. Dr. Ankit Mehra brings over 12 years of experience in the field, with a background as a former Assistant Professor at JLN Medical College, Ajmer.
                         </p>

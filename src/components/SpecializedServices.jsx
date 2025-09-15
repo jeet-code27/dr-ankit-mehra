@@ -104,7 +104,7 @@ const SpecializedServices = () =>
                   alt={item.title}
                   fill
                   sizes="100vw"
-                  onLoadingComplete={() => handleImageLoad(index)} // ✅ correct way in next/image
+                  onLoad={() => handleImageLoad(index)} // ✅ correct way in next/image
                   className={`object-cover transition-opacity duration-300 ${loadedImages[index] ? "opacity-100" : "opacity-0"
                     }`}
                 />
@@ -154,7 +154,7 @@ const SpecializedServices = () =>
                   alt={item.title}
                   fill
                   sizes="100vw"
-                  onLoadingComplete={() => handleImageLoad(index)} // ✅ correct way in next/image
+                  onLoad={() => handleImageLoad(index)} // ✅ correct way in next/image
                   className={`object-cover transition-opacity duration-300 ${loadedImages[index] ? "opacity-100" : "opacity-0"
                     }`}
                 />

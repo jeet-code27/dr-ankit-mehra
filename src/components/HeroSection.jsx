@@ -165,7 +165,7 @@ export default function HeroSection({ slides })
 
                     {/* Slide content */}
                     <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-6 z-20 text-center">
-                      <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fadeIn">{slide.title}</h1>
+                      <h2 className="text-4xl md:text-5xl font-bold mb-4 animate-fadeIn">{slide.title}</h2>
                       <p className="text-xl md:text-2xl max-w-2xl animate-fadeIn">{slide.description}</p>
                     </div>
                   </div>

@@ -7,7 +7,7 @@ const DermatologyBenefits = () =>
         <div className='flex justify-center  bg-[#FEF7F8]' >
             <div className='max-w-7xl rounded-[40]' style={{ backgroundColor: '#bf7f62', color: 'white', padding: '40px 20px', fontFamily: "'Georgia', serif" }}>
             <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 40px' }}>
-                <p style={{ fontWeight: 'bold', fontSize: '18px', margin: '0 0 10px' }}>• Our Benefits</p>
+               
                 <h2 style={{ fontSize: '3rem', margin: '0 0 20px' }}>
                     Exceptional dermatology, every step of the way
                 </h2>

@@ -15,7 +15,7 @@ const ElfsightWidget = () => {
     <div className="w-full flex justify-center my-6">
       {/* Elfsight Google Reviews */}
       <div
-        className="elfsight-app-08497030-db98-4789-9970-9bc0cbf751d3"
+        className="elfsight-app-b658eaad-9fbf-4a61-87f0-1f92c0c37aa0"
         data-elfsight-app-lazy
       ></div>
     </div>

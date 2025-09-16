@@ -58,7 +58,7 @@ const CardGrid = () =>
             <div className='flex justify-center text-[#B97E63]'>
                 <div style={{ padding: '40px 20px', fontFamily: "'Georgia', serif" }}>
                     <div style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto 40px' }}>
-                        <p style={{ fontWeight: 'bold', fontSize: '18px', margin: '0 0 10px' }}>• Our Team</p>
+                       
                         <h2 style={{ fontSize: '3rem', margin: '0 0 20px' }}>
                             Our Expert Care Team
                         </h2>

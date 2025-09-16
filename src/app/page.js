@@ -246,19 +246,19 @@ export default function Home() {
     const slides = [
     {
       id: 1,
-      image: '/images/home/woman-beauty-clinic-face-treatment-scaled.jpg',
+      image: '/images/home/woman-beauty-clinic-face-treatment-scaled.png',
     },
     {
       id: 2,
-      image: '/images/home/doctor-performing-laser-hair-removal-patient-skin-scaled.jpg',
+      image: '/images/home/doctor-performing-laser-hair-removal-patient-skin-scaled.png',
     },
     {
       id: 3,
-      image: '/images/home/person-dealing-with-rosacea-scaled.jpg',
+      image: '/images/home/person-dealing-with-rosacea-scaled.png',
     },
     {
       id: 4,
-      image: '/images/home/head-leaning.jpeg',
+      image: '/images/home/head-leaning.png',
     },
   ];
   

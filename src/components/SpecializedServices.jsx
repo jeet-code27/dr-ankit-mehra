@@ -15,13 +15,13 @@ const SpecializedServices = () =>
 
   const carouselItems = [
     {
-      img: '/images/skin-rejuvenation-1.webp',
+      img: '/images/skin-rejuvenation-1.png',
       title: 'Skin Rejuvenation',
       text: 'Skin rejuvenation treatments like chemical peels and lasers reduce wrinkles, dullness, and pigmentation. While mild side effects may occur, preventive care with sunscreen, hydration, and healthy habits helps maintain radiant, youthful skin.',
       url: '/skin-rejuvenation',
     },
     {
-      img: '/images/antiaging.webp',
+      img: '/images/antiaging.png',
       title: 'Anti-Aging Treatments',
       text: 'Anti-aging treatments address wrinkles, fine lines, and skin elasticity loss through non-invasive methods like injectables and lasers or surgical options, all focused on restoring youthful appearance and improving skin quality.',
       url: '/anti-aging-treatments',
@@ -39,7 +39,7 @@ const SpecializedServices = () =>
       url: '/scar-reduction',
     },
     {
-      img: '/images/acne-scar-treatment.png',
+      img: '/images/acne-scar-treatment-new.png',
       title: 'Acne Treatment',
       text: 'Acne treatments address pimples, blackheads, and clogged pores using topical or oral medications, chemical peels, and laser therapy, aiming to control breakouts, reduce inflammation, and improve overall skin health and clarity.',
       url: '/acne-treatment',
@@ -63,7 +63,7 @@ const SpecializedServices = () =>
       url: '/scalp-micropigmentation',
     },
     {
-      img: '/images/hair-remover.jpg',
+      img: '/images/hair-remover.png',
       title: 'Laser Hair Removal',
       text: 'Laser hair removal targets hair follicles to slow or stop unwanted growth, offering long-term results across multiple body areas while enhancing smoothness, confidence, and convenience with minimal maintenance required.',
       url: '/laser-hair-removal',

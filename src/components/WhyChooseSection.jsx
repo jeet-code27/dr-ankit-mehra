@@ -10,7 +10,7 @@ export default function WhyChooseSection()
         {/* Right Image (shows first on mobile, second on desktop) */}
         <div className="flex justify-center order-1 md:order-2">
           <img
-            src="/images/all-solution.png" // replace with real image of Dr. Mehra in /public
+            src="/images/all-solutions.png" // replace with real image of Dr. Mehra in /public
             alt="Dr. Ankit Mehra"
             className="rounded-3xl shadow-md"
           />

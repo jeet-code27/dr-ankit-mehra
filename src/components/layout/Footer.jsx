@@ -31,7 +31,7 @@ export default function Footer()
             </p>
           </div>
 
-          <p className="text-sm mt-5 leading-relaxed">
+          <p className="text-sm mt-5 leading-relaxed text-justify">
             Best Dermatologist in Ajmer. Dr. Ankit Mehra brings 12+ years of expertise in advanced skin, hair, and laser treatments—helping you achieve healthy, glowing skin.
 
 
@@ -91,7 +91,7 @@ export default function Footer()
                 href="https://www.google.com/maps/place/Dr+Ankit+Mehra(MD+Skin+%26+VD)+%E0%A4%9A%E0%A4%B0%E0%A5%8D%E0%A4%AE%E0%A4%B0%E0%A5%8B%E0%A4%97,%E0%A4%AF%E0%A5%8C%E0%A4%A8%E0%A4%B0%E0%A5%8B%E0%A4%97+%E0%A4%8F%E0%A4%B5%E0%A4%82+%E0%A4%B8%E0%A5%8C%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%B0%E0%A5%8B%E0%A4%97+%E0%A4%B5%E0%A4%BF%E0%A4%B6%E0%A5%87%E0%A4%B7%E0%A4%9C%E0%A5%8D%E0%A4%9E(Senior+Skin+Specialist+Dermatologist+%26+Cosmetologist)/@26.4715859,74.6335588,17.91z/data=!4m6!3m5!1s0x396be7ec6b89ce17:0x9014bae9b1d9ff78!8m2!3d26.4715641!4d74.6352111!16s%2Fg%2F11mn889n60?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm pt-2 text-white hover:underline"
+                className="text-sm pt-2 text-white hover:underline text-justify"
               >
                 62, Lane no 2, opp. Hotel Ambassador, Nagina Bagh,
                 Muslim Mochi Mohalla, Ajmer, Rajasthan 305001

@@ -83,7 +83,7 @@ const SkinTreatmentsPage = () => {
       title: "Anti-Aging Treatments",
       description:
         "Combat wrinkles and fine lines with cutting-edge laser therapies and age-defying solutions",
-      image: "head-leaning.jpeg",
+      image: "head-leaning.png",
       features: ["Laser Therapy", "Wrinkle Reduction", "Age Defying"],
       url: "/anti-aging-treatments",
     },
@@ -92,7 +92,7 @@ const SkinTreatmentsPage = () => {
       title: "Pigmentation Treatment",
       description:
         "Effectively treat dark spots and uneven skin tone with specialized chemical treatments",
-      image: "woman-beauty-clinic-face-treatment-scaled.jpg",
+      image: "woman-beauty-clinic-face-treatment-scaled.png",
       features: ["Dark Spot Removal", "Even Tone", "Chemical Solutions"],
       url: "/pigmentation-treatment",
     },
@@ -111,7 +111,7 @@ const SkinTreatmentsPage = () => {
       title: "Acne Treatment",
       description:
         "Clear your skin with effective medications and specialized acne-fighting treatments",
-      image: "person-dealing-with-rosacea-scaled.jpg",
+      image: "person-dealing-with-rosacea-scaled.png",
       features: ["Medication", "Acne Control", "Clear Skin"],
       url: "/acne-treatment",
     },
@@ -147,7 +147,7 @@ const SkinTreatmentsPage = () => {
                   {item.title}
                 </h3>
 
-                <p className="text-gray-600 mb-4 text-justify">
+                <p className="text-gray-600 mb-4 ">
                   {item.description}
                 </p>
 

@@ -10,56 +10,56 @@ const GallerySection = () => {
   const galleryItems = [
     {
       id: 1,
-      src: "closeup-young-woman-with-towel-head-pimples-face-scaled.jpg",
+      src: "skin-care-awareness.png",
       alt: "Skin Care Awareness",
       title: "Skin Care Awareness",
       description: "Discover the importance of daily skin care for a healthy, glowing complexion."
     },
     {
       id: 2,
-      src: "young-beautiful-girl-lies-beautician-s-table-receives-procedures-scaled-qwlpr8v570ly32hd4hh19tk1zi61z4x4ivqz277fwg.jpg",
+      src: "hydra-facial-therapy.png",
       alt: "Hydra Facial Therapy",
       title: "Hydra Facial Therapy",
       description: "A deep cleansing treatment that hydrates and rejuvenates the skin."
     },
     {
       id: 3,
-      src: "side-view-woman-getting-prp-treatment-scaled-qwlrxs9o8o4g64eeifmtm02kuj254oppzm3imir800.jpg",
+      src: "prp-skin-treatment.png",
       alt: "PRP Skin Treatment",
       title: "PRP Skin Treatment",
       description: "Advanced skin rejuvenation using platelet-rich plasma for natural healing."
     },
     {
       id: 4,
-      src: "woman-looking-her-rosacea-mirror-scaled-qwqso8zftqzdmtebbw0i549f6hiwfkxd7meex3k1fk.jpg",
+      src: "acne-skin-concerns.png",
       alt: "Acne & Skin Concerns",
       title: "Acne & Skin Concerns",
       description: "Personalized solutions to address acne, scars, and sensitive skin issues."
     },
     {
       id: 5,
-      src: "view-doctor-cosmetologist-doing-anti-aging-procedure-cosmetology-office-satisfied-woman.jpg",
+      src: "view-doctor-cosmetologist-doing-anti-aging-procedure-cosmetology-office-satisfied-woman.png",
       alt: "Laser Skin Therapy",
       title: "Laser Skin Therapy",
       description: "Cutting-edge laser treatment for pigmentation, fine lines, and skin renewal."
     },
     {
       id: 6,
-      src: "portrait-beautiful-woman-preparation-rejuvenation-cosmetology-operation-beauty-salon-view-from-doctor-s-hands-blue-gloves-drawing-face-botox-beauty.jpg",
+      src: "facial-contouring-injection.png",
       alt: "Facial Contouring Injection",
       title: "Facial Contouring Injection",
       description: "Non-surgical procedure to enhance facial features and restore youthful appearance."
     },
       {
       id: 7,
-      src: "woman-getting-hair-loss-treatment-clinic-1.jpg",
+      src: "woman-getting-hair-loss-treatment-clinic-1.png",
       alt: "Hair PRP Treatment",
       title: "Hair PRP Treatment",
       description: "Advanced platelet-rich plasma therapy to strengthen hair roots and promote regrowth."
     },
     {
       id: 8,
-      src: "woman-beauty-clinic-face-treatment-scaled.jpg",
+      src: "woman-beauty-clinic-face-treatment-scaled.png",
       alt: "Radiofrequency Facial",
       title: "Radiofrequency Facial",
       description: "Skin tightening treatment that boosts collagen for a firmer, youthful look."
@@ -67,14 +67,14 @@ const GallerySection = () => {
     ,
      {
       id: 9,
-      src: "head-leaning.jpeg",
+      src: "head-leaning.png",
       alt: "Mesotherapy Skin Rejuvenation",
       title: "Mesotherapy Skin Rejuvenation",
       description: "Micro-injections of vitamins and nutrients to refresh and brighten dull skin."
     },
     {
       id: 10,
-      src: "person-dealing-with-rosacea-scaled.jpg",
+      src: "person-dealing-with-rosacea-scaled.png",
       alt: "Acne & Scar Treatment",
       title: "Acne & Scar Treatment",
       description: "Specialized care to reduce acne scars, pigmentation, and improve skin texture."
@@ -143,17 +143,16 @@ const GallerySection = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {galleryItems.map((item, index) => (
               <div 
-                className="relative rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 cursor-pointer group" 
+                className="relative rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 cursor-pointer group h-80" 
                 key={item.id}
                 onClick={() => openLightbox(index)}
               >
                 <Image
                   src={`/images/home/${item.src}`}
                   alt={item.alt}
-                  layout="responsive"
-                  width={500}
-                  height={300}
-                  className="w-full h-64 object-cover transition-transform duration-400 group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-400 group-hover:scale-105"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#B9826C]/80 to-transparent text-white p-4 pt-2 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
                   <h3 className="m-0 mb-1 text-xl">{item.title}</h3>
@@ -173,10 +172,9 @@ const GallerySection = () => {
               className="max-w-[90%] max-h-[80vh] object-contain rounded-lg shadow-2xl animate-zoomIn"
               src={`/images/home/${galleryItems[currentIndex].src}`}
               alt={galleryItems[currentIndex].alt}
-              layout="fill"
-              objectFit="contain"
-             
-             
+              fill
+              sizes="90vw"
+              style={{ objectFit: 'contain' }}
             />
             <button className="absolute top-1/2 right-8 -translate-y-1/2 bg-white/20 text-white border-0 text-3xl w-12 h-12 rounded-full cursor-pointer flex items-center justify-center transition-all duration-300 z-[1001] hover:bg-white/40 hover:scale-110" onClick={goToNext}>&#10095;</button>
             <div className="absolute bottom-8 left-0 right-0 text-center text-white text-xl px-5">

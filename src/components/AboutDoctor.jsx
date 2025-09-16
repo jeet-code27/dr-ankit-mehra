@@ -46,7 +46,7 @@ export default function AboutDoctor() {
               {/* Image Space */}
               <div className="h-48 bg-gradient-to-r from-blue-100 to-indigo-100">
                 <Image
-                  src="/images/home/portrait-beautiful-woman-preparation-rejuvenation-cosmetology-operation-beauty-salon-view-from-doctor-s-hands-blue-gloves-drawing-face-botox-beauty.jpg"
+                  src="/images/home/facial-contouring-injection.png"
                   alt="Skin Treatment"
                   className="w-full h-full object-cover"
                   width={500}
@@ -155,7 +155,7 @@ export default function AboutDoctor() {
               {/* Image Space */}
               <div className="h-48 bg-gradient-to-r from-blue-100 to-indigo-100">
                 <Image
-                  src="/images/home/woman-getting-hair-loss-treatment-clinic-1.jpg"
+                  src="/images/home/woman-getting-hair-loss-treatment-clinic-1.png"
                   alt="Skin Treatment"
                   className="w-full h-full object-cover"
                   width={500}
@@ -264,7 +264,7 @@ export default function AboutDoctor() {
               {/* Image Space */}
               <div className="h-48 bg-gradient-to-r from-blue-100 to-indigo-100">
                 <Image
-                  src="/images/home/view-doctor-cosmetologist-doing-anti-aging-procedure-cosmetology-office-satisfied-woman.jpg"
+                  src="/images/home/view-doctor-cosmetologist-doing-anti-aging-procedure-cosmetology-office-satisfied-woman.png"
                   alt="Skin Treatment"
                   className="w-full h-full object-cover"
                   width={500}

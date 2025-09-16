@@ -76,7 +76,7 @@ const LaserHairRemoval = () =>
         showOnMobile: true,
       },
       {
-        src: "/images/hair-remover.jpg",
+        src: "/images/hair-remover.png",
         alt: "Laser Hair Removal 2",
         showOnMobile: false,
       },

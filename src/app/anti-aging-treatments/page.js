@@ -71,7 +71,7 @@ const AntiAgingTreatmentComponent = () =>
   const data = {
     images: [
       {
-        src: "/images/home/head-leaning.jpeg",
+        src: "/images/home/head-leaning.png",
         alt: "anti-agingtreatment",
         showOnMobile: true,
       },

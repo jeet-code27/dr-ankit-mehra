@@ -43,7 +43,7 @@ export const metadata = {
       "Get advanced skin, hair, laser, and cosmetology treatments with Dr. Ankit Mehra, MD Skin & VD. Trusted by thousands of patients in Ajmer for dermatology and aesthetic care.",
     images: [
       {
-        url: "/images/home/dr-ankit-mehra.jpeg", // Replace with actual image path
+        url: "/images/home/dr-ankitmehra.jpeg", // Replace with actual image path
         width: 800,
         height: 600,
         alt: "Dr. Ankit Mehra - Dermatologist in Ajmer",
@@ -96,7 +96,7 @@ const structuredData = {
       url: "https://drankitmehra.com/",
       logo: {
         "@type": "ImageObject",
-        url: "https://drankitmehra.com/images/home/dr-ankit-mehra.jpeg",
+        url: "https://drankitmehra.com/images/home/dr-ankitmehra.jpeg",
         width: 800,
         height: 600,
       },

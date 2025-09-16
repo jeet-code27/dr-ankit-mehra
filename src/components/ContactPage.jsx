@@ -183,7 +183,7 @@ const ContactPage = () => {
                     <div className="rounded-3xl overflow-hidden">
                       <div className="relative   w-full max-h-[500px]">
                        <Image
-                                           src="/images/home/dr-ankit-mehra.jpeg" 
+                                           src="/images/home/dr-ankitmehra.jpeg" 
                                            alt="Dr. Ankit Mehra"
                                            className="w-full aspect-square object-cover border-8 border-[#F2C8A7] shadow-2xl transform transition-transform duration-500 rounded-3xl group-hover:scale-110"
                                            width={200}

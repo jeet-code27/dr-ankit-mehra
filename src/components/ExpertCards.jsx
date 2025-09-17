@@ -2,9 +2,10 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
-const CardGrid = () =>
-{
+const CardGrid = () => {
     const [activeCard, setActiveCard] = useState(null);
 
     const cards = [
@@ -18,7 +19,7 @@ const CardGrid = () =>
             ],
             url: '/apurva-mehra',
         },
-         {
+        {
             title: 'Dr. Anju Depan',
             img: '/images/home/anju-depan.jpg',
             text: [
@@ -30,7 +31,6 @@ const CardGrid = () =>
             ],
             url: '/dr-anju-depan',
         },
-       
         {
             title: 'Dr. Kanti Meherda',
             img: '/images/home/kanti-meherda.jpeg',
@@ -41,7 +41,7 @@ const CardGrid = () =>
             ],
             url: '/dr-kanti-meherda',
         },
-         {
+        {
             title: 'Dr. Ashok Meherda',
             img: '/images/home/ashok-meherda.jpeg',
             text: [
@@ -53,32 +53,79 @@ const CardGrid = () =>
         },
     ];
 
+    // Animation variants
+    const fadeInUp = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6, ease: "easeOut" }
+        }
+    };
+
+    const staggerContainer = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15
+            }
+        }
+    };
+
+    const cardVariant = {
+        hidden: { opacity: 0, y: 40 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6, ease: "easeOut" }
+        }
+    };
+
     return (
         <>
-            <div className='flex justify-center text-[#B97E63]'>
+            <motion.div 
+                className='flex justify-center text-[#B97E63]'
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}
+                variants={fadeInUp}
+            >
                 <div style={{ padding: '40px 20px', fontFamily: "'Georgia', serif" }}>
                     <div style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto 40px' }}>
-                       
-                        <h2 style={{ fontSize: '3rem', margin: '0 0 20px' }}>
+                        <motion.h2 
+                            style={{ fontSize: '3rem', margin: '0 0 20px' }}
+                            variants={fadeInUp}
+                        >
                             Our Expert Care Team
-                        </h2>
-                        <p style={{ fontSize: '1.15rem', fontWeight: '400', margin: '0' }}>
+                        </motion.h2>
+                        <motion.p 
+                            style={{ fontSize: '1.15rem', fontWeight: '400', margin: '0' }}
+                            variants={fadeInUp}
+                        >
                             Meet our distinguished team of medical professionals dedicated to providing exceptional healthcare services
-                        </p>
+                        </motion.p>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
-            <div
+            <motion.div
                 className="pb-25 flex justify-center items-center font-mono"
                 style={{ fontFamily: "'Georgia', serif" }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.2 }}
+                variants={staggerContainer}
             >
                 <div className="container w-[95%] max-w-[1600px] flex flex-wrap align-center justify-center gap-5 xl:justify-between">
                     {cards.map((card, index) => (
-                        <div
+                        <motion.div
                             key={index}
                             className="relative w-[350px] xl:w-[23%] xl:min-w-[320px] h-[400px] overflow-hidden rounded-lg cursor-pointer group"
                             onClick={() => setActiveCard(index)}
+                            variants={cardVariant}
+                            whileHover={{ y: -5 }}
+                            transition={{ duration: 0.3 }}
                         >
                             {/* Face 1 */}
                             <div
@@ -104,16 +151,19 @@ const CardGrid = () =>
                             >
                                 {/* Close Button (mobile only) */}
                                 {activeCard === index && (
-                                    <button
+                                    <motion.button
                                         className="absolute top-3 right-3 bg-gray-100 hover:bg-gray-200 p-2 rounded-full shadow-md md:hidden"
-                                        onClick={(e) =>
-                                        {
+                                        onClick={(e) => {
                                             e.stopPropagation();
                                             setActiveCard(null);
                                         }}
+                                        initial={{ scale: 0 }}
+                                        animate={{ scale: 1 }}
+                                        transition={{ duration: 0.3 }}
+                                        whileTap={{ scale: 0.9 }}
                                     >
                                         <X size={18} className="text-gray-700" />
-                                    </button>
+                                    </motion.button>
                                 )}
 
                                 {/* Content */}
@@ -137,12 +187,12 @@ const CardGrid = () =>
                                     Read More
                                 </Link>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
-            </div>
+            </motion.div>
         </>
     );
 };
 
-export default CardGrid;import Image from 'next/image';
+export default CardGrid;

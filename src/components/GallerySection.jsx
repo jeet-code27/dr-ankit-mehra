@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image'
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+
 const GallerySection = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -50,7 +52,7 @@ const GallerySection = () => {
       title: "Facial Contouring Injection",
       description: "Non-surgical procedure to enhance facial features and restore youthful appearance."
     },
-      {
+    {
       id: 7,
       src: "woman-getting-hair-loss-treatment-clinic-1.png",
       alt: "Hair PRP Treatment",
@@ -63,9 +65,8 @@ const GallerySection = () => {
       alt: "Radiofrequency Facial",
       title: "Radiofrequency Facial",
       description: "Skin tightening treatment that boosts collagen for a firmer, youthful look."
-    }
-    ,
-     {
+    },
+    {
       id: 9,
       src: "head-leaning.png",
       alt: "Mesotherapy Skin Rejuvenation",
@@ -80,6 +81,35 @@ const GallerySection = () => {
       description: "Specialized care to reduce acne scars, pigmentation, and improve skin texture."
     }
   ];
+
+  // Animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const galleryItemVariant = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
 
   // Open lightbox and set current index
   const openLightbox = (index) => {
@@ -129,23 +159,42 @@ const GallerySection = () => {
   return (
     <>
       <div className='bg-[#FFF9F9]'>
-        <section className="max-w-7xl   mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 relative inline-block mb-4">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+          <motion.div 
+            className="text-center mb-12 md:mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            variants={fadeInUp}
+          >
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold text-gray-800 relative inline-block mb-4"
+              variants={fadeInUp}
+            >
               Our Gallery
               <span className="absolute bottom-0 left-1/4 w-1/2 h-1 bg-gradient-to-r from-[#B9826C] to-[#B9826C] rounded-full"></span>
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">
+            </motion.h2>
+            <motion.p 
+              className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg"
+              variants={fadeInUp}
+            >
               Explore our collection of stunning images showcasing our work, events, and special moments
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <motion.div 
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+            variants={staggerContainer}
+          >
             {galleryItems.map((item, index) => (
-              <div 
+              <motion.div 
                 className="relative rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 cursor-pointer group h-80" 
                 key={item.id}
                 onClick={() => openLightbox(index)}
+                variants={galleryItemVariant}
               >
                 <Image
                   src={`/images/home/${item.src}`}
@@ -158,44 +207,51 @@ const GallerySection = () => {
                   <h3 className="m-0 mb-1 text-xl">{item.title}</h3>
                   <p className="m-0 text-sm opacity-80">{item.description}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </section>
 
         {/* Lightbox Modal */}
         {lightboxOpen && (
-          <div className="fixed inset-0 bg-black/85 z-50 flex items-center justify-center p-4" onClick={closeLightbox}>
+          <motion.div 
+            className="fixed inset-0 bg-black/85 z-50 flex items-center justify-center p-4" 
+            onClick={closeLightbox}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          >
             <span className="absolute top-5 right-8 text-white text-4xl font-bold cursor-pointer transition-colors duration-300 z-[1001] hover:text-red-500" onClick={closeLightbox}>&times;</span>
             <button className="absolute top-1/2 left-8 -translate-y-1/2 bg-white/20 text-white border-0 text-3xl w-12 h-12 rounded-full cursor-pointer flex items-center justify-center transition-all duration-300 z-[1001] hover:bg-white/40 hover:scale-110" onClick={goToPrev}>&#10094;</button>
-            <Image
-              className="max-w-[90%] max-h-[80vh] object-contain rounded-lg shadow-2xl animate-zoomIn"
-              src={`/images/home/${galleryItems[currentIndex].src}`}
-              alt={galleryItems[currentIndex].alt}
-              fill
-              sizes="90vw"
-              style={{ objectFit: 'contain' }}
-            />
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="relative max-w-[90%] max-h-[80vh]"
+            >
+              <Image
+                className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                src={`/images/home/${galleryItems[currentIndex].src}`}
+                alt={galleryItems[currentIndex].alt}
+                fill
+                sizes="90vw"
+                style={{ objectFit: 'contain' }}
+              />
+            </motion.div>
             <button className="absolute top-1/2 right-8 -translate-y-1/2 bg-white/20 text-white border-0 text-3xl w-12 h-12 rounded-full cursor-pointer flex items-center justify-center transition-all duration-300 z-[1001] hover:bg-white/40 hover:scale-110" onClick={goToNext}>&#10095;</button>
-            <div className="absolute bottom-8 left-0 right-0 text-center text-white text-xl px-5">
+            <motion.div 
+              className="absolute bottom-8 left-0 right-0 text-center text-white text-xl px-5"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+            >
               <strong>{galleryItems[currentIndex].title}</strong>
               <br />
               {galleryItems[currentIndex].description}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         )}
       </div>
-
-      {/* Custom animation for lightbox - using regular style tag instead of styled-jsx */}
-      <style>{`
-        @keyframes zoomIn {
-          from { transform: scale(0.8); opacity: 0; }
-          to { transform: scale(1); opacity: 1; }
-        }
-        .animate-zoomIn {
-          animation: zoomIn 0.4s ease;
-        }
-      `}</style>
     </>
   );
 };

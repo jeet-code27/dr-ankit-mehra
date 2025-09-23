@@ -221,24 +221,49 @@ const GallerySection = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
           >
-            <span className="absolute top-5 right-8 text-white text-4xl font-bold cursor-pointer transition-colors duration-300 z-[1001] hover:text-red-500" onClick={closeLightbox}>&times;</span>
-            <button className="absolute top-1/2 left-8 -translate-y-1/2 bg-white/20 text-white border-0 text-3xl w-12 h-12 rounded-full cursor-pointer flex items-center justify-center transition-all duration-300 z-[1001] hover:bg-white/40 hover:scale-110" onClick={goToPrev}>&#10094;</button>
+            {/* Close Button */}
+            <span 
+              className="absolute top-5 right-8 text-white text-4xl font-bold cursor-pointer transition-colors duration-300 z-[1001] hover:text-red-500" 
+              onClick={closeLightbox}
+            >
+              &times;
+            </span>
+            
+            {/* Previous Button */}
+            <button 
+              className="absolute top-1/2 left-8 -translate-y-1/2 bg-white/20 text-white border-0 text-3xl w-12 h-12 rounded-full cursor-pointer flex items-center justify-center transition-all duration-300 z-[1001] hover:bg-white/40 hover:scale-110" 
+              onClick={goToPrev}
+            >
+              &#10094;
+            </button>
+            
+            {/* Image Container - Fixed positioning and dimensions */}
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="relative max-w-[90%] max-h-[80vh]"
+              className="relative w-[90vw] h-[80vh] flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
             >
               <Image
-                className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
                 src={`/images/home/${galleryItems[currentIndex].src}`}
                 alt={galleryItems[currentIndex].alt}
-                fill
-                sizes="90vw"
-                style={{ objectFit: 'contain' }}
+                width={1200}
+                height={800}
+                className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                priority
               />
             </motion.div>
-            <button className="absolute top-1/2 right-8 -translate-y-1/2 bg-white/20 text-white border-0 text-3xl w-12 h-12 rounded-full cursor-pointer flex items-center justify-center transition-all duration-300 z-[1001] hover:bg-white/40 hover:scale-110" onClick={goToNext}>&#10095;</button>
+            
+            {/* Next Button */}
+            <button 
+              className="absolute top-1/2 right-8 -translate-y-1/2 bg-white/20 text-white border-0 text-3xl w-12 h-12 rounded-full cursor-pointer flex items-center justify-center transition-all duration-300 z-[1001] hover:bg-white/40 hover:scale-110" 
+              onClick={goToNext}
+            >
+              &#10095;
+            </button>
+            
+            {/* Image Description */}
             <motion.div 
               className="absolute bottom-8 left-0 right-0 text-center text-white text-xl px-5"
               initial={{ y: 20, opacity: 0 }}

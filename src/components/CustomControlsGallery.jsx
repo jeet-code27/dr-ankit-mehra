@@ -8,13 +8,15 @@ const DermatologyGallery = () => {
   const images = [
     "/images/diseases/a1.jpg",
     "/images/diseases/a2.jpg",
-    "/images/diseases/a1.jpg",
+    // "/images/diseases/a1.jpg",
     "/images/diseases/a3.jpg",
-    "/images/diseases/a4.jpg",
+    // "/images/diseases/a4.jpg",
     "/images/diseases/a5.jpg",
     "/images/diseases/a6.jpg",
     "/images/diseases/a7.jpg",
-    "/images/diseases/a8.jpg"
+    "/images/diseases/a8.jpg",
+    "/images/diseases/a9.jpg",
+    "/images/diseases/a18.jpg"
   ];
   
   // Function to go to the next slide

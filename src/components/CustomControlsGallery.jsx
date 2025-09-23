@@ -16,7 +16,7 @@ const DermatologyGallery = () => {
     "/images/diseases/a7.jpg",
     "/images/diseases/a8.jpg",
     "/images/diseases/a9.jpg",
-    "/images/diseases/a18.jpg"
+    "/images/diseases/a10.jpg"
   ];
   
   // Function to go to the next slide

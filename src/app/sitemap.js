@@ -230,6 +230,12 @@ export default function sitemap() {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+     {
+      url: `${baseUrl}blogs/best-skin-treatments-for-glowing-skin-in-2025`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
          
   ];
 }

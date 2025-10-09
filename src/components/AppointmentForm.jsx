@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const ContactForm = () => {
-  // Form state
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,7 +11,6 @@ const ContactForm = () => {
     reason: '',
   });
 
-  // Validation errors state
   const [errors, setErrors] = useState({
     name: '',
     email: '',
@@ -22,12 +20,10 @@ const ContactForm = () => {
     reason: '',
   });
 
-  // Form submission state
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -56,33 +52,40 @@ const ContactForm = () => {
     }
   };
 
-  // Format phone number to 123 456 7890 format (without brackets)
   const formatPhoneNumber = (value) => {
-    // Remove all non-digit characters
     const cleaned = value.replace(/\D/g, '');
-    
-    // Limit to 10 digits
     const trimmed = cleaned.substring(0, 10);
     
-    // Format the phone number without brackets
     if (trimmed.length === 0) {
       return '';
-    } else if (trimmed.length <= 3) {
+    } else if (trimmed.length <= 5) {
       return trimmed;
-    } else if (trimmed.length <= 6) {
-      return `${trimmed.substring(0, 3)} ${trimmed.substring(3)}`;
     } else {
-      return `${trimmed.substring(0, 3)} ${trimmed.substring(3, 6)} ${trimmed.substring(6)}`;
+      return `${trimmed.substring(0, 5)} ${trimmed.substring(5)}`;
     }
   };
 
-  // Handle input changes
+  const isValidIndianPhone = (phone) => {
+    const digits = phone.replace(/\D/g, '');
+    
+    // Check if it's exactly 10 digits
+    if (digits.length !== 10) return false;
+    
+    // Check if it starts with 9, 8, 7, or 6
+    const firstDigit = digits.charAt(0);
+    if (!['9', '8', '7', '6'].includes(firstDigit)) return false;
+    
+    // Check if all digits are the same (like 0000000000, 1111111111, etc.)
+    const allSame = digits.split('').every(digit => digit === digits.charAt(0));
+    if (allSame) return false;
+    
+    return true;
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     
-    // Special handling for phone number
     if (name === 'phone') {
-      // Only allow digits and format the phone number
       const formattedValue = formatPhoneNumber(value);
       setFormData(prev => ({
         ...prev,
@@ -95,7 +98,6 @@ const ContactForm = () => {
       }));
     }
 
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -104,7 +106,6 @@ const ContactForm = () => {
     }
   };
 
-  // Validate form
   const validateForm = () => {
     let isValid = true;
     const newErrors = { ...errors };
@@ -132,13 +133,16 @@ const ContactForm = () => {
     if (!formData.phone) {
       newErrors.phone = 'Phone number is required';
       isValid = false;
-    } else {
-      // Remove formatting and check if we have 10 digits
+    } else if (!isValidIndianPhone(formData.phone)) {
       const digits = formData.phone.replace(/\D/g, '');
       if (digits.length < 10) {
-        newErrors.phone = 'Please enter a complete phone number';
-        isValid = false;
+        newErrors.phone = 'Please enter a complete 10-digit phone number';
+      } else if (!['9', '8', '7', '6'].includes(digits.charAt(0))) {
+        newErrors.phone = 'Phone number must start with 9, 8, 7, or 6';
+      } else {
+        newErrors.phone = 'Please enter a valid phone number';
       }
+      isValid = false;
     }
 
     // Date validation
@@ -172,7 +176,6 @@ const ContactForm = () => {
     return isValid;
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -184,22 +187,38 @@ const ContactForm = () => {
     setSubmitError('');
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // In a real app, you would send the data to your backend here
-      console.log('Form submitted:', formData);
-      
-      setSubmitSuccess(true);
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        date: '',
-        time: '',
-        reason: '',
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '0504d518-0bf6-48a6-9f20-9f196dacc29f', // Replace with your actual access key
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          date: formData.date,
+          time: formData.time,
+          reason: formData.reason,
+          subject: 'New Consultation Booking - Dermatology Clinic',
+        }),
       });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitSuccess(true);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          date: '',
+          time: '',
+          reason: '',
+        });
+      } else {
+        setSubmitError('An error occurred while submitting your form. Please try again.');
+      }
     } catch (error) {
       setSubmitError('An error occurred while submitting your form. Please try again.');
     } finally {
@@ -207,7 +226,6 @@ const ContactForm = () => {
     }
   };
 
-  // Reset success message after 5 seconds
   useEffect(() => {
     if (submitSuccess) {
       const timer = setTimeout(() => {
@@ -219,17 +237,17 @@ const ContactForm = () => {
 
   return (
     <motion.div 
-      className="bg-white rounded-xl   overflow-hidden mb-12"
+      className="bg-white rounded-xl overflow-hidden mb-12 shadow-lg"
       variants={scaleUpVariants}
       initial="hidden"
       animate="visible"
     >
       <div className="p-8">
-        <h2 className="text-2xl font-bold mb-6   font-serif  text-[#BF7F62] text-center">
+        <h2 className="text-3xl font-bold mb-4 text-[#BF7F62] text-center">
           Book Your Consultation
         </h2>
         <motion.p 
-          className="text-gray-600 font-serif text-center mb-8"
+          className="text-gray-600 text-center mb-8"
           variants={itemVariants}
         >
           Personalized treatment plans for all your dermatological needs
@@ -241,11 +259,10 @@ const ContactForm = () => {
           initial="hidden"
           animate="visible"
         >
-          {/* Success message */}
           <AnimatePresence>
             {submitSuccess && (
               <motion.div 
-                className="mb-6 p-4 bg-green-50 text-green-700 rounded-lg"
+                className="mb-6 p-4 bg-green-50 text-green-700 rounded-lg border border-green-200"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -255,9 +272,8 @@ const ContactForm = () => {
             )}
           </AnimatePresence>
 
-          {/* Error message */}
           {submitError && (
-            <div className="mb-6 p-4 bg-red-50 text-red-700 rounded-lg">
+            <div className="mb-6 p-4 bg-red-50 text-red-700 rounded-lg border border-red-200">
               {submitError}
             </div>
           )}
@@ -265,33 +281,37 @@ const ContactForm = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <motion.div variants={itemVariants}>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  Full Name *
+                </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition ${
                     errors.name ? 'border-red-500' : 'border-gray-300'
                   }`}
-                  required
+                  placeholder="Enter your full name"
                 />
                 {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
               </motion.div>
               
               <motion.div variants={itemVariants}>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  Email Address *
+                </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition ${
                     errors.email ? 'border-red-500' : 'border-gray-300'
                   }`}
-                  required
+                  placeholder="your.email@example.com"
                 />
                 {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
               </motion.div>
@@ -299,25 +319,30 @@ const ContactForm = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <motion.div variants={itemVariants}>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                  Phone Number *
+                </label>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="123 456 7890"
-                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                  placeholder="98765 43210"
+                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition ${
                     errors.phone ? 'border-red-500' : 'border-gray-300'
                   }`}
-                  required
                 />
                 {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
-                <p className="mt-1 text-xs text-gray-500">Only numbers are allowed</p>
+                <p className="mt-1 text-xs text-gray-500">
+                  Must start with 9, 8, 7, or 6 | Contact: +91 96970 41111
+                </p>
               </motion.div>
               
               <motion.div variants={itemVariants}>
-                <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-1">Preferred Date</label>
+                <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-1">
+                  Preferred Date *
+                </label>
                 <input
                   type="date"
                   id="date"
@@ -325,10 +350,9 @@ const ContactForm = () => {
                   value={formData.date}
                   onChange={handleChange}
                   min={new Date().toISOString().split('T')[0]}
-                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition ${
                     errors.date ? 'border-red-500' : 'border-gray-300'
                   }`}
-                  required
                 />
                 {errors.date && <p className="mt-1 text-sm text-red-600">{errors.date}</p>}
               </motion.div>
@@ -336,48 +360,57 @@ const ContactForm = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <motion.div variants={itemVariants}>
-                <label htmlFor="time" className="block text-sm font-medium text-gray-700 mb-1">Preferred Time</label>
+                <label htmlFor="time" className="block text-sm font-medium text-gray-700 mb-1">
+                  Preferred Time *
+                </label>
                 <select
                   id="time"
                   name="time"
                   value={formData.time}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition ${
                     errors.time ? 'border-red-500' : 'border-gray-300'
                   }`}
-                  required
                 >
                   <option value="">Select a time</option>
-                  <option value="10:00">10:00 AM</option>
                   <option value="11:00">11:00 AM</option>
+                  <option value="11:30">11:30 AM</option>
                   <option value="12:00">12:00 PM</option>
+                  <option value="12:30">12:30 PM</option>
                   <option value="13:00">1:00 PM</option>
-                  <option value="14:00">2:00 PM</option>
-                  <option value="15:00">3:00 PM</option>
-                  <option value="16:00">4:00 PM</option>
+                  <option value="13:30">1:30 PM</option>
                   <option value="17:00">5:00 PM</option>
+                  <option value="17:30">5:30 PM</option>
+                  <option value="18:00">6:00 PM</option>
+                  <option value="18:30">6:30 PM</option>
                 </select>
                 {errors.time && <p className="mt-1 text-sm text-red-600">{errors.time}</p>}
+                <p className="mt-1 text-xs text-gray-500">
+                  Consultation Hours: Mon-Sat: 11am-2pm, 5-7pm | Sun: 11am-2pm
+                </p>
               </motion.div>
               
               <motion.div variants={itemVariants}>
-                <label htmlFor="reason" className="block text-sm font-medium text-gray-700 mb-1">Reason for Visit</label>
+                <label htmlFor="reason" className="block text-sm font-medium text-gray-700 mb-1">
+                  Reason for Visit *
+                </label>
                 <select
                   id="reason"
                   name="reason"
                   value={formData.reason}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition ${
                     errors.reason ? 'border-red-500' : 'border-gray-300'
                   }`}
-                  required
                 >
                   <option value="">Select a reason</option>
                   <option value="acne">Acne Treatment</option>
                   <option value="anti-aging">Anti-Aging</option>
                   <option value="hair-loss">Hair Loss</option>
-                  <option value="skin-cancer">Skin Cancer</option>
+                  <option value="skin-cancer">Skin Cancer Screening</option>
                   <option value="laser-therapy">Laser Therapy</option>
+                  <option value="skin-allergy">Skin Allergy</option>
+                  <option value="cosmetic-consultation">Cosmetic Consultation</option>
                   <option value="other">Other</option>
                 </select>
                 {errors.reason && <p className="mt-1 text-sm text-red-600">{errors.reason}</p>}
@@ -388,11 +421,10 @@ const ContactForm = () => {
               className="text-center"
               variants={itemVariants}
             >
-            
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-[#FAF2F0] border-[#BF7F62] border hover:text-white hover:bg-[#BF7F62] font-serif font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105"
+                className="bg-[#FAF2F0] border-[#BF7F62] border-2 text-[#BF7F62] hover:text-white hover:bg-[#BF7F62] font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Submitting...' : 'Book Consultation'}
               </button>

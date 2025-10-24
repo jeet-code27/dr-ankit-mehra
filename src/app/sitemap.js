@@ -231,10 +231,16 @@ export default function sitemap() {
       priority: 0.9,
     },
      {
-      url: `${baseUrl}blogs/best-skin-treatments-for-glowing-skin-in-2025`,
+      url: `${baseUrl}/blogs/best-skin-treatments-for-glowing-skin-in-2025`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
+    },
+     {
+      url: `${baseUrl}/blogs/identify-skin-type-care-properly`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
     },
          
   ];

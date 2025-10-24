@@ -191,7 +191,7 @@ export default async function SingleBlogPage({ params }) {
           alt={blog.alt || blog.title}
           fill
           priority
-          className="object-cover rounded-lg shadow-lg"
+          className="object-fit rounded-lg shadow-lg"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#B97A57] to-transparent opacity-70 rounded-lg"></div>
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">

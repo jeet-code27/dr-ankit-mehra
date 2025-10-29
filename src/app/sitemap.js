@@ -242,6 +242,12 @@ export default function sitemap() {
       changeFrequency: "weekly",
       priority: 0.95,
     },
+      {
+      url: `${baseUrl}/blogs/seasonal-skincare-tips-protect-skin-in-winter`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
          
   ];
 }

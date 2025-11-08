@@ -74,7 +74,7 @@ const SkinTreatmentsPage = () => {
       description:
         "Enhance your skin texture and radiance with advanced chemical peels and innovative treatments",
       image:
-        "young-beautiful-girl-lies-beautician-s-table-receives-procedures-scaled-qwlpr8v570ly32hd4hh19tk1zi61z4x4ivqz277fwg.jpg",
+        "young-beautiful-girl-lies-beautician-s-table-receives-procedures-scaled.png",
       features: ["Chemical Peels", "Texture Improvement", "Radiance Boost"],
       url: "/skin-rejuvenation",
     },

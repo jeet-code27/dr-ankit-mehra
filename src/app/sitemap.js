@@ -248,6 +248,12 @@ export default function sitemap() {
       changeFrequency: "weekly",
       priority: 0.95,
     },
+      {
+      url: `${baseUrl}/blogs/how-to-get-glowing-skin-fast-skin-doctor-tips`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
          
   ];
 }

@@ -35,7 +35,7 @@ export default function sitemap() {
       priority: 0.9,
     },
 
-    
+
     {
       url: `${baseUrl}/skin-treatments`,
       lastModified: currentDate,
@@ -114,7 +114,7 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.6,
     },
-     {
+    {
       url: `${baseUrl}/laser-tattoo-removal`,
       lastModified: currentDate,
       changeFrequency: "monthly",
@@ -126,13 +126,13 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.6,
     },
-        {
+    {
       url: `${baseUrl}/gallery-2`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.6,
     },
-      
+
     // All Blog Posts - High Priority (0.9)
     {
       url: `${baseUrl}/blogs/common-skin-problems-and-home-remedies`,
@@ -206,54 +206,60 @@ export default function sitemap() {
       changeFrequency: "weekly",
       priority: 0.9,
     },
-     {
+    {
       url: `${baseUrl}/blogs/skin-care-treatments-best-dermatologist-in-ajmer-dr-ankit-mehra`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
-        {
+    {
       url: `${baseUrl}/blogs/best-dermatologist-skin-specialist-in-ajmer-dr-ankit-mehra`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
-        {
+    {
       url: `${baseUrl}/blogs/how-to-find-the-best-dermatologist-in-ajmer-dr-ankit-mehra`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
-        {
+    {
       url: `${baseUrl}/blogs/understanding-vitiligo-causes-symptoms-and-treatment-options`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
-     {
+    {
       url: `${baseUrl}/blogs/best-skin-treatments-for-glowing-skin-in-2025`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,
     },
-     {
+    {
       url: `${baseUrl}/blogs/identify-skin-type-care-properly`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.95,
     },
-      {
+    {
       url: `${baseUrl}/blogs/seasonal-skincare-tips-protect-skin-in-winter`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.95,
     },
-      {
+    {
       url: `${baseUrl}/blogs/how-to-get-glowing-skin-fast-skin-doctor-tips`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.95,
     },
-         
+    {
+      url: `${baseUrl}/blogs/dermatologist-recommended-sunscreens-indian-skin`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+
   ];
 }

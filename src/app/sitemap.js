@@ -266,6 +266,12 @@ export default function sitemap() {
       changeFrequency: "weekly",
       priority: 0.95,
     },
+{
+      url: `${baseUrl}/blogs/remove-pimple-marks-dark-spots-naturally-home-dermatologist-approved`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
 
   ];
 }
